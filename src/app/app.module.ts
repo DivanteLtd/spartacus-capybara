@@ -6,33 +6,32 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://storefront.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com',
-          prefix: '/rest/v2/'
-        }
+          baseUrl:
+            'https://storefront.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com',
+          prefix: '/rest/v2/',
+        },
       },
       context: {
-        baseSite: ['electronics-spa']
+        baseSite: ['electronics-spa'],
       },
       i18n: {
         resources: translations,
         chunks: translationChunksConfig,
-        fallbackLang: 'en'
+        fallbackLang: 'en',
       },
       features: {
         level: '1.4',
-        anonymousConsents: true
-      }
-    })
+        anonymousConsents: true,
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

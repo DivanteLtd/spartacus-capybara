@@ -1,0 +1,5 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.eol": "\n",
+    "prettier.endOfLine": "lf"
+}
