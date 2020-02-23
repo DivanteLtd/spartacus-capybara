@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "build:pages": "node_modules/.bin/ng build --prod --outputPath=public --baseHref=https://gitlab.divante.pl/spartacus-demo/",
+    "build:firebase": "node_modules/.bin/ng build --prod --outputPath=public --baseHref=https://spartacus-demo.web.app/",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
