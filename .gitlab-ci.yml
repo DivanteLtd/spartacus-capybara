@@ -1,8 +1,6 @@
 image: node:12.14.0
 
 pages:
-  tags:
-    - docker
   cache:
     paths:
       - node_modules/
