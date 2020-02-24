@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
+
+import { AppComponent } from './app.component';
+import { StaticHeaderCmsModule } from './layout/static-header-cms/static-header-cms.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
         anonymousConsents: true,
       },
     }),
+    StaticHeaderCmsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,13 @@
+* {
+  outline: none;
+}
+
+header {
+  background-color: white !important;
+  color: black !important;
+
+  .header {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
