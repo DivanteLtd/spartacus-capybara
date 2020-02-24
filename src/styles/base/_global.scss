@@ -2,12 +2,12 @@
   outline: none;
 }
 
+.topBanner {
+  height: 40px;
+  display: flex;
+}
+
 header {
   background-color: white !important;
   color: black !important;
-
-  .header {
-    max-width: none !important;
-    padding: 0 !important;
-  }
 }

@@ -7,13 +7,15 @@ import {
 
 export const staticHeaderLayoutConfig: LayoutConfig = {
   layoutSlots: {
+    topBar: {
+      slots: ['SiteContext'],
+    },
     header: {
       md: {
         slots: [
           'PreHeader',
-          'SiteContext',
           //   'SiteLinks',
-          'SiteLogo',
+          'CustomSiteLogo',
           'NavigationBar',
           'SearchBox',
           'SiteLogin',
@@ -21,7 +23,7 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
         ],
       },
       xs: {
-        slots: ['PreHeader', 'SiteLogo', 'SearchBox', 'MiniCart'],
+        slots: ['PreHeader', 'CustomSiteLogo', 'SearchBox', 'MiniCart'],
       },
     },
   },
@@ -38,7 +40,7 @@ export const staticHeaderComponents: {
 };
 
 export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
-  SiteLogo: {
+  CustomSiteLogo: {
     componentIds: ['StaticHeaderLogoComponent'],
   },
 };
