@@ -1,0 +1,37 @@
+@import '../variables';
+@import '../mixins';
+
+h1 {
+  font-size: calculateRem(36px);
+  line-height: calculateRem(50px);
+}
+
+h2 {
+  font-size: calculateRem(24px);
+  line-height: calculateRem(33px);
+}
+
+h3 {
+  font-size: calculateRem(18px);
+  line-height: calculateRem(40px);
+}
+
+h4 {
+  font-size: calculateRem(18px);
+  line-height: calculateRem(30px);
+}
+
+h5 {
+  font-size: calculateRem(14px);
+  line-height: calculateRem(20px);
+}
+
+h6 {
+  font-size: calculateRem(14px);
+  line-height: calculateRem(23px);
+}
+
+p {
+  font-size: calculateRem(18px);
+  line-height: calculateRem(30px);
+}

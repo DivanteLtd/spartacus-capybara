@@ -3,14 +3,8 @@
 
 $skipComponentStyles: (cx-searchbox);
 
-@import './styles/base/media';
-@import './styles/base/global';
-
 @import '~@spartacus/styles/index';
 
-//header
-@import './styles/components/customSiteLogin.scss';
-@import './styles/components/customSiteLogo.scss';
-@import './styles/components/navigationBar.scss';
-@import './styles/components/searchBox.scss';
-@import './styles/components/siteContext.scss';
+@import 'styles/_index.scss';
+@import './styles/base/media';
+@import './styles/base/_global';
