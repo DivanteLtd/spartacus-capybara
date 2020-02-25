@@ -1,0 +1,11 @@
+.btn {
+
+  &.btn-block {
+    padding: 16px 40px;
+    max-height: 52px;
+    height: 52px;
+    border-radius: 0;
+    line-height: 20px;
+    font-size: calculateRem(14px);
+  }
+}
