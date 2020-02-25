@@ -20,11 +20,11 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
           'SearchBox',
           'CustomSiteLogin',
           'CustomWishListIcon',
-          'MiniCart',
+          'CustomMiniCart',
         ],
       },
       xs: {
-        slots: ['PreHeader', 'CustomSiteLogo', 'SearchBox', 'MiniCart'],
+        slots: ['PreHeader', 'CustomSiteLogo', 'SearchBox', 'CustomMiniCart'],
       },
     },
   },
@@ -48,6 +48,11 @@ export const staticHeaderComponents: {
     flexType: 'CustomWishListIconComponent',
     uid: 'CustomWishListIconComponent',
   },
+  CustomMiniCartComponent: {
+    typeCode: 'CustomMiniCartComponent',
+    flexType: 'CustomMiniCartComponent',
+    uid: 'CustomMiniCartComponent',
+  },
 };
 
 export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
@@ -59,6 +64,9 @@ export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
   },
   CustomWishListIcon: {
     componentIds: ['CustomWishListIconComponent'],
+  },
+  CustomMiniCart: {
+    componentIds: ['CustomMiniCartComponent'],
   },
 };
 

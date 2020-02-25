@@ -3,21 +3,24 @@
 
   .account-icon {
     cursor: pointer;
-    margin: 0 20px;
+  }
+
+  .header-links {
+    position: absolute;
   }
 
   .HeaderLinks {
     .accNavComponent {
       nav {
         h5 {
-          height: 25px;
+          height: 40px;
           margin: 0;
           opacity: 0;
           overflow: hidden;
           padding: 0;
           position: absolute;
-          top: 0;
-          width: 61px;
+          bottom: -7px;
+          width: 33px;
         }
       }
     }

@@ -7,7 +7,6 @@ import { AuthService, UserService, User } from '@spartacus/core';
 @Component({
   selector: 'app-custom-wish-list-icon',
   templateUrl: './custom-wish-list-icon.component.html',
-  styleUrls: ['./custom-wish-list-icon.component.scss'],
 })
 export class CustomWishListIconComponent implements OnInit {
   user$: Observable<User>;

@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { ConfigModule } from '@spartacus/core';
 
+import { CustomLoginComponent } from '../custom-login/custom-login.component';
+import { CustomMiniCartComponent } from '../custom-mini-cart/custom-mini-cart.component';
+import { CustomWishListIconComponent } from '../custom-wish-list-icon/custom-wish-list-icon.component';
 import {
   staticHeaderLayoutConfig,
   defaultCmsContentConfig,
 } from './static-header-layout.config';
-import { CustomLoginComponent } from '../custom-login/custom-login.component';
-import { CustomWishListIconComponent } from '../custom-wish-list-icon/custom-wish-list-icon.component';
 import { StaticHeaderLogoComponent } from '../static-header-logo/static-header-logo.component';
 
 @NgModule({
@@ -22,6 +23,9 @@ import { StaticHeaderLogoComponent } from '../static-header-logo/static-header-l
         },
         CustomWishListIconComponent: {
           component: CustomWishListIconComponent,
+        },
+        CustomMiniCartComponent: {
+          component: CustomMiniCartComponent,
         },
       },
     }),
