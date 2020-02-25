@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { StorefrontComponent } from '@spartacus/storefront';
 
 @Component({
@@ -6,6 +7,4 @@ import { StorefrontComponent } from '@spartacus/storefront';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent extends StorefrontComponent {
-  title = 'SpartacusDemo';
-}
+export class AppComponent extends StorefrontComponent {}

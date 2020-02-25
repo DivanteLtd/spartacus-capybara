@@ -6,7 +6,7 @@ cx-searchbox {
     height: 40px;
     margin: 0;
     position: relative;
-    width: 320px;
+    width: 280px;
 
     &.dirty .search {
       display: none;
@@ -28,7 +28,6 @@ cx-searchbox {
       background: #f1f2f3;
       border-radius: 27px;
       border: none;
-      font-family: 'Roboto';
       font-size: 14px;
       font-style: normal;
       font-weight: 300;

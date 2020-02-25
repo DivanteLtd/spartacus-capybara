@@ -14,7 +14,6 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
       md: {
         slots: [
           'PreHeader',
-          //   'SiteLinks',
           'CustomSiteLogo',
           'NavigationBar',
           'SearchBox',
