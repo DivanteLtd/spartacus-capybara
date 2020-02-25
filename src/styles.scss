@@ -8,7 +8,9 @@ $skipComponentStyles: (cx-searchbox);
 
 @import '~@spartacus/styles/index';
 
+//header
+@import './styles/components/customSiteLogin.scss';
 @import './styles/components/customSiteLogo.scss';
 @import './styles/components/navigationBar.scss';
-@import './styles/components/searchbox.scss';
+@import './styles/components/searchBox.scss';
 @import './styles/components/siteContext.scss';

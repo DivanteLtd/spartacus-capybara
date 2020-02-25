@@ -1,21 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { translations, translationChunksConfig } from '@spartacus/assets';
-import {
-  B2cStorefrontModule,
-  GlobalMessageComponentModule,
-  OutletModule,
-  OutletRefModule,
-  PwaModule,
-  PageLayoutModule,
-  SeoModule,
-  PageSlotModule,
-} from '@spartacus/storefront';
+import { B2cStorefrontModule } from '@spartacus/storefront';
 
 import { AppComponent } from './app.component';
-import { StaticHeaderCmsModule } from './layout/static-header-cms/static-header-cms.module';
-import { RouterModule } from '@angular/router';
-import { AnonymousConsentsModule, FeaturesConfigModule } from '@spartacus/core';
+import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
+import { HeaderModule } from './layout/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,20 +32,9 @@ import { AnonymousConsentsModule, FeaturesConfigModule } from '@spartacus/core';
         anonymousConsents: true,
       },
     }),
-    StaticHeaderCmsModule,
-
-    RouterModule,
-    GlobalMessageComponentModule,
-    OutletModule,
-    OutletRefModule,
-    PwaModule,
-    PageLayoutModule,
-    SeoModule,
-    PageSlotModule,
-    AnonymousConsentsModule,
-    FeaturesConfigModule,
+    StorefrontMissingExportsModule,
+    HeaderModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

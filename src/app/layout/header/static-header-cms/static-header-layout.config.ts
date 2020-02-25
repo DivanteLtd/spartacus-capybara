@@ -18,7 +18,8 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
           'CustomSiteLogo',
           'NavigationBar',
           'SearchBox',
-          'SiteLogin',
+          'CustomSiteLogin',
+          'CustomWishListIcon',
           'MiniCart',
         ],
       },
@@ -37,11 +38,27 @@ export const staticHeaderComponents: {
     flexType: 'StaticHeaderLogoComponent',
     uid: 'StaticHeaderLogoComponent',
   },
+  CustomLoginComponent: {
+    typeCode: 'CustomLoginComponent',
+    flexType: 'CustomLoginComponent',
+    uid: 'CustomLoginComponent',
+  },
+  CustomWishListIconComponent: {
+    typeCode: 'CustomWishListIconComponent',
+    flexType: 'CustomWishListIconComponent',
+    uid: 'CustomWishListIconComponent',
+  },
 };
 
 export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
   CustomSiteLogo: {
     componentIds: ['StaticHeaderLogoComponent'],
+  },
+  CustomSiteLogin: {
+    componentIds: ['CustomLoginComponent'],
+  },
+  CustomWishListIcon: {
+    componentIds: ['CustomWishListIconComponent'],
   },
 };
 

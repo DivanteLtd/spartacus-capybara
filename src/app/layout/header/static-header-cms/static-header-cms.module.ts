@@ -5,10 +5,11 @@ import {
   staticHeaderLayoutConfig,
   defaultCmsContentConfig,
 } from './static-header-layout.config';
-import { StaticHeaderLogoComponent } from '../header/static-header-logo/static-header-logo.component';
+import { CustomLoginComponent } from '../custom-login/custom-login.component';
+import { CustomWishListIconComponent } from '../custom-wish-list-icon/custom-wish-list-icon.component';
+import { StaticHeaderLogoComponent } from '../static-header-logo/static-header-logo.component';
 
 @NgModule({
-  declarations: [StaticHeaderLogoComponent],
   imports: [
     ConfigModule.withConfigFactory(defaultCmsContentConfig),
     ConfigModule.withConfig({
@@ -16,10 +17,15 @@ import { StaticHeaderLogoComponent } from '../header/static-header-logo/static-h
         StaticHeaderLogoComponent: {
           component: StaticHeaderLogoComponent,
         },
+        CustomLoginComponent: {
+          component: CustomLoginComponent,
+        },
+        CustomWishListIconComponent: {
+          component: CustomWishListIconComponent,
+        },
       },
     }),
     ConfigModule.withConfig(staticHeaderLayoutConfig),
   ],
-  entryComponents: [StaticHeaderLogoComponent],
 })
 export class StaticHeaderCmsModule {}

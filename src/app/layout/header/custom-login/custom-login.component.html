@@ -1,0 +1,24 @@
+<ng-container *ngIf="user$ | async as user; else login">
+  <a role="link" [routerLink]="{ cxRoute: 'login' } | cxUrl">
+    <img
+      src="../../../../assets/icons/account.svg"
+      alt="Account"
+      class="account-icon"
+    />
+  </a>
+  <cx-page-slot position="HeaderLinks"></cx-page-slot>
+</ng-container>
+
+<ng-template #login>
+  <a role="link" [routerLink]="{ cxRoute: 'login' } | cxUrl">
+    <img
+      src="../../../../assets/icons/account.svg"
+      alt="Account"
+      class="account-icon"
+    />
+  </a>
+</ng-template>
+
+<a role="link" ng-reflect-router-link="/,login" href="/login"></a>
+
+<a _ngcontent-yki-c2="" role="link" ng-reflect-router-link="/" href="/"></a>
