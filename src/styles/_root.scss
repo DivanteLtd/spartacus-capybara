@@ -1,0 +1,15 @@
+@import "variables";
+@import "mixins";
+
+:root {
+  --cx-color-light: #000;
+  --cx-color-dark: #1D1F22;
+  --cx-color-primary: #5ECE7B;
+  --cx-color-secondary: #9EE2B0;
+  --cx-font-size: calculateRem(14px);
+}
+
+body {
+  font-family: $app-font-family;
+}
+
