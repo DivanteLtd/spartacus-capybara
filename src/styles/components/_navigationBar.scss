@@ -16,5 +16,15 @@ header {
       margin: 0 10px !important;
       padding: 0 !important;
     }
+
+    .wrapper {
+      a {
+        padding: 5px 0 !important;
+
+        &:hover {
+          color: var(--cx-color-primary);
+        }
+      }
+    }
   }
 }
