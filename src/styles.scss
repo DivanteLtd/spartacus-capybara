@@ -1,13 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=latin-ext');
 
-// $skipComponentStyles: (cx-site-context-selector);
+$skipComponentStyles: (cx-searchbox);
 
 @import './styles/base/media';
 @import './styles/base/global';
 
 @import '~@spartacus/styles/index';
 
-@import './styles/components/siteContext.scss';
-@import './styles/components/navigationBar.scss';
 @import './styles/components/customSiteLogo.scss';
+@import './styles/components/navigationBar.scss';
+@import './styles/components/searchbox.scss';
+@import './styles/components/siteContext.scss';
