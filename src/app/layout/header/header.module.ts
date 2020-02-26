@@ -21,11 +21,11 @@ import { StaticHeaderLogoComponent } from './static-header-logo/static-header-lo
   imports: [
     CommonModule,
     RouterModule,
+    StaticHeaderCmsModule,
 
     // SPRATACUS
     I18nModule,
     PageSlotModule,
-    StaticHeaderCmsModule,
     UrlModule,
   ],
   entryComponents: [

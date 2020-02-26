@@ -1,0 +1,12 @@
+.custom-fotter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 24px auto;
+  max-width: 1140px;
+  position: relative;
+
+  .custom-footer-element {
+    position: relative;
+  }
+}

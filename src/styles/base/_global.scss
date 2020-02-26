@@ -10,8 +10,8 @@
 }
 
 header {
-  background-color: white !important;
-  color: black !important;
+  background-color: var(--cx-text-color-primary) !important;
+  color: var(--cx-color-dark) !important;
 }
 
 .header-navigation-icon {
@@ -24,4 +24,9 @@ header {
   &:hover {
     background-color: var(--cx-button-hover-color);
   }
+}
+
+.footer {
+  background-color: var(--cx-text-color-primary) !important;
+  color: var(--cx-color-dark) !important;
 }

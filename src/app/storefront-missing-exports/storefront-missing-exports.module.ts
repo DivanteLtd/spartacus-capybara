@@ -9,6 +9,7 @@ import {
   PageLayoutModule,
   SeoModule,
   PageSlotModule,
+  PageComponentModule,
 } from '@spartacus/storefront';
 import {
   AnonymousConsentsModule,
@@ -24,6 +25,7 @@ import {
     GlobalMessageComponentModule,
     OutletModule,
     OutletRefModule,
+    PageComponentModule,
     PageLayoutModule,
     PageSlotModule,
     PwaModule,
@@ -37,6 +39,7 @@ import {
     GlobalMessageComponentModule,
     OutletModule,
     OutletRefModule,
+    PageComponentModule,
     PageLayoutModule,
     PageSlotModule,
     PwaModule,

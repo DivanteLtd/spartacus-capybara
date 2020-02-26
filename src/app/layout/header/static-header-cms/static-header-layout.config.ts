@@ -69,7 +69,7 @@ export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
   },
 };
 
-export function defaultCmsContentConfig(): CmsStructureConfig {
+export function defaultHeaderCmsContentConfig(): CmsStructureConfig {
   return {
     cmsStructure: {
       components: {

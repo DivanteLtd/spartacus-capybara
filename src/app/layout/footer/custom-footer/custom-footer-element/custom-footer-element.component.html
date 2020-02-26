@@ -1,0 +1,19 @@
+<div *ngIf="node.children; else singleElement" class="element-depth-block">
+  <h5 class="element-title">
+    {{ node.title }}
+  </h5>
+  <app-custom-footer-element
+    *ngFor="let child of node.children"
+    [node]="child"
+  ></app-custom-footer-element>
+</div>
+
+<ng-template #singleElement>
+  <!-- <img
+    *ngIf="isSocialMediaElement()"
+    src="../../../../../assets/icons/facebook.svg"
+  /> -->
+  <h6 class="single-element-title">
+    {{ node.title }}
+  </h6>
+</ng-template>
