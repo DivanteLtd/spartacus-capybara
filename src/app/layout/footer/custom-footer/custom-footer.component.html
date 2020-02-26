@@ -1,9 +1,0 @@
-<ng-container *ngIf="node$ | async as node">
-  <div *ngIf="node?.children.length" class="custom-fotter-container">
-    <app-custom-footer-element
-      *ngFor="let child of node.children"
-      [node]="child"
-      class="custom-footer-element"
-    ></app-custom-footer-element>
-  </div>
-</ng-container>

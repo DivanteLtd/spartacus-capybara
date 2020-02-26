@@ -26,7 +26,13 @@ header {
   }
 }
 
-.footer {
+footer {
   background-color: var(--cx-text-color-primary) !important;
   color: var(--cx-color-dark) !important;
+
+  a {
+    &:hover {
+      color: var(--cx-color-primary) !important;
+    }
+  }
 }
