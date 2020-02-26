@@ -1,0 +1,9 @@
+<ng-container *ngIf="user$ | async as user">
+  <a
+    [routerLink]="'my-account/wishlist'"
+    class="header-navigation-icon"
+    role="link"
+  >
+    <img alt="Wish" class="wish-icon" src="../../../../assets/icons/wish.svg" />
+  </a>
+</ng-container>

@@ -1,0 +1,30 @@
+header {
+  .NavigationBar {
+    align-items: center;
+    display: flex;
+    flex: auto;
+    margin-left: 30px;
+
+    a,
+    h5 {
+      color: var(--cx-color-dark);
+      font-family: 'Roboto';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      margin: 0 10px !important;
+      padding: 0 !important;
+    }
+
+    .wrapper {
+      a {
+        padding: 5px 0 !important;
+
+        &:hover {
+          color: var(--cx-color-primary);
+        }
+      }
+    }
+  }
+}

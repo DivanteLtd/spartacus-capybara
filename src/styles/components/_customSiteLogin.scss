@@ -1,0 +1,28 @@
+.CustomSiteLogin {
+  position: relative;
+
+  .account-icon {
+    cursor: pointer;
+  }
+
+  .header-links {
+    position: absolute;
+  }
+
+  .HeaderLinks {
+    .accNavComponent {
+      nav {
+        h5 {
+          height: 40px;
+          margin: 0;
+          opacity: 0;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          bottom: -7px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}

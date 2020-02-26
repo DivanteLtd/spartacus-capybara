@@ -1,1 +1,28 @@
-<cx-storefront></cx-storefront>
+<ng-template cxOutlet="cx-storefront">
+  <cx-page-layout section="topBanner">
+    <cx-page-slot position="SiteContext"></cx-page-slot>
+  </cx-page-layout>
+
+  <ng-template cxOutlet="cx-header">
+    <header
+      [class.is-expanded]="isExpanded$ | async"
+      (keydown.escape)="collapseMenu()"
+      (click)="collapseMenuIfClickOutside($event)"
+    >
+      <cx-page-layout section="header"></cx-page-layout>
+      <cx-page-layout section="navigation"></cx-page-layout>
+    </header>
+    <cx-page-slot position="BottomHeaderSlot"></cx-page-slot>
+    <cx-global-message></cx-global-message>
+  </ng-template>
+
+  <router-outlet></router-outlet>
+
+  <ng-template cxOutlet="cx-footer">
+    <footer>
+      <cx-page-layout section="footer"></cx-page-layout>
+    </footer>
+  </ng-template>
+</ng-template>
+
+<!-- <cx-storefront></cx-storefront> -->

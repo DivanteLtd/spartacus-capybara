@@ -1,5 +1,14 @@
-@import "fonts/fonts-remote";
-@import "variables";
-@import "root";
-@import "base/buttons";
-@import "base/typography";
+@import 'fonts/fonts-remote';
+@import 'variables';
+@import 'root';
+@import 'base/buttons';
+@import 'base/typography';
+
+// COMPONENTS
+
+// Header
+@import './styles/components/customSiteLogin.scss';
+@import './styles/components/customSiteLogo.scss';
+@import './styles/components/navigationBar.scss';
+@import './styles/components/searchBox.scss';
+@import './styles/components/siteContext.scss';
