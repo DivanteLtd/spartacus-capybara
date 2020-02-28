@@ -5,6 +5,4 @@ $skipComponentStyles: (cx-searchbox);
 
 @import '~@spartacus/styles/index';
 
-@import 'styles/_index.scss';
-@import './styles/base/media';
-@import './styles/base/_global';
+@import 'styles/index.scss';
