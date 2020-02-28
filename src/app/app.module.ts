@@ -28,7 +28,7 @@ import { HeaderModule } from './layout/header/header.module';
         fallbackLang: 'en',
       },
       features: {
-        level: '1.4',
+        level: '1.5',
         anonymousConsents: true,
       },
     }),
