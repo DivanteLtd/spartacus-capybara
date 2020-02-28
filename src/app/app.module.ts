@@ -28,7 +28,7 @@ import { StorefrontMissingExportsModule } from './storefront-missing-exports/sto
         fallbackLang: 'en',
       },
       features: {
-        level: '1.4',
+        level: '1.5',
         anonymousConsents: true,
       },
     }),

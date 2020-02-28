@@ -1022,31 +1022,31 @@
     semver "6.3.0"
     semver-intersect "1.4.0"
 
-"@spartacus/assets@^1.4":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@spartacus/assets/-/assets-1.4.1.tgz#999e85eca0adf86cab79aeeaa91f471bc54336a7"
-  integrity sha512-r4OqcckfSQqYbOEwQlBXCXah39nnnyFNFTKs/byPdXE0pHaFnXsHIl0NMiN9qHoJqdnhlrVgn7PJx9rIn4yfhw==
+"@spartacus/assets@^1.5":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@spartacus/assets/-/assets-1.5.0.tgz#4efdf6af52a964c433a20ae2ae1e8b0b17813f7a"
+  integrity sha512-9l+YKdKNTu3omK0YQTX4VKK4/HhCVhyqjuJVNKmPU9WpTUOsXZlRe5MujgXt9eG8ch+bNHYL5T8leEugVjodHg==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/core@^1.4":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@spartacus/core/-/core-1.4.1.tgz#886580e12c237608539752150c32eede84bcb688"
-  integrity sha512-+f0RteA4ti5lGjYIChStBKkcyBwsglIShUAyEybjrytHJu6bUFfZHNIl6tApsMjyFKLk62hILDaHL4YgVZbG4A==
+"@spartacus/core@^1.5":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@spartacus/core/-/core-1.5.0.tgz#7a05b42f1605bb1f54346445e23b14092c949f53"
+  integrity sha512-RZviSxBfqlXB2zmFH+OwVtvq/FWKacLH+saa144IkbFydTY7dmeOR5t4Qb9wR28qM0hH4VedY94Jpy3Z/n+YPg==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/storefront@^1.4":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@spartacus/storefront/-/storefront-1.4.1.tgz#0ce8cefae1a25260e45c06d9377019757c801868"
-  integrity sha512-xhk9fDzGUEcrFzjRR8/tlZ5r0fFEQ9pvIDfSIgltCDJKYBV4hevAQeAP9we9L3IduvX8Mwtuj204XM6ZblJ+Fw==
+"@spartacus/storefront@^1.5":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@spartacus/storefront/-/storefront-1.5.0.tgz#5779096ca6a0a648faf25465b4789e087afab46e"
+  integrity sha512-WJn1qHlH/iY0AOf7oYYLqZzHu/yjeDrNNmdMRDajoFN2S+tyVpuSmH70gNVbpPZecWC8TuhlT2fO1x3KmGaxbg==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/styles@^1.4":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@spartacus/styles/-/styles-1.4.1.tgz#69734c5da26e99cfe09d0457ecf103925e16208c"
-  integrity sha512-DFD9rzh5e507GKWNc25KXdOMS8YimU9bmw9/fp6cAq2zutK9zpy57GCTiJrCmwRr3RuFdLoqz0htQXSO5MbcWg==
+"@spartacus/styles@^1.5":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@spartacus/styles/-/styles-1.5.0.tgz#6d5c52453e27581661a1dba4fc63d4d2618e8836"
+  integrity sha512-DNnEexQDU0fyKrL7+I8CGmKnVaqMOM3X7Jeviap5talReVstNDXD7a4jCEWH6y7oNdDi6ZihjllZz0c+Gihg/Q==
   dependencies:
     hamburgers "^1.1.3"
 
