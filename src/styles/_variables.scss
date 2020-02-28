@@ -1,1 +1,6 @@
+@import "mixins";
 $app-font-family: 'Raleway', sans-serif;
+
+// Buttons
+$button-font-size: calculateRem(14px);
+$button-base-height: 52px;
