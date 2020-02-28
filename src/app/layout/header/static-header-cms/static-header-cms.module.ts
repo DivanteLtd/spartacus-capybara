@@ -6,13 +6,13 @@ import { CustomMiniCartComponent } from '../custom-mini-cart/custom-mini-cart.co
 import { CustomWishListIconComponent } from '../custom-wish-list-icon/custom-wish-list-icon.component';
 import {
   staticHeaderLayoutConfig,
-  defaultCmsContentConfig,
+  defaultHeaderCmsContentConfig,
 } from './static-header-layout.config';
 import { StaticHeaderLogoComponent } from '../static-header-logo/static-header-logo.component';
 
 @NgModule({
   imports: [
-    ConfigModule.withConfigFactory(defaultCmsContentConfig),
+    ConfigModule.withConfigFactory(defaultHeaderCmsContentConfig),
     ConfigModule.withConfig({
       cmsComponents: {
         StaticHeaderLogoComponent: {

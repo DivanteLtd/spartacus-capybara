@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginComponent } from '@spartacus/storefront';
 import { Observable } from 'rxjs';
 
@@ -8,10 +8,6 @@ import { User } from '@spartacus/core';
   selector: 'app-custom-login',
   templateUrl: './custom-login.component.html',
 })
-export class CustomLoginComponent extends LoginComponent implements OnInit {
+export class CustomLoginComponent extends LoginComponent {
   user$: Observable<User>;
-
-  ngOnInit() {
-    super.ngOnInit();
-  }
 }

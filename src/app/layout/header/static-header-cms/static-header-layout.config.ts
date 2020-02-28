@@ -14,7 +14,6 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
       md: {
         slots: [
           'PreHeader',
-          //   'SiteLinks',
           'CustomSiteLogo',
           'NavigationBar',
           'SearchBox',
@@ -70,7 +69,7 @@ export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
   },
 };
 
-export function defaultCmsContentConfig(): CmsStructureConfig {
+export function defaultHeaderCmsContentConfig(): CmsStructureConfig {
   return {
     cmsStructure: {
       components: {
