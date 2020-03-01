@@ -13,26 +13,26 @@ import { StaticHeaderLogoComponent } from './static-header-logo/static-header-lo
 
 @NgModule({
   declarations: [
-    StaticHeaderLogoComponent,
     CustomLoginComponent,
-    CustomWishListIconComponent,
     CustomMiniCartComponent,
+    CustomWishListIconComponent,
+    StaticHeaderLogoComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    StaticHeaderCmsModule,
 
     // SPRATACUS
-    StaticHeaderCmsModule,
+    I18nModule,
     PageSlotModule,
     UrlModule,
-    I18nModule,
   ],
   entryComponents: [
-    StaticHeaderLogoComponent,
     CustomLoginComponent,
-    CustomWishListIconComponent,
     CustomMiniCartComponent,
+    CustomWishListIconComponent,
+    StaticHeaderLogoComponent,
   ],
 })
 export class HeaderModule {}

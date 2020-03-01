@@ -3,12 +3,13 @@
 @import 'root';
 @import 'base/buttons';
 @import 'base/typography';
+@import 'base/media';
+@import 'base/global';
 
 // COMPONENTS
-
 // Header
-@import './styles/components/customSiteLogin.scss';
-@import './styles/components/customSiteLogo.scss';
-@import './styles/components/navigationBar.scss';
-@import './styles/components/searchBox.scss';
-@import './styles/components/siteContext.scss';
+@import 'components/customSiteLogin';
+@import 'components/customSiteLogo';
+@import 'components/navigationBar';
+@import 'components/searchbox';
+@import 'components/siteContext';

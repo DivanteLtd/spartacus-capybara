@@ -20,9 +20,7 @@
 
   <ng-template cxOutlet="cx-footer">
     <footer>
-      <cx-page-layout section="footer"></cx-page-layout>
+      <ng-container [cxComponentWrapper]="footerComponent"></ng-container>
     </footer>
   </ng-template>
 </ng-template>
-
-<!-- <cx-storefront></cx-storefront> -->
