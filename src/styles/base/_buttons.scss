@@ -3,16 +3,32 @@
 .btn {
   max-height: $button-base-height;
   border-radius: 0;
+  border: none;
+  height: $button-base-height;
+  padding: 16px 40px;
+
+
+  &:hover {
+    color: var(--cx-text-color-primary);
+    filter: none;
+  }
 
   &-primary {
     font-size: $button-font-size;
-    height: $button-base-height;
+    transition: background-color $button-transition-time linear;
+
+    &:hover, &:focus {
+      background-color: var(--cx-color-secondary);
+    }
   }
 
   &-secondary {
     font-size: $button-font-size;
     height: $button-base-height;
     background-color: var(--cx-color-dark);
+    &:hover, &:focus {
+      background-color: var(--cx-color-light);
+    }
   }
 
 }

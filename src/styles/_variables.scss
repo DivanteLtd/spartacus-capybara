@@ -3,4 +3,7 @@ $app-font-family: 'Raleway', sans-serif;
 
 // Buttons
 $button-font-size: calculateRem(14px);
-$button-base-height: 52px;
+$button-base-width: 54px;
+$button-base-height: 54px;
+
+$button-transition-time: 0.15s;
