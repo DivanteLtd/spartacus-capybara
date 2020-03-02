@@ -26,9 +26,11 @@ header {
   }
 }
 
-footer {
+.footer {
   background-color: var(--cx-text-color-primary) !important;
   color: var(--cx-color-dark) !important;
+  margin: auto;
+  max-width: 1140px;
 
   a {
     &:hover {
