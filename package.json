@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --aot --prod",
     "test": "ng test",
-    "build:firebase": "node_modules/.bin/ng build --prod --outputPath=public --baseHref=https://spartacus-demo.web.app/",
+    "build:firebase": "node_modules/.bin/ng build --aot --prod --outputPath=public --baseHref=https://spartacus-demo.web.app/",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
