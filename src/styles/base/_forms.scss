@@ -1,0 +1,47 @@
+@import 'mixins';
+
+.form-group {
+  .label-content {
+    font-weight: 400;
+    font-size: calculateRem(10px);
+  }
+
+  input {
+    &.form-control {
+      border-radius: 0;
+      box-sizing: border-box;
+      display: block;
+      padding: 5px 0;
+      border-width: 0 0 1px 0;
+      border-color: #f1f2f3;
+      background-color: transparent;
+      outline: none;
+      font-size: calculateRem(18px);
+
+      &[type='text']:focus,
+      &[type='password']:focus {
+        background-color: transparent;
+        border-color: var(--cx-color-primary);
+        box-shadow: none;
+
+        &.is-invalid {
+          background-image: none;
+          border-color: var(--ssf-alert-color);
+        }
+      }
+
+      &.is-invalid {
+        border-color: var(--ssf-alert-color);
+        background-image: none;
+      }
+    }
+  }
+
+  .invalid-feedback {
+    font-size: calculateRem(12px);
+
+    &:before {
+      display: none;
+    }
+  }
+}
