@@ -1,18 +1,29 @@
 image: node:12.14.0
 
-pages:
+stages:
+  - build
+  #  - test
+  - deploy
+
+build:
   cache:
     paths:
       - node_modules/
-  stage: deploy
+  stage: build
   script:
-    - npm install -g firebase-tools
     - yarn
     - yarn build:firebase
-    - firebase deploy --token "$FIREBASE_TOKEN"
   artifacts:
     paths:
       - public
     expire_in: '60 min'
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - npm install -g firebase-tools
+    - firebase deploy --token "$FIREBASE_TOKEN"
   only:
     - develop
