@@ -1,7 +1,9 @@
+@import 'variables';
+
 * {
   box-sizing: border-box;
   outline: none;
-  font-family: 'Raleway';
+  font-family: $primary-font-family;
 }
 
 .topBanner {
@@ -31,10 +33,4 @@ header {
   color: var(--cx-color-dark) !important;
   margin: auto;
   max-width: 1140px;
-
-  a {
-    &:hover {
-      color: var(--cx-color-primary) !important;
-    }
-  }
 }

@@ -1,4 +1,42 @@
-app-custom-navigation-ui {
+@import 'variables';
+
+.footer-container {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1140px;
+
+  .fotter-column {
+    margin: 3vw;
+
+    .footer-column-title {
+      font-family: $primary-font-family;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 18px 0;
+      text-transform: uppercase;
+    }
+
+    .footer-menu-item {
+      font-family: $primary-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      padding: 6px 0;
+      a {
+        color: var(--cx-color-dark);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--cx-color-primary) !important;
+        }
+      }
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
 }

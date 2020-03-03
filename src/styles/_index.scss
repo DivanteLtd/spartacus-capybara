@@ -1,15 +1,15 @@
 @import 'fonts/fonts-remote';
 @import 'variables';
 @import 'root';
-@import 'base/buttons';
-@import 'base/typography';
-@import 'base/media';
-@import 'base/global';
+@import 'buttons';
+@import 'typography';
+@import 'media';
+@import 'global';
 
 // COMPONENTS
 // Header
-@import 'components/customSiteLogin';
-@import 'components/customSiteLogo';
-@import 'components/navigationBar';
-@import 'components/searchbox';
-@import 'components/siteContext';
+@import 'customSiteLogin';
+@import 'customSiteLogo';
+@import 'navigationBar';
+@import 'searchbox';
+@import 'siteContext';

@@ -1,5 +1,14 @@
-<app-custom-navigation-ui
-  [node]="node$ | async"
-  [flyout]="false"
-  [ngClass]="styleClass$ | async"
-></app-custom-navigation-ui>
+<div *ngIf="node$ | async as node" class="footer-container">
+  <div *ngFor="let column of node.children" class="fotter-column">
+    <ul>
+      <li class="footer-column-title">
+        {{ column?.title }}
+      </li>
+      <li *ngFor="let item of column.children" class="footer-menu-item">
+        <a [href]="item.url" [target]="item.target">
+          {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
