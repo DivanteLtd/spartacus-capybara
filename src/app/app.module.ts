@@ -8,6 +8,7 @@ import { FooterModule } from './layout/footer/footer.module';
 import { HeaderModule } from './layout/header/header.module';
 import { StaticLayoutCmsModule } from './layout/static-layout-cms/static-layout-cms.module';
 import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
+import { StyleGuideModule } from './features/style-guide/style-guide.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,6 +39,7 @@ import { StorefrontMissingExportsModule } from './storefront-missing-exports/sto
     FooterModule,
     HeaderModule,
     StaticLayoutCmsModule,
+    StyleGuideModule,
   ],
   bootstrap: [AppComponent],
 })
