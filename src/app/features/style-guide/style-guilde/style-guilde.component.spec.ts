@@ -8,9 +8,8 @@ describe('StyleGuildeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StyleGuildeComponent ]
-    })
-    .compileComponents();
+      declarations: [StyleGuildeComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
