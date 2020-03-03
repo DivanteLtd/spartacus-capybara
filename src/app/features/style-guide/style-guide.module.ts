@@ -6,9 +6,6 @@ import { styleGuideRoutes } from './style-guide.routes';
 
 @NgModule({
   declarations: [StyleGuildeComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(styleGuideRoutes),
-  ],
+  imports: [CommonModule, RouterModule.forChild(styleGuideRoutes)],
 })
 export class StyleGuideModule {}
