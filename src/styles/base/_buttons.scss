@@ -7,7 +7,6 @@
   height: $button-base-height;
   padding: 16px 40px;
 
-
   &:hover {
     color: var(--cx-text-color-primary);
     filter: none;
@@ -26,9 +25,46 @@
     font-size: $button-font-size;
     height: $button-base-height;
     background-color: var(--cx-color-dark);
+
     &:hover, &:focus {
       background-color: var(--cx-color-light);
     }
+
+    &:active {
+      background-color: var(--cx-color-dark);
+    }
   }
 
+}
+
+.btn-icon {
+  width: $button-base-width;
+  height: $button-base-height;
+  border-radius: $button-base-height /2;
+  border: none;
+  color: var(--cx-text-color-primary);
+
+  &-primary {
+    background-color: var(--cx-color-primary);
+
+    &:hover {
+      box-shadow: 0 0 0 5px rgba($color-primary, .4);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 10px rgba($color-primary, .4);
+    }
+  }
+
+  &-secondary {
+    background-color: var(--cx-color-dark);
+
+    &:hover {
+      box-shadow: 0 0 0 5px rgba($color-dark, .4);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 10px rgba($color-dark, .4);
+    }
+  }
 }
