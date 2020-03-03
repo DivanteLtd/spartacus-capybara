@@ -12,6 +12,7 @@ build:
   stage: build
   script:
     - yarn
+    - yarn format:check
     - yarn build:firebase
   artifacts:
     paths:
