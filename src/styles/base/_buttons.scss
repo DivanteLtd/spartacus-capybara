@@ -35,6 +35,11 @@
     }
   }
 
+  &:disabled, &-cancel {
+    color: #686d7d;
+    background-color: #f1f2f3;
+  }
+
 }
 
 .btn-icon {
