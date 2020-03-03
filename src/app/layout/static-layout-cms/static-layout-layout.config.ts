@@ -5,7 +5,7 @@ import {
   CmsStructureConfig,
 } from '@spartacus/core';
 
-export const staticHeaderLayoutConfig: LayoutConfig = {
+export const staticLayoutConfig: LayoutConfig = {
   layoutSlots: {
     topBar: {
       slots: ['SiteContext'],
@@ -29,7 +29,7 @@ export const staticHeaderLayoutConfig: LayoutConfig = {
   },
 };
 
-export const staticHeaderComponents: {
+export const staticComponents: {
   [key: string]: ContentSlotComponentData | any;
 } = {
   StaticHeaderLogoComponent: {
@@ -54,7 +54,7 @@ export const staticHeaderComponents: {
   },
 };
 
-export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
+export const defaultStaticConfig: CmsPageSlotsConfig = {
   CustomSiteLogo: {
     componentIds: ['StaticHeaderLogoComponent'],
   },
@@ -69,14 +69,14 @@ export const defaultStaticHeaderConfig: CmsPageSlotsConfig = {
   },
 };
 
-export function defaultHeaderCmsContentConfig(): CmsStructureConfig {
+export function defaultStaticCmsContentConfig(): CmsStructureConfig {
   return {
     cmsStructure: {
       components: {
-        ...staticHeaderComponents,
+        ...staticComponents,
       },
       slots: {
-        ...defaultStaticHeaderConfig,
+        ...defaultStaticConfig,
       },
     },
   };
