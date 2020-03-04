@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'variables';
 
 .form-group {
   .label-content {
@@ -42,6 +43,52 @@
 
     &:before {
       display: none;
+    }
+  }
+}
+
+.form-check {
+  .form-checkbox {
+    margin-bottom: 0;
+
+    .form-check-input {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      visibility: hidden;
+      border: none;
+      margin-right: 20px;
+
+      &:checked {
+        border-radius: 0;
+        border-width: 0;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      & + span:after,
+      &:checked + span:after {
+        background: transparent no-repeat center;
+        background-size: calculateRem(11px);
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid #bebfc4;
+        content: ' ';
+        transform: none;
+        transition: all $button-transition-time cubic-bezier(1, 0.5, 0.8, 1);
+      }
+
+      &:checked + span:after {
+        background-color: var(--cx-color-primary);
+        border: 1px solid transparent;
+        background-image: url('~assets/icons/checked.svg');
+      }
     }
   }
 }
