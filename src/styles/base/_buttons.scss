@@ -3,15 +3,75 @@
 .btn {
   max-height: $button-base-height;
   border-radius: 0;
+  border: none;
+  height: $button-base-height;
+  padding: 16px 40px;
+
+  &:hover {
+    color: var(--cx-text-color-primary);
+    filter: none;
+  }
 
   &-primary {
     font-size: $button-font-size;
-    height: $button-base-height;
+    transition: background-color $button-transition-time linear;
+
+    &:hover,
+    &:focus {
+      background-color: var(--cx-color-secondary);
+    }
   }
 
   &-secondary {
     font-size: $button-font-size;
     height: $button-base-height;
     background-color: var(--cx-color-dark);
+
+    &:hover,
+    &:focus {
+      background-color: var(--cx-color-light);
+    }
+
+    &:active {
+      background-color: var(--cx-color-dark);
+    }
+  }
+
+  &:disabled,
+  &-cancel {
+    color: #686d7d;
+    background-color: #f1f2f3;
+  }
+}
+
+.btn-icon {
+  width: $button-base-width;
+  height: $button-base-height;
+  border-radius: $button-base-height / 2;
+  border: none;
+  color: var(--cx-text-color-primary);
+
+  &-primary {
+    background-color: var(--cx-color-primary);
+
+    &:hover {
+      box-shadow: 0 0 0 5px rgba($color-primary, 0.4);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 10px rgba($color-primary, 0.4);
+    }
+  }
+
+  &-secondary {
+    background-color: var(--cx-color-dark);
+
+    &:hover {
+      box-shadow: 0 0 0 5px rgba($color-dark, 0.4);
+    }
+
+    &:active {
+      box-shadow: 0 0 0 10px rgba($color-dark, 0.4);
+    }
   }
 }
