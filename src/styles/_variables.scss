@@ -3,4 +3,11 @@ $primary-font-family: 'Raleway', sans-serif;
 
 // Buttons
 $button-font-size: calculateRem(14px);
-$button-base-height: 52px;
+$button-base-width: 54px;
+$button-base-height: 54px;
+
+$button-transition-time: 0.15s;
+
+$color-primary: #5ece7b;
+$color-secondary: #9ee2b0;
+$color-dark: #1d1f22;
