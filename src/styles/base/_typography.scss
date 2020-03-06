@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins';
+@import 'media';
 
 h1 {
   font-size: calculateRem(36px);
@@ -32,6 +33,6 @@ h6 {
 }
 
 p {
-  font-size: calculateRem(18px);
-  line-height: calculateRem(30px);
+  font-size: calculateRem(14px);
+  line-height: calculateRem(23px);
 }

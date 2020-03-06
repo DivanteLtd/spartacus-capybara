@@ -4,8 +4,6 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 
 import { AppComponent } from './app.component';
-import { FooterModule } from './layout/footer/footer.module';
-import { HeaderModule } from './layout/header/header.module';
 import { StaticLayoutCmsModule } from './layout/static-layout-cms/static-layout-cms.module';
 import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 import { StyleGuideModule } from './features/style-guide/style-guide.module';
@@ -36,8 +34,6 @@ import { StyleGuideModule } from './features/style-guide/style-guide.module';
       },
     }),
     StorefrontMissingExportsModule,
-    FooterModule,
-    HeaderModule,
     StaticLayoutCmsModule,
     StyleGuideModule,
   ],
