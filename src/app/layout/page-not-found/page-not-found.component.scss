@@ -1,0 +1,24 @@
+@import 'variables';
+
+:host {
+  padding: $body-padding;
+}
+
+.pnf-container {
+  display: flex;
+  flex-direction: column;
+
+  .pnf-image {
+    margin: 7.5rem 0;
+  }
+
+  .pnf-title,
+  .pnf-subtitle {
+    color: var(--cx-text-color-secondary);
+  }
+
+  .pnf-actions-container {
+    display: flex;
+    justify-content: center;
+  }
+}
