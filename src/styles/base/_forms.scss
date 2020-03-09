@@ -2,6 +2,41 @@
 @import 'variables';
 @import 'media';
 
+%base-input {
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  padding: 15px 0 10px 0;
+  border-width: 0 0 1px 0;
+  border-color: #f1f2f3;
+  background-color: transparent;
+  outline: none;
+  font-size: calculateRem(16px);
+
+  @include laptop-and-up {
+    font-size: calculateRem(18px);
+    height: calculateRem(48px);
+  }
+}
+
+input:not([type='checkbox']) {
+  @extend %base-input;
+
+  &.with-icon {
+    background-size: calculateRem(20px);
+
+    &.icon-prepend {
+      padding-left: calculateRem(60px);
+      background-position: calculateRem(20px);
+    }
+
+    &.icon-append {
+      padding-right: calculateRem(60px);
+      background-position: right calculateRem(20px) center;
+    }
+  }
+}
+
 .form-group {
   .label-content {
     font-weight: 400;
@@ -14,15 +49,11 @@
 
   input {
     &.form-control {
-      border-radius: 0;
-      box-sizing: border-box;
-      display: block;
-      padding: 5px 0;
-      border-width: 0 0 1px 0;
-      border-color: #f1f2f3;
-      background-color: transparent;
-      outline: none;
-      font-size: calculateRem(18px);
+      @extend %base-input;
+
+      @include laptop-and-up {
+        font-size: calculateRem(18px);
+      }
 
       &[type='text']:focus,
       &[type='password']:focus {
