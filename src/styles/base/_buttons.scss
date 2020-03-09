@@ -1,63 +1,144 @@
 @import '../variables';
+@import '../base/media';
+@import '../mixins';
 
-.btn {
-  max-height: $button-base-height;
+.btn,
+.ssf-button {
+  max-height: var(--ssf-button-mobile-height);
   border-radius: 0;
   border: none;
-  height: $button-base-height;
+  height: var(--ssf-button-mobile-height);
   padding: 16px 40px;
+  text-transform: uppercase;
+  font-size: var(--ssf-button-mobile-font-size);
+  vertical-align: middle;
 
-  &:hover {
+  &:hover:not(.btn-link),
+  &:active:not(.btn-link) {
     color: var(--cx-text-color-primary);
-    filter: none;
+    filter: none !important;
+  }
+
+  &-primary,
+  &-secondary,
+  &-warning,
+  &-danger,
+  &-info,
+  &:disabled,
+  &-clear,
+  &-outline {
+    transition: background-color var(--ssf-button-hover-transition-time) linear;
+
+    @include laptop-and-up {
+      font-size: var(--ssf-button-font-size);
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: none !important;
+    }
   }
 
   &-primary {
-    font-size: $button-font-size;
-    transition: background-color $button-transition-time linear;
+    background-color: var(--cx-color-primary) !important;
 
-    &:hover, &:focus {
-      background-color: var(--cx-color-secondary);
+    &:hover,
+    &:active {
+      background-color: var(--cx-color-secondary) !important;
     }
   }
 
   &-secondary {
-    font-size: $button-font-size;
-    height: $button-base-height;
-    background-color: var(--cx-color-dark);
+    background-color: var(--cx-color-dark) !important;
 
-    &:hover, &:focus {
-      background-color: var(--cx-color-light);
-    }
-
+    &:hover,
     &:active {
-      background-color: var(--cx-color-dark);
+      background-color: var(--cx-color-light) !important;
     }
   }
 
-  &:disabled, &-cancel {
-    color: #686d7d;
-    background-color: #f1f2f3;
+  &-warning {
+    background-color: var(--ssf-yellow-primary) !important;
+    color: var(--ssf-white) !important;
+
+    &:hover,
+    &:active {
+      background-color: var(--ssf-yellow-primary-lighten) !important;
+    }
   }
 
+  &-danger {
+    background-color: var(--ssf-red-primary) !important;
+    color: var(--ssf-white);
+
+    &:hover,
+    &:active {
+      background-color: var(--ssf-red-primary-lighten) !important;
+    }
+  }
+
+  &-info {
+    background-color: var(--ssf-button-info-color) !important;
+    color: var(--ssf-white);
+
+    &:hover,
+    &:active {
+      background-color: var(--ssf-button-info-color-lighten) !important;
+    }
+  }
+
+  &:disabled,
+  &-clear {
+    color: var(--ssf-dark-secondary);
+    background-color: #f1f2f3 !important;
+
+    &:hover {
+      color: var(--ssf-dark-secondary) !important;
+    }
+  }
+
+  &-outline {
+    border: solid 1px var(--ssf-dark-primary);
+
+    &:hover {
+      color: var(--ssf-white);
+      background-color: var(--ssf-dark-primary);
+    }
+  }
+
+  &-link {
+    color: var(--ssf-dark-primary);
+    font-size: var(--ssf-button-mobile-font-size);
+    text-transform: none;
+
+    @include laptop-and-up {
+      font-size: var(--ssf-button-font-size);
+    }
+
+    &:hover {
+      color: var(--ssf-dark-primary-lighten);
+    }
+  }
 }
 
 .btn-icon {
-  width: $button-base-width;
-  height: $button-base-height;
-  border-radius: $button-base-height /2;
+  width: var(--ssf-button-base-width);
+  height: var(--ssf-button-base-width);
+  border-radius: calc(var(--ssf-button-base-height) / 2);
   border: none;
   color: var(--cx-text-color-primary);
+  transition: box-shadow var(--ssf-button-hover-transition-time) linear;
 
   &-primary {
     background-color: var(--cx-color-primary);
 
     &:hover {
-      box-shadow: 0 0 0 5px rgba($color-primary, .4);
+      background-color: var(--ssf-green-secondary) !important;
+      box-shadow: 0 0 0 5px rgba(var(--ssf-green-primary-base), 0.4);
     }
 
     &:active {
-      box-shadow: 0 0 0 10px rgba($color-primary, .4);
+      box-shadow: 0 0 0 10px rgba(var(--ssf-green-primary-base), 0.4);
     }
   }
 
@@ -65,11 +146,12 @@
     background-color: var(--cx-color-dark);
 
     &:hover {
-      box-shadow: 0 0 0 5px rgba($color-dark, .4);
+      background-color: var(--ssf-dark-primary-lighten) !important;
+      box-shadow: 0 0 0 5px rgba(var(--ssf-dark-primary-base), 0.4);
     }
 
     &:active {
-      box-shadow: 0 0 0 10px rgba($color-dark, .4);
+      box-shadow: 0 0 0 10px rgba(var(--ssf-dark-primary-base), 0.4);
     }
   }
 }

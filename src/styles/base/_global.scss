@@ -1,9 +1,19 @@
 @import 'variables';
+@import 'mixins';
+
+body {
+  font-family: var(--ssf-primary-font-family);
+  font-size: var(--ssf-font-size-mobile);
+
+  @include laptop-and-up {
+    font-size: var(--ssf-font-size-desktop);
+  }
+}
 
 * {
   box-sizing: border-box;
   outline: none;
-  font-family: $primary-font-family;
+  font-family: var(--ssf-primary-font-family);
 }
 
 .topBanner {

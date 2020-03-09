@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { StyleGuildeComponent } from './style-guilde/style-guilde.component';
+import { StyleGuideComponent } from './style-guide/style-guide.component';
 
 export const styleGuideRoutes: Routes = [
   {
     path: 'style-guide',
-    component: StyleGuildeComponent,
+    component: StyleGuideComponent,
   },
 ];

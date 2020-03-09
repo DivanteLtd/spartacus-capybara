@@ -1,0 +1,205 @@
+<div class="spartacus-container">
+  <div class="section">
+    <h1>Typography</h1>
+
+    <h1>This is Header 1</h1>
+    <h2>This is Header 2</h2>
+    <h3>This is Header 3</h3>
+    <h4>This is Header 4</h4>
+    <h5>This is Header 5</h5>
+    <h6>This is Header 6</h6>
+
+    <br /><br />
+    <p>
+      This is paragraph/text: Find stunning women's cocktail dresses and party
+      dresses. Stand out in lace and metallic cocktail dresses and party dresses
+      from all your favorite brands.
+    </p>
+  </div>
+
+  <div class="section">
+    <h1>Buttons</h1>
+
+    <p>Buttons</p>
+
+    <div class="elements">
+      <div class="element">
+        <div class="element-name">Primary</div>
+        <button class="btn btn-primary">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Secondary</div>
+        <button class="btn btn-secondary">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Warning</div>
+        <button class="btn btn-warning">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Danger</div>
+        <button class="btn btn-danger">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Info</div>
+        <button class="btn btn-info">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Clear</div>
+        <button class="btn btn-clear">
+          Add to cart
+        </button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Outline</div>
+        <button class="btn btn-outline">Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Disabled</div>
+        <button class="btn btn-primary" disabled>Add to cart</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Link/Ghost</div>
+        <button class="btn btn-link">Add to cart</button>
+      </div>
+    </div>
+
+    <p>Block button</p>
+
+    <div class="elements">
+      <div class="element" style="width: 100%">
+        <button class="btn btn-primary btn-block">Add to cart</button>
+      </div>
+    </div>
+
+    <p>Icon buttons</p>
+
+    <div class="elements">
+      <div class="element">
+        <div class="element-name">Primary with svg</div>
+        <button class="btn-icon btn-icon-primary">
+          <svg
+            class="bi bi-chevron-right"
+            width="32"
+            height="32"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Primary with svg as img</div>
+        <button class="btn-icon btn-icon-primary">
+          <img src="/assets/icons/cart.svg" />
+        </button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Secondary</div>
+        <button class="btn-icon btn-icon-secondary">
+          <svg
+            class="bi bi-chevron-right"
+            width="32"
+            height="32"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Forms</h1>
+
+    <div class="elements forms">
+      <div class="element">
+        <div class="element-name">Input</div>
+        <div class="form-group">
+          <label>
+            <span class="label-content required">First name</span>
+            <input class="form-control" placeholder="First Name" />
+          </label>
+        </div>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Input with error</div>
+        <div class="form-group">
+          <label>
+            <span class="label-content required">First name</span>
+            <input
+              class="form-control ng-invalid ng-dirty is-invalid ng-touched"
+              placeholder="First Name"
+            />
+            <div class="invalid-feedback">
+              <span>Error message</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Checkbox</div>
+        <div class="form-check">
+          <label class="form-checkbox cx-facet-label">
+            <input class="form-check-input" type="checkbox" />
+            <span class="cx-facet-text"
+              >Fukuoka Canal City Fukuoka Washington Hotel (22)</span
+            >
+          </label>
+        </div>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Select (ng-select)</div>
+        <ng-select
+          class="custom"
+          placeholder="Select"
+          [items]="['Mr', 'Mrs']"
+        ></ng-select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Select (native)</div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label>
+              <span class="label-content">Label text</span>
+              <select class="form-control">
+                <option selected>Select</option>
+                <option value="ms">Ms.</option>
+                <option value="mr">Mr.</option>
+                <option value="miss">Miss</option>
+                <option value="dr">Dr.</option>
+                <option value="mrs">Mrs.</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,10 +11,6 @@
     margin-top: 10px;
     padding: 20px;
 
-    p {
-      margin-bottom: 5px;
-    }
-
     h1:first-child {
       font-weight: bold;
       margin-bottom: 20px;
@@ -22,11 +18,18 @@
       border-bottom: solid 1px #eee;
     }
 
-    label {
-      display: inline-block;
-      padding: 5px;
-      margin-bottom: 15px;
-      margin-left: 5px;
+    .elements {
+      &.forms {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .element {
+        display: inline-block;
+        padding: 5px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+      }
     }
   }
 }

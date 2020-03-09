@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StyleGuildeComponent } from './style-guilde/style-guilde.component';
+import { StyleGuideComponent } from './style-guide/style-guide.component';
 import { RouterModule } from '@angular/router';
 import { styleGuideRoutes } from './style-guide.routes';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
-  declarations: [StyleGuildeComponent],
-  imports: [CommonModule, RouterModule.forChild(styleGuideRoutes)],
+  declarations: [StyleGuideComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(styleGuideRoutes),
+    NgSelectModule,
+  ],
 })
 export class StyleGuideModule {}

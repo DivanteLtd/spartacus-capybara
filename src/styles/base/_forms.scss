@@ -1,0 +1,165 @@
+@import 'mixins';
+@import 'variables';
+@import 'media';
+
+.form-group {
+  .label-content {
+    font-weight: 400;
+    font-size: calculateRem(10px);
+
+    @include laptop-and-up {
+      font-size: calculateRem(12px);
+    }
+  }
+
+  input {
+    &.form-control {
+      border-radius: 0;
+      box-sizing: border-box;
+      display: block;
+      padding: 5px 0;
+      border-width: 0 0 1px 0;
+      border-color: #f1f2f3;
+      background-color: transparent;
+      outline: none;
+      font-size: calculateRem(18px);
+
+      &[type='text']:focus,
+      &[type='password']:focus {
+        background-color: transparent;
+        border-color: var(--cx-color-primary);
+        box-shadow: none;
+
+        &.is-invalid {
+          background-image: none;
+          border-color: var(--ssf-alert-color);
+        }
+      }
+
+      &.is-invalid {
+        border-color: var(--ssf-alert-color);
+        background-image: none;
+      }
+    }
+  }
+
+  .invalid-feedback {
+    font-size: calculateRem(12px);
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.form-check {
+  .form-checkbox {
+    margin-bottom: 0;
+
+    .form-check-input {
+      position: relative;
+      width: 1.25rem;
+      height: 1.25rem;
+      visibility: hidden;
+      border: none;
+      margin-right: 20px;
+
+      @include laptop-and-up {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &:checked {
+        border-radius: 0;
+        border-width: 0;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      & + span:after,
+      &:checked + span:after {
+        background: transparent no-repeat center;
+        background-size: calculateRem(11px);
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 1px solid #bebfc4;
+        content: ' ';
+        transform: none;
+        transition: all $button-transition-time cubic-bezier(1, 0.5, 0.8, 1);
+
+        @include laptop-and-up {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      &:checked + span:after {
+        background-color: var(--cx-color-primary);
+        border: 1px solid transparent;
+        background-image: url('~assets/icons/checked.svg');
+      }
+    }
+  }
+}
+
+select {
+  &.form-control {
+    border: none;
+    border-bottom: solid 1px var(--ssf-light-primary);
+    border-radius: 0;
+    appearance: none;
+    padding-left: 0;
+
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.ng-select {
+  background-color: transparent;
+
+  .ng-select-container {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px var(--ssf-light-primary) !important;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+
+  &.ng-select-opened {
+    .ng-select-container {
+      background-color: transparent;
+    }
+  }
+
+  .ng-option {
+    background: transparent;
+
+    &.ng-option-selected {
+      background-color: var(--ssf-light-primary) !important;
+
+      .ng-option-label {
+        font-weight: normal !important;
+      }
+    }
+
+    &.ng-option-marked {
+      background-color: var(--ssf-light-secondary) !important;
+    }
+  }
+
+  .ng-value-container {
+    padding-left: 0 !important;
+  }
+
+  .ng-arrow-wrapper {
+    display: none;
+  }
+}
