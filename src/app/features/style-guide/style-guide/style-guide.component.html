@@ -162,7 +162,7 @@
       </div>
 
       <div class="element">
-        Checkbox <br />
+        <div class="element-name">Checkbox</div>
         <div class="form-check">
           <label class="form-checkbox cx-facet-label">
             <input class="form-check-input" type="checkbox" />
@@ -170,6 +170,34 @@
               >Fukuoka Canal City Fukuoka Washington Hotel (22)</span
             >
           </label>
+        </div>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Select (ng-select)</div>
+        <ng-select
+          class="custom"
+          placeholder="Select"
+          [items]="['Mr', 'Mrs']"
+        ></ng-select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">Select (native)</div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label>
+              <span class="label-content">Label text</span>
+              <select class="form-control">
+                <option selected>Select</option>
+                <option value="ms">Ms.</option>
+                <option value="mr">Mr.</option>
+                <option value="miss">Miss</option>
+                <option value="dr">Dr.</option>
+                <option value="mrs">Mrs.</option>
+              </select>
+            </label>
+          </div>
         </div>
       </div>
     </div>

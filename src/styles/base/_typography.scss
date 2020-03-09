@@ -3,36 +3,75 @@
 @import 'media';
 
 h1 {
-  font-size: calculateRem(36px);
-  line-height: calculateRem(50px);
+  font-size: calculateRem(18px);
+  line-height: calculateRem(25px);
 }
 
 h2 {
-  font-size: calculateRem(24px);
-  line-height: calculateRem(33px);
+  font-size: calculateRem(16px);
+  line-height: calculateRem(22px);
 }
 
 h3 {
-  font-size: calculateRem(18px);
-  line-height: calculateRem(40px);
+  font-size: calculateRem(16px);
+  line-height: calculateRem(22px);
 }
 
 h4 {
-  font-size: calculateRem(18px);
-  line-height: calculateRem(30px);
+  font-size: calculateRem(16px);
+  line-height: calculateRem(22px);
+  font-weight: 300;
 }
 
 h5 {
   font-size: calculateRem(14px);
   line-height: calculateRem(20px);
+  font-weight: 300;
 }
 
 h6 {
   font-size: calculateRem(14px);
   line-height: calculateRem(23px);
+  font-weight: 300;
 }
 
 p {
-  font-size: calculateRem(14px);
+  font-size: var(--ssf-font-size-mobile);
+
+  @include laptop-and-up {
+    font-size: var(--ssf-font-size-desktop);
+  }
   line-height: calculateRem(23px);
+}
+
+@include laptop-and-up {
+  h1 {
+    font-size: calculateRem(36px);
+    line-height: calculateRem(50px);
+  }
+
+  h2 {
+    font-size: calculateRem(24px);
+    line-height: calculateRem(33px);
+  }
+
+  h3 {
+    font-size: calculateRem(18px);
+    line-height: calculateRem(40px);
+  }
+
+  h4 {
+    font-size: calculateRem(18px);
+    line-height: calculateRem(30px);
+  }
+
+  h5 {
+    font-size: calculateRem(14px);
+    line-height: calculateRem(20px);
+  }
+
+  h6 {
+    font-size: calculateRem(14px);
+    line-height: calculateRem(23px);
+  }
 }

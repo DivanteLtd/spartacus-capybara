@@ -89,8 +89,12 @@
 
   &:disabled,
   &-clear {
-    color: #686d7d !important;
+    color: var(--ssf-dark-secondary);
     background-color: #f1f2f3 !important;
+
+    &:hover {
+      color: var(--ssf-dark-secondary) !important;
+    }
   }
 
   &-outline {
