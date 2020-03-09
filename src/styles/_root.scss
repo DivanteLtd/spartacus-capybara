@@ -2,19 +2,85 @@
 @import 'mixins';
 
 :root {
-  --cx-color-light: #737680;
-  --cx-color-dark: #1d1f22;
-  --cx-color-primary: #5ece7b;
+  // All colors
+  --ssf-black: #1d1f22;
+  --ssf-black-lighten: #292c30;
+  --ssf-black-darken: #111214;
+  --ssf-white: #ffffff;
+  --ssf-green-primary: #5ece7b;
+  --ssf-green-primary-base: 94, 206, 123;
+  --ssf-green-primary-lighten: #72d48b;
+  --ssf-green-primary-darken: #4ac86b;
+  --ssf-green-secondary: #9ee2b0;
+  --ssf-green-secondary-base: 158, 226, 176;
+  --ssf-green-secondary-lighten: #b2e8c0;
+  --ssf-green-secondary-darken: #8adca0;
+  --ssf-dark-primary: #1d1f22;
+  --ssf-dark-primary-base: 29, 31, 34;
+  --ssf-dark-primary-lighten: #292c30;
+  --ssf-dark-primary-darken: #111214;
+  --ssf-dark-secondary: #737680;
+  --ssf-dark-secondary-base: 115, 118, 128;
+  --ssf-dark-secondary-lighten: #80838d;
+  --ssf-dark-secondary-darken: #676a73;
+  --ssf-gray-primary: #a3a5ad;
+  --ssf-gray-primary-base: 163, 165, 173;
+  --ssf-gray-primary-lighten: #b0b2b9;
+  --ssf-gray-primary-darken: #9698a1;
+  --ssf-gray-secondary: #bebfc4;
+  --ssf-gray-secondary-base: 190, 191, 196;
+  --ssf-gray-secondary-lighten: #cbccd0;
+  --ssf-gray-secondary-darken: #b1b2b8;
+  --ssf-light-primary: #f1f2f3;
+  --ssf-light-primary-base: 241, 242, 243;
+  --ssf-light-primary-lighten: white;
+  --ssf-light-primary-darken: #e3e5e7;
+  --ssf-light-secondary: #f6f7f8;
+  --ssf-light-secondary-base: 246, 247, 248;
+  --ssf-light-secondary-lighten: white;
+  --ssf-light-secondary-darken: #e8eaed;
+  --ssf-red-primary: #e22225;
+  --ssf-red-primary-base: 226, 34, 37;
+  --ssf-red-primary-lighten: #e5393b;
+  --ssf-red-primary-darken: #cf1b1e;
+  --ssf-red-secondary: #fff6f5;
+  --ssf-red-secondary-base: 255, 246, 245;
+  --ssf-red-secondary-lighten: white;
+  --ssf-red-secondary-darken: #ffdfdc;
+  --ssf-yellow-primary: #ffdf3d;
+  --ssf-yellow-primary-base: 255, 223, 61;
+  --ssf-yellow-primary-lighten: #ffe357;
+  --ssf-yellow-primary-darken: #ffdb24;
+  --ssf-yellow-secondary: #fffceb;
+
+  // Main colors
+  --ssf-color-primary: var(--ssf-green-primary);
+  --ssf-color-secondary: var(--ssf-green-secondary);
+  --ssf-alert-color: #d12727;
+  --ssf-alert-light-color: #f8dedf;
+
+  // Override Spartacus colors
+  --cx-color-primary: var(--ssf-color-primary);
   --cx-color-secondary: #9ee2b0;
+  --cx-color-light: #737680;
+  --cx-color-dark: var(--ssf-dark-primary);
   --cx-text-color-primary: #ffffff;
   --cx-text-color-secondary: #1c1e21;
   --cx-font-size: calculateRem(14px);
   --cx-button-hover-color: #f1f2f3;
 
-  --ssf-alert-color: #d12727;
-  --ssf-alert-light-color: #f8dedf;
-}
-
-body {
-  font-family: $primary-font-family;
+  // Fonts
+  --ssf-primary-font-family: 'Raleway', sans-serif;
+  --ssf-font-size-mobile: #{calculateRem(14px)};
+  --ssf-font-size-desktop: #{calculateRem(16px)};
+  // Buttons
+  --ssf-button-font-size: #{calculateRem(14px)};
+  --ssf-button-mobile-font-size: #{calculateRem(12px)};
+  --ssf-button-base-width: 54px;
+  --ssf-button-base-height: 54px;
+  --ssf-button-mobile-height: 51px;
+  --ssf-button-desktop-height: 54px;
+  --ssf-button-hover-transition-time: 0.15s;
+  --ssf-button-info-color: #69c;
+  --ssf-button-info-color-lighten: #79a6d2;
 }

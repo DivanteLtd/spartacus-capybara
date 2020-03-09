@@ -1,17 +1,17 @@
 @import 'mixins';
 
-$primary-font-family: 'Raleway', sans-serif;
+$primary-font-family: var(--ssf-primary-font-family);
 
 // Buttons
-$button-font-size: calculateRem(14px);
-$button-base-width: 54px;
-$button-base-height: 54px;
+$button-font-size: var(--ssf-button-mobile-font-size);
+$button-base-width: var(--ssf-button-base-width);
+$button-base-height: var(--ssf-button-mobile-height);
 
-$button-transition-time: 0.15s;
+$button-transition-time: var(--ssf-button-hover-transition-time);
 
-$color-primary: #5ece7b;
-$color-secondary: #9ee2b0;
-$color-dark: #1d1f22;
+$color-primary: var(--ssf-color-primary);
+$color-secondary: var(--ssf-color-secondary);
+$color-dark: var(--ssf-dark-primary);
 
 // Padding
 $body-padding: 24px;

@@ -1,10 +1,15 @@
 @import 'mixins';
 @import 'variables';
+@import 'media';
 
 .form-group {
   .label-content {
     font-weight: 400;
     font-size: calculateRem(10px);
+
+    @include laptop-and-up {
+      font-size: calculateRem(12px);
+    }
   }
 
   input {

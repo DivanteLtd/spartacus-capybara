@@ -1,9 +1,13 @@
 @import 'variables';
 
+body {
+  font-family: var(--ssf-primary-font-family);
+}
+
 * {
   box-sizing: border-box;
   outline: none;
-  font-family: $primary-font-family;
+  font-family: var(--ssf-primary-font-family);
 }
 
 .topBanner {
