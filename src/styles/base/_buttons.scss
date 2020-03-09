@@ -155,3 +155,44 @@
     }
   }
 }
+
+.arrow-button {
+  width: calculateRem(44px);
+  height: calculateRem(44px);
+  border: none;
+  padding: 0 10px;
+
+  svg * {
+    fill: var(--ssf-dark-primary);
+  }
+
+  &:hover {
+    background-color: var(--ssf-dark-primary);
+    color: var(--ssf-light-primary);
+    box-shadow: 0 5px 12px -5px rgba(var(--ssf-dark-primary-base), 0.6);
+
+    svg * {
+      fill: white;
+    }
+  }
+
+  &-long {
+    width: calculateRem(70px);
+    height: calculateRem(40px);
+    padding: 0 10px;
+  }
+
+  &-rounded {
+    border-radius: calculateRem(24px);
+  }
+
+  &-transparent,
+  &-transparent:hover {
+    background: transparent;
+    box-shadow: none;
+
+    svg * {
+      fill: var(--ssf-dark-primary);
+    }
+  }
+}
