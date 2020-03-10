@@ -1,0 +1,29 @@
+.results {
+  .message {
+    color: var(--ssf-dark-primary);
+    font-weight: 300;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+
+    .single-product {
+      align-items: center;
+      color: var(--ssf-black-lighten);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+      width: 50%;
+
+      cx-media {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

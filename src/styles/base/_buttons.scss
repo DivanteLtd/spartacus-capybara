@@ -126,6 +126,7 @@
   height: var(--ssf-button-base-width);
   border-radius: calc(var(--ssf-button-base-height) / 2);
   border: none;
+  box-shadow: rgba(66, 66, 66, 0.2) 0px 4px 6px 0px;
   color: var(--cx-text-color-primary);
   transition: box-shadow var(--ssf-button-hover-transition-time) linear;
 

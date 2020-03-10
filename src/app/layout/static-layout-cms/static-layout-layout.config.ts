@@ -8,7 +8,9 @@ import {
 export const staticLayoutConfig: LayoutConfig = {
   layoutSlots: {
     topBar: {
-      slots: ['SiteContext'],
+      md: {
+        slots: ['SiteContext'],
+      },
     },
     header: {
       md: {
@@ -23,7 +25,7 @@ export const staticLayoutConfig: LayoutConfig = {
         ],
       },
       xs: {
-        slots: ['PreHeader', 'CustomSiteLogo', 'SearchBox', 'CustomMiniCart'],
+        slots: ['BottomNavigation'],
       },
     },
     ErrorPageTemplate: {
@@ -60,6 +62,11 @@ export const staticComponents: {
     flexType: 'CustomMiniCartComponent',
     uid: 'CustomMiniCartComponent',
   },
+  BottomNavigationComponent: {
+    typeCode: 'BottomNavigationComponent',
+    flexType: 'BottomNavigationComponent',
+    uid: 'BottomNavigationComponent',
+  },
 };
 
 export const defaultStaticConfig: CmsPageSlotsConfig = {
@@ -77,6 +84,9 @@ export const defaultStaticConfig: CmsPageSlotsConfig = {
   },
   CustomMiniCart: {
     componentIds: ['CustomMiniCartComponent'],
+  },
+  BottomNavigation: {
+    componentIds: ['BottomNavigationComponent'],
   },
 };
 

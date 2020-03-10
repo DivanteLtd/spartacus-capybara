@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
-    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
-    "format:all": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets,styles}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "format:all": "prettier --config ./.prettierrc --write \"src/{app,environments,assets,styles}/**/*{.ts,.js,.json,.css,.scss}\""
   },
   "private": true,
   "husky": {

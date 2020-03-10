@@ -1,12 +1,12 @@
 @import 'mixins';
 
 $primary-font-family: var(--ssf-primary-font-family);
+$secondary-font-family: var(--ssf-secondary-font-family);
 
 // Buttons
 $button-font-size: var(--ssf-button-mobile-font-size);
 $button-base-width: var(--ssf-button-base-width);
 $button-base-height: var(--ssf-button-mobile-height);
-
 $button-transition-time: var(--ssf-button-hover-transition-time);
 
 $color-primary: var(--ssf-color-primary);
