@@ -10,7 +10,7 @@ import { debounce } from 'rxjs/operators';
 })
 export class DvntBreadcrumbsComponent extends BreadcrumbComponent
   implements OnInit {
-  private myCrumbs$: Observable<any[]>;
+  myCrumbs$: Observable<any[]>;
 
   ngOnInit(): void {
     super.ngOnInit();
