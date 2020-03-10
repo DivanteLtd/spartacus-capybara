@@ -1,0 +1,42 @@
+<div class="bottom-navigation-container">
+  <div (click)="navigateTo('', $event)" class="navigation-item">
+    <img src="../../../assets/icons/home.svg" class="navigation-item-icon" />
+    <span class="navigation-item-label">
+      Home
+    </span>
+  </div>
+  <div (click)="setSearchAction($event)" class="navigation-item">
+    <img
+      src="../../../assets/icons/search-navigation.svg"
+      class="navigation-item-icon"
+    />
+    <span class="navigation-item-label">
+      Search
+    </span>
+  </div>
+  <div (click)="setProfileAction($event)" class="navigation-item">
+    <img src="../../../assets/icons/account.svg" class="navigation-item-icon" />
+    <span class="navigation-item-label">
+      Profile
+    </span>
+  </div>
+  <div
+    (click)="navigateTo('my-account/wishlist', $event)"
+    class="navigation-item"
+  >
+    <img src="../../../assets/icons/wish2.svg" class="navigation-item-icon" />
+    <span class="navigation-item-label">
+      Wish list
+    </span>
+  </div>
+  <div (click)="navigateTo('cart', $event)" class="navigation-item cart-item">
+    <div class="big-cart-icon">
+      <button class="btn-icon btn-icon-primary">
+        <img src="../../../assets/icons/add-to-cart.svg" />
+      </button>
+    </div>
+    <span class="navigation-item-label">
+      Cart
+    </span>
+  </div>
+</div>

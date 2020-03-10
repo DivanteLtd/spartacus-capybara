@@ -6,7 +6,7 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
 import { StaticLayoutCmsModule } from './layout/static-layout-cms/static-layout-cms.module';
 import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
-import { StyleGuideModule } from './features/style-guide/style-guide.module';
+import { FeatureModule } from './features/feature.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,8 +34,8 @@ import { StyleGuideModule } from './features/style-guide/style-guide.module';
       },
     }),
     StorefrontMissingExportsModule,
+    FeatureModule,
     StaticLayoutCmsModule,
-    StyleGuideModule,
   ],
   bootstrap: [AppComponent],
 })

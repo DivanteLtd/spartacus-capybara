@@ -1,0 +1,22 @@
+<div *ngIf="elements$ | async as elements" class="modal-content">
+  <div class="header">
+    <img
+      (click)="closeModal()"
+      class="back-icon"
+      src="../../../assets/icons/chevron/left.svg"
+    />
+    <span>
+      {{ elements.children[0].title }}
+    </span>
+  </div>
+
+  <div *ngIf="elements.children.length" class="content">
+    <div
+      *ngFor="let element of elements.children[0].children"
+      (click)="navigateTo(element.url)"
+      class="element"
+    >
+      {{ element.title }}
+    </div>
+  </div>
+</div>

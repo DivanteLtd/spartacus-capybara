@@ -1,0 +1,59 @@
+@import 'variables';
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.bottom-navigation-container {
+  align-items: center;
+  box-shadow: rgba(154, 154, 154, 0.15) 0px -2px 10px 0px;
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  padding: 0 1rem;
+  width: 100%;
+  z-index: 99999999;
+
+  .navigation-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    .navigation-item-icon {
+      height: 20px;
+      width: 20px;
+    }
+
+    .navigation-item-label {
+      font-family: $secondary-font-family;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 19px;
+    }
+  }
+
+  .cart-item {
+    position: relative;
+    top: 10px;
+
+    .big-cart-icon {
+      bottom: 22px;
+      position: absolute;
+
+      button {
+        height: 66px;
+        width: 66px;
+        border-radius: 100%;
+
+        img {
+          height: 28px;
+          width: 28px;
+        }
+      }
+    }
+  }
+}
