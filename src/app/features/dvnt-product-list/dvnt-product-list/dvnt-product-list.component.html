@@ -55,49 +55,51 @@
             <span class="items-found-total">
               {{ (model$ | async).pagination.totalResults }}
             </span>
-            <span class="view-modes-label font-roboto">
-              View
+            <span class="view-modes">
+              <span class="view-modes-label font-roboto">
+                View
+              </span>
+              <button
+                class="btn-view-mode"
+                [disabled]="viewMode === viewModes.List"
+                (click)="setViewMode(viewModes.List)"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="10" y="11" width="11" height="2" fill="#A3A5AD" />
+                  <rect x="10" y="19" width="11" height="2" fill="#A3A5AD" />
+                  <rect x="10" y="15" width="7" height="2" fill="#A3A5AD" />
+                </svg>
+              </button>
+              <button
+                class="btn-view-mode"
+                [disabled]="viewMode === viewModes.Grid"
+                (click)="setViewMode(viewModes.Grid)"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="11" y="11" width="2" height="2" fill="#1D1F22" />
+                  <rect x="11" y="15" width="2" height="2" fill="#1D1F22" />
+                  <rect x="11" y="19" width="2" height="2" fill="#1D1F22" />
+                  <rect x="15" y="11" width="2" height="2" fill="#1D1F22" />
+                  <rect x="15" y="15" width="2" height="2" fill="#1D1F22" />
+                  <rect x="15" y="19" width="2" height="2" fill="#1D1F22" />
+                  <rect x="19" y="11" width="2" height="2" fill="#1D1F22" />
+                  <rect x="19" y="15" width="2" height="2" fill="#1D1F22" />
+                  <rect x="19" y="19" width="2" height="2" fill="#1D1F22" />
+                </svg>
+              </button>
             </span>
-            <button
-              class="btn-view-mode"
-              [disabled]="viewMode === viewModes.List"
-              (click)="setViewMode(viewModes.List)"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect x="10" y="11" width="11" height="2" fill="#A3A5AD" />
-                <rect x="10" y="19" width="11" height="2" fill="#A3A5AD" />
-                <rect x="10" y="15" width="7" height="2" fill="#A3A5AD" />
-              </svg>
-            </button>
-            <button
-              class="btn-view-mode"
-              [disabled]="viewMode === viewModes.Grid"
-              (click)="setViewMode(viewModes.Grid)"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect x="11" y="11" width="2" height="2" fill="#1D1F22" />
-                <rect x="11" y="15" width="2" height="2" fill="#1D1F22" />
-                <rect x="11" y="19" width="2" height="2" fill="#1D1F22" />
-                <rect x="15" y="11" width="2" height="2" fill="#1D1F22" />
-                <rect x="15" y="15" width="2" height="2" fill="#1D1F22" />
-                <rect x="15" y="19" width="2" height="2" fill="#1D1F22" />
-                <rect x="19" y="11" width="2" height="2" fill="#1D1F22" />
-                <rect x="19" y="15" width="2" height="2" fill="#1D1F22" />
-                <rect x="19" y="19" width="2" height="2" fill="#1D1F22" />
-              </svg>
-            </button>
           </div>
           <div class="cx-product-container">
             <!-- Product list when using pagination -->

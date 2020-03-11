@@ -16,20 +16,31 @@
         margin-bottom: 0;
         display: flex;
         align-items: center;
-        margin-right: auto;
+
+        @include tablet-and-up {
+          margin-right: auto;
+        }
       }
 
       .ng-select-container {
         height: calculateRem(48px);
-        min-width: calculateRem(200px);
         border: none !important;
+        min-width: calculateRem(150px);
+
+        @include tablet-and-up {
+          min-width: calculateRem(200px);
+        }
 
         input {
           display: none;
         }
 
         .ng-value-label {
-          font-size: var(--ssf-font-size-mobile);
+          font-size: calculateRem(12px);
+
+          @include tablet-and-up {
+            font-size: var(--ssf-font-size-mobile);
+          }
         }
       }
 
@@ -54,14 +65,34 @@
   animation-name: slide-from-left;
   animation-duration: 0.6s;
   animation-timing-function: ease-out;
+  //width: 400px;
 
   .modal-content,
-  .modal-dialog {
+  .modal-dialog,
+  .filters-container {
     height: 100%;
   }
 
-  .modal-dialog {
+  .modal-content {
+    @include tablet-and-up {
+      width: 408px;
+    }
+  }
+
+  .filters-container {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .filters-scroll-container {
     overflow-y: auto;
+    overflow-x: hidden;
+    padding: 40px;
+    height: 100%;
+    width: calc(100% + 50px);
+  }
+
+  .modal-dialog {
     margin: 0;
 
     .cx-facet-filter-header,
@@ -83,6 +114,10 @@
   animation-name: fade-in;
   animation-duration: 0.6s;
   animation-timing-function: ease-out;
+
+  &.show {
+    opacity: 0.8;
+  }
 }
 
 @keyframes slide-from-left {
@@ -102,6 +137,6 @@
     opacity: 0;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 }

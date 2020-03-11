@@ -8,6 +8,7 @@ import {
   ViewConfig,
   ViewModes,
 } from '@spartacus/storefront';
+import { DvntProductFacetNavigationComponent } from '../dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
 
 @Component({
   selector: 'app-dvnt-product-list',
@@ -27,7 +28,7 @@ export class DvntProductListComponent extends ProductListComponent {
   }
 
   showProductFacetNavigationModal() {
-    this.modalService.open(ProductFacetNavigationComponent, {
+    this.modalService.open(DvntProductFacetNavigationComponent, {
       windowClass: 'product-list-filters-modal',
       backdropClass: 'product-list-filters-backdrop',
       beforeDismiss: () => {

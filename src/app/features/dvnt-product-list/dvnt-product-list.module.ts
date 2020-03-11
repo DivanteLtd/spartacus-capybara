@@ -5,9 +5,14 @@ import { CmsConfig, ConfigModule } from '@spartacus/core';
 import { SharedModule } from '../../shared/shared.module';
 import { ListNavigationModule, ProductListModule } from '@spartacus/storefront';
 import { DvntCategoriesComponent } from './dvnt-categories/dvnt-categories.component';
+import { DvntProductFacetNavigationComponent } from './dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
 
 @NgModule({
-  declarations: [DvntProductListComponent, DvntCategoriesComponent],
+  declarations: [
+    DvntProductListComponent,
+    DvntCategoriesComponent,
+    DvntProductFacetNavigationComponent,
+  ],
   imports: [
     CommonModule,
     SharedModule,
@@ -36,6 +41,10 @@ import { DvntCategoriesComponent } from './dvnt-categories/dvnt-categories.compo
       },
     }),
   ],
-  entryComponents: [DvntProductListComponent, DvntCategoriesComponent],
+  entryComponents: [
+    DvntProductListComponent,
+    DvntCategoriesComponent,
+    DvntProductFacetNavigationComponent,
+  ],
 })
 export class DvntProductListModule {}
