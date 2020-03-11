@@ -23,6 +23,18 @@ import { DvntCategoriesComponent } from './dvnt-categories/dvnt-categories.compo
         },
       },
     } as CmsConfig),
+    ConfigModule.withConfig({
+      layoutSlots: {
+        ProductListPageTemplate: {
+          xs: {
+            slots: ['ProductListSlot'],
+          },
+          md: {
+            slots: ['ProductLeftRefinements', 'ProductListSlot'],
+          },
+        },
+      },
+    }),
   ],
   entryComponents: [DvntProductListComponent, DvntCategoriesComponent],
 })

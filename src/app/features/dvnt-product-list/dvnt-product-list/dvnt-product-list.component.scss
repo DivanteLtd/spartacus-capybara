@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'media';
 
 .cx-page-section {
   padding-top: 0;
@@ -6,6 +7,80 @@
   .cx-sorting {
     &.top {
       padding: calculateRem(20px) 0;
+
+      .btn-filters {
+        color: var(--ssf-dark-primary);
+        text-transform: none;
+        font-size: calculateRem(12px);
+        box-shadow: none !important;
+
+        svg {
+          margin-right: calculateRem(8px);
+        }
+
+        @include laptop-and-up {
+          font-size: calculateRem(14px);
+        }
+      }
+
+      .view-modes-label,
+      .items-found-label,
+      .items-found-total,
+      .sort-by-label {
+        font-size: var(--ssf-font-size-mobile);
+        color: var(--ssf-gray-primary);
+        font-weight: 300;
+        font-family: var(--ssf-secondary-font-family);
+      }
+
+      .view-modes-label {
+        color: var(--ssf-dark-primary);
+      }
+
+      .items-found-total {
+        font-weight: bold;
+        margin-left: 4px;
+        color: var(--ssf-dark-primary);
+      }
+
+      .view-modes-label {
+        margin-left: 20px;
+      }
+
+      .btn-view-mode {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+
+        svg {
+          width: 32px;
+          height: 32px;
+
+          * {
+            fill: var(--ssf-dark-primary);
+          }
+        }
+
+        &:disabled {
+          background-color: transparent !important;
+
+          svg {
+            * {
+              fill: var(--ssf-gray-primary);
+            }
+          }
+        }
+      }
+
+      .cx-sort-dropdown {
+        //display: flex;
+        //justify-content: center;
+
+        span {
+          margin-right: calculateRem(8px);
+        }
+      }
     }
   }
 }

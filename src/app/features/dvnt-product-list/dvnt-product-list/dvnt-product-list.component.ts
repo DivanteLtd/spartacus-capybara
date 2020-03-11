@@ -6,6 +6,7 @@ import {
   ProductListComponent,
   ProductListComponentService,
   ViewConfig,
+  ViewModes,
 } from '@spartacus/storefront';
 
 @Component({
@@ -14,6 +15,8 @@ import {
   styleUrls: ['./dvnt-product-list.component.scss'],
 })
 export class DvntProductListComponent extends ProductListComponent {
+  viewModes = ViewModes;
+
   constructor(
     pageLayoutService: PageLayoutService,
     productListComponentService: ProductListComponentService,
@@ -24,6 +27,14 @@ export class DvntProductListComponent extends ProductListComponent {
   }
 
   showProductFacetNavigationModal() {
-    this.modalService.open(ProductFacetNavigationComponent);
+    this.modalService.open(ProductFacetNavigationComponent, {
+      windowClass: 'product-list-filters-modal',
+      backdropClass: 'product-list-filters-backdrop',
+      beforeDismiss: () => {
+        return new Promise(resolve => {
+          resolve(true);
+        });
+      },
+    });
   }
 }

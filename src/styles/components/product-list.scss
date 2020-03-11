@@ -7,22 +7,101 @@
     height: calculateRem(102px);
 
     &.top {
-      .row {
-        display: flex;
-        align-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-bottom: solid 1px var(--ssf-light-primary);
 
-        .cx-sort-dropdown {
-          margin-bottom: 0;
+      .cx-sort-dropdown {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+      }
+
+      .ng-select-container {
+        height: calculateRem(48px);
+        min-width: calculateRem(200px);
+        border: none !important;
+
+        input {
+          display: none;
         }
 
-        .ng-select-container {
-          height: calculateRem(48px);
+        .ng-value-label {
+          font-size: var(--ssf-font-size-mobile);
+        }
+      }
 
-          input {
-            display: none;
+      .ng-dropdown-panel {
+        border: none;
+
+        .ng-dropdown-panel-items {
+          max-height: 260px;
+          box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
+
+          .ng-option-label {
+            font-size: var(--ssf-font-size-mobile);
           }
         }
       }
     }
+  }
+}
+
+// Filters modal
+.product-list-filters-modal {
+  animation-name: slide-from-left;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+
+  .modal-content,
+  .modal-dialog {
+    height: 100%;
+  }
+
+  .modal-dialog {
+    overflow-y: auto;
+    margin: 0;
+
+    .cx-facet-filter-header,
+    .cx-facet-filter-container {
+      display: none;
+    }
+
+    .cx-search-facet {
+      display: block !important;
+    }
+
+    .cx-facet-mobile {
+      display: none !important;
+    }
+  }
+}
+
+.product-list-filters-backdrop {
+  animation-name: fade-in;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
