@@ -9,6 +9,7 @@ import {
   ViewModes,
 } from '@spartacus/storefront';
 import { DvntProductFacetNavigationComponent } from '../dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-dvnt-product-list',

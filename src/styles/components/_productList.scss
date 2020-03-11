@@ -63,8 +63,8 @@
 // Filters modal
 .product-list-filters-modal {
   animation-name: slide-from-left;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   //width: 400px;
 
   .modal-content,
@@ -77,19 +77,6 @@
     @include tablet-and-up {
       width: 408px;
     }
-  }
-
-  .filters-container {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .filters-scroll-container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 40px;
-    height: 100%;
-    width: calc(100% + 50px);
   }
 
   .modal-dialog {
@@ -112,8 +99,8 @@
 
 .product-list-filters-backdrop {
   animation-name: fade-in;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 
   &.show {
     opacity: 0.8;

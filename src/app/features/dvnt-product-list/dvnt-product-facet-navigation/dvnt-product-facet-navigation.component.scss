@@ -6,6 +6,23 @@
   height: 100%;
 }
 
+.filters-container {
+  height: 100%;
+  overflow: hidden;
+
+  .filters-scroll-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 40px;
+    height: 100%;
+    width: calc(100% + 50px);
+
+    .cx-search-facet {
+      padding: 40px 50px 40px 20px;
+    }
+  }
+}
+
 .close-filters {
   position: absolute;
   right: -26px;
@@ -57,6 +74,12 @@
     .cx-facet-text {
       line-height: 22px;
       color: var(--ssf-dark-primary);
+      display: block;
+      width: 100%;
+
+      .count {
+        float: right;
+      }
     }
   }
 
