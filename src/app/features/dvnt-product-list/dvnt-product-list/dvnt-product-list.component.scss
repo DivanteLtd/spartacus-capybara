@@ -1,0 +1,11 @@
+@import 'mixins';
+
+.cx-page-section {
+  padding-top: 0;
+
+  .cx-sorting {
+    &.top {
+      padding: calculateRem(20px) 0;
+    }
+  }
+}

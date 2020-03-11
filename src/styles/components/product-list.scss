@@ -1,0 +1,28 @@
+@import 'mixins';
+
+.cx-page-section {
+  padding-top: 0;
+
+  .cx-sorting {
+    height: calculateRem(102px);
+
+    &.top {
+      .row {
+        display: flex;
+        align-content: center;
+
+        .cx-sort-dropdown {
+          margin-bottom: 0;
+        }
+
+        .ng-select-container {
+          height: calculateRem(48px);
+
+          input {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
