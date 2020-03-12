@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import {
   ModalService,
   PageLayoutService,
-  ProductFacetNavigationComponent,
   ProductListComponent,
   ProductListComponentService,
   ViewConfig,
   ViewModes,
 } from '@spartacus/storefront';
 import { DvntProductFacetNavigationComponent } from '../dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-dvnt-product-list',
@@ -26,6 +24,10 @@ export class DvntProductListComponent extends ProductListComponent {
     private modalService: ModalService
   ) {
     super(pageLayoutService, productListComponentService, scrollConfig);
+
+    setTimeout(() => {
+      this.setViewMode(ViewModes.Grid);
+    }, 1000);
   }
 
   showProductFacetNavigationModal() {

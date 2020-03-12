@@ -106,11 +106,16 @@
             <ng-container *ngIf="!isInfiniteScroll; else infiniteScroll">
               <ng-container *ngIf="viewMode === ViewModes.Grid">
                 <div class="row">
-                  <cx-product-grid-item
+                  <app-dvnt-product-grid-item
                     *ngFor="let product of model?.products"
                     [product]="product"
-                    class="col-12 col-sm-6 col-md-4"
-                  ></cx-product-grid-item>
+                    class="col-12 col-sm-6 col-md-3"
+                  ></app-dvnt-product-grid-item>
+                  <!--                  <cx-product-grid-item-->
+                  <!--                    *ngFor="let product of model?.products"-->
+                  <!--                    [product]="product"-->
+                  <!--                    class="col-12 col-sm-6 col-md-3"-->
+                  <!--                  ></cx-product-grid-item>-->
                 </div>
               </ng-container>
 
