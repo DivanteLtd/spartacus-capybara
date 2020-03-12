@@ -1,0 +1,62 @@
+@import 'mixins';
+.cx-product-search-list {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: var(--cx-color-light);
+  margin: 0 0 25px 0;
+
+  &:last-of-type {
+    border-width: 0 0 0 0;
+  }
+}
+
+.cx-product-image-container {
+  display: block;
+  text-align: center;
+}
+
+.cx-product-image {
+  width: 100%;
+}
+
+.cx-product-name {
+  text-align: left;
+  display: block;
+  margin: 0 0 3px 0;
+  color: var(--ssf-dark-secondary);
+  text-decoration: none;
+  font-size: var(--ssf-font-size-desktop);
+
+  &:hover {
+    color: var(--cx-color-primary);
+  }
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rating {
+  text-align: left;
+  transform: scale(0.57);
+  transform-origin: left;
+}
+
+.cx-product-price {
+  text-align: left;
+  margin: 5px 0 0 0;
+  font-size: calculateRem(18px);
+  font-weight: 500;
+
+  &.old {
+    color: var(--cx-color-secondary);
+    text-decoration: line-through;
+  }
+
+  &.new {
+    margin: 0 0 0 5px;
+    color: var(--cx-color-primary);
+  }
+}
