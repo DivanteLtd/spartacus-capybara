@@ -12,6 +12,7 @@ import { DvntCategoriesComponent } from './dvnt-categories/dvnt-categories.compo
 import { DvntProductFacetNavigationComponent } from './dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
 import { DvntProductListItemComponent } from './dvnt-product-list-item/dvnt-product-list-item.component';
 import { DvntProductGridItemComponent } from './dvnt-product-grid-item/dvnt-product-grid-item.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { DvntProductGridItemComponent } from './dvnt-product-grid-item/dvnt-prod
     }),
     StarRatingModule,
     FeaturesConfigModule,
+    DvntSharedModule,
   ],
   entryComponents: [
     DvntProductListComponent,

@@ -26,8 +26,8 @@ export class DvntProductListComponent extends ProductListComponent {
     super(pageLayoutService, productListComponentService, scrollConfig);
 
     setTimeout(() => {
-      // this.setViewMode(ViewModes.Grid);
-    }, 1000);
+      this.setViewMode(ViewModes.Grid);
+    }, 300);
   }
 
   showProductFacetNavigationModal() {

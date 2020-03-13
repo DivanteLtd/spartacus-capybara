@@ -146,14 +146,14 @@
             <div class="row">
               <div
                 *ngIf="!isInfiniteScroll"
-                class="col-auto"
+                class="col-12"
                 aria-label="product search pagination"
               >
                 <div class="cx-pagination">
-                  <cx-pagination
+                  <app-dvnt-pagination
                     [pagination]="model.pagination"
                     (viewPageEvent)="viewPage($event)"
-                  ></cx-pagination>
+                  ></app-dvnt-pagination>
                 </div>
               </div>
             </div>

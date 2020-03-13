@@ -1,0 +1,38 @@
+<ul class="pagination" *ngIf="showPagination()">
+  <!-- Previous -->
+  <li class="page-item" [ngClass]="{ disabled: onFirstPage() || !hasPages() }">
+    <a class="page-link" (click)="clickPageNo(getPagePrevious())"
+      ><svg viewBox="0 0 14 14" preserveAspectRatio="none" class="sf-icon-path">
+        <path
+          d="M6.04545 0L7 1.12025L1.92207 7L7 12.8798L6.04545 14L0 6.99994L6.04545 0Z"
+          style="height:100%"
+        ></path></svg
+    ></a>
+  </li>
+
+  <!-- Page Index -->
+  <li
+    class="page-item"
+    *ngFor="let page of getPageIndicies(); let i = index"
+    [ngClass]="{ active: onPageIndex(i), disabled: showDots(i) }"
+  >
+    <a class="page-link" *ngIf="showDots(i)">...</a>
+    <a
+      class="page-link"
+      *ngIf="!hidePageIndex(i)"
+      (click)="clickPageNo(i + 1)"
+      >{{ i + 1 }}</a
+    >
+  </li>
+
+  <!-- Next -->
+  <li class="page-item" [ngClass]="{ disabled: onLastPage() || !hasPages() }">
+    <a class="page-link" (click)="clickPageNo(getPageNext())"
+      ><svg viewBox="0 0 14 14">
+        <path
+          d="M0.954545 14L0 12.8798L5.07793 7L0 1.12024L0.954545 0L7 7.00006L0.954545 14Z"
+          fill="black"
+        ></path></svg
+    ></a>
+  </li>
+</ul>

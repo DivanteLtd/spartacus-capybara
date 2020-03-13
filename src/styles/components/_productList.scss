@@ -132,3 +132,15 @@
 .ProductGridPageTemplate .ProductLeftRefinements {
   padding-top: 20px;
 }
+
+.ProductLeftRefinements {
+  max-width: 18% !important;
+}
+
+.ProductListSlot {
+  max-width: 100%;
+
+  @include laptop-and-up {
+    max-width: 82% !important;
+  }
+}
