@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DvntProductListComponent } from './dvnt-product-list/dvnt-product-list.component';
-import { CmsConfig, ConfigModule, FeaturesConfigModule } from '@spartacus/core';
+import {
+  CmsConfig,
+  CmsPageSlotsConfig,
+  CmsStructureConfig,
+  ConfigModule,
+  ContentSlotComponentData,
+  FeaturesConfigModule,
+} from '@spartacus/core';
 import { SharedModule } from '../../shared/shared.module';
 import {
   ListNavigationModule,
@@ -27,12 +34,16 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     SharedModule,
     ListNavigationModule,
     ProductListModule,
+    ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig({
       cmsComponents: {
         CMSProductListComponent: {
           component: DvntProductListComponent,
         },
         ProductRefinementComponent: {
+          component: DvntCategoriesComponent,
+        },
+        DvntCategoriesComponent: {
           component: DvntCategoriesComponent,
         },
       },
@@ -44,7 +55,7 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
             slots: ['ProductListSlot'],
           },
           md: {
-            slots: ['ProductLeftRefinements', 'ProductListSlot'],
+            slots: ['DvntCategories', 'ProductListSlot'],
           },
         },
       },
@@ -60,3 +71,32 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
   ],
 })
 export class DvntProductListModule {}
+
+export const staticComponents: {
+  [key: string]: ContentSlotComponentData | any;
+} = {
+  DvntCategoriesComponent: {
+    typeCode: 'DvntCategoriesComponent',
+    flexType: 'DvntCategoriesComponent',
+    uid: 'DvntCategoriesComponent',
+  },
+};
+
+const cmsPageSlotConfig: CmsPageSlotsConfig = {
+  DvntCategories: {
+    componentIds: ['DvntCategoriesComponent'],
+  },
+};
+
+function cmsStructureConfig(): CmsStructureConfig {
+  return {
+    cmsStructure: {
+      components: {
+        ...staticComponents,
+      },
+      slots: {
+        ...cmsPageSlotConfig,
+      },
+    },
+  };
+}

@@ -60,12 +60,18 @@
   }
 }
 
+.cx-product-image {
+  &.is-missing {
+    background-size: 177px !important;
+    min-height: 177px !important;
+  }
+}
+
 // Filters modal
 .product-list-filters-modal {
   animation-name: slide-from-left;
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  //width: 400px;
 
   .modal-content,
   .modal-dialog,
@@ -133,14 +139,14 @@
   padding-top: 20px;
 }
 
-.ProductLeftRefinements {
-  max-width: 18% !important;
+.DvntCategories {
+  max-width: 20% !important;
 }
 
 .ProductListSlot {
   max-width: 100%;
 
   @include laptop-and-up {
-    max-width: 82% !important;
+    max-width: 80% !important;
   }
 }

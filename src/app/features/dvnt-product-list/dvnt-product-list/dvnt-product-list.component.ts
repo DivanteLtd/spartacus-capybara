@@ -33,6 +33,7 @@ export class DvntProductListComponent extends ProductListComponent
       backdropClass: 'product-list-filters-backdrop',
       beforeDismiss: () => {
         return new Promise(resolve => {
+          // @todo: Add logic to add or remove class from modal to run exit animation before dismiss.
           resolve(true);
         });
       },
