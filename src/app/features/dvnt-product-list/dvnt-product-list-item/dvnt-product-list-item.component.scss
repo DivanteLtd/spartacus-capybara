@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'media';
 .cx-product-search-list {
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -27,21 +28,30 @@
   text-decoration: none;
   font-size: var(--ssf-font-size-desktop);
 
+  @include tablet-and-up {
+    font-size: calculateRem(18px);
+    font-weight: 500;
+    color: var(--ssf-dark-primary);
+  }
+
   &:hover {
     color: var(--cx-color-primary);
   }
 }
 
 .product-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include tablet-and-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .rating {
   text-align: left;
   transform: scale(0.57);
   transform-origin: left;
+  margin-bottom: 20px;
 }
 
 .cx-product-price {
@@ -49,6 +59,14 @@
   margin: 5px 0 0 0;
   font-size: calculateRem(18px);
   font-weight: 500;
+
+  @include tablet-and-up {
+    position: absolute;
+    text-align: right;
+    right: 0;
+    top: 0;
+    margin: 0;
+  }
 
   &.old {
     color: var(--cx-color-secondary);

@@ -6,6 +6,16 @@
   height: 100%;
 }
 
+.filter-modal-header {
+  background-color: var(--ssf-light-primary-darken);
+  height: 50px;
+  display: flex;
+
+  @include tablet-and-up {
+    display: none;
+  }
+}
+
 .filters-container {
   height: 100%;
   overflow: hidden;

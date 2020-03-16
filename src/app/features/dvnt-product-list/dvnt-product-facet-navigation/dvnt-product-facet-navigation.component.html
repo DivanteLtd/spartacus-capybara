@@ -1,4 +1,11 @@
 <ng-container *ngIf="searchResult$ | async as searchResult">
+  <div class="filter-modal-header">
+    <img
+      (click)="dismissFiltersModal()"
+      class="back-icon"
+      src="assets/icons/chevron/left.svg"
+    />
+  </div>
   <button
     class="btn-icon btn-icon-primary close-filters"
     (click)="dismissFiltersModal()"
