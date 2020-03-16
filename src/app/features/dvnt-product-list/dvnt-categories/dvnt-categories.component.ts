@@ -17,7 +17,9 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./dvnt-categories.component.scss'],
 })
 export class DvntCategoriesComponent extends CategoryNavigationComponent {
-  public categoriesData = [];
+  categoriesData = [];
+
+  myNode;
 
   constructor(
     componentData: CmsComponentData<CmsNavigationComponent>,

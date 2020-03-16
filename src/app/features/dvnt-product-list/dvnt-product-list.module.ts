@@ -12,6 +12,7 @@ import {
 import { SharedModule } from '../../shared/shared.module';
 import {
   ListNavigationModule,
+  NavigationModule,
   ProductListModule,
   StarRatingModule,
 } from '@spartacus/storefront';
@@ -63,6 +64,7 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     StarRatingModule,
     FeaturesConfigModule,
     DvntSharedModule,
+    NavigationModule,
   ],
   entryComponents: [
     DvntProductListComponent,
@@ -88,7 +90,7 @@ const cmsPageSlotConfig: CmsPageSlotsConfig = {
   },
 };
 
-function cmsStructureConfig(): CmsStructureConfig {
+export function cmsStructureConfig(): CmsStructureConfig {
   return {
     cmsStructure: {
       components: {

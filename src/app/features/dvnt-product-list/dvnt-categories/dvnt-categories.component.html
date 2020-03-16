@@ -3,10 +3,11 @@
     <h3>Categories</h3>
   </div>
 
-  <nav>
-    <ul class="categories-navigation">
+  <nav class="categories-navigation">
+    <ul>
       <li *ngFor="let item of categoriesData">
         {{ item.title }}
+        <!-- @todo: add links. Currently url data no available. -->
       </li>
     </ul>
   </nav>

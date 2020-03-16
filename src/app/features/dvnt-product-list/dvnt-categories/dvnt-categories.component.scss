@@ -12,10 +12,12 @@
     ul {
       list-style: none;
       padding-left: 40px;
+      padding-top: 40px;
 
       li {
         padding-bottom: 10px;
         padding-top: 10px;
+        color: var(--ssf-dark-primary);
       }
     }
   }
