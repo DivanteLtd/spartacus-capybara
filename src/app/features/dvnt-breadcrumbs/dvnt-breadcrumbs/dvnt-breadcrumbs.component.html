@@ -2,13 +2,13 @@
   <nav>
     <ol>
       <ng-container *ngFor="let crumb of myCrumbs$ | async; let last = last">
-        <ng-template [ngIf]="!last" [ngIfElse]="lastElement">
+        <ng-container *ngIf="!last; else lastElement">
           <li class="sf-breadcrumbs__item">
-            <a href="{{ crumb.link }}">
+            <a [routerLink]="crumb.link">
               {{ crumb.label }}
             </a>
           </li>
-        </ng-template>
+        </ng-container>
         <ng-template #lastElement>
           <li>
             <span>{{ crumb.label }}</span>

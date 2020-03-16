@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   ModalService,
   PageLayoutService,
@@ -14,7 +14,8 @@ import { DvntProductFacetNavigationComponent } from '../dvnt-product-facet-navig
   templateUrl: './dvnt-product-list.component.html',
   styleUrls: ['./dvnt-product-list.component.scss'],
 })
-export class DvntProductListComponent extends ProductListComponent {
+export class DvntProductListComponent extends ProductListComponent
+  implements OnInit {
   viewModes = ViewModes;
 
   constructor(
@@ -24,10 +25,6 @@ export class DvntProductListComponent extends ProductListComponent {
     private modalService: ModalService
   ) {
     super(pageLayoutService, productListComponentService, scrollConfig);
-
-    setTimeout(() => {
-      this.setViewMode(ViewModes.Grid);
-    }, 300);
   }
 
   showProductFacetNavigationModal() {
@@ -40,5 +37,10 @@ export class DvntProductListComponent extends ProductListComponent {
         });
       },
     });
+  }
+
+  ngOnInit(): void {
+    super.ngOnInit();
+    this.setViewMode(ViewModes.Grid);
   }
 }

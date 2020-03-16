@@ -1,28 +1,28 @@
 nav {
-  display: block;
-  padding: 20px 40px 40px 20px;
-  max-width: 1140px;
-  margin: 0 auto;
   border-bottom: solid 1px var(--ssf-light-primary);
+  display: block;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 20px 40px 40px 20px;
 
   ol {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
     color: var(--ssf-dark-primary);
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     li {
+      font-size: var(--ssf-font-size-mobile);
       list-style: none;
       text-align: right;
-      font-size: var(--ssf-font-size-mobile);
 
       &:not(:first-child) {
         padding: 0 0 0 8px;
 
         &:before {
-          padding: 0 8px 0 0;
           content: '|';
+          padding: 0 8px 0 0;
         }
       }
 
