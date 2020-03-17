@@ -24,9 +24,6 @@ export const staticLayoutConfig: LayoutConfig = {
           'CustomMiniCart',
         ],
       },
-      xs: {
-        slots: ['BottomNavigation'],
-      },
     },
   },
 };
@@ -54,11 +51,6 @@ export const staticComponents: {
     flexType: 'CustomMiniCartComponent',
     uid: 'CustomMiniCartComponent',
   },
-  BottomNavigationComponent: {
-    typeCode: 'BottomNavigationComponent',
-    flexType: 'BottomNavigationComponent',
-    uid: 'BottomNavigationComponent',
-  },
 };
 
 export const defaultStaticConfig: CmsPageSlotsConfig = {
@@ -73,9 +65,6 @@ export const defaultStaticConfig: CmsPageSlotsConfig = {
   },
   CustomMiniCart: {
     componentIds: ['CustomMiniCartComponent'],
-  },
-  BottomNavigation: {
-    componentIds: ['BottomNavigationComponent'],
   },
 };
 

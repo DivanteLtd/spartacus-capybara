@@ -7,11 +7,11 @@ import { ProfileLinkListComponent } from 'src/app/features/profile-link-list/pro
 import { ModalSearchComponent } from 'src/app/features/modal-search/modal-search.component';
 
 @Component({
-  selector: 'app-bottom-navigation',
-  templateUrl: './bottom-navigation.component.html',
-  styleUrls: ['./bottom-navigation.component.scss'],
+  selector: 'app-dvnt-bottom-navigation',
+  templateUrl: './dvnt-bottom-navigation.component.html',
+  styleUrls: ['./dvnt-bottom-navigation.component.scss'],
 })
-export class BottomNavigationComponent implements OnDestroy {
+export class DvntBottomNavigationComponent implements OnDestroy {
   private modalRef: ModalRef;
 
   constructor(

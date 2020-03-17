@@ -1,52 +1,54 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { PageNotFoundComponent } from './page-not-found.component';
 import {
+  CmsPageSlotsConfig,
+  CmsStructureConfig,
   ConfigModule,
   CmsConfig,
-  CmsPageSlotsConfig,
   ContentSlotComponentData,
-  CmsStructureConfig,
 } from '@spartacus/core';
 
+import { DvntBottomNavigationComponent } from './dvnt-bottom-navigation.component';
+
 @NgModule({
-  declarations: [PageNotFoundComponent],
+  declarations: [DvntBottomNavigationComponent],
   imports: [
     CommonModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig({
       cmsComponents: {
-        PageNotFoundComponent: {
-          component: PageNotFoundComponent,
+        DvntBottomNavigationComponent: {
+          component: DvntBottomNavigationComponent,
         },
       },
     } as CmsConfig),
     ConfigModule.withConfig({
       layoutSlots: {
-        ErrorPageTemplate: {
-          slots: ['PageNotFound'],
+        header: {
+          xs: {
+            slots: ['DvntBottomNavigation'],
+          },
         },
       },
     }),
   ],
-  entryComponents: [PageNotFoundComponent],
+  entryComponents: [DvntBottomNavigationComponent],
 })
-export class PageNotFoundModule {}
+export class DvntBottomNavigationModule {}
 
 export const staticComponents: {
   [key: string]: ContentSlotComponentData | any;
 } = {
-  PageNotFoundComponent: {
-    typeCode: 'PageNotFoundComponent',
-    flexType: 'PageNotFoundComponent',
-    uid: 'PageNotFoundComponent',
+  DvntBottomNavigationComponent: {
+    typeCode: 'DvntBottomNavigationComponent',
+    flexType: 'DvntBottomNavigationComponent',
+    uid: 'DvntBottomNavigationComponent',
   },
 };
 
 const cmsPageSlotConfig: CmsPageSlotsConfig = {
-  PageNotFound: {
-    componentIds: ['PageNotFoundComponent'],
+  DvntBottomNavigation: {
+    componentIds: ['DvntBottomNavigationComponent'],
   },
 };
 
