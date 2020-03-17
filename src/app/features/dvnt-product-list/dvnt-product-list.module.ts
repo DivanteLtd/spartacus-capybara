@@ -41,9 +41,6 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
         CMSProductListComponent: {
           component: DvntProductListComponent,
         },
-        ProductRefinementComponent: {
-          component: DvntCategoriesComponent,
-        },
         DvntCategoriesComponent: {
           component: DvntCategoriesComponent,
         },
