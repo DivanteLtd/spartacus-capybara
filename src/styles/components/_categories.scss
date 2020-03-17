@@ -1,0 +1,42 @@
+app-dvnt-categories {
+  cx-navigation-ui {
+    padding-left: 40px;
+    padding-top: 40px;
+
+    h5 {
+      display: none !important;
+    }
+    .wrapper {
+      visibility: visible !important;
+      opacity: 1 !important;
+      margin: 0 !important;
+      border: none !important;
+      padding: 0 !important;
+      position: initial !important;
+
+      cx-generic-link {
+        text-decoration: none !important;
+
+        &:hover {
+          a {
+            color: var(--ssf-dark-primary) !important;
+          }
+        }
+
+        a {
+          &:hover {
+            color: var(--ssf-dark-primary) !important;
+          }
+        }
+      }
+
+      .childs {
+        flex-direction: column;
+
+        cx-generic-link:not(.all) {
+          color: var(--ssf-gray-primary);
+        }
+      }
+    }
+  }
+}

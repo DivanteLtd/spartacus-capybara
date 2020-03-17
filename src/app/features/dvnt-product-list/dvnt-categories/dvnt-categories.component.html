@@ -3,12 +3,5 @@
     <h3>Categories</h3>
   </div>
 
-  <nav class="categories-navigation">
-    <ul>
-      <li *ngFor="let item of categoriesData">
-        {{ item.title }}
-        <!-- @todo: add links. Currently url data no available. -->
-      </li>
-    </ul>
-  </nav>
+  <cx-navigation-ui [node]="categoriesData$ | async"></cx-navigation-ui>
 </div>

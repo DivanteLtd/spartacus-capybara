@@ -17,22 +17,17 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./dvnt-categories.component.scss'],
 })
 export class DvntCategoriesComponent extends CategoryNavigationComponent {
-  categoriesData = [];
-
-  myNode;
+  categoriesData$;
 
   constructor(
     componentData: CmsComponentData<CmsNavigationComponent>,
     service: NavigationService,
-    cmsService: CmsService
+    cmsService: CmsService,
+    private navigationService: NavigationService
   ) {
     super(componentData, service);
-    cmsService
-      .getComponentData('ElectronicsCategoryNavComponent')
-      .pipe(take(1))
-      .subscribe(
-        (_componentData: CmsNavigationComponent) =>
-          (this.categoriesData = _componentData.navigationNode.children)
-      );
+    this.categoriesData$ = this.navigationService.createNavigation(
+      cmsService.getComponentData('ElectronicsCategoryNavComponent')
+    );
   }
 }
