@@ -14,18 +14,13 @@ import {
   defaultStaticCmsContentConfig,
   staticLayoutConfig,
 } from './static-layout-layout.config';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { PageNotFoundModule } from '../page-not-found/page-not-found.module';
-import { ProfileLinkListComponent } from 'src/app/features/profile-link-list/profile-link-list.component';
 
 @NgModule({
   imports: [
     ConfigModule.withConfigFactory(defaultStaticCmsContentConfig),
     ConfigModule.withConfig({
       cmsComponents: {
-        PageNotFoundComponent: {
-          component: PageNotFoundComponent,
-        },
         StaticHeaderLogoComponent: {
           component: StaticHeaderLogoComponent,
         },

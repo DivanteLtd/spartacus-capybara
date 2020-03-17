@@ -28,20 +28,12 @@ export const staticLayoutConfig: LayoutConfig = {
         slots: ['BottomNavigation'],
       },
     },
-    ErrorPageTemplate: {
-      slots: ['PageNotFound'],
-    },
   },
 };
 
 export const staticComponents: {
   [key: string]: ContentSlotComponentData | any;
 } = {
-  PageNotFoundComponent: {
-    typeCode: 'PageNotFoundComponent',
-    flexType: 'PageNotFoundComponent',
-    uid: 'PageNotFoundComponent',
-  },
   StaticHeaderLogoComponent: {
     typeCode: 'StaticHeaderLogoComponent',
     flexType: 'StaticHeaderLogoComponent',
@@ -70,9 +62,6 @@ export const staticComponents: {
 };
 
 export const defaultStaticConfig: CmsPageSlotsConfig = {
-  PageNotFound: {
-    componentIds: ['PageNotFoundComponent'],
-  },
   CustomSiteLogo: {
     componentIds: ['StaticHeaderLogoComponent'],
   },
