@@ -6,6 +6,19 @@
   height: 100%;
 }
 
+.cx-facet-filter-header,
+.cx-facet-filter-container {
+  display: none;
+}
+
+.cx-search-facet {
+  display: block !important;
+}
+
+.cx-facet-mobile {
+  display: none !important;
+}
+
 .filter-modal-header {
   background-color: var(--ssf-light-primary-darken);
   height: 50px;
@@ -30,17 +43,6 @@
     .cx-search-facet {
       padding: 40px 50px 40px 20px;
     }
-  }
-}
-
-.close-filters {
-  position: absolute;
-  right: -26px;
-  top: 60px;
-  display: none;
-
-  @include tablet-and-up {
-    display: block;
   }
 }
 

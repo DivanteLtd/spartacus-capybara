@@ -29,8 +29,21 @@ export class DvntProductListComponent extends ProductListComponent
 
   showProductFacetNavigationModal() {
     this.modalService.open(DvntProductFacetNavigationComponent, {
-      windowClass: 'product-list-filters-modal',
-      backdropClass: 'product-list-filters-backdrop',
+      windowClass: 'side-modal slide-from-left',
+      backdropClass: 'side-modal-backdrop',
+      beforeDismiss: () => {
+        return new Promise(resolve => {
+          // @todo: Add logic to add or remove class from modal to run exit animation before dismiss.
+          resolve(true);
+        });
+      },
+    });
+  }
+
+  showProductFacetNavigationModal2() {
+    this.modalService.open(DvntProductFacetNavigationComponent, {
+      windowClass: 'side-modal slide-from-right',
+      backdropClass: 'side-modal-backdrop',
       beforeDismiss: () => {
         return new Promise(resolve => {
           // @todo: Add logic to add or remove class from modal to run exit animation before dismiss.
