@@ -40,19 +40,6 @@ export class DvntProductListComponent extends ProductListComponent
     });
   }
 
-  showProductFacetNavigationModal2() {
-    this.modalService.open(DvntProductFacetNavigationComponent, {
-      windowClass: 'side-modal slide-from-right',
-      backdropClass: 'side-modal-backdrop',
-      beforeDismiss: () => {
-        return new Promise(resolve => {
-          // @todo: Add logic to add or remove class from modal to run exit animation before dismiss.
-          resolve(true);
-        });
-      },
-    });
-  }
-
   ngOnInit(): void {
     super.ngOnInit();
     this.setViewMode(ViewModes.Grid);
