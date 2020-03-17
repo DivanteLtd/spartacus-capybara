@@ -3,8 +3,8 @@ import { RoutingService, AuthService } from '@spartacus/core';
 import { ModalService, ModalRef } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
 
-import { ProfileLinkListComponent } from 'src/app/features/profile-link-list/profile-link-list.component';
-import { ModalSearchComponent } from 'src/app/features/modal-search/modal-search.component';
+import { DvntModalSearchComponent } from '../dvnt-modal-search/dvnt-modal-search.component';
+import { DvntProfileLinkListComponent } from '../dvnt-profile-link-list/dvnt-profile-link-list.component';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',
@@ -54,14 +54,14 @@ export class DvntBottomNavigationComponent implements OnDestroy {
 
   private createProfileModal(): void {
     this.createModal(
-      ProfileLinkListComponent,
+      DvntProfileLinkListComponent,
       'modal-full-screen-with-column',
       'profile'
     );
   }
 
   private createSearchModal(): void {
-    this.createModal(ModalSearchComponent, 'modal-full-screen', 'search');
+    this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
   }
 
   private createModal(

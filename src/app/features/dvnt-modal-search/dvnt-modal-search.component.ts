@@ -17,11 +17,11 @@ const DEFAULT_SEARCHBOX_CONFIG: SearchBoxConfig = {
 };
 
 @Component({
-  selector: 'app-modal-search',
-  templateUrl: './modal-search.component.html',
-  styleUrls: ['./modal-search.component.scss'],
+  selector: 'app-dvnt-modal-search',
+  templateUrl: './dvnt-modal-search.component.html',
+  styleUrls: ['./dvnt-modal-search.component.scss'],
 })
-export class ModalSearchComponent extends SearchBoxComponent {
+export class DvntModalSearchComponent extends SearchBoxComponent {
   private customConfig: SearchBoxConfig = DEFAULT_SEARCHBOX_CONFIG;
 
   constructor(

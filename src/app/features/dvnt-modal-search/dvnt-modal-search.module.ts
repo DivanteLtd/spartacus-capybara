@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 import { UrlModule, I18nModule } from '@spartacus/core';
 import { IconModule, MediaModule } from '@spartacus/storefront';
 
-import { ModalSearchComponent } from './modal-search.component';
+import { DvntModalSearchComponent } from './dvnt-modal-search.component';
 
 @NgModule({
-  declarations: [ModalSearchComponent],
+  declarations: [DvntModalSearchComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -16,7 +16,7 @@ import { ModalSearchComponent } from './modal-search.component';
     I18nModule,
     MediaModule,
   ],
-  entryComponents: [ModalSearchComponent],
-  exports: [ModalSearchComponent],
+  entryComponents: [DvntModalSearchComponent],
+  exports: [DvntModalSearchComponent],
 })
-export class ModalSearchModule {}
+export class DvntModalSearchModule {}

@@ -4,7 +4,6 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 
 import { AppComponent } from './app.component';
-import { StaticLayoutCmsModule } from './layout/static-layout-cms/static-layout-cms.module';
 import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 import { FeatureModule } from './features/feature.module';
 
@@ -35,7 +34,6 @@ import { FeatureModule } from './features/feature.module';
     }),
     StorefrontMissingExportsModule,
     FeatureModule,
-    StaticLayoutCmsModule,
   ],
   bootstrap: [AppComponent],
 })

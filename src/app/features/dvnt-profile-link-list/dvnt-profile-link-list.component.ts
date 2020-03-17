@@ -8,11 +8,11 @@ import {
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-profile-link-list',
-  templateUrl: './profile-link-list.component.html',
-  styleUrls: ['./profile-link-list.component.scss'],
+  selector: 'app-dvnt-profile-link-list',
+  templateUrl: './dvnt-profile-link-list.component.html',
+  styleUrls: ['./dvnt-profile-link-list.component.scss'],
 })
-export class ProfileLinkListComponent {
+export class DvntProfileLinkListComponent {
   public elements$: Observable<NavigationNode>;
 
   constructor(
