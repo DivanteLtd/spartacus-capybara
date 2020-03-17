@@ -93,6 +93,7 @@ export class BottomNavigationComponent implements OnDestroy {
 
     this.modalRef = this.modalService.open(component, {
       windowClass: className,
+      backdrop: false,
     });
 
     modalInstance = this.modalRef.componentInstance;
