@@ -5,6 +5,7 @@ import { take } from 'rxjs/operators';
 
 import { DvntModalSearchComponent } from 'src/app/features/dvnt-modal-search/dvnt-modal-search.component';
 import { DvntProfileLinkListComponent } from 'src/app/features/dvnt-profile-link-list/dvnt-profile-link-list.component';
+import { DvntModalCategoriesComponent } from '../dvnt-modal-categories/dvnt-modal-categories.component';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',
@@ -70,7 +71,11 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   }
 
   private createCategoriesModal(): void {
-    this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
+    this.createModal(
+      DvntModalCategoriesComponent,
+      'modal-full-screen',
+      'categories'
+    );
   }
 
   private createModal(
