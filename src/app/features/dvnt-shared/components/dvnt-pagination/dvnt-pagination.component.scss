@@ -1,3 +1,4 @@
+@import 'media';
 :host {
   display: flex;
   align-content: center;
@@ -6,6 +7,12 @@
 .pagination {
   margin: 0 auto;
   text-align: center;
+  padding: 0;
+
+  @include tablet-and-up {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }
 .page-item {
   .page-link {
@@ -33,7 +40,11 @@
 
   &:last-child {
     .page-link {
-      padding-left: 50px;
+      padding-left: 30px;
+
+      @include tablet-and-up {
+        padding-left: 50px;
+      }
     }
   }
 

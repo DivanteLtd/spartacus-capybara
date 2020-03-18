@@ -23,6 +23,11 @@
   background-color: var(--ssf-light-primary-darken);
   height: 50px;
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
 
   @include tablet-and-up {
     display: none;
@@ -36,7 +41,7 @@
   .filters-scroll-container {
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 40px;
+    padding: 80px 40px 40px;
     height: 100%;
     width: calc(100% + 50px);
 
