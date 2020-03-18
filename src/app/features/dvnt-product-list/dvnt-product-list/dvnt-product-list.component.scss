@@ -1,0 +1,124 @@
+@import 'mixins';
+@import 'media';
+
+.cx-page {
+  border-left: solid 1px var(--ssf-light-primary);
+}
+
+.cx-page-section {
+  padding-top: 0;
+
+  .cx-sorting {
+    &.top {
+      padding: calculateRem(20px) 0;
+
+      .btn-filters {
+        color: var(--ssf-dark-primary);
+        text-transform: none;
+        font-size: calculateRem(12px);
+        box-shadow: none !important;
+        padding: 4px 4px;
+
+        svg {
+          margin-right: calculateRem(8px);
+        }
+
+        @include tablet-and-up {
+          padding: 16px 40px;
+          font-size: calculateRem(14px);
+        }
+      }
+
+      .view-modes-label,
+      .items-found-label,
+      .items-found-total,
+      .sort-by-label {
+        font-size: calculateRem(12px);
+        color: var(--ssf-gray-primary);
+        font-weight: 300;
+        font-family: var(--ssf-secondary-font-family);
+
+        @include tablet-and-up {
+          font-size: var(--ssf-font-size-mobile);
+        }
+
+        .sort-by-label {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+
+      .items-found-label {
+        display: none;
+
+        @include tablet-and-up {
+          display: inline;
+        }
+      }
+
+      .view-modes-label {
+        color: var(--ssf-dark-primary);
+      }
+
+      .items-found-total {
+        font-weight: bold;
+        margin-left: 4px;
+        color: var(--ssf-dark-primary);
+
+        display: none;
+
+        @include tablet-and-up {
+          display: inline;
+        }
+      }
+
+      .view-modes-label {
+        margin-left: 20px;
+      }
+
+      .view-modes {
+        display: none;
+
+        @include tablet-and-up {
+          display: inline;
+        }
+      }
+
+      .btn-view-mode {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+
+        svg {
+          width: 32px;
+          height: 32px;
+
+          * {
+            fill: var(--ssf-dark-primary);
+          }
+        }
+
+        &:disabled {
+          background-color: transparent !important;
+
+          svg {
+            * {
+              fill: var(--ssf-gray-primary);
+            }
+          }
+        }
+      }
+
+      .cx-sort-dropdown {
+        span {
+          margin-right: calculateRem(8px);
+        }
+      }
+    }
+  }
+
+  .cx-product-container {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-6 col-md-3">
+    <a
+      [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+      class="cx-product-image-container"
+    >
+      <cx-media
+        class="cx-product-image"
+        [container]="product.images?.PRIMARY"
+        format="product"
+        [alt]="product.summary"
+      ></cx-media>
+    </a>
+  </div>
+  <div class="col-6 col-md-9 product-details font-roboto">
+    <a
+      [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+      class="cx-product-name"
+      [innerHtml]="product.nameHtml"
+    ></a>
+    <div *ngIf="!product.averageRating">
+      {{ 'productDetails.noReviews' | cxTranslate }}
+    </div>
+    <div class="cx-product-price" aria-label="Product price">
+      {{ product.price?.formattedValue }}
+    </div>
+    <div class="desktop-only">
+      <p class="cx-product-summary" [innerHtml]="product.summary">
+        {{ product.summary }}
+      </p>
+    </div>
+    <div class=" rating">
+      <cx-star-rating
+        *ngIf="product.averageRating"
+        [rating]="product?.averageRating"
+        [disabled]="true"
+      ></cx-star-rating>
+    </div>
+  </div>
+</div>

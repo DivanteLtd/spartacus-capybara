@@ -1,0 +1,98 @@
+// Side modal
+.side-modal {
+  z-index: 2100;
+
+  .modal-content {
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+    .close-side-modal {
+      position: absolute;
+      right: -26px;
+      top: 60px;
+      display: none;
+
+      @include tablet-and-up {
+        display: block;
+      }
+    }
+  }
+
+  &.slide-from-left {
+    .modal-content {
+      animation-name: slide-from-left;
+    }
+  }
+
+  &.slide-from-right {
+    .modal-content {
+      animation-name: slide-from-right;
+      left: auto;
+      position: fixed;
+      right: 0;
+
+      .close-side-modal {
+        right: auto;
+        left: -26px;
+      }
+    }
+  }
+
+  .modal-content,
+  .modal-dialog {
+    height: 100%;
+  }
+
+  .modal-content {
+    @include tablet-and-up {
+      width: 408px;
+    }
+  }
+
+  .modal-dialog {
+    margin: 0;
+  }
+}
+
+.side-modal-backdrop {
+  animation-duration: 0.5s;
+  animation-name: fade-in;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+  &.show {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    transform: translateX(100vw);
+  }
+  20% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,86 @@
+@import 'mixins';
+
+.cx-page-section {
+  padding-top: 0;
+
+  .cx-sorting {
+    height: calculateRem(102px);
+
+    &.top {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-bottom: solid 1px var(--ssf-light-primary);
+
+      .cx-sort-dropdown {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+
+        @include tablet-and-up {
+          margin-right: auto;
+        }
+      }
+
+      .ng-select-container {
+        height: calculateRem(48px);
+        border: none !important;
+        min-width: calculateRem(150px);
+
+        @include tablet-and-up {
+          min-width: calculateRem(200px);
+        }
+
+        input {
+          display: none;
+        }
+
+        .ng-value-label {
+          font-size: calculateRem(12px);
+
+          @include tablet-and-up {
+            font-size: var(--ssf-font-size-mobile);
+          }
+        }
+      }
+
+      .ng-dropdown-panel {
+        border: none;
+
+        .ng-dropdown-panel-items {
+          max-height: 260px;
+          box-shadow: 0 8px 11px rgba(0, 0, 0, 0.1);
+
+          .ng-option-label {
+            font-size: var(--ssf-font-size-mobile);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cx-product-image {
+  &.is-missing {
+    background-size: 177px !important;
+    min-height: 177px !important;
+  }
+}
+
+.ProductListPageTemplate .ProductLeftRefinements,
+.ProductGridPageTemplate .ProductLeftRefinements {
+  padding-top: 20px;
+}
+
+.DvntCategories {
+  max-width: 20% !important;
+  min-width: 250px;
+}
+
+.ProductListSlot {
+  max-width: 100%;
+
+  @include laptop-and-up {
+    max-width: 80% !important;
+  }
+}

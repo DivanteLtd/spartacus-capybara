@@ -75,3 +75,7 @@ p {
     line-height: calculateRem(23px);
   }
 }
+
+.font-roboto {
+  font-family: var(--ssf-secondary-font-family);
+}

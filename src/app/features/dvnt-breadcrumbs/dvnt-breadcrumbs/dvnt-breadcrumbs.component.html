@@ -1,0 +1,20 @@
+<div class="desktop-only">
+  <nav>
+    <ol>
+      <ng-container *ngFor="let crumb of myCrumbs$ | async; let last = last">
+        <ng-container *ngIf="!last; else lastElement">
+          <li class="sf-breadcrumbs__item">
+            <a [routerLink]="crumb.link">
+              {{ crumb.label }}
+            </a>
+          </li>
+        </ng-container>
+        <ng-template #lastElement>
+          <li>
+            <span>{{ crumb.label }}</span>
+          </li>
+        </ng-template>
+      </ng-container>
+    </ol>
+  </nav>
+</div>

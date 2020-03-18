@@ -1,0 +1,7 @@
+.desktop-only {
+  display: none;
+
+  @include laptop-and-up {
+    display: inherit;
+  }
+}

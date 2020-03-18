@@ -128,7 +128,7 @@
   border: none;
   box-shadow: rgba(66, 66, 66, 0.2) 0px 4px 6px 0px;
   color: var(--cx-text-color-primary);
-  transition: box-shadow var(--ssf-button-hover-transition-time) linear;
+  transition: box-shadow var(--ssf-button-hover-transition-time);
 
   &-primary {
     background-color: var(--cx-color-primary);
