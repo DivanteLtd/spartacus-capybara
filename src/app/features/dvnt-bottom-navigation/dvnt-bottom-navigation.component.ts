@@ -37,6 +37,11 @@ export class DvntBottomNavigationComponent implements OnDestroy {
     this.createSearchModal();
   }
 
+  public setCategoriesAction(event: Event): void {
+    this.preventOtherActions(event);
+    this.createCategoriesModal();
+  }
+
   public setProfileAction(event: Event): void {
     this.preventOtherActions(event);
     this.authService
@@ -61,6 +66,10 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   }
 
   private createSearchModal(): void {
+    this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
+  }
+
+  private createCategoriesModal(): void {
     this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
   }
 

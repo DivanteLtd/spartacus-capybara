@@ -3,13 +3,10 @@ import {
   CategoryNavigationComponent,
   CmsComponentData,
   NavigationService,
+  NavigationNode,
 } from '@spartacus/storefront';
-import {
-  CmsComponent,
-  CmsNavigationComponent,
-  CmsService,
-} from '@spartacus/core';
-import { take } from 'rxjs/operators';
+import { CmsNavigationComponent, CmsService } from '@spartacus/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dvnt-categories',
@@ -17,7 +14,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./dvnt-categories.component.scss'],
 })
 export class DvntCategoriesComponent extends CategoryNavigationComponent {
-  categoriesData$;
+  public categoriesData$: Observable<NavigationNode>;
 
   constructor(
     componentData: CmsComponentData<CmsNavigationComponent>,
