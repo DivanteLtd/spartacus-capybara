@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RoutingService } from '@spartacus/core';
 
 @Component({
-  selector: 'app-page-not-found',
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.scss'],
+  selector: 'app-dvnt-page-not-found',
+  templateUrl: './dvnt-page-not-found.component.html',
+  styleUrls: ['./dvnt-page-not-found.component.scss'],
 })
-export class PageNotFoundComponent {
+export class DvntPageNotFoundComponent {
   constructor(private routingService: RoutingService) {}
 
   public navigateToHomePage(): void {

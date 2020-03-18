@@ -5,10 +5,10 @@ import { switchMap } from 'rxjs/operators';
 import { AuthService, UserService, User } from '@spartacus/core';
 
 @Component({
-  selector: 'app-custom-wish-list-icon',
-  templateUrl: './custom-wish-list-icon.component.html',
+  selector: 'app-dvnt-wish-list-icon',
+  templateUrl: './dvnt-wish-list-icon.component.html',
 })
-export class CustomWishListIconComponent implements OnInit {
+export class DvntWishListIconComponent implements OnInit {
   user$: Observable<User>;
 
   constructor(private auth: AuthService, private userService: UserService) {}
