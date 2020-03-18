@@ -1,0 +1,20 @@
+@import 'variables';
+
+.item-container {
+  color: var(--cx-color-light);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-decoration: none !important;
+
+  .name {
+    font-family: var(--ssf-secondary-font-family);
+    margin-bottom: 4px;
+  }
+
+  .price {
+    font-family: var(--ssf-secondary-font-family);
+    font-weight: bold;
+    margin: 0;
+  }
+}

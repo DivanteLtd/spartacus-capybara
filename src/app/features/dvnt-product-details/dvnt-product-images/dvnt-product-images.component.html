@@ -1,0 +1,15 @@
+<div *ngIf="thumbs$ | async as thumbs">
+  <div *ngIf="thumbs.length; else onlyMainImage">
+    <cx-media
+      *ngFor="let thumb of thumbs"
+      [container]="thumb.value.container"
+      format="zoom"
+    >
+    </cx-media>
+  </div>
+  <ng-template #onlyMainImage>
+    <div *ngIf="mainImage$ | async as main">
+      <cx-media [container]="main" format="zoom"> </cx-media>
+    </div>
+  </ng-template>
+</div>

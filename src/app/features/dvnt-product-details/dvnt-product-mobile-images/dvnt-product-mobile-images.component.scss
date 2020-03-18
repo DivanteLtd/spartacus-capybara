@@ -1,0 +1,32 @@
+:host {
+  width: 100vw;
+}
+
+.box-container {
+  height: auto;
+  width: 100%;
+}
+
+.content-container {
+  height: 400px;
+  min-height: 0;
+  overflow: auto;
+  position: relative;
+}
+
+.horizontal-container {
+  min-height: 0 !important;
+}
+
+.swiper-container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+}

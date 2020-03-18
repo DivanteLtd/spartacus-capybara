@@ -1,0 +1,27 @@
+<cx-carousel
+  [items]="items$ | async"
+  [template]="carouselItem"
+  title="We found other products you migth like"
+>
+</cx-carousel>
+
+<ng-template #carouselItem let-item="item">
+  <a
+    tabindex="0"
+    [routerLink]="{ cxRoute: 'product', params: item } | cxUrl"
+    class="item-container"
+  >
+    <cx-media
+      *ngIf="item.images?.PRIMARY"
+      [container]="item.images.PRIMARY"
+      format="product"
+    >
+    </cx-media>
+    <p class="name">{{ item.name }}</p>
+    <h4 class="price">{{ item.price?.formattedValue }}</h4>
+    <cx-star-rating
+      [rating]="item?.averageRating"
+      [disabled]="true"
+    ></cx-star-rating>
+  </a>
+</ng-template>

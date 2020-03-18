@@ -1,0 +1,34 @@
+<div *ngIf="thumbs$ | async as thumbs" class="box-container">
+  <div class="horizontal-container">
+    <div class="content-container">
+      <swiper
+        *ngIf="thumbs.length; else onlyMainImage"
+        [config]="config"
+        class="swiper-container"
+      >
+        <cx-media
+          *ngFor="let thumb of thumbs"
+          [container]="thumb.value.container"
+          class="swiper-slide"
+          format="zoom"
+        >
+        </cx-media>
+      </swiper>
+
+      <ng-template #onlyMainImage>
+        <swiper
+          *ngIf="mainImage$ | async as main"
+          [config]="config"
+          class="swiper-container"
+          disabled="true"
+        >
+          <cx-media
+            [container]="main"
+            class="swiper-slide"
+            format="zoom"
+          ></cx-media>
+        </swiper>
+      </ng-template>
+    </div>
+  </div>
+</div>

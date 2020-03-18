@@ -22,7 +22,7 @@ export class DvntProfileLinkListComponent {
     private routingService: RoutingService
   ) {
     this.elements$ = this.navigationService.createNavigation(
-      cmsService.getComponentData('MyAccountComponent')
+      this.cmsService.getComponentData('MyAccountComponent')
     );
   }
 

@@ -1,0 +1,29 @@
+<div class="stock">
+  Quantity
+  <span *ngIf="product.stock?.stockLevel; else stockLevelStatusField">
+    ({{ product.stock?.stockLevel }} available)
+  </span>
+  <ng-template #stockLevelStatusField>
+    <span> ({{ product.stock?.stockLevelStatus }}) </span>
+  </ng-template>
+</div>
+
+<div *ngIf="productCode" class="quantity-and-cart">
+  <cx-item-counter
+    *ngIf="hasStock"
+    (update)="updateCount($event)"
+    [max]="maxQuantity || null"
+    [min]="1"
+    [value]="quantity"
+    isValueChangeable="true"
+  ></cx-item-counter>
+  <button
+    *ngIf="hasStock"
+    (click)="addToCart()"
+    [disabled]="quantity <= 0 || quantity > maxQuantity"
+    class="btn btn-primary btn-block"
+    type="button"
+  >
+    {{ 'addToCart.addToCart' | cxTranslate }}
+  </button>
+</div>

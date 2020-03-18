@@ -1,14 +1,29 @@
 @import 'variables';
+@import 'media';
 
 .footer-container {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: auto;
-  max-width: 1140px;
+  max-width: 100vw;
 
-  .fotter-column {
-    margin: 3vw;
+  @include tablet-and-up {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1140px;
+  }
+
+  .footer-column {
+    margin: 0.5vw;
+    width: 100%;
+
+    @include tablet-and-up {
+      margin: 3vw;
+      width: auto;
+    }
 
     .footer-column-title {
       font-family: $primary-font-family;

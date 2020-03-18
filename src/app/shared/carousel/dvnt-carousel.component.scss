@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'media';
+@import 'mixins';
+
+.carousel-header {
+  border-bottom: 1px var(--ssf-light-primary) solid;
+  font-family: $primary-font-family;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 10px;
+
+  @include desktop-and-up {
+    border: none;
+    font-size: 24px;
+    padding-bottom: 0px;
+  }
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  transition-delay: 0s !important;
+  transition: 0.2s all ease-in-out !important;
+
+  &:hover {
+    @include box-shadow(
+      0px,
+      4px,
+      35px,
+      0px,
+      var(--cx-grid-item-box-shadow-color)
+    );
+  }
+}
+
+.previous-button {
+  align-self: center;
+  margin-right: 10px;
+}
+
+.next-button {
+  align-self: center;
+  margin-left: 10px;
+}

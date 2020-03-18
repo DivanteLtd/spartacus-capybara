@@ -1,0 +1,12 @@
+cx-add-to-wishlist {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    padding: 16px 0px !important;
+  }
+
+  cx-icon {
+    display: none !important;
+  }
+}
