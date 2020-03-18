@@ -1,0 +1,22 @@
+@import 'media';
+
+.stock {
+  margin-bottom: 10px;
+}
+.quantity-and-cart {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include laptop-and-up {
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  cx-item-counter {
+    margin-left: 5px;
+
+    @include laptop-and-up {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.name {
+  margin: 0;
+}
+
+.price-and-rating {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .price {
+    justify-content: flex-start;
+  }
+  .rating {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+    .reviews {
+      margin-left: 5px;
+    }
+  }
+}
+
+.code {
+  color: var(--ssf-black);
+  margin: 40px 0 60px;
+}

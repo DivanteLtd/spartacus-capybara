@@ -1,3 +1,7 @@
+cx-searchbox > * {
+  background-color: transparent;
+}
+
 cx-searchbox {
   position: relative;
   z-index: 20;
@@ -6,7 +10,7 @@ cx-searchbox {
     height: 40px;
     margin: 0;
     position: relative;
-    width: 280px;
+    width: 240px;
 
     &.dirty .search {
       display: none;

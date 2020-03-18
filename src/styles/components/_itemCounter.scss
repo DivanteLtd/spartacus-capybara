@@ -1,0 +1,35 @@
+@import 'media';
+
+cx-item-counter {
+  height: var(--ssf-button-mobile-height);
+
+  .cx-counter-wrapper {
+    height: 100%;
+
+    .cx-counter {
+      background-color: var(--ssf-white);
+      border-radius: 0;
+      border: 1px solid var(--ssf-light-primary);
+      height: 100%;
+
+      @include laptop-and-up {
+        background-color: var(--ssf-light-primary);
+        border: none;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-size: 30px;
+        outline: none;
+        width: 30px;
+      }
+
+      input {
+        text-align: center;
+        width: 40px;
+        border: none;
+      }
+    }
+  }
+}

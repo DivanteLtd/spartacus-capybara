@@ -1,0 +1,21 @@
+<div class="product-details-container">
+  <app-dvnt-product-mobile-images
+    *ngIf="isMobileView$ | async; else desktopImagesGallery"
+  ></app-dvnt-product-mobile-images>
+
+  <ng-template #desktopImagesGallery>
+    <app-dvnt-product-images></app-dvnt-product-images>
+  </ng-template>
+
+  <div class="product-details-content">
+    <app-dvnt-product-intro></app-dvnt-product-intro>
+    <app-dvnt-add-product-to-cart
+      *ngIf="product$ | async as product"
+      [product]="product"
+    ></app-dvnt-add-product-to-cart>
+
+    <cx-add-to-wishlist></cx-add-to-wishlist>
+
+    <app-dvnt-product-tabs-wrapper></app-dvnt-product-tabs-wrapper>
+  </div>
+</div>

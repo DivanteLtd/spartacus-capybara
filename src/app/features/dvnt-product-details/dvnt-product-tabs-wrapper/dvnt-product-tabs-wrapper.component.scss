@@ -1,0 +1,9 @@
+@import 'media';
+
+:host {
+  margin-top: 20px;
+
+  @include tablet-and-up {
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,81 @@
+<ng-container *ngIf="items?.length > 0 && (size$ | async) as size">
+  <h3 *ngIf="title" class="carousel-header">{{ title }}</h3>
+
+  <div class="carousel-panel" [ngClass]="'size-' + size">
+    <button
+      *ngIf="size < items.length"
+      (click)="activeSlide = activeSlide - size"
+      [disabled]="activeSlide === 0"
+      class="previous-button arrow-button"
+    >
+      <svg
+        width="24"
+        height="12"
+        viewBox="0 0 24 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M24 7L2 7L2 5L24 5L24 7Z" fill="#1D1F22" />
+        <path
+          d="M6.61667 1.20934e-07L8 1.25423L2.76478 6L8 10.7458L6.61667 12L-5.24538e-07 5.99998L6.61667 1.20934e-07Z"
+          fill="#1D1F22"
+        />
+      </svg>
+    </button>
+
+    <div class="slides">
+      <ng-container *ngFor="let _ of items; let i = index">
+        <div class="slide" *ngIf="i % size === 0">
+          <ng-container
+            *ngFor="let item of items | slice: i:i + size; let j = index"
+          >
+            <div
+              *ngIf="item | async as data"
+              class="item"
+              [class.active]="i === activeSlide"
+            >
+              <ng-container
+                *ngTemplateOutlet="template; context: { item: data }"
+              ></ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+
+    <button
+      *ngIf="size < items.length"
+      (click)="activeSlide = activeSlide + size"
+      [disabled]="activeSlide > items.length - size - 1"
+      class="next-button arrow-button"
+      tabindex="0"
+    >
+      <svg
+        width="24"
+        height="12"
+        viewBox="0 0 24 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 5L22 5L22 7L-3.49691e-07 7L0 5Z" fill="#1D1F22" />
+        <path
+          d="M17.3833 12L16 10.7458L21.2352 6L16 1.25423L17.3833 2.41869e-07L24 6.00002L17.3833 12Z"
+          fill="#1D1F22"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <div *ngIf="!hideIndicators && size < items.length" class="indicators">
+    <ng-container *ngFor="let _ of items; let i = index">
+      <button
+        *ngIf="i % size === 0"
+        (focus)="activeSlide = i"
+        [disabled]="i === activeSlide"
+        tabindex="0"
+      >
+        <cx-icon [type]="indicatorIcon"></cx-icon>
+      </button>
+    </ng-container>
+  </div>
+</ng-container>

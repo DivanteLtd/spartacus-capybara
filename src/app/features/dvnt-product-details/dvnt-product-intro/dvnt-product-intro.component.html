@@ -1,0 +1,28 @@
+<div *ngIf="product$ | async as product">
+  <h1 class="name" *ngIf="product?.name">
+    {{ product.name }}
+  </h1>
+
+  <div class="price-and-rating">
+    <div class="price">
+      <h3>
+        {{ product?.price?.formattedValue }}
+      </h3>
+    </div>
+    <div class="rating" *ngIf="product.averageRating">
+      <cx-star-rating
+        [rating]="product?.averageRating"
+        [disabled]="true"
+      ></cx-star-rating>
+      <div class="reviews">Read all {{ product?.numberOfReviews }} review</div>
+    </div>
+
+    <div class="rating" *ngIf="!product.averageRating">
+      {{ 'productDetails.noReviews' | cxTranslate }}
+    </div>
+  </div>
+
+  <p class="code">
+    {{ 'productSummary.id' | cxTranslate }} {{ product?.code }}
+  </p>
+</div>

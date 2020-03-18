@@ -3,8 +3,8 @@ import { RoutingService, AuthService } from '@spartacus/core';
 import { ModalService, ModalRef } from '@spartacus/storefront';
 import { take } from 'rxjs/operators';
 
-import { DvntModalSearchComponent } from '../dvnt-modal-search/dvnt-modal-search.component';
-import { DvntProfileLinkListComponent } from '../dvnt-profile-link-list/dvnt-profile-link-list.component';
+import { DvntModalSearchComponent } from 'src/app/features/dvnt-modal-search/dvnt-modal-search.component';
+import { DvntProfileLinkListComponent } from 'src/app/features/dvnt-profile-link-list/dvnt-profile-link-list.component';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',

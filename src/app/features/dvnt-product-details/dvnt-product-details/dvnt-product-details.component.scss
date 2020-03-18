@@ -1,0 +1,40 @@
+@import 'media';
+
+.product-details-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  @include desktop-and-up {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  app-dvnt-product-images {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include desktop-and-up {
+      align-items: flex-start;
+      flex: 0 0 calc(50% - 50px);
+      margin-right: 50px;
+    }
+  }
+
+  .product-details-content {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    overflow: auto;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    @include desktop-and-up {
+      padding: 0;
+    }
+  }
+}

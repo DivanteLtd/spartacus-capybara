@@ -11,12 +11,14 @@
 @import 'modals';
 
 // COMPONENTS
-// Header
+@import 'addToWishlist';
 @import 'bottomNavigation';
-@import 'siteLogin';
-@import 'siteLogo';
+@import 'categories';
+@import 'itemCounter';
 @import 'navigationBar';
+@import 'productList';
 @import 'searchbox';
 @import 'siteContext';
-@import 'productList';
-@import 'categories';
+@import 'siteLogin';
+@import 'siteLogo';
+@import 'startRating';
