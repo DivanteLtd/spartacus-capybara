@@ -17,6 +17,7 @@ import { DvntHeaderLogoComponent } from './dvnt-header-logo/dvnt-header-logo.com
 import { DvntLoginComponent } from './dvnt-login/dvnt-login.component';
 import { DvntMiniCartComponent } from './dvnt-mini-cart/dvnt-mini-cart.component';
 import { DvntWishListIconComponent } from './dvnt-wish-list-icon/dvnt-wish-list-icon.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DvntWishListIconComponent } from './dvnt-wish-list-icon/dvnt-wish-list-
   imports: [
     CommonModule,
     RouterModule,
+    DvntSharedModule,
 
     // SPRATACUS
     I18nModule,

@@ -9,6 +9,7 @@ import {
 } from '@spartacus/core';
 
 import { DvntBottomNavigationComponent } from './dvnt-bottom-navigation.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [DvntBottomNavigationComponent],
@@ -31,6 +32,7 @@ import { DvntBottomNavigationComponent } from './dvnt-bottom-navigation.componen
         },
       },
     }),
+    DvntSharedModule,
   ],
   entryComponents: [DvntBottomNavigationComponent],
 })

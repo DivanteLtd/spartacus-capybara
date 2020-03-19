@@ -2,6 +2,11 @@
   [routerLink]="{ cxRoute: 'cart' } | cxUrl"
   class="header-navigation-icon navigation-link"
 >
-  <img alt="Cart" class="cart-icon" src="../../../../assets/icons/cart.svg" />
+  <app-dvnt-icon
+    height="32"
+    icon="cart"
+    ngClass="cart-icon"
+    width="32"
+  ></app-dvnt-icon>
   <span *ngIf="quantity$ | async" class="count">{{ quantity$ | async }}</span>
 </a>

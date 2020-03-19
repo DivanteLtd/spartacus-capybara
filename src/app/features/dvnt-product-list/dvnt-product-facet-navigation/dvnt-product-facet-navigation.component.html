@@ -1,10 +1,12 @@
 <ng-container *ngIf="searchResult$ | async as searchResult">
   <div class="modal-header">
-    <img
+    <app-dvnt-icon
       (click)="dismissFiltersModal()"
-      class="back-icon"
-      src="assets/icons/chevron/left.svg"
-    />
+      height="30"
+      icon="left"
+      ngClass="back-icon"
+      width="30"
+    ></app-dvnt-icon>
   </div>
   <button
     class="btn-icon btn-icon-primary close-side-modal"
