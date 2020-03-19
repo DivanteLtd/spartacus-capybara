@@ -9,6 +9,7 @@ import {
 } from '@spartacus/core';
 
 import { DvntPageNotFoundComponent } from './dvnt-page-not-found.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [DvntPageNotFoundComponent],
@@ -29,6 +30,7 @@ import { DvntPageNotFoundComponent } from './dvnt-page-not-found.component';
         },
       },
     }),
+    DvntSharedModule,
   ],
   entryComponents: [DvntPageNotFoundComponent],
 })

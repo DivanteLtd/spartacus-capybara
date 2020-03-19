@@ -1,10 +1,12 @@
 <div *ngIf="elements$ | async as elements" class="modal-content">
   <div class="modal-header">
-    <img
+    <app-dvnt-icon
       (click)="closeModal()"
-      class="back-icon"
-      src="../../../assets/icons/chevron/left.svg"
-    />
+      height="30"
+      icon="left"
+      ngClass="back-icon"
+      width="30"
+    ></app-dvnt-icon>
     <span>
       {{ elements.children[0].title }}
     </span>
