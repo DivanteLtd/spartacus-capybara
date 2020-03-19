@@ -23,61 +23,10 @@ body {
   font-family: var(--ssf-primary-font-family);
 }
 
-// MODAL
-.modal-full-screen {
-  padding-bottom: 60px;
-  width: 100%;
+// HELPERS
 
-  @include laptop-and-up {
-    margin-bottom: 0;
-  }
-
-  .modal-dialog {
-    height: 100%;
-    margin: 0;
-    min-height: 100%;
-    min-width: 100%;
-    width: 100%;
-
-    .modal-content {
-      height: calc(100vh - 60px);
-      margin-bottom: 60px;
-      width: 100%;
-
-      .header {
-        align-items: center;
-        background-color: var(--cx-modal-header-color);
-        display: flex;
-        font-weight: 500;
-        height: 50px;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-
-        .back-icon {
-          left: 10px;
-          position: absolute;
-        }
-      }
-
-      .content {
-        height: calc(100vh - 120px);
-        overflow: scroll;
-        padding: 0 20px;
-      }
-    }
-  }
-}
-
-.modal-full-screen-with-column {
-  @extend .modal-full-screen;
-  width: calc(100% - 60px);
-
-  .modal-dialog {
-    min-height: calc(100% - 60px);
-    min-width: calc(100% - 60px);
-    width: calc(100% - 60px);
-  }
+.hide {
+  display: none !important;
 }
 
 .topBanner {

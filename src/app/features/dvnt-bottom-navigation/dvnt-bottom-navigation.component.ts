@@ -59,30 +59,18 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   }
 
   private createProfileModal(): void {
-    this.createModal(
-      DvntProfileLinkListComponent,
-      'modal-full-screen-with-column',
-      'profile'
-    );
+    this.createModal(DvntProfileLinkListComponent, 'profile');
   }
 
   private createSearchModal(): void {
-    this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
+    this.createModal(DvntModalSearchComponent, 'search');
   }
 
   private createCategoriesModal(): void {
-    this.createModal(
-      DvntModalCategoriesComponent,
-      'modal-full-screen',
-      'categories'
-    );
+    this.createModal(DvntModalCategoriesComponent, 'categories');
   }
 
-  private createModal(
-    component: any,
-    className: string,
-    componentType: string
-  ): void {
+  private createModal(component: any, componentType: string): void {
     if (this.modalService.getActiveModal()) {
       if (
         this.modalService.getActiveModal().componentInstance.type ===
@@ -91,23 +79,19 @@ export class DvntBottomNavigationComponent implements OnDestroy {
         this.clearModalRef();
       } else {
         this.modalService.dismissActiveModal();
-        this.createModelInstance(component, className, componentType);
+        this.createModelInstance(component, componentType);
       }
     } else {
-      this.createModelInstance(component, className, componentType);
+      this.createModelInstance(component, componentType);
     }
   }
 
-  private createModelInstance(
-    component: any,
-    className: string,
-    componentType: string
-  ): void {
+  private createModelInstance(component: any, componentType: string): void {
     let modalInstance: any;
 
     this.modalRef = this.modalService.open(component, {
-      windowClass: className,
-      backdrop: false,
+      windowClass: 'side-modal slide-from-left',
+      backdropClass: 'side-modal-backdrop',
     });
 
     modalInstance = this.modalRef.componentInstance;

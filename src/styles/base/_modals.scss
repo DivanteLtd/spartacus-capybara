@@ -6,6 +6,29 @@
     animation-duration: 0.5s;
     animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 
+    .modal-header {
+      align-items: center;
+      background-color: var(--ssf-light-primary-darken);
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      left: 0;
+      padding: 0 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9;
+
+      @include tablet-and-up {
+        display: none;
+      }
+
+      .back-icon {
+        position: absolute;
+        left: 8px;
+      }
+    }
+
     .close-side-modal {
       position: absolute;
       right: -26px;
@@ -14,6 +37,23 @@
 
       @include tablet-and-up {
         display: block;
+      }
+    }
+
+    .modal-container {
+      height: 100%;
+      overflow: hidden;
+      padding: 50px 40px;
+
+      .modal-scroll-container {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        width: calc(100% + 40px);
+
+        &.padding-both-sides {
+          width: 100%;
+        }
       }
     }
   }

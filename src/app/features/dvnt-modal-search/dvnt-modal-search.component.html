@@ -1,5 +1,5 @@
 <div class="modal-content">
-  <div class="header">
+  <div class="modal-header">
     <img
       (click)="closeModal()"
       class="back-icon"
@@ -10,46 +10,48 @@
     </span>
   </div>
 
-  <div class="content">
-    <div class="form-group">
-      <label class="searchbox" [class.dirty]="!!searchInput.value">
-        <input
-          #searchInput
-          (blur)="close($event)"
-          (focus)="open()"
-          (input)="search(searchInput.value)"
-          (keydown.enter)="launchSearchResult($event, searchInput.value)"
-          (keydown.escape)="close($event)"
-          [placeholder]="'searchBox.placeholder' | cxTranslate"
-          aria-label="search"
-          class="form-control"
-        />
-      </label>
-    </div>
+  <div class="modal-container">
+    <div class="modal-scroll-container padding-both-sides">
+      <div class="form-group">
+        <label class="searchbox" [class.dirty]="!!searchInput.value">
+          <input
+            #searchInput
+            (blur)="close($event)"
+            (focus)="open()"
+            (input)="search(searchInput.value)"
+            (keydown.enter)="launchSearchResult($event, searchInput.value)"
+            (keydown.escape)="close($event)"
+            [placeholder]="'searchBox.placeholder' | cxTranslate"
+            aria-label="search"
+            class="form-control"
+          />
+        </label>
+      </div>
 
-    <div *ngIf="results$ | async as result" class="results">
-      <div
-        *ngIf="result.message"
-        [innerHTML]="result.message"
-        class="message"
-      ></div>
-
-      <div class="products" *ngIf="result.products">
+      <div *ngIf="results$ | async as result" class="results">
         <div
-          *ngFor="let product of result.products"
-          (click)="navigateToProductPage(product)"
-          [class.has-media]="config.displayProductImages"
-          class="single-product"
-        >
-          <cx-media
-            *ngIf="config.displayProductImages"
-            [alt]="product.summary"
-            [container]="product.images?.PRIMARY"
-            class="product-image"
-            format="thumbnail"
-          ></cx-media>
-          <h4 class="name" [innerHTML]="product.nameHtml"></h4>
-          <span class="price">{{ product.price?.formattedValue }}</span>
+          *ngIf="result.message"
+          [innerHTML]="result.message"
+          class="message"
+        ></div>
+
+        <div class="products" *ngIf="result.products">
+          <div
+            *ngFor="let product of result.products"
+            (click)="navigateToProductPage(product)"
+            [class.has-media]="config.displayProductImages"
+            class="single-product"
+          >
+            <cx-media
+              *ngIf="config.displayProductImages"
+              [alt]="product.summary"
+              [container]="product.images?.PRIMARY"
+              class="product-image"
+              format="thumbnail"
+            ></cx-media>
+            <h4 class="name" [innerHTML]="product.nameHtml"></h4>
+            <span class="price">{{ product.price?.formattedValue }}</span>
+          </div>
         </div>
       </div>
     </div>

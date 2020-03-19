@@ -1,1 +1,20 @@
-<p>dvnt-modal-categories works!</p>
+<div class="modal-content">
+  <div class="modal-header">
+    <img
+      (click)="closeModal()"
+      class="back-icon"
+      src="../../../assets/icons/chevron/left.svg"
+    />
+    <span>
+      Categories
+    </span>
+  </div>
+
+  <div class="modal-container">
+    <div class="modal-scroll-container">
+      <div *ngIf="categoriesData$ | async as node">
+        <app-categories-row [parent]="node"></app-categories-row>
+      </div>
+    </div>
+  </div>
+</div>
