@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { DvntBottomNavigationModule } from './dvnt-bottom-navigation/dvnt-bottom-navigation.module';
 import { DvntBreadcrumbsModule } from './dvnt-breadcrumbs/dvnt-breadcrumbs.module';
+import { DvntCategoriesWrapperModule } from './dvnt-categories-wrapper/dvnt-categories-wrapper.module';
 import { DvntFooterModule } from './dvnt-footer/dvnt-footer.module';
 import { DvntHeaderModule } from './dvnt-header/dvnt-header.module';
+import { DvntModalCategoriesModule } from './dvnt-modal-categories/dvnt-modal-categories.module';
 import { DvntModalSearchModule } from './dvnt-modal-search/dvnt-modal-search.module';
 import { DvntPageNotFoundModule } from './dvnt-page-not-found/dvnt-page-not-found.module';
 import { DvntProductDetailsModule } from './dvnt-product-details/dvnt-product-details.module';
@@ -15,8 +17,10 @@ import { StyleGuideModule } from './style-guide/style-guide.module';
   imports: [
     DvntBottomNavigationModule,
     DvntBreadcrumbsModule,
+    DvntCategoriesWrapperModule,
     DvntFooterModule,
     DvntHeaderModule,
+    DvntModalCategoriesModule,
     DvntModalSearchModule,
     DvntPageNotFoundModule,
     DvntProductDetailsModule,

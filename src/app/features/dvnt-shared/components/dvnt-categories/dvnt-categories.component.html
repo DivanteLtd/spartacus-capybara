@@ -1,0 +1,3 @@
+<div *ngIf="categoriesData$ | async as node" [ngClass]="containerClass">
+  <app-dvnt-categories-row [parent]="node"></app-dvnt-categories-row>
+</div>

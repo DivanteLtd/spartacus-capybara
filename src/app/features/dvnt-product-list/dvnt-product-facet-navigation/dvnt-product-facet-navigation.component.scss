@@ -19,36 +19,8 @@
   display: none !important;
 }
 
-.filter-modal-header {
-  background-color: var(--ssf-light-primary-darken);
-  height: 50px;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9;
-
-  @include tablet-and-up {
-    display: none;
-  }
-}
-
-.filters-container {
-  height: 100%;
-  overflow: hidden;
-
-  .filters-scroll-container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 80px 40px 40px;
-    height: 100%;
-    width: calc(100% + 50px);
-
-    .cx-search-facet {
-      padding: 20px 50px 20px 20px;
-    }
-  }
+.cx-search-facet {
+  padding: 20px 50px 20px 20px;
 }
 
 .cx-facet-checkbox {

@@ -1,5 +1,5 @@
 <div *ngIf="elements$ | async as elements" class="modal-content">
-  <div class="header">
+  <div class="modal-header">
     <img
       (click)="closeModal()"
       class="back-icon"
@@ -10,13 +10,15 @@
     </span>
   </div>
 
-  <div *ngIf="elements.children.length" class="content">
-    <div
-      *ngFor="let element of elements.children[0].children"
-      (click)="navigateTo(element.url)"
-      class="element"
-    >
-      {{ element.title }}
+  <div class="modal-container">
+    <div class="modal-scroll-container">
+      <div
+        *ngFor="let element of elements.children[0].children"
+        (click)="navigateTo(element.url)"
+        class="element"
+      >
+        {{ element.title }}
+      </div>
     </div>
   </div>
 </div>

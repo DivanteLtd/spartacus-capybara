@@ -20,13 +20,13 @@
       Profile
     </span>
   </div>
-  <div
-    (click)="navigateTo('my-account/wishlist', $event)"
-    class="navigation-item"
-  >
-    <img src="../../../assets/icons/wish2.svg" class="navigation-item-icon" />
+  <div (click)="setCategoriesAction($event)" class="navigation-item">
+    <img
+      src="../../../assets/icons/categories.svg"
+      class="navigation-item-icon"
+    />
     <span class="navigation-item-label">
-      Wish list
+      Categories
     </span>
   </div>
   <div (click)="navigateTo('cart', $event)" class="navigation-item cart-item">
