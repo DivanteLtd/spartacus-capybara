@@ -19,8 +19,12 @@
         box-shadow: none !important;
         padding: 4px 4px;
 
-        svg {
+        app-dvnt-icon {
           margin-right: calculateRem(8px);
+
+          * {
+            fill: red !important;
+          }
         }
 
         @include tablet-and-up {

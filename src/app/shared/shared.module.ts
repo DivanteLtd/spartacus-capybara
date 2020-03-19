@@ -11,6 +11,7 @@ const imports = [
   RouterModule,
   UrlModule,
   MediaModule,
+  IconModule,
 ];
 
 @NgModule({
