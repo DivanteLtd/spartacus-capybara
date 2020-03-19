@@ -11,7 +11,8 @@
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets,styles}/**/*{.ts,.js,.json,.css,.scss}\"",
-    "format:all": "prettier --config ./.prettierrc --write \"src/{app,environments,assets,styles}/**/*{.ts,.js,.json,.css,.scss}\""
+    "format:all": "prettier --config ./.prettierrc --write \"src/{app,environments,assets,styles}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "generate:icons-sheet": "svg-sprite-generate -d resources/icons -o src/assets/icons-sheet.svg"
   },
   "private": true,
   "husky": {
@@ -67,6 +68,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "protractor": "~5.4.0",
+    "svg-sprite-generator": "^0.0.7",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"

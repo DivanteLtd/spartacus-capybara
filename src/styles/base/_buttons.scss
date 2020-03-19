@@ -227,3 +227,13 @@
     }
   }
 }
+
+button {
+  &:disabled {
+    svg {
+      * {
+        fill: var(--ssf-light-primary-darken);
+      }
+    }
+  }
+}
