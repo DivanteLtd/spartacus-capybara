@@ -1,9 +1,0 @@
-<ul>
-  <li *ngFor="let child of parent.children" class="footer-menu-fourthParent">
-    <a [href]="child.url" [ngClass]="{ hide: !child.title }">
-      {{ child.title }}
-    </a>
-
-    <app-categories-row [parent]="child"></app-categories-row>
-  </li>
-</ul>

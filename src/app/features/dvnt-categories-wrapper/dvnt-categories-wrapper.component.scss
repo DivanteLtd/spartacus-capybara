@@ -1,0 +1,10 @@
+@import 'mixins';
+.categories-container {
+  .categories-header {
+    align-items: center;
+    display: flex;
+    height: calculateRem(102px);
+    border-bottom: solid 1px var(--ssf-light-primary);
+    padding-left: 40px;
+  }
+}

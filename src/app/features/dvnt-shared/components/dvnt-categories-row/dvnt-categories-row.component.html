@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let child of parent.children" class="footer-menu">
+    <a [href]="child.url" [ngClass]="{ hide: !child.title }">
+      {{ child.title }}
+    </a>
+
+    <app-dvnt-categories-row [parent]="child"></app-dvnt-categories-row>
+  </li>
+</ul>

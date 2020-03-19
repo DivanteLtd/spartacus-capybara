@@ -2,11 +2,11 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NavigationNode } from '@spartacus/storefront';
 
 @Component({
-  selector: 'app-categories-row',
-  templateUrl: './categories-row.component.html',
-  styleUrls: ['./categories-row.component.scss'],
+  selector: 'app-dvnt-categories-row',
+  templateUrl: './dvnt-categories-row.component.html',
+  styleUrls: ['./dvnt-categories-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CategoriesRowComponent {
+export class DvntCategoriesRowComponent {
   @Input() parent: NavigationNode;
 }

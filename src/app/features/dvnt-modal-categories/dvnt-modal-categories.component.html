@@ -12,9 +12,9 @@
 
   <div class="modal-container">
     <div class="modal-scroll-container">
-      <div *ngIf="categoriesData$ | async as node">
-        <app-categories-row [parent]="node"></app-categories-row>
-      </div>
+      <app-dvnt-categories
+        [categoriesData$]="categoriesData$"
+      ></app-dvnt-categories>
     </div>
   </div>
 </div>

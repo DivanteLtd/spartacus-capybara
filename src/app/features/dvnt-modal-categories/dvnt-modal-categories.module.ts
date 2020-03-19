@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DvntModalCategoriesComponent } from './dvnt-modal-categories.component';
 import { NavigationModule } from '@spartacus/storefront';
-import { CategoriesRowComponent } from './categories-row/categories-row.component';
+
+import { DvntModalCategoriesComponent } from './dvnt-modal-categories.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
-  declarations: [DvntModalCategoriesComponent, CategoriesRowComponent],
-  imports: [CommonModule, NavigationModule],
-  entryComponents: [DvntModalCategoriesComponent, CategoriesRowComponent],
+  declarations: [DvntModalCategoriesComponent],
+  imports: [CommonModule, NavigationModule, DvntSharedModule],
+  entryComponents: [DvntModalCategoriesComponent],
 })
 export class DvntModalCategoriesModule {}
