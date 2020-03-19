@@ -5,6 +5,7 @@ import { take } from 'rxjs/operators';
 
 import { DvntModalSearchComponent } from 'src/app/features/dvnt-modal-search/dvnt-modal-search.component';
 import { DvntProfileLinkListComponent } from 'src/app/features/dvnt-profile-link-list/dvnt-profile-link-list.component';
+import { DvntModalCategoriesComponent } from '../dvnt-modal-categories/dvnt-modal-categories.component';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',
@@ -37,6 +38,11 @@ export class DvntBottomNavigationComponent implements OnDestroy {
     this.createSearchModal();
   }
 
+  public setCategoriesAction(event: Event): void {
+    this.preventOtherActions(event);
+    this.createCategoriesModal();
+  }
+
   public setProfileAction(event: Event): void {
     this.preventOtherActions(event);
     this.authService
@@ -53,22 +59,18 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   }
 
   private createProfileModal(): void {
-    this.createModal(
-      DvntProfileLinkListComponent,
-      'modal-full-screen-with-column',
-      'profile'
-    );
+    this.createModal(DvntProfileLinkListComponent, 'profile');
   }
 
   private createSearchModal(): void {
-    this.createModal(DvntModalSearchComponent, 'modal-full-screen', 'search');
+    this.createModal(DvntModalSearchComponent, 'search');
   }
 
-  private createModal(
-    component: any,
-    className: string,
-    componentType: string
-  ): void {
+  private createCategoriesModal(): void {
+    this.createModal(DvntModalCategoriesComponent, 'categories');
+  }
+
+  private createModal(component: any, componentType: string): void {
     if (this.modalService.getActiveModal()) {
       if (
         this.modalService.getActiveModal().componentInstance.type ===
@@ -77,23 +79,19 @@ export class DvntBottomNavigationComponent implements OnDestroy {
         this.clearModalRef();
       } else {
         this.modalService.dismissActiveModal();
-        this.createModelInstance(component, className, componentType);
+        this.createModelInstance(component, componentType);
       }
     } else {
-      this.createModelInstance(component, className, componentType);
+      this.createModelInstance(component, componentType);
     }
   }
 
-  private createModelInstance(
-    component: any,
-    className: string,
-    componentType: string
-  ): void {
+  private createModelInstance(component: any, componentType: string): void {
     let modalInstance: any;
 
     this.modalRef = this.modalService.open(component, {
-      windowClass: className,
-      backdrop: false,
+      windowClass: 'side-modal slide-from-left',
+      backdropClass: 'side-modal-backdrop',
     });
 
     modalInstance = this.modalRef.componentInstance;

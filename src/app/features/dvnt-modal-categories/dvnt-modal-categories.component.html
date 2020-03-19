@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <img
+      (click)="closeModal()"
+      class="back-icon"
+      src="../../../assets/icons/chevron/left.svg"
+    />
+    <span>
+      Categories
+    </span>
+  </div>
+
+  <div class="modal-container">
+    <div class="modal-scroll-container">
+      <app-dvnt-categories
+        [categoriesData$]="categoriesData$"
+      ></app-dvnt-categories>
+    </div>
+  </div>
+</div>

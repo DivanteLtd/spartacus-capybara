@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 10px;
+
+  a {
+    align-items: center;
+    border-bottom: 1px solid var(--cx-border-color);
+    color: var(--cx-text-color-secondary);
+    display: flex;
+    height: 58px;
+    width: 100%;
+  }
+}

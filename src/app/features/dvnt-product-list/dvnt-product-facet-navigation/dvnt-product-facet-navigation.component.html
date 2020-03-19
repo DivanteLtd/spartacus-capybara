@@ -1,5 +1,5 @@
 <ng-container *ngIf="searchResult$ | async as searchResult">
-  <div class="filter-modal-header">
+  <div class="modal-header">
     <img
       (click)="dismissFiltersModal()"
       class="back-icon"
@@ -24,8 +24,8 @@
     </svg>
   </button>
 
-  <div class="filters-container">
-    <div class="filters-scroll-container">
+  <div class="modal-container">
+    <div class="modal-scroll-container">
       <div class="cx-search-facet">
         <ng-container *ngIf="searchResult.breadcrumbs?.length">
           <h4 class="cx-facet-filter-header">
