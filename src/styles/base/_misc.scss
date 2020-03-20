@@ -1,0 +1,18 @@
+/*
+This file contains styles for small reusable elements, that are not components, to avoid creating separate files for each.
+ */
+@import 'mixins';
+@import 'media';
+
+.ssf-badge {
+  background-color: var(--ssf-badge-color, transparent);
+  color: var(--ssf-badge-text-color, var(--ssf-dark-primary));
+  display: inline-block;
+  font-size: calculateRem(12px);
+  font-weight: 500;
+  padding: calculateRem(4px) calculateRem(8px);
+
+  @include tablet-and-up {
+    font-size: calculateRem(14px);
+  }
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import { IconModule, MediaModule } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const imports = [
   CommonModule,
@@ -12,6 +13,7 @@ const imports = [
   UrlModule,
   MediaModule,
   IconModule,
+  BrowserAnimationsModule,
 ];
 
 @NgModule({

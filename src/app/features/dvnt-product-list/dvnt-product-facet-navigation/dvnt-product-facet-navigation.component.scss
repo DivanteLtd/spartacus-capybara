@@ -6,9 +6,43 @@
   height: 100%;
 }
 
-.cx-facet-filter-header,
 .cx-facet-filter-container {
-  display: none;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet-and-up {
+    width: 297px;
+  }
+
+  .ssf-badge {
+    --ssf-badge-color: var(--ssf-light-primary);
+    --ssf-badge-text-color: var(--ssf-dark-primary);
+    margin: 2px;
+    cursor: pointer;
+    overflow-y: hidden;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .facet-filter-text {
+      white-space: nowrap;
+      max-width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      background-color: var(--ssf-light-primary-darken);
+      color: var(--ssf-dark-primary);
+    }
+  }
+
+  .cx-facet-group {
+    @include laptop-and-up {
+      max-width: 298px;
+    }
+  }
 }
 
 .cx-search-facet {
@@ -93,10 +127,6 @@
     cursor: pointer;
     transition: 0.3s;
   }
-}
-
-.cx-facet-filter-container {
-  margin: 0 0 40px 0;
 }
 
 .cx-facet-filter-header {
