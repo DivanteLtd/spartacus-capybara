@@ -5,11 +5,13 @@ import {
   ProductListComponentService,
 } from '@spartacus/storefront';
 import { ActivatedRoute } from '@angular/router';
+import { facetAnimations } from './animations';
 
 @Component({
   selector: 'app-dvnt-product-facet-navigation',
   templateUrl: './dvnt-product-facet-navigation.component.html',
   styleUrls: ['./dvnt-product-facet-navigation.component.scss'],
+  animations: facetAnimations,
 })
 export class DvntProductFacetNavigationComponent extends ProductFacetNavigationComponent {
   modalServiceRef: ModalService;
@@ -25,5 +27,9 @@ export class DvntProductFacetNavigationComponent extends ProductFacetNavigationC
   dismissFiltersModal() {
     const modal = this.modalServiceRef.getActiveModal();
     modal.dismiss();
+  }
+
+  trackFacetBreadcrumb(index, item) {
+    return item.facetValueName;
   }
 }

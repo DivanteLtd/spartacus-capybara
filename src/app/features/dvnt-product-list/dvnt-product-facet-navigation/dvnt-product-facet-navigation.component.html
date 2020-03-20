@@ -29,33 +29,27 @@
   <div class="modal-container">
     <div class="modal-scroll-container">
       <div class="cx-search-facet">
-        <ng-container *ngIf="searchResult.breadcrumbs?.length">
-          <h4 class="cx-facet-filter-header">
-            {{ 'productList.filterBy.label' | cxTranslate }}
-          </h4>
-          <div class="cx-facet-filter-container">
+        <div class="cx-facet-filter-container">
+          <ng-container *ngIf="searchResult.breadcrumbs?.length">
+            <h5>{{ 'productList.filterBy.label' | cxTranslate }}</h5>
             <div
-              *ngFor="let breadcrumb of searchResult.breadcrumbs"
+              (click)="toggleValue(breadcrumb.removeQuery.query.value)"
+              *ngFor="
+                let breadcrumb of searchResult.breadcrumbs;
+                trackBy: trackFacetBreadcrumb
+              "
+              @fadeIn
               [hidden]="breadcrumb.facetValueCode === activeFacetValueCode"
-              class="cx-facet-filter-pill"
+              class="ssf-badge"
               role="filter"
             >
-              <span class="cx-facet-pill-value">{{
-                breadcrumb.facetValueName
-              }}</span>
-              <button
-                type="button"
-                class="close"
-                aria-label="Close"
-                (click)="toggleValue(breadcrumb.removeQuery.query.value)"
-              >
-                <span aria-hidden="true">
-                  <cx-icon [type]="iconTypes.CLOSE"></cx-icon>
-                </span>
-              </button>
+              <span class="facet-filter-text">
+                {{ breadcrumb.facetName }}: {{ breadcrumb.facetValueName }}
+              </span>
+              <app-dvnt-icon icon="close"></app-dvnt-icon>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
+        </div>
 
         <ng-container *ngIf="visibleFacets$ | async as visibleFacets">
           <ng-container
