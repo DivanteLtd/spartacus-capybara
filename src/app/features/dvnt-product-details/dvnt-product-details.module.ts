@@ -16,8 +16,6 @@ import {
   MediaModule,
   OutletModule,
   PageComponentModule,
-  CarouselModule,
-  LayoutConfig,
 } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
 import { SwiperModule } from 'ngx-swiper-wrapper';

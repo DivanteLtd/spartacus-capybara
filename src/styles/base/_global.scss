@@ -62,14 +62,26 @@ header {
 footer {
   background-color: var(--cx-text-color-primary) !important;
   color: var(--cx-color-dark) !important;
-  margin: auto;
+  margin: 50px auto 0px;
   max-width: 1140px;
+
+  @include laptop-and-up {
+    margin: 25px auto 0px;
+  }
 }
 
-.ProductDetailsPageTemplate {
+.ProductDetailsPageTemplate,
+.DvntBestsellingProducts,
+.DvntNewProducts {
   margin: 0 auto 30px;
   max-width: 1140px;
   padding: 0 20px;
+
+  @include laptop-and-up {
+    height: auto;
+    position: initial;
+    padding: 0;
+  }
 }
 
 // Product details tabs
@@ -100,4 +112,12 @@ cx-product-details-tab {
 
 .swiper-pagination-bullet-active {
   background-color: $color-primary !important;
+}
+
+.swiper-pagination {
+  bottom: -10px !important;
+
+  @include laptop-and-up {
+    bottom: 10px !important;
+  }
 }

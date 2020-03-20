@@ -1,0 +1,26 @@
+<div *ngIf="items$ | async as items" class="box-container">
+  <h3 *ngIf="title$ | async as title" class="box-header">{{ title }}</h3>
+  <div class="horizontal-container">
+    <div class="content-container">
+      <swiper [config]="config" class="swiper-container">
+        <div *ngFor="let item of items" class="swiper-slide">
+          <div
+            *ngIf="item | async as singleItem"
+            [routerLink]="{ cxRoute: 'product', params: singleItem } | cxUrl"
+            class="swiper-slide-content"
+          >
+            <cx-media [container]="singleItem.images.PRIMARY" format="product">
+            </cx-media>
+            <p class="name">{{ singleItem.name }}</p>
+            <h4 class="price">{{ singleItem.price?.formattedValue }}</h4>
+            <cx-star-rating
+              *ngIf="singleItem.averageRating"
+              [disabled]="true"
+              [rating]="singleItem.averageRating"
+            ></cx-star-rating>
+          </div>
+        </div>
+      </swiper>
+    </div>
+  </div>
+</div>
