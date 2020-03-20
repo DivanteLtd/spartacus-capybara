@@ -5,6 +5,7 @@ import { DvntBreadcrumbsModule } from './dvnt-breadcrumbs/dvnt-breadcrumbs.modul
 import { DvntCategoriesWrapperModule } from './dvnt-categories-wrapper/dvnt-categories-wrapper.module';
 import { DvntFooterModule } from './dvnt-footer/dvnt-footer.module';
 import { DvntHeaderModule } from './dvnt-header/dvnt-header.module';
+import { DvntLandingPageModule } from './dvnt-landing-page/dvnt-landing-page.module';
 import { DvntModalCategoriesModule } from './dvnt-modal-categories/dvnt-modal-categories.module';
 import { DvntModalSearchModule } from './dvnt-modal-search/dvnt-modal-search.module';
 import { DvntPageNotFoundModule } from './dvnt-page-not-found/dvnt-page-not-found.module';
@@ -20,6 +21,7 @@ import { StyleGuideModule } from './style-guide/style-guide.module';
     DvntCategoriesWrapperModule,
     DvntFooterModule,
     DvntHeaderModule,
+    DvntLandingPageModule,
     DvntModalCategoriesModule,
     DvntModalSearchModule,
     DvntPageNotFoundModule,

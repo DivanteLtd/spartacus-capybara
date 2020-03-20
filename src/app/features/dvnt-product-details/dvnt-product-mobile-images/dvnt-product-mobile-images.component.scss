@@ -1,3 +1,5 @@
+@import 'media';
+
 :host {
   width: 100vw;
 }
@@ -21,9 +23,14 @@
 .swiper-container {
   bottom: 0;
   left: 0;
+  padding: 20px;
   position: absolute;
   right: 0;
   top: 0;
+
+  @include laptop-and-up {
+    padding: 0px;
+  }
 
   .swiper-slide {
     display: flex;
