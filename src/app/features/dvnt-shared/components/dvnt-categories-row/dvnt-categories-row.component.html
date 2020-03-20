@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let child of parent.children" class="footer-menu">
-    <a [href]="child.url" [ngClass]="{ hide: !child.title }">
+    <a [routerLink]="child.url" [ngClass]="{ hide: !child.title }">
       {{ child.title }}
     </a>
 
