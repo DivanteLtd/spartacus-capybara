@@ -1,0 +1,33 @@
+@import 'media';
+
+.summary-container {
+  display: table;
+  margin-bottom: 10px;
+  width: 100%;
+
+  .summary-row {
+    display: table-row;
+    height: 40px;
+
+    .summary-label {
+      color: var(--ssf-gray-primary);
+      display: table-cell;
+      font-size: 16px;
+      margin: 0px 8px 0px 0px;
+      text-align: start;
+      text-transform: uppercase;
+      width: 60%;
+      vertical-align: middle;
+    }
+    .summary-value {
+      color: var(--ssf-black);
+      display: table-cell;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: right;
+      text-transform: uppercase;
+      vertical-align: middle;
+      width: 40%;
+    }
+  }
+}

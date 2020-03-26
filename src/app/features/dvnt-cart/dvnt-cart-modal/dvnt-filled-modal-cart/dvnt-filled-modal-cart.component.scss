@@ -1,0 +1,36 @@
+.filled-cart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-right: 40px;
+
+  .top-section {
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    .header-label {
+      padding: 18px 0px;
+    }
+  }
+
+  .bottom-section {
+    .promotion-container {
+      margin: 15px 0 30px;
+
+      .promotion {
+        color: var(--cx-color-primary);
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: justify;
+        width: 100%;
+      }
+    }
+
+    .action-button {
+      width: 100%;
+    }
+  }
+}

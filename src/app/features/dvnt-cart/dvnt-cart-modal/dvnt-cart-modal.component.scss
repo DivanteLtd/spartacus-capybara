@@ -1,4 +1,14 @@
+@import 'media';
+
 :host {
   background: #fff;
   height: 100%;
+}
+
+.modal-scroll-container {
+  padding-bottom: 10px;
+
+  @include laptop-and-up {
+    padding-bottom: 40px;
+  }
 }

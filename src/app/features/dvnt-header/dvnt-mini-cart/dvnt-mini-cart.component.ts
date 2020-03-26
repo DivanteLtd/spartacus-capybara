@@ -18,7 +18,10 @@ export class DvntMiniCartComponent extends MiniCartComponent {
     super(cartService);
   }
 
-  public showCartModal(): void {
+  public showCartModal(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+
     this.modalService.open(DvntCartModalComponent, {
       windowClass: 'side-modal slide-from-right',
       backdropClass: 'side-modal-backdrop',

@@ -1,37 +1,42 @@
-<div class="modal-header">
-  <app-dvnt-icon
-    (click)="dismissCartModal()"
-    height="30"
-    icon="left"
-    ngClass="back-icon"
-    width="30"
-  ></app-dvnt-icon>
-</div>
-<button
-  class="btn-icon btn-icon-primary close-side-modal"
-  (click)="dismissCartModal()"
->
-  <app-dvnt-icon
-    color="white"
-    height="32"
-    icon="close"
-    width="32"
-  ></app-dvnt-icon>
-</button>
-
-<div class="modal-container">
-  <div
-    *ngIf="activeCartService.getEntries() | async as products"
-    class="modal-scroll-container"
-  >
-    <div *ngIf="products.length; else cartIsEmpty">
-      koszyk z produktami
-    </div>
-
-    <ng-template #cartIsEmpty>
-      <app-dvnt-empty-modal-cart
-        (closeSideBar)="dismissCartModal()"
-      ></app-dvnt-empty-modal-cart>
-    </ng-template>
+<ng-container>
+  <div class="modal-header">
+    <app-dvnt-icon
+      (click)="dismissCartModal()"
+      height="30"
+      icon="left"
+      ngClass="back-icon"
+      width="30"
+    ></app-dvnt-icon>
   </div>
-</div>
+  <button
+    class="btn-icon btn-icon-primary close-side-modal"
+    (click)="dismissCartModal()"
+  >
+    <app-dvnt-icon
+      color="white"
+      height="32"
+      icon="close"
+      width="32"
+    ></app-dvnt-icon>
+  </button>
+
+  <div class="modal-container">
+    <div
+      *ngIf="activeCartService.getEntries() | async as products"
+      class="modal-scroll-container"
+    >
+      <ng-container *ngIf="products.length; else cartIsEmpty">
+        <app-dvnt-filled-modal-cart
+          (closeSideBar)="dismissCartModal()"
+          [products]="products"
+        ></app-dvnt-filled-modal-cart>
+      </ng-container>
+
+      <ng-template #cartIsEmpty>
+        <app-dvnt-empty-modal-cart
+          (closeSideBar)="dismissCartModal()"
+        ></app-dvnt-empty-modal-cart>
+      </ng-template>
+    </div>
+  </div>
+</ng-container>

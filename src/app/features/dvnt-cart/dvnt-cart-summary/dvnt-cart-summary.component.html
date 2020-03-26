@@ -1,0 +1,42 @@
+<div *ngIf="cart$ | async as cart" class="summary-container">
+  <div class="summary-row">
+    <p class="summary-label">
+      Subtotal
+    </p>
+    <p class="summary-value">
+      {{ cart.subTotal?.formattedValue }}
+    </p>
+  </div>
+  <div class="summary-row">
+    <p class="summary-label">
+      Shipping & Handling (flat rate - fixed)
+    </p>
+    <p class="summary-value">
+      {{ cart.deliveryCost?.formattedValue || '-' }}
+    </p>
+  </div>
+  <div class="summary-row">
+    <p class="summary-label">
+      Discount
+    </p>
+    <p class="summary-value">
+      {{ cart.totalDiscounts?.formattedValue }}
+    </p>
+  </div>
+  <div class="summary-row">
+    <p class="summary-label">
+      Tax
+    </p>
+    <p class="summary-value">
+      {{ cart.totalTax?.formattedValue }}
+    </p>
+  </div>
+  <div class="summary-row">
+    <p class="summary-label">
+      Grand total
+    </p>
+    <p class="summary-value">
+      {{ cart.totalPriceWithTax?.formattedValue }}
+    </p>
+  </div>
+</div>
