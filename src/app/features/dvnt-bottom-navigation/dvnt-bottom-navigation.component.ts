@@ -6,6 +6,7 @@ import { take } from 'rxjs/operators';
 import { DvntModalSearchComponent } from 'src/app/features/dvnt-modal-search/dvnt-modal-search.component';
 import { DvntProfileLinkListComponent } from 'src/app/features/dvnt-profile-link-list/dvnt-profile-link-list.component';
 import { DvntModalCategoriesComponent } from '../dvnt-modal-categories/dvnt-modal-categories.component';
+import { DvntCartModalComponent } from '../dvnt-cart/dvnt-cart-modal/dvnt-cart-modal.component';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',
@@ -43,6 +44,11 @@ export class DvntBottomNavigationComponent implements OnDestroy {
     this.createCategoriesModal();
   }
 
+  public setCartAction(event: Event): void {
+    this.preventOtherActions(event);
+    this.createCartModal();
+  }
+
   public setProfileAction(event: Event): void {
     this.preventOtherActions(event);
     this.authService
@@ -68,6 +74,10 @@ export class DvntBottomNavigationComponent implements OnDestroy {
 
   private createCategoriesModal(): void {
     this.createModal(DvntModalCategoriesComponent, 'categories');
+  }
+
+  private createCartModal(): void {
+    this.createModal(DvntCartModalComponent, 'cart');
   }
 
   private createModal(component: any, componentType: string): void {

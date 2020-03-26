@@ -1,7 +1,4 @@
-<a
-  [routerLink]="{ cxRoute: 'cart' } | cxUrl"
-  class="header-navigation-icon navigation-link"
->
+<a (click)="showCartModal()" class="header-navigation-icon navigation-link">
   <app-dvnt-icon
     height="32"
     icon="cart"
