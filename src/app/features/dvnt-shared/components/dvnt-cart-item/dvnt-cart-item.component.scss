@@ -1,0 +1,145 @@
+@import 'mixins';
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  margin: 20px 0;
+  padding: 18px 10px;
+  position: relative;
+
+  &:hover {
+    @include box-shadow(
+      0px,
+      4px,
+      25px,
+      0,
+      var(--cx-grid-item-box-shadow-color)
+    );
+
+    .remove-button {
+      display: flex;
+    }
+  }
+
+  .remove-button {
+    align-items: center;
+    background: rgb(var(--ssf-gray-secondary-base));
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    display: none;
+    height: 28px;
+    justify-content: center;
+    position: absolute;
+    right: -14px;
+    top: 10px;
+    width: 28px;
+  }
+
+  .cart-item-image {
+    flex: 0 0 8.75rem;
+    height: 100%;
+    position: relative;
+
+    .image {
+      align-items: center;
+      display: flex;
+      height: 200px;
+      justify-content: center;
+      width: 140px;
+    }
+
+    .quantity-item {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+
+      input {
+        background: var(--ssf-white);
+        border: 1px solid var(--ssf-light-primary);
+        font-family: var(--ssf-secondary-font-family);
+        font-size: 18px;
+        font-weight: 300;
+        height: 27px;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        text-align: center;
+        width: 50px;
+        z-index: 999;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+
+  .cart-item-details {
+    flex: 1;
+    padding-left: 5px;
+
+    .basic-details {
+      display: flex;
+      flex-direction: column;
+
+      .item-name {
+        color: var(--ssf-black);
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .item-price {
+        font-family: var(--ssf-secondary-font-family);
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .item-discount-price {
+        @extend .item-price;
+        color: rgb(var(--ssf-red-primary-base));
+      }
+
+      .item-old-price {
+        color: rgb(var(--ssf-gray-primary-base));
+        font-size: 14px;
+        line-height: 22px;
+        text-decoration: line-through;
+      }
+    }
+
+    .additional-details {
+      margin-top: 16px;
+
+      .additional-row {
+        align-items: center;
+        display: flex;
+        margin: 7px 0;
+
+        .label {
+          color: rgb(var(--ssf-gray-primary-base));
+          font-size: 13px;
+          font-weight: 400;
+          margin-right: 3px;
+        }
+
+        .value {
+          color: var(--ssf-dark-primary-base);
+          font-size: 13px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

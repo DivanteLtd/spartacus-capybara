@@ -1,0 +1,7 @@
+<app-dvnt-cart-item
+  *ngFor="let item of products; trackBy: trackByFn"
+  (remove)="removeEntry($event)"
+  (update)="updateEntry($event)"
+  (view)="gotToProduct($event)"
+  [item]="item"
+></app-dvnt-cart-item>

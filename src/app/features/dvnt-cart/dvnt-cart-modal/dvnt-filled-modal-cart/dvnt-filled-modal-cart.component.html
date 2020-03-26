@@ -1,0 +1,27 @@
+<div class="filled-cart">
+  <div class="top-section">
+    <h3 class="header-label">Total items: {{ quantity$ | async }}</h3>
+
+    <app-dvnt-cart-product-list
+      (closeSideBar)="dismissCartModal()"
+      [products]="products"
+    ></app-dvnt-cart-product-list>
+  </div>
+
+  <div class="bottom-section">
+    <app-dvnt-cart-summary></app-dvnt-cart-summary>
+
+    <div *ngIf="promotions$ | async as promotions" class="promotion-container">
+      <p *ngFor="let promotion of promotions" class="promotion">
+        {{ promotion.description }}
+      </p>
+    </div>
+
+    <button
+      (click)="goToCheckout()"
+      class="btn btn-primary btn-block action-button"
+    >
+      Go to checkout
+    </button>
+  </div>
+</div>

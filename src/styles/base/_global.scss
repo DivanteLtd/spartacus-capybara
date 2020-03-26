@@ -121,3 +121,19 @@ cx-product-details-tab {
     bottom: 10px !important;
   }
 }
+
+// Cart item
+.cart-item-image {
+  .cx-counter-action {
+    display: none;
+  }
+
+  .cx-counter-value {
+    background: white;
+    border: 1px solid #f1f2f3 !important;
+    font-size: 18px;
+    height: 27px;
+    padding: 0;
+    width: 50px !important;
+  }
+}

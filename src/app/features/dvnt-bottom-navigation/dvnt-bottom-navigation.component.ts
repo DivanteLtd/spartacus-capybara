@@ -23,9 +23,7 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    if (this.modalRef) {
-      this.clearModalRef();
-    }
+    this.clearModalRef();
   }
 
   public navigateTo(path: string, event: Event): void {
@@ -81,19 +79,8 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   }
 
   private createModal(component: any, componentType: string): void {
-    if (this.modalService.getActiveModal()) {
-      if (
-        this.modalService.getActiveModal().componentInstance.type ===
-        componentType
-      ) {
-        this.clearModalRef();
-      } else {
-        this.modalService.dismissActiveModal();
-        this.createModelInstance(component, componentType);
-      }
-    } else {
-      this.createModelInstance(component, componentType);
-    }
+    this.clearModalRef();
+    this.createModelInstance(component, componentType);
   }
 
   private createModelInstance(component: any, componentType: string): void {

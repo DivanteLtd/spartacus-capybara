@@ -1,0 +1,84 @@
+<div *ngIf="item" class="cart-item">
+  <div (click)="removeItem()" class="remove-button">
+    <app-dvnt-icon
+      color="white"
+      height="21"
+      icon="close"
+      width="21"
+    ></app-dvnt-icon>
+  </div>
+
+  <div class="cart-item-image">
+    <a
+      [routerLink]="{ cxRoute: 'product', params: item.product } | cxUrl"
+      (click)="viewItem()"
+    >
+      <cx-media
+        [container]="item.product.images?.PRIMARY"
+        class="image"
+        format="thumbnail"
+      ></cx-media>
+    </a>
+
+    <div class="quantity-item">
+      <input
+        [formControl]="quantity"
+        type="number"
+        min="1"
+        [max]="item.product.stock.stockLevel"
+        class="quantity-value"
+      />
+    </div>
+  </div>
+
+  <div class="cart-item-details">
+    <div class="basic-details">
+      <p *ngIf="item.product.name" class="item-name">
+        {{ item.product.name }}
+      </p>
+      <p
+        *ngIf="
+          item.totalPrice.value / item.quantity === item.basePrice.value;
+          else priceWithDiscount
+        "
+        class="item-price"
+      >
+        {{ item.totalPrice?.formattedValue }}
+      </p>
+      <ng-template #priceWithDiscount>
+        <p class="item-discount-price">
+          {{ item.totalPrice?.formattedValue }}
+        </p>
+        <p class="item-old-price">
+          {{ item.basePrice?.formattedValue }}
+        </p>
+      </ng-template>
+    </div>
+
+    <div class="additional-details">
+      <p *ngIf="item.product.code" class="additional-row">
+        <span class="label">
+          SKU:
+        </span>
+        <span class="value">
+          {{ item.product.code }}
+        </span>
+      </p>
+      <!-- Variants -->
+      <ng-container *cxFeatureLevel="'1.5'">
+        <p
+          *ngFor="
+            let variant of item.product.baseOptions[0]?.selected
+              ?.variantOptionQualifiers
+          "
+          class="additional-row"
+        >
+          <span *ngIf="variant.name" class="label"> {{ variant.name }}: </span>
+          <span *ngIf="variant.value" class="value">
+            {{ variant.value }}
+          </span>
+        </p>
+      </ng-container>
+    </div>
+  </div>
+</div>
