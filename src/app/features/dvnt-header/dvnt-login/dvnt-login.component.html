@@ -1,5 +1,6 @@
 <ng-container *ngIf="user$ | async as user; else login">
   <a
+    (click)="blockPropagation($event)"
     [routerLink]="{ cxRoute: 'login' } | cxUrl"
     class="header-navigation-icon"
     role="link"
@@ -16,6 +17,7 @@
 
 <ng-template #login>
   <a
+    (click)="blockPropagation($event)"
     [routerLink]="{ cxRoute: 'login' } | cxUrl"
     class="header-navigation-icon"
     role="link"

@@ -5,4 +5,9 @@ import { LoginComponent } from '@spartacus/storefront';
   selector: 'app-dvnt-login',
   templateUrl: './dvnt-login.component.html',
 })
-export class DvntLoginComponent extends LoginComponent {}
+export class DvntLoginComponent extends LoginComponent {
+  public blockPropagation(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+}
