@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { DvntBottomNavigationModule } from './dvnt-bottom-navigation/dvnt-bottom-navigation.module';
 import { DvntBreadcrumbsModule } from './dvnt-breadcrumbs/dvnt-breadcrumbs.module';
+import { DvntCartModule } from './dvnt-cart/dvnt-cart.module';
 import { DvntCategoriesWrapperModule } from './dvnt-categories-wrapper/dvnt-categories-wrapper.module';
 import { DvntFooterModule } from './dvnt-footer/dvnt-footer.module';
 import { DvntHeaderModule } from './dvnt-header/dvnt-header.module';
@@ -18,6 +19,7 @@ import { StyleGuideModule } from './style-guide/style-guide.module';
   imports: [
     DvntBottomNavigationModule,
     DvntBreadcrumbsModule,
+    DvntCartModule,
     DvntCategoriesWrapperModule,
     DvntFooterModule,
     DvntHeaderModule,
