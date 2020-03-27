@@ -61,6 +61,13 @@
     <div [class.opened]="showCouponForm" class="discount-container toggleable">
       <app-dvnt-coupon></app-dvnt-coupon>
     </div>
+
+    <div class="applied-discounts-container">
+      <app-dvnt-applied-coupons
+        [isReadOnly]="true"
+        [vouchers]="(cart$ | async).appliedVouchers"
+      ></app-dvnt-applied-coupons>
+    </div>
   </div>
   <div *ngIf="cart.totalDiscounts?.value > 0" class="highlight highlight-gray">
     <div class="summary-label">
@@ -80,10 +87,4 @@
     *ngIf="cart"
     [promotions]="cart.appliedOrderPromotions"
   ></cx-promotions>
-  <ng-container *cxFeatureLevel="'1.3'">
-    <cx-applied-coupons
-      [isReadOnly]="true"
-      [vouchers]="(cart$ | async).appliedVouchers"
-    ></cx-applied-coupons>
-  </ng-container>
 </div>
