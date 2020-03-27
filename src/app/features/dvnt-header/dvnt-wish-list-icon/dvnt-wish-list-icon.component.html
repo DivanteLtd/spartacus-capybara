@@ -2,7 +2,7 @@
   <a
     (click)="blockPropagation($event)"
     [routerLink]="'my-account/wishlist'"
-    class="header-navigation-icon"
+    class="header-navigation-icon navigation-link"
     role="link"
   >
     <app-dvnt-icon
@@ -11,5 +11,6 @@
       icon="wish"
       width="32"
     ></app-dvnt-icon>
+    <span *ngIf="quantity$ | async" class="count">{{ quantity$ | async }}</span>
   </a>
 </ng-container>
