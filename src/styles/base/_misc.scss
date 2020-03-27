@@ -12,12 +12,22 @@ This file contains styles for small reusable elements, that are not components, 
   font-weight: 500;
   padding: calculateRem(4px) calculateRem(8px);
 
+  &.primary {
+    background-color: var(--ssf-color-primary);
+    color: var(--ssf-white);
+  }
+
+  &.gray {
+    background-color: var(--ssf-gray-primary);
+    color: var(--ssf-white);
+  }
+
   @include tablet-and-up {
     font-size: calculateRem(14px);
   }
 }
 
 .highlight {
-  padding: 2rem;
   background-color: var(--ssf-light-primary);
+  padding: 2rem;
 }

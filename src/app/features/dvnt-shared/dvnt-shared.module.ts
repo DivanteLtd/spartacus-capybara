@@ -22,6 +22,7 @@ import { DvntCardComponent } from './components/dvnt-card/dvnt-card.component';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DvntCouponComponent } from './components/dvnt-coupon/dvnt-coupon.component';
+import { DvntAppliedCouponsComponent } from './components/dvnt-applied-coupons/dvnt-applied-coupons.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -38,6 +39,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntPaginationComponent,
     DvntCardComponent,
     DvntCouponComponent,
+    DvntAppliedCouponsComponent,
   ],
   imports: [
     CommonModule,
@@ -62,6 +64,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntPaginationComponent,
     DvntCardComponent,
     DvntCouponComponent,
+    DvntAppliedCouponsComponent,
   ],
   providers: [
     {
