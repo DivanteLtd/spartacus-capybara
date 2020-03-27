@@ -1,0 +1,17 @@
+.navigation-link {
+  position: relative;
+
+  .count {
+    background-color: var(--cx-color-primary);
+    border-radius: 100%;
+    bottom: 15px;
+    color: var(--cx-text-color-primary);
+    font-size: 10px;
+    left: 20px;
+    min-height: 21px;
+    padding: 3px 0;
+    position: absolute;
+    text-align: center;
+    width: 21px;
+  }
+}
