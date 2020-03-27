@@ -4,17 +4,17 @@
       <div class="image-column"></div>
       <div class="name-column">
         <h3>
-          Product name
+          {{ 'wishlist.productName' | cxTranslate }}
         </h3>
       </div>
       <div class="price-column">
         <h3>
-          Item price
+          {{ 'wishlist.itemPrice' | cxTranslate }}
         </h3>
       </div>
       <div class="action-column">
         <h3>
-          Action
+          {{ 'wishlist.action' | cxTranslate }}
         </h3>
       </div>
     </div>
@@ -27,6 +27,8 @@
   </div>
 
   <ng-template #emptyWishList>
-    <h2>{{ 'wishlist.empty' | cxTranslate }}</h2>
+    <h2>
+      {{ 'wishlist.empty' | cxTranslate }}
+    </h2>
   </ng-template>
 </div>

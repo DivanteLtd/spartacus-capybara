@@ -1,3 +1,5 @@
+@import 'media';
+
 .wish-list-container {
   display: flex;
   flex-direction: column;
@@ -43,8 +45,13 @@
 
     .wish-row-header {
       border-bottom: 1px solid var(--cx-border-color);
+      display: none;
       margin-bottom: 30px;
       padding-bottom: 12px;
+
+      @include laptop-and-up {
+        display: flex;
+      }
     }
   }
 }
