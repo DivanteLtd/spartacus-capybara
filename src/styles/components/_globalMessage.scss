@@ -1,0 +1,51 @@
+@import 'media';
+
+dvnt-global-message {
+  background: transparent;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+
+  @include laptop-and-up {
+    right: 70px;
+    top: 100px;
+    width: auto;
+  }
+
+  .alert {
+    color: var(--cx-text-color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 60px;
+    padding: 0 45px 0 20px;
+
+    @include laptop-and-up {
+      border-radius: 5px;
+    }
+
+    &-success {
+      background-color: var(--ssf-green-primary);
+    }
+
+    &-danger {
+      background-color: var(--ssf-red-primary);
+    }
+
+    &-info {
+      background-color: var(--ssf-gray-primary);
+    }
+
+    .close {
+      opacity: 0.8;
+      right: 10px;
+      top: 14px;
+
+      @include laptop-and-up {
+        right: 7px;
+        top: 7px;
+      }
+    }
+  }
+}
