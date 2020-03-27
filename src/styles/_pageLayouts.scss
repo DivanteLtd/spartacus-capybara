@@ -1,0 +1,18 @@
+@import 'media';
+
+.MultiStepCheckoutSummaryPageTemplate {
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  @include laptop-and-up {
+    padding: 0;
+  }
+
+  .BodyContent {
+    align-content: start;
+    flex: 0.6 !important;
+  }
+  .SideContent {
+    flex: 0.4 !important;
+  }
+}

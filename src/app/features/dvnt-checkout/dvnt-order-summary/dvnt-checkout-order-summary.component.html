@@ -1,0 +1,81 @@
+<div *ngIf="cart$ | async as cart" class="checkout-order-summary">
+  <div class="highlight highlight-gray">
+    <h2 class="checkout-order-summary-header">
+      {{ 'orderCost.orderSummary' | cxTranslate }}
+    </h2>
+    <h3 class="summary-label total-items-label">
+      {{ 'cartItems.totalItems' | cxTranslate }}: {{ cart.totalItems }}
+      <a
+        (click)="showProductsInCart = !showProductsInCart"
+        class="toggle-product-list"
+      >
+        {{ showProductsInCart ? 'Hide' : 'Show' }} products
+      </a>
+    </h3>
+
+    <div [class.opened]="showProductsInCart" class="products-list">
+      <app-dvnt-cart-item
+        *ngFor="let item of cart.entries"
+        [item]="item"
+      ></app-dvnt-cart-item>
+    </div>
+  </div>
+  <div class="highlight highlight-gray">
+    <div class="summary-label color-gray">
+      {{ 'orderCost.subtotalStandalone' | cxTranslate }}
+      <div class="summary-amount">
+        {{ cart.subTotal?.formattedValue }}
+      </div>
+    </div>
+    <div class="summary-label color-gray">
+      {{ 'orderCost.shipping' | cxTranslate }}
+      <div class="summary-amount">
+        {{
+          cart.deliveryCost?.formattedValue
+            ? cart.deliveryCost.formattedValue
+            : 'TBD'
+        }}
+      </div>
+    </div>
+
+    <ng-container *ngIf="cart.net" class="highlight highlight-gray">
+      <div class="summary-label color-gray">
+        {{ 'orderCost.salesTax' | cxTranslate }}
+        <div class="summary-amount">
+          {{ cart.totalTax?.formattedValue }}
+        </div>
+      </div>
+    </ng-container>
+    <div class="summary-label total-label text-uppercase">
+      {{ 'orderCost.total' | cxTranslate }}
+      <div class="summary-amount">
+        {{ cart.totalPriceWithTax?.formattedValue }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="cart.totalDiscounts?.value > 0" class="highlight highlight-gray">
+    <div class="summary-label">
+      {{ 'orderCost.discount' | cxTranslate }}
+      <div class="summary-amount">
+        {{ cart.totalDiscounts?.formattedValue }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!cart.net" class="highlight highlight-gray">
+    <div class="summary-label">
+      {{ 'orderCost.grossTax' | cxTranslate }}
+      <div class="summary-amount">{{ cart.totalTax?.formattedValue }}.</div>
+    </div>
+  </div>
+  <cx-promotions
+    *ngIf="cart"
+    [promotions]="cart.appliedOrderPromotions"
+  ></cx-promotions>
+
+  <ng-container *cxFeatureLevel="'1.3'">
+    <cx-applied-coupons
+      [isReadOnly]="true"
+      [vouchers]="(cart$ | async).appliedVouchers"
+    ></cx-applied-coupons>
+  </ng-container>
+</div>

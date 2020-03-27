@@ -14,6 +14,7 @@ import { DvntProductDetailsModule } from './dvnt-product-details/dvnt-product-de
 import { DvntProductListModule } from './dvnt-product-list/dvnt-product-list.module';
 import { DvntProfileLinkListModule } from './dvnt-profile-link-list/dvnt-profile-link-list.module';
 import { StyleGuideModule } from './style-guide/style-guide.module';
+import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { StyleGuideModule } from './style-guide/style-guide.module';
     DvntProductListModule,
     DvntProfileLinkListModule,
     StyleGuideModule,
+    DvntCheckoutModule,
   ],
 })
 export class FeatureModule {}

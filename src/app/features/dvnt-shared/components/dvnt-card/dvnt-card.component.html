@@ -1,0 +1,66 @@
+<div
+  *ngIf="content"
+  class="ssf-card {{ color }}"
+  [class.no-header]="!content.header"
+  [class.cx-card-border]="border"
+  [class.cx-card-fit-to-container]="fitToContainer"
+  [class.hover-shadow]="hoverShadow"
+  [class.has-shadow]="hasShadow"
+>
+  <!-- Card Header -->
+  <div *ngIf="content.header && !editMode" class="ssf-card-header">
+    {{ content.header }}
+  </div>
+  <!-- Card Body -->
+  <div class="ssf-card-body" [class.cx-card-delete]="editMode">
+    <!-- Edit message -->
+    <div *ngIf="editMode" class="cx-card-delete-msg">
+      {{ content.deleteMsg }}
+    </div>
+    <!-- Card title -->
+    <h4 *ngIf="content.title">
+      {{ content.title }}
+    </h4>
+    <!-- Card Content -->
+    <div>
+      <!-- Card Label -->
+      <div>
+        <div *ngIf="content.textBold" class="text-bold">
+          {{ content.textBold }}
+        </div>
+        <div *ngFor="let line of content.text">
+          <div>{{ line }}</div>
+        </div>
+      </div>
+      <!-- Image -->
+      <div *ngIf="content.img">
+        <cx-icon [type]="content.img"></cx-icon>
+      </div>
+    </div>
+    <!-- Edit Mode Actions -->
+    <div *ngIf="editMode">
+      <div class="card-actions">
+        <button class="btn btn-block btn-secondary" (click)="cancelEdit()">
+          {{ 'common.cancel' | cxTranslate }}
+        </button>
+        <button class="btn btn-block btn-primary" (click)="delete()">
+          {{ 'common.delete' | cxTranslate }}
+        </button>
+      </div>
+    </div>
+    <!-- Actions -->
+    <div *ngIf="content.actions && !editMode" class="card-actions">
+      <div *ngFor="let action of content.actions">
+        <div [ngSwitch]="action.event">
+          <a *ngSwitchCase="'delete'" (click)="delete()">{{ action.name }}</a>
+          <a *ngSwitchCase="'default'" (click)="setDefault()">{{
+            action.name
+          }}</a>
+          <a *ngSwitchCase="'send'" (click)="send()">{{ action.name }}</a>
+          <a *ngSwitchCase="'edit'" (click)="edit()">{{ action.name }}</a>
+          <a *ngSwitchDefault href="{{ action.link }}">{{ action.name }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

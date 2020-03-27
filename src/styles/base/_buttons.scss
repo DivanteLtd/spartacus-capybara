@@ -122,7 +122,6 @@
 }
 
 .btn-icon {
-  @include box-shadow(0px, 4px, 6px, 0px, rgba(66, 66, 66, 0.2));
   width: var(--ssf-button-base-width);
   height: var(--ssf-button-base-width);
   border-radius: calc(var(--ssf-button-base-height) / 2);

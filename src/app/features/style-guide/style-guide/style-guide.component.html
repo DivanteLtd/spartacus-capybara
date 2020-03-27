@@ -85,27 +85,14 @@
       <div class="element">
         <div class="element-name">Primary with svg</div>
         <button class="btn-icon btn-icon-primary">
-          <svg
-            class="bi bi-chevron-right"
-            width="32"
-            height="32"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <app-dvnt-icon icon="right" width="30" height="30"></app-dvnt-icon>
         </button>
       </div>
 
       <div class="element">
         <div class="element-name">Primary with svg as img</div>
         <button class="btn-icon btn-icon-primary">
-          <img src="/assets/icons/cart.svg" />
+          <img src="/assets/icons/checked.svg" />
         </button>
       </div>
 
@@ -267,6 +254,26 @@
           height="20"
           className="myCustomClass"
         ></app-dvnt-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Card component</h1>
+
+    <div class="elements" style="display: flex">
+      <div class="element">
+        <app-dvnt-card
+          [content]="exampleCardContent"
+          color="primary"
+        ></app-dvnt-card>
+      </div>
+
+      <div class="element">
+        <app-dvnt-card
+          [content]="exampleCardContent"
+          color="secondary"
+        ></app-dvnt-card>
       </div>
     </div>
   </div>

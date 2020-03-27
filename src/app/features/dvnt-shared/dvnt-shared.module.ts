@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { UrlModule, FeaturesConfigModule } from '@spartacus/core';
+import { I18nModule, UrlModule, FeaturesConfigModule } from '@spartacus/core';
 import {
   MediaModule,
   StarRatingModule,
@@ -18,6 +18,8 @@ import { DvntCategoriesComponent } from './components/dvnt-categories/dvnt-categ
 import { DvntCategoriesRowComponent } from './components/dvnt-categories-row/dvnt-categories-row.component';
 import { DvntIconComponent } from './components/dvnt-icon/dvnt-icon.component';
 import { DvntPaginationComponent } from './components/dvnt-pagination/dvnt-pagination.component';
+import { DvntCardComponent } from './components/dvnt-card/dvnt-card.component';
+import { SharedModule } from '../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -33,6 +35,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntCategoriesRowComponent,
     DvntIconComponent,
     DvntPaginationComponent,
+    DvntCardComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     StarRatingModule,
     SwiperModule,
     UrlModule,
+    I18nModule,
+    SharedModule,
     FeaturesConfigModule,
     ItemCounterModule,
   ],
@@ -53,6 +58,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntCategoriesRowComponent,
     DvntIconComponent,
     DvntPaginationComponent,
+    DvntCardComponent,
   ],
   providers: [
     {
