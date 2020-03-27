@@ -3,9 +3,9 @@
   class="header-navigation-icon navigation-link"
 >
   <app-dvnt-icon
+    className="cart-icon"
     height="32"
     icon="cart"
-    ngClass="cart-icon"
     width="32"
   ></app-dvnt-icon>
   <span *ngIf="quantity$ | async" class="count">{{ quantity$ | async }}</span>

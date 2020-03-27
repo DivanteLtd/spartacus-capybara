@@ -1,0 +1,32 @@
+<div class="wish-list-container">
+  <div *ngIf="wishList$ | async as wishList" class="wish-list-content">
+    <div class="wish-row wish-row-header">
+      <div class="image-column"></div>
+      <div class="name-column">
+        <h3>
+          Product name
+        </h3>
+      </div>
+      <div class="price-column">
+        <h3>
+          Item price
+        </h3>
+      </div>
+      <div class="action-column">
+        <h3>
+          Action
+        </h3>
+      </div>
+    </div>
+
+    <app-dvnt-wish-list-item
+      *ngFor="let entry of wishList?.entries"
+      (remove)="removeEntry($event)"
+      [cartEntry]="entry"
+    ></app-dvnt-wish-list-item>
+  </div>
+
+  <ng-template #emptyWishList>
+    <h2>{{ 'wishlist.empty' | cxTranslate }}</h2>
+  </ng-template>
+</div>

@@ -1,13 +1,14 @@
 <ng-container *ngIf="user$ | async as user">
   <a
+    (click)="blockPropagation($event)"
     [routerLink]="'my-account/wishlist'"
     class="header-navigation-icon"
     role="link"
   >
     <app-dvnt-icon
+      className="wish-icon"
       height="32"
       icon="wish"
-      ngClass="wish-icon"
       width="32"
     ></app-dvnt-icon>
   </a>

@@ -1,0 +1,50 @@
+.wish-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .wish-list-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .wish-row {
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+
+      .standard-column {
+        flex: 1;
+      }
+      .wider-column {
+        flex: 2;
+      }
+
+      .image-column {
+        @extend .standard-column;
+      }
+
+      .name-column {
+        @extend .wider-column;
+        flex: 2;
+      }
+
+      .price-column {
+        @extend .standard-column;
+      }
+
+      .action-column {
+        @extend .standard-column;
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    .wish-row-header {
+      border-bottom: 1px solid var(--cx-border-color);
+      margin-bottom: 30px;
+      padding-bottom: 12px;
+    }
+  }
+}

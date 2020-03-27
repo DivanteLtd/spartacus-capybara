@@ -1,0 +1,30 @@
+<div class="wish-row wish-row-header">
+  <div class="image-column">
+    <a [routerLink]="{ cxRoute: 'product', params: cartEntry.product } | cxUrl">
+      <cx-media
+        [container]="cartEntry.product.images?.PRIMARY"
+        format="thumbnail"
+      ></cx-media>
+    </a>
+  </div>
+  <div class="name-column">
+    <a
+      [routerLink]="{ cxRoute: 'product', params: cartEntry.product } | cxUrl"
+      class="product-name"
+      [innerHtml]="cartEntry.product.nameHtml"
+    ></a>
+  </div>
+  <div class="price-column">
+    <h3 class="product-price">
+      {{ cartEntry.totalPrice.formattedValue }}
+    </h3>
+  </div>
+  <div class="action-column">
+    <button (click)="addToCart()" class="btn btn-block btn-primary">
+      Add to cart
+    </button>
+    <button (click)="removeEntry(cartEntry)" class="btn btn-block btn-link">
+      Remove
+    </button>
+  </div>
+</div>

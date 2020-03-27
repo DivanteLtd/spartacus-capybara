@@ -13,6 +13,7 @@ import { DvntPageNotFoundModule } from './dvnt-page-not-found/dvnt-page-not-foun
 import { DvntProductDetailsModule } from './dvnt-product-details/dvnt-product-details.module';
 import { DvntProductListModule } from './dvnt-product-list/dvnt-product-list.module';
 import { DvntProfileLinkListModule } from './dvnt-profile-link-list/dvnt-profile-link-list.module';
+import { DvntWishListModule } from './dvnt-wish-list/dvnt-wish-list.module';
 import { StyleGuideModule } from './style-guide/style-guide.module';
 import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
 
@@ -31,6 +32,7 @@ import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
     DvntProductDetailsModule,
     DvntProductListModule,
     DvntProfileLinkListModule,
+    DvntWishListModule,
     StyleGuideModule,
     DvntCheckoutModule,
   ],
