@@ -7,6 +7,7 @@ import { StorefrontMissingExportsModule } from './storefront-missing-exports/sto
 import { AppComponent } from './app.component';
 import { FeatureModule } from './features/feature.module';
 import { SharedModule } from './shared/shared.module';
+import { DvntSharedModule } from './features/dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { SharedModule } from './shared/shared.module';
     StorefrontMissingExportsModule,
     SharedModule,
     FeatureModule,
+    DvntSharedModule,
   ],
   bootstrap: [AppComponent],
 })

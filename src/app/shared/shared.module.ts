@@ -5,8 +5,6 @@ import { IconModule, MediaModule } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DvntGlobalMessageModule } from './dvnt-global-message/dvnt-global-message.module';
-
 const imports = [
   CommonModule,
   I18nModule,
@@ -21,6 +19,6 @@ const imports = [
 @NgModule({
   declarations: [],
   imports: imports,
-  exports: [imports, DvntGlobalMessageModule],
+  exports: imports,
 })
 export class SharedModule {}
