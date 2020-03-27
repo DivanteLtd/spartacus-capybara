@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
+import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 
 import { AppComponent } from './app.component';
 import { FeatureModule } from './features/feature.module';
 import { SharedModule } from './shared/shared.module';
-import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 
 @NgModule({
   declarations: [AppComponent],
