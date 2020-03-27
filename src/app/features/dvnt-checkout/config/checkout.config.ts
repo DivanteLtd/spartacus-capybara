@@ -48,16 +48,22 @@ const translationOverwrites = {
     cart: {
       cartItems: {
         totalItems: 'Total items',
+        ssfProducts: 'Products',
       },
       orderCost: {
         subtotalStandalone: 'Subtotal',
         shipping: 'Shipping',
         tax: 'Tax',
       },
+      voucher: {
+        ssfDiscountCode: 'Discount',
+      },
     },
   },
 };
 
 export const translationsConfig = {
-  i18n: { resources: translationOverwrites },
+  i18n: {
+    resources: translationOverwrites,
+  },
 };

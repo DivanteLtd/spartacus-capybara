@@ -1,0 +1,28 @@
+<ng-container *ngIf="cart$ | async as cart">
+  <div class="coupon-form-container">
+    <form (submit)="applyVoucher()" [formGroup]="form" autocomplete="off">
+      <input
+        #couponInput
+        (blur)="close($event)"
+        (focus)="open()"
+        (input)="filter(couponInput.value)"
+        (keydown.escape)="close($event)"
+        aria-label="applyVoucher"
+        autocomplete="off"
+        class="form-input"
+        formControlName="couponCode"
+        placeholder="Add discount code"
+        type="text"
+      />
+
+      <button
+        [class.disabled]="submitDisabled$ | async"
+        [disabled]="submitDisabled$ | async"
+        class="btn btn-block btn-primary apply-coupon-button"
+        type="submit"
+      >
+        {{ 'voucher.apply' | cxTranslate }}
+      </button>
+    </form>
+  </div>
+</ng-container>

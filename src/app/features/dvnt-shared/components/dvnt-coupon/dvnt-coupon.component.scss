@@ -1,0 +1,14 @@
+.coupon-form-container {
+  input {
+    border-color: var(--ssf-gray-primary);
+    width: 100%;
+  }
+
+  .apply-coupon-button {
+    margin-top: 1rem;
+
+    &:disabled {
+      border: solid 2px var(--ssf-light-primary-darken);
+    }
+  }
+}

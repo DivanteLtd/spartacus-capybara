@@ -8,4 +8,5 @@ import { CheckoutOrderSummaryComponent } from '@spartacus/storefront';
 })
 export class DvntCheckoutOrderSummaryComponent extends CheckoutOrderSummaryComponent {
   showProductsInCart: boolean;
+  showCouponForm: boolean;
 }
