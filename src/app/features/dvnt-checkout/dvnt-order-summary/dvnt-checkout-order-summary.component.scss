@@ -7,22 +7,22 @@
   .highlight {
     padding: 3rem;
 
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    &.coupons {
+      margin-top: 1px;
+    }
+
     .checkout-order-summary-header {
-      margin-bottom: 40px;
+      margin-bottom: calculateRem(40px);
     }
 
     .total-items-label {
       display: flex;
       font-weight: 700;
       justify-content: space-between;
-
-      .toggle-product-list {
-        color: var(--ssf-color-primary);
-        cursor: pointer;
-        font-size: calculateRem(14px);
-        font-weight: 300;
-        text-decoration: underline;
-      }
     }
 
     .total-label {
@@ -40,10 +40,24 @@
   }
 }
 
-.products-list {
+.toggleable {
   display: none;
 
   &.opened {
     display: block;
+  }
+}
+
+.toggle-link {
+  color: var(--ssf-color-primary);
+  cursor: pointer;
+  font-size: calculateRem(14px);
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.coupons {
+  .toggle-link {
+    text-decoration: none;
   }
 }
