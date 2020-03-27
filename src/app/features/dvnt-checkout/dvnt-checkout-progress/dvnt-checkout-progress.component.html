@@ -1,0 +1,16 @@
+<section *ngIf="routerState$ | async as routerState">
+  <div class="checkout-progress-items">
+    <div
+      class="checkout-progress-item"
+      *ngFor="let step of steps; let i = index"
+      [ngClass]="{
+        ' is-active': i === activeStepIndex,
+        ' is-disabled': i > activeStepIndex
+      }"
+    >
+      <a [routerLink]="{ cxRoute: step.routeName } | cxUrl">
+        {{ step.name | cxTranslate }}
+      </a>
+    </div>
+  </div>
+</section>

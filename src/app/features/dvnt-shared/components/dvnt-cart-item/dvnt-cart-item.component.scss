@@ -19,6 +19,7 @@ p {
       0,
       var(--cx-grid-item-box-shadow-color)
     );
+    background-color: var(--ssf-white);
 
     .remove-button {
       display: flex;
@@ -54,9 +55,9 @@ p {
     }
 
     .quantity-item {
+      bottom: 0;
       position: absolute;
       right: 10px;
-      bottom: 0;
 
       input {
         background: var(--ssf-white);

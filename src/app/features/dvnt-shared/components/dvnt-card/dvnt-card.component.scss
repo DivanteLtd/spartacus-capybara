@@ -1,0 +1,49 @@
+.ssf-card {
+  padding: 3rem 2rem 1rem;
+  position: relative;
+  font-size: calculateRem(14px);
+  border: solid 1px var(--ssf-light-primary);
+
+  &.no-header {
+    padding: 2rem;
+  }
+
+  &.hover-shadow {
+    transition: box-shadow 0.3s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 30px var(--ssf-light-primary);
+    }
+  }
+
+  .ssf-card-header {
+    font-size: var(--ssf-font-size-mobile);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  &.primary {
+    .ssf-card-header {
+      background-color: var(--ssf-color-primary);
+      color: var(--ssf-white);
+    }
+  }
+
+  &.secondary {
+    .ssf-card-header {
+      background-color: var(--ssf-dark-primary);
+      color: var(--ssf-white);
+    }
+  }
+
+  &.has-shadow {
+    box-shadow: 0 0 30px var(--ssf-light-primary);
+  }
+
+  .card-actions {
+    font-weight: 500;
+  }
+}

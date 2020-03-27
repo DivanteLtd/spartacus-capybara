@@ -1,0 +1,49 @@
+@import 'mixins';
+
+.checkout-order-summary {
+  padding: 0.5rem;
+  padding-left: calculateRem(50px);
+
+  .highlight {
+    padding: 3rem;
+
+    .checkout-order-summary-header {
+      margin-bottom: 40px;
+    }
+
+    .total-items-label {
+      display: flex;
+      font-weight: 700;
+      justify-content: space-between;
+
+      .toggle-product-list {
+        color: var(--ssf-color-primary);
+        cursor: pointer;
+        font-size: calculateRem(14px);
+        font-weight: 300;
+        text-decoration: underline;
+      }
+    }
+
+    .total-label {
+      margin-top: calculateRem(40px);
+    }
+
+    .summary-label {
+      margin-bottom: 0.5rem;
+
+      .summary-amount {
+        float: right;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.products-list {
+  display: none;
+
+  &.opened {
+    display: block;
+  }
+}

@@ -16,3 +16,9 @@ This file contains styles for small reusable elements, that are not components, 
     font-size: calculateRem(14px);
   }
 }
+
+.highlight {
+  padding: 2rem;
+  background-color: var(--ssf-light-primary);
+  margin-bottom: 1rem;
+}

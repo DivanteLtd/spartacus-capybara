@@ -1,0 +1,43 @@
+@import 'media';
+@import 'mixins';
+.checkout-step-header {
+  padding-top: calculateRem(40px);
+
+  @include tablet-and-up {
+    padding-top: calculateRem(80px);
+  }
+}
+.checkout-address-select {
+  margin-bottom: 1.5rem;
+
+  .checkout-address-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .checkout-address-card-item {
+      cursor: pointer;
+      flex: 1;
+      width: auto;
+
+      @include tablet-and-up {
+        max-width: 48%;
+      }
+    }
+
+    @include tablet-and-up {
+      flex-direction: row;
+      .checkout-address-card-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.checkout-navigation-buttons {
+  display: flex;
+
+  button {
+    flex: 1;
+  }
+}
