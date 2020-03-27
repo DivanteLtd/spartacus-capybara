@@ -24,4 +24,9 @@ export class DvntWishListIconComponent implements OnInit {
       })
     );
   }
+
+  public blockPropagation(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+  }
 }
