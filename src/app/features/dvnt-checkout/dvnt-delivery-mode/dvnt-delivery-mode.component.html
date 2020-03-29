@@ -1,0 +1,49 @@
+<h2 class="checkout-step-header">
+  {{ 'checkoutShipping.shippingMethod' | cxTranslate }}
+</h2>
+<div [formGroup]="mode" class="delivery-mode-items">
+  <ng-container *ngIf="(supportedDeliveryModes$ | async)?.length; else loading">
+    <div
+      *ngFor="let mode of supportedDeliveryModes$ | async"
+      class="ssf-radio-input"
+    >
+      <input
+        (change)="changeMode(mode.code)"
+        [value]="mode.code"
+        aria-checked="true"
+        formControlName="deliveryModeId"
+        id="deliveryMode-{{ mode.code }}"
+        role="radio"
+        type="radio"
+      />
+      <label
+        class="ssf-radio-label delivery-mode-item"
+        for="deliveryMode-{{ mode.code }}"
+      >
+        <div class="ssf-delivery-mode">{{ mode.name }}</div>
+        <div class="ssf-delivery-price">
+          {{ mode.deliveryCost.formattedValue }}
+        </div>
+        <div class="ssf-delivery-details">{{ mode.description }}</div>
+      </label>
+    </div>
+  </ng-container>
+</div>
+<div class="checkout-navigation-buttons">
+  <button (click)="back()" class="btn btn-link">
+    {{ 'common.back' | cxTranslate }}
+  </button>
+  <button
+    (click)="next()"
+    [disabled]="deliveryModeInvalid"
+    class="btn btn-primary"
+  >
+    {{ 'common.continue' | cxTranslate }}
+  </button>
+</div>
+
+<ng-template #loading>
+  <div class="cx-spinner">
+    <cx-spinner></cx-spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,10 @@
+@import 'mixins';
+
+.delivery-mode-items {
+  margin-bottom: calculateRem(40px);
+  margin-top: calculateRem(40px);
+
+  .delivery-mode-item {
+    display: flex;
+  }
+}

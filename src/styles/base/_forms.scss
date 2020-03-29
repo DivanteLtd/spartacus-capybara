@@ -38,6 +38,45 @@
   }
 }
 
+.ssf-radio-input {
+  input {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked {
+      & + .ssf-radio-label {
+        background-color: var(--ssf-light-primary);
+
+        &:before {
+          border: solid 9px var(--ssf-color-primary);
+        }
+      }
+    }
+  }
+
+  .ssf-radio-label {
+    cursor: pointer;
+    font-family: var(--ssf-secondary-font-family);
+    font-size: calculateRem(18px);
+    font-weight: 500;
+    padding: 20px;
+    padding-left: calculateRem(60px);
+    position: relative;
+
+    &:before {
+      border: solid 1px var(--ssf-gray-primary);
+      border-radius: 100%;
+      content: ' ';
+      height: 23px;
+      left: 20px;
+      position: absolute;
+      top: 22px;
+      transition: border 0.3s ease-out;
+      width: 23px;
+    }
+  }
+}
+
 input:not([type='checkbox']) {
   @extend %base-input;
 

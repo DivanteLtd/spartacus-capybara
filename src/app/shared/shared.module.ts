@@ -4,6 +4,7 @@ import { I18nModule, UrlModule } from '@spartacus/core';
 import { IconModule, MediaModule } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const imports = [
   CommonModule,
@@ -14,6 +15,7 @@ const imports = [
   MediaModule,
   IconModule,
   BrowserAnimationsModule,
+  ReactiveFormsModule,
 ];
 
 @NgModule({

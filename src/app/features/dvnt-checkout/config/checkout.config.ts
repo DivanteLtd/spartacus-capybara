@@ -5,9 +5,11 @@ import {
   CheckoutAuthGuard,
   CheckoutDetailsLoadedGuard,
   LayoutConfig,
+  ShippingAddressSetGuard,
 } from '@spartacus/storefront';
 import { DvntCheckoutProgressComponent } from '../dvnt-checkout-progress/dvnt-checkout-progress.component';
 import { DvntCheckoutOrderSummaryComponent } from '../dvnt-order-summary/dvnt-checkout-order-summary.component';
+import { DvntDeliveryModeComponent } from '../dvnt-delivery-mode/dvnt-delivery-mode.component';
 
 export const checkoutLayoutConfig = {
   layoutSlots: {
@@ -31,6 +33,10 @@ export const checkoutCmsConfig = <CmsConfig>{
         CartNotEmptyGuard,
         CheckoutDetailsLoadedGuard,
       ],
+    },
+    CheckoutDeliveryMode: {
+      component: DvntDeliveryModeComponent,
+      guards: [CheckoutAuthGuard, CartNotEmptyGuard, ShippingAddressSetGuard],
     },
     CheckoutProgress: {
       component: DvntCheckoutProgressComponent,

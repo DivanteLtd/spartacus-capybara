@@ -19,12 +19,14 @@ import {
 } from '@spartacus/storefront';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 import { DvntCheckoutOrderSummaryComponent } from './dvnt-order-summary/dvnt-checkout-order-summary.component';
+import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mode.component';
 
 @NgModule({
   declarations: [
     DvntShippingAddressComponent,
     DvntCheckoutProgressComponent,
     DvntCheckoutOrderSummaryComponent,
+    DvntDeliveryModeComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { DvntCheckoutOrderSummaryComponent } from './dvnt-order-summary/dvnt-che
     DvntShippingAddressComponent,
     DvntCheckoutProgressComponent,
     DvntCheckoutOrderSummaryComponent,
+    DvntDeliveryModeComponent,
   ],
 })
 export class DvntCheckoutModule {}
