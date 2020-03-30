@@ -15,6 +15,7 @@
   <div class="modal-container">
     <div class="modal-scroll-container">
       <app-dvnt-categories
+        (categorySelected)="closeModal()"
         [categoriesData$]="categoriesData$"
       ></app-dvnt-categories>
     </div>

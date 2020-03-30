@@ -1,6 +1,10 @@
 <ul>
   <li *ngFor="let child of parent.children" class="footer-menu">
-    <a [routerLink]="child.url" [ngClass]="{ hide: !child.title }">
+    <a
+      (click)="selectCategory()"
+      [ngClass]="{ hide: !child.title }"
+      [routerLink]="child.url"
+    >
       {{ child.title }}
     </a>
 

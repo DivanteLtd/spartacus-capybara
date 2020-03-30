@@ -18,6 +18,7 @@ import { DvntCarouselProductsComponent } from './components/dvnt-carousel-produc
 import { DvntCartItemComponent } from './components/dvnt-cart-item/dvnt-cart-item.component';
 import { DvntCategoriesComponent } from './components/dvnt-categories/dvnt-categories.component';
 import { DvntCategoriesRowComponent } from './components/dvnt-categories-row/dvnt-categories-row.component';
+import { DvntCategoriesService } from './services/dvnt-categories/dvnt-categories.service';
 import { DvntCouponComponent } from './components/dvnt-coupon/dvnt-coupon.component';
 import { DvntGlobalMessageComponent } from './components/dvnt-global-message/dvnt-global-message.component';
 import { DvntIconComponent } from './components/dvnt-icon/dvnt-icon.component';
@@ -70,6 +71,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntPaginationComponent,
   ],
   providers: [
+    DvntCategoriesService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
