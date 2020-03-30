@@ -1,0 +1,176 @@
+<form [formGroup]="userRegistrationForm" class="register-customer-form">
+  <div class="form-group">
+    <label>
+      <span class="label-content">{{ 'register.title' | cxTranslate }}</span>
+      <ng-select
+        [items]="titles$ | async"
+        [virtualScroll]="true"
+        class="custom"
+        dropdownPosition="auto"
+        placeholder="{{ 'register.selectTitle' | cxTranslate }}"
+      >
+        <ng-template ng-label-tmp let-item="item">
+          <span>{{ item.name }}</span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          {{ item.name }}
+        </ng-template>
+      </ng-select>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'register.emailAddress.placeholder' | cxTranslate
+      }}</span>
+      <input
+        [class.is-invalid]="
+          userRegistrationForm.get('email').errors &&
+          (userRegistrationForm.get('email').errors['email'] ||
+            userRegistrationForm.get('email').errors['InvalidEmail']) &&
+          userRegistrationForm.get('email').dirty
+        "
+        class="form-control"
+        formControlName="email"
+        name="email"
+        placeholder="{{ 'register.emailAddress.placeholder' | cxTranslate }}"
+        type="email"
+      />
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'register.firstName.placeholder' | cxTranslate
+      }}</span>
+      <input
+        class="form-control"
+        formControlName="firstName"
+        name="firstname"
+        placeholder="{{ 'register.firstName.placeholder' | cxTranslate }}"
+        type="text"
+      />
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'register.lastName.placeholder' | cxTranslate
+      }}</span>
+      <input
+        class="form-control"
+        formControlName="lastName"
+        name="lastname"
+        placeholder="{{ 'register.lastName.placeholder' | cxTranslate }}"
+        type="text"
+      />
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'register.password.placeholder' | cxTranslate
+      }}</span>
+      <input
+        [class.is-invalid]="
+          userRegistrationForm.get('password').invalid &&
+          userRegistrationForm.get('password').dirty
+        "
+        class="form-control"
+        formControlName="password"
+        name="password"
+        placeholder="{{ 'register.password.placeholder' | cxTranslate }}"
+        type="password"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          userRegistrationForm.get('password').invalid &&
+          userRegistrationForm.get('password').dirty
+        "
+      >
+        <span>{{ 'register.passwordMinRequirements' | cxTranslate }}</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'register.confirmPassword.label' | cxTranslate
+      }}</span>
+      <input
+        [class.is-invalid]="
+          userRegistrationForm.get('password').value !==
+          userRegistrationForm.get('passwordconf').value
+        "
+        class="form-control"
+        formControlName="passwordconf"
+        name="confirmpassword"
+        placeholder="{{ 'register.confirmPassword.placeholder' | cxTranslate }}"
+        type="password"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          userRegistrationForm.get('password').value !==
+            userRegistrationForm.get('passwordconf').value &&
+          userRegistrationForm.get('passwordconf').value
+        "
+      >
+        <span>{{ 'register.bothPasswordMustMatch' | cxTranslate }}</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-check">
+    <label class="form-checkbox">
+      <input
+        type="checkbox"
+        name="newsletter"
+        class="form-check-input"
+        formControlName="newsletter"
+      />
+      <span>
+        {{ 'register.emailMarketing' | cxTranslate }}
+      </span>
+    </label>
+  </div>
+
+  <div class="form-check">
+    <label class="form-checkbox">
+      <input
+        class="form-check-input"
+        formControlName="termsandconditions"
+        name="termsandconditions"
+        type="checkbox"
+      />
+      <span>
+        {{ 'register.registerTerms' | cxTranslate }}
+        <a
+          [routerLink]="{ cxRoute: 'termsAndConditions' } | cxUrl"
+          target="_blank"
+        >
+          {{ 'register.termsAndConditions' | cxTranslate }}
+        </a>
+      </span>
+    </label>
+  </div>
+
+  <button
+    (click)="submit()"
+    [disabled]="userRegistrationForm.invalid"
+    class="btn btn-primary btn-block"
+    type="submit"
+  >
+    {{ 'register.register' | cxTranslate }}
+  </button>
+
+  <a [routerLink]="{ cxRoute: 'login' } | cxUrl" class="btn btn-link">
+    {{ 'register.signIn' | cxTranslate }}
+  </a>
+</form>
