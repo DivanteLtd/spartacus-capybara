@@ -88,6 +88,7 @@ input:not([type='checkbox']) {
 
 .form-check {
   .form-checkbox {
+    display: flex;
     margin-bottom: 0;
 
     .form-check-input {

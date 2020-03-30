@@ -20,7 +20,7 @@ export class DvntWishListIconComponent implements OnInit {
     number
   > = this.wishListService.getWishList().pipe(
     startWith({ totalItems: 0 }),
-    map(wishList => wishList.totalItems || 0)
+    map(wishList => (wishList && wishList.totalItems) || 0)
   );
 
   constructor(

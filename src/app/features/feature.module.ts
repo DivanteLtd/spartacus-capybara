@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { DvntAccountModule } from './dvnt-account/dvnt-account.module';
 import { DvntBottomNavigationModule } from './dvnt-bottom-navigation/dvnt-bottom-navigation.module';
 import { DvntBreadcrumbsModule } from './dvnt-breadcrumbs/dvnt-breadcrumbs.module';
 import { DvntCartModule } from './dvnt-cart/dvnt-cart.module';
@@ -19,6 +20,7 @@ import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
 
 @NgModule({
   imports: [
+    DvntAccountModule,
     DvntBottomNavigationModule,
     DvntBreadcrumbsModule,
     DvntCartModule,

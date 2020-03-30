@@ -1,0 +1,67 @@
+<form (submit)="login()" [formGroup]="form" class="login-customer-form">
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'loginForm.emailAddress.label' | cxTranslate
+      }}</span>
+      <input
+        [class.is-invalid]="
+          form.controls['userId'].invalid &&
+          (form.controls['userId'].touched || form.controls['userId'].dirty)
+        "
+        class="form-control"
+        formControlName="userId"
+        placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}"
+        type="email"
+      />
+      <div
+        class="invalid-feedback"
+        *ngIf="
+          form.controls['userId'].invalid &&
+          (form.controls['userId'].touched || form.controls['userId'].dirty)
+        "
+      >
+        <span>{{ 'loginForm.wrongEmailFormat' | cxTranslate }}</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <span class="label-content required">{{
+        'loginForm.password.label' | cxTranslate
+      }}</span>
+      <input
+        class="form-control"
+        formControlName="password"
+        placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}"
+        type="password"
+      />
+    </label>
+  </div>
+
+  <button
+    [disabled]="form.invalid"
+    class="btn btn-primary btn-block"
+    type="submit"
+  >
+    {{ 'loginForm.signIn' | cxTranslate }}
+  </button>
+
+  <a
+    [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl"
+    aria-controls="reset-password"
+    class="btn btn-link"
+  >
+    {{ 'loginForm.forgotPassword' | cxTranslate }}
+  </a>
+
+  <div class="register-section">
+    <span class="register-lable">
+      {{ 'loginForm.dontHaveAccount' | cxTranslate }}
+    </span>
+    <a [routerLink]="{ cxRoute: 'register' } | cxUrl" class="btn btn-link">
+      {{ 'loginForm.register' | cxTranslate }}
+    </a>
+  </div>
+</form>
