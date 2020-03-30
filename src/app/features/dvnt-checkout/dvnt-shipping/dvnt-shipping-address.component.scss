@@ -1,12 +1,6 @@
 @import 'media';
 @import 'mixins';
-.checkout-step-header {
-  padding-top: calculateRem(40px);
 
-  @include tablet-and-up {
-    padding-top: calculateRem(80px);
-  }
-}
 .checkout-address-select {
   margin-bottom: 1.5rem;
 
@@ -31,13 +25,5 @@
         width: 100%;
       }
     }
-  }
-}
-
-.checkout-navigation-buttons {
-  display: flex;
-
-  button {
-    flex: 1;
   }
 }

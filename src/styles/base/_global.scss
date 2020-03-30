@@ -19,13 +19,13 @@ body {
 
 * {
   box-sizing: border-box;
-  outline: none;
   font-family: var(--ssf-primary-font-family);
+  outline: none;
 }
 
 .topBanner {
-  height: 40px;
   display: flex;
+  height: 40px;
 }
 
 header {
@@ -79,8 +79,8 @@ footer {
 
   @include laptop-and-up {
     height: auto;
-    position: initial;
     padding: 0;
+    position: initial;
   }
 }
 
@@ -135,5 +135,22 @@ cx-product-details-tab {
     height: 27px;
     padding: 0;
     width: 50px !important;
+  }
+}
+
+// Checkout common
+.checkout-step-header {
+  padding-top: calculateRem(40px);
+
+  @include tablet-and-up {
+    padding-top: calculateRem(80px);
+  }
+}
+
+.checkout-navigation-buttons {
+  display: flex;
+
+  button {
+    flex: 1;
   }
 }
