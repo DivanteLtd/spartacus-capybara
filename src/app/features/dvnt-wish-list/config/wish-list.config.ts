@@ -44,18 +44,20 @@ export function cmsStructureConfig(): CmsStructureConfig {
   };
 }
 
-const translationOverwrites = {
+const wishTranslationOverwrites = {
   en: {
     myAccount: {
       wishlist: {
         action: 'Action',
         itemPrice: 'Item price',
         productName: 'Product name',
+        remove: 'Remove',
+        addToCart: 'Add to cart',
       },
     },
   },
 };
 
-export const translationsConfig = {
-  i18n: { resources: translationOverwrites },
+export const wishTranslationsConfig = {
+  i18n: { resources: wishTranslationOverwrites },
 };

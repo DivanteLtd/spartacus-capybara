@@ -57,9 +57,7 @@
 
     <div class="additional-details">
       <p *ngIf="item.product.code" class="additional-row">
-        <span class="label">
-          SKU:
-        </span>
+        <span class="label"> {{ 'productDetails.sku' | cxTranslate }}: </span>
         <span class="value">
           {{ item.product.code }}
         </span>

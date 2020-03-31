@@ -61,7 +61,7 @@ export function cmsStructureConfig(): CmsStructureConfig {
   };
 }
 
-const translationOverwrites = {
+const accountTranslationOverwrites = {
   en: {
     user: {
       register: {
@@ -72,6 +72,6 @@ const translationOverwrites = {
   },
 };
 
-export const translationsConfig = {
-  i18n: { resources: translationOverwrites },
+export const accountTranslationsConfig = {
+  i18n: { resources: accountTranslationOverwrites },
 };

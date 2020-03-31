@@ -16,10 +16,16 @@ import {
   ProductListModule,
   StarRatingModule,
 } from '@spartacus/storefront';
+
 import { DvntProductFacetNavigationComponent } from './dvnt-product-facet-navigation/dvnt-product-facet-navigation.component';
-import { DvntProductListItemComponent } from './dvnt-product-list-item/dvnt-product-list-item.component';
 import { DvntProductGridItemComponent } from './dvnt-product-grid-item/dvnt-product-grid-item.component';
+import { DvntProductListItemComponent } from './dvnt-product-list-item/dvnt-product-list-item.component';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
+import {
+  productListCmsConfig,
+  productListLayoutConfig,
+  productListTranslationsConfig,
+} from './config/product-list.config';
 
 @NgModule({
   declarations: [
@@ -33,26 +39,13 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     SharedModule,
     ListNavigationModule,
     ProductListModule,
-    ConfigModule.withConfig({
-      cmsComponents: {
-        CMSProductListComponent: {
-          component: DvntProductListComponent,
-        },
-      },
-    } as CmsConfig),
-    ConfigModule.withConfig({
-      layoutSlots: {
-        ProductListPageTemplate: {
-          xs: {
-            slots: ['ProductListSlot'],
-          },
-        },
-      },
-    }),
     StarRatingModule,
     FeaturesConfigModule,
     DvntSharedModule,
     NavigationModule,
+    ConfigModule.withConfig(productListTranslationsConfig),
+    ConfigModule.withConfig(productListCmsConfig),
+    ConfigModule.withConfig(productListLayoutConfig),
   ],
   entryComponents: [
     DvntProductListComponent,

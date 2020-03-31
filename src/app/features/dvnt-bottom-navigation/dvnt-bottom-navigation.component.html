@@ -8,7 +8,7 @@
       width="20"
     ></app-dvnt-icon>
     <span class="navigation-item-label">
-      Home
+      {{ 'navigation.home' | cxTranslate }}
     </span>
   </div>
   <div (click)="setSearchAction($event)" class="navigation-item">
@@ -21,7 +21,7 @@
     ></app-dvnt-icon>
 
     <span class="navigation-item-label">
-      Search
+      {{ 'navigation.search' | cxTranslate }}
     </span>
   </div>
   <div (click)="setProfileAction($event)" class="navigation-item">
@@ -34,7 +34,7 @@
     ></app-dvnt-icon>
 
     <span class="navigation-item-label">
-      Profile
+      {{ 'navigation.profile' | cxTranslate }}
     </span>
   </div>
   <div (click)="setCategoriesAction($event)" class="navigation-item">
@@ -46,7 +46,7 @@
       width="20"
     ></app-dvnt-icon>
     <span class="navigation-item-label">
-      Categories
+      {{ 'navigation.categories' | cxTranslate }}
     </span>
   </div>
   <div (click)="setCartAction($event)" class="navigation-item cart-item">
@@ -62,7 +62,7 @@
       </button>
     </div>
     <span class="navigation-item-label">
-      Cart
+      {{ 'navigation.cart' | cxTranslate }}
     </span>
   </div>
 </div>

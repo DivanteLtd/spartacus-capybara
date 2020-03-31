@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  I18nModule,
-  UrlModule,
-  CmsStructureConfig,
-  CmsPageSlotsConfig,
-  ContentSlotComponentData,
-  ConfigModule,
-  CmsConfig,
-} from '@spartacus/core';
+import { I18nModule, UrlModule, ConfigModule } from '@spartacus/core';
 import {
   StarRatingModule,
   ItemCounterModule,
@@ -31,6 +23,12 @@ import { DvntProductMobileImagesComponent } from './dvnt-product-mobile-images/d
 import { DvntProductTabsComponent } from './dvnt-product-tabs/dvnt-product-tabs.component';
 import { DvntProductTabsWrapperComponent } from './dvnt-product-tabs-wrapper/dvnt-product-tabs-wrapper.component';
 import { DvntProductUpSellingReferencesComponent } from './dvnt-product-up-selling-references/dvnt-product-up-selling-references.component';
+import {
+  productDetailsCmsStructureConfig,
+  productDetailsTranslationsConfig,
+  productDetailsCmsConfig,
+  productDetailsLayoutConfig,
+} from './config/product-details.config';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -61,27 +59,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     UrlModule,
     DvntCarouselModule,
-    ConfigModule.withConfigFactory(cmsStructureConfig),
-    ConfigModule.withConfig({
-      cmsComponents: {
-        DvntProductDetailsComponent: {
-          component: DvntProductDetailsComponent,
-        },
-        CMSTabParagraphContainer: {
-          component: DvntProductTabsComponent,
-        },
-        ProductReferencesComponent: {
-          component: DvntProductUpSellingReferencesComponent,
-        },
-      },
-    } as CmsConfig),
-    ConfigModule.withConfig({
-      layoutSlots: {
-        ProductDetailsPageTemplate: {
-          slots: ['DvntProductDetails', 'UpSelling'],
-        },
-      },
-    }),
+    ConfigModule.withConfigFactory(productDetailsCmsStructureConfig),
+    ConfigModule.withConfig(productDetailsTranslationsConfig),
+    ConfigModule.withConfig(productDetailsCmsConfig),
+    ConfigModule.withConfig(productDetailsLayoutConfig),
   ],
   entryComponents: [
     DvntAddProductToCartComponent,
@@ -101,32 +82,3 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
 })
 export class DvntProductDetailsModule {}
-
-export const staticComponents: {
-  [key: string]: ContentSlotComponentData | any;
-} = {
-  DvntProductDetailsComponent: {
-    typeCode: 'DvntProductDetailsComponent',
-    flexType: 'DvntProductDetailsComponent',
-    uid: 'DvntProductDetailsComponent',
-  },
-};
-
-const cmsPageSlotConfig: CmsPageSlotsConfig = {
-  DvntProductDetails: {
-    componentIds: ['DvntProductDetailsComponent'],
-  },
-};
-
-export function cmsStructureConfig(): CmsStructureConfig {
-  return {
-    cmsStructure: {
-      components: {
-        ...staticComponents,
-      },
-      slots: {
-        ...cmsPageSlotConfig,
-      },
-    },
-  };
-}

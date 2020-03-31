@@ -20,7 +20,7 @@ export class DvntWishListIconComponent implements OnInit {
     number
   > = this.wishListService.getWishList().pipe(
     startWith({ totalItems: 0 }),
-    map(wishList => (wishList && wishList.totalItems) || 0)
+    map((wishList) => (wishList && wishList.totalItems) || 0)
   );
 
   constructor(
@@ -31,7 +31,7 @@ export class DvntWishListIconComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.auth.isUserLoggedIn().pipe(
-      switchMap(isUserLoggedIn => {
+      switchMap((isUserLoggedIn) => {
         if (isUserLoggedIn) {
           return this.userService.get();
         } else {

@@ -79,14 +79,14 @@ export class DvntCarouselProductsComponent implements OnInit, OnDestroy {
   }
 
   private setTitle(): void {
-    this.title$ = this.componentData$.pipe(map(data => data.title));
+    this.title$ = this.componentData$.pipe(map((data) => data.title));
   }
 
   private setItems(): void {
     this.items$ = this.componentData$.pipe(
-      map(data => data.productCodes.trim().split(' ')),
-      map(codes =>
-        codes.map(code => this.productService.get(code, this.PRODUCT_SCOPE))
+      map((data) => data.productCodes.trim().split(' ')),
+      map((codes) =>
+        codes.map((code) => this.productService.get(code, this.PRODUCT_SCOPE))
       )
     );
   }

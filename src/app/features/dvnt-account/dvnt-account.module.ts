@@ -9,9 +9,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
 import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
 import {
-  translationsConfig,
   accountCmsConfig,
   accountLayoutConfig,
+  accountTranslationsConfig,
   cmsStructureConfig,
 } from './config/account.config';
 
@@ -30,7 +30,7 @@ import {
     RouterModule,
     NgSelectModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
-    ConfigModule.withConfig(translationsConfig),
+    ConfigModule.withConfig(accountTranslationsConfig),
     ConfigModule.withConfig(accountCmsConfig),
     ConfigModule.withConfig(accountLayoutConfig),
   ],

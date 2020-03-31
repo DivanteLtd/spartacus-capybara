@@ -2,16 +2,17 @@
   <div class="image-container">
     <app-dvnt-icon height="143" icon="empty-cart" width="211"></app-dvnt-icon>
   </div>
-  <h3>Your bag is empty</h3>
+  <h3>
+    {{ 'empty.title' | cxTranslate }}
+  </h3>
   <p>
-    Looks like you haven’t added any items to the bag yet. Start shopping to
-    fill it in.
+    {{ 'empty.slogan' | cxTranslate }}
   </p>
 
   <button
     (click)="goToHomePage()"
     class="btn btn-secondary btn-block action-button"
   >
-    Start shopping
+    {{ 'empty.startShopping' | cxTranslate }}
   </button>
 </div>

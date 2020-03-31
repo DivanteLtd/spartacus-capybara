@@ -1,68 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ContentSlotComponentData,
-  CmsPageSlotsConfig,
-  CmsStructureConfig,
-  ConfigModule,
-  CmsConfig,
-} from '@spartacus/core';
+import { ConfigModule, I18nModule } from '@spartacus/core';
 
 import { DvntCategoriesWrapperComponent } from './dvnt-categories-wrapper.component';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
+import {
+  categoriesWrapperLayoutConfig,
+  categoriesWrapperCmsConfig,
+  categoriesWrapperTranslationsConfig,
+  categoriesWrapperCmsStructureConfig,
+} from './config/categories-wrapper.config';
 
 @NgModule({
   declarations: [DvntCategoriesWrapperComponent],
   imports: [
     CommonModule,
-    ConfigModule.withConfigFactory(cmsStructureConfig),
-    ConfigModule.withConfig({
-      cmsComponents: {
-        DvntCategoriesWrapperComponent: {
-          component: DvntCategoriesWrapperComponent,
-        },
-      },
-    } as CmsConfig),
-    ConfigModule.withConfig({
-      layoutSlots: {
-        ProductListPageTemplate: {
-          md: {
-            slots: ['DvntCategoriesWrapper', 'ProductListSlot'],
-          },
-        },
-      },
-    }),
+    I18nModule,
     DvntSharedModule,
+    ConfigModule.withConfigFactory(categoriesWrapperCmsStructureConfig),
+    ConfigModule.withConfig(categoriesWrapperTranslationsConfig),
+    ConfigModule.withConfig(categoriesWrapperCmsConfig),
+    ConfigModule.withConfig(categoriesWrapperLayoutConfig),
   ],
   entryComponents: [DvntCategoriesWrapperComponent],
 })
 export class DvntCategoriesWrapperModule {}
-
-export const staticComponents: {
-  [key: string]: ContentSlotComponentData | any;
-} = {
-  DvntCategoriesWrapperComponent: {
-    typeCode: 'DvntCategoriesWrapperComponent',
-    flexType: 'DvntCategoriesWrapperComponent',
-    uid: 'DvntCategoriesWrapperComponent',
-  },
-};
-
-const cmsPageSlotConfig: CmsPageSlotsConfig = {
-  DvntCategoriesWrapper: {
-    componentIds: ['DvntCategoriesWrapperComponent'],
-  },
-};
-
-export function cmsStructureConfig(): CmsStructureConfig {
-  return {
-    cmsStructure: {
-      components: {
-        ...staticComponents,
-      },
-      slots: {
-        ...cmsPageSlotConfig,
-      },
-    },
-  };
-}

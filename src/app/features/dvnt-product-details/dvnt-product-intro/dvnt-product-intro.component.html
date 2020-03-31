@@ -14,7 +14,12 @@
         [rating]="product?.averageRating"
         [disabled]="true"
       ></cx-star-rating>
-      <div class="reviews">Read all {{ product?.numberOfReviews }} review</div>
+      <div class="reviews">
+        {{
+          'productReview.readAll'
+            | cxTranslate: { count: product?.numberOfReviews }
+        }}
+      </div>
     </div>
 
     <div class="rating" *ngIf="!product.averageRating">

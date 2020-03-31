@@ -25,7 +25,7 @@ export class DvntProductDetailsComponent {
     this.product$ = this.currentProductService.getProduct();
 
     this.isMobileView$ = this.breakpointService.breakpoint$.pipe(
-      map(breakpoint => breakpoint === BREAKPOINT.xs)
+      map((breakpoint) => breakpoint === BREAKPOINT.xs)
     );
   }
 }

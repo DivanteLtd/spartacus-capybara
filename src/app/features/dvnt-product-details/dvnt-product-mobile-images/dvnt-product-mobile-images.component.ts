@@ -47,7 +47,7 @@ export class DvntProductMobileImagesComponent extends ProductImagesComponent
 
   ngOnInit(): void {
     this.thumbs$ = this.thumbs$.pipe(
-      tap(thumbs => {
+      tap((thumbs) => {
         if (!thumbs.length) {
           this.config.pagination = false;
           this.cd.detectChanges();

@@ -13,10 +13,12 @@
                 width="15"
                 height="15"
               ></app-dvnt-icon>
-              Filters
+              {{ 'productList.filters' | cxTranslate }}
             </button>
             <div class="form-group cx-sort-dropdown">
-              <span class="font-roboto sort-by-label">Sort By:</span>
+              <span class="font-roboto sort-by-label">
+                {{ 'productList.sortBy' | cxTranslate }}:
+              </span>
               <cx-sorting
                 [sortOptions]="model.sorts"
                 (sortListEvent)="sortList($event)"
@@ -25,14 +27,14 @@
               ></cx-sorting>
             </div>
             <span class="items-found-label">
-              Products found:
+              {{ 'productList.productsFound' | cxTranslate }}:
             </span>
             <span class="items-found-total">
               {{ (model$ | async).pagination.totalResults }}
             </span>
             <span class="view-modes">
               <span class="view-modes-label font-roboto">
-                View
+                {{ 'productList.view' | cxTranslate }}
               </span>
               <button
                 class="btn-view-mode"

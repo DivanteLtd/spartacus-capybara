@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ConfigModule,
-  CmsStructureConfig,
-  CmsConfig,
-  ContentSlotComponentData,
-  CmsPageSlotsConfig,
-  I18nModule,
-  UrlModule,
-} from '@spartacus/core';
+import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import { MediaModule } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
 
@@ -17,7 +9,7 @@ import { DvntWishListItemComponent } from './dvnt-wish-list-item/dvnt-wish-list-
 import {
   wishListCmsConfig,
   cmsStructureConfig,
-  translationsConfig,
+  wishTranslationsConfig,
 } from './config/wish-list.config';
 
 @NgModule({
@@ -28,7 +20,7 @@ import {
     MediaModule,
     RouterModule,
     UrlModule,
-    ConfigModule.withConfig(translationsConfig),
+    ConfigModule.withConfig(wishTranslationsConfig),
     ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig(wishListCmsConfig),
   ],
