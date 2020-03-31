@@ -6,7 +6,7 @@ import { DvntCheckoutProgressComponent } from './dvnt-checkout-progress/dvnt-che
 import {
   checkoutCmsConfig,
   checkoutLayoutConfig,
-  translationsConfig,
+  checkoutTranslationsConfig,
 } from './config/checkout.config';
 import { SharedModule } from '../../shared/shared.module';
 import {
@@ -31,7 +31,7 @@ import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mo
   imports: [
     CommonModule,
     SharedModule,
-    ConfigModule.withConfig(translationsConfig),
+    ConfigModule.withConfig(checkoutTranslationsConfig),
     ConfigModule.withConfig(checkoutCmsConfig),
     ConfigModule.withConfig(checkoutLayoutConfig),
     CardModule,

@@ -7,20 +7,20 @@
   ></app-dvnt-icon>
 
   <h2 class="pnf-title">
-    We can't find the page
+    {{ 'pageNotFound.title' | cxTranslate }}
   </h2>
 
   <p class="pnf-subtitle">
-    Unfortunately we can't find the page you are looking for.
+    {{ 'pageNotFound.slogan' | cxTranslate }}
   </p>
 
   <div class="pnf-actions-container">
     <button (click)="navigateToHomePage()" class="btn btn-primary">
-      Return to home
+      {{ 'pageNotFound.returnToHome' | cxTranslate }}
     </button>
 
     <button (click)="navigateToPreviousPage()" class="btn btn-link">
-      Back
+      {{ 'pageNotFound.back' | cxTranslate }}
     </button>
   </div>
 </div>

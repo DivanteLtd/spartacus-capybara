@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { I18nModule, UrlModule, FeaturesConfigModule } from '@spartacus/core';
+import {
+  I18nModule,
+  UrlModule,
+  FeaturesConfigModule,
+  ConfigModule,
+} from '@spartacus/core';
 import {
   MediaModule,
   StarRatingModule,
@@ -23,8 +29,8 @@ import { DvntCouponComponent } from './components/dvnt-coupon/dvnt-coupon.compon
 import { DvntGlobalMessageComponent } from './components/dvnt-global-message/dvnt-global-message.component';
 import { DvntIconComponent } from './components/dvnt-icon/dvnt-icon.component';
 import { DvntPaginationComponent } from './components/dvnt-pagination/dvnt-pagination.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
+import { sharedTranslationsConfig } from './config/shared.config';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -57,6 +63,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SharedModule,
     FeaturesConfigModule,
     ItemCounterModule,
+    ConfigModule.withConfig(sharedTranslationsConfig),
   ],
   exports: [
     DvntAppliedCouponsComponent,

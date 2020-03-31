@@ -49,7 +49,7 @@ export const checkoutCmsConfig = <CmsConfig>{
   },
 };
 
-const translationOverwrites = {
+const checkoutTranslationOverwrites = {
   en: {
     cart: {
       cartItems: {
@@ -68,8 +68,8 @@ const translationOverwrites = {
   },
 };
 
-export const translationsConfig = {
+export const checkoutTranslationsConfig = {
   i18n: {
-    resources: translationOverwrites,
+    resources: checkoutTranslationOverwrites,
   },
 };

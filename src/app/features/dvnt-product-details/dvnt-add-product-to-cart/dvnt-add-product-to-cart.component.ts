@@ -39,7 +39,7 @@ export class DvntAddProductToCartComponent extends AddToCartComponent {
 
     this.cartService
       .getEntry(this.productCode)
-      .subscribe(entry => {
+      .subscribe((entry) => {
         if (entry) {
           this.increment = true;
         }

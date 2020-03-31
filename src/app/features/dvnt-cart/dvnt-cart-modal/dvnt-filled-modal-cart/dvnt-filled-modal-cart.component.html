@@ -1,6 +1,8 @@
 <div class="filled-cart">
   <div class="top-section">
-    <h3 class="header-label">Total items: {{ quantity$ | async }}</h3>
+    <h3 class="header-label">
+      {{ 'filled.total' | cxTranslate: { count: quantity$ | async } }}
+    </h3>
 
     <app-dvnt-cart-product-list
       (closeSideBar)="dismissCartModal()"
@@ -21,7 +23,7 @@
       (click)="goToCheckout()"
       class="btn btn-primary btn-block action-button"
     >
-      Go to checkout
+      {{ 'filled.goToCheckout' | cxTranslate }}
     </button>
   </div>
 </div>

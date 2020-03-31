@@ -1,5 +1,5 @@
 <div class="stock">
-  Quantity
+  {{ 'productDetails.quantity' | cxTranslate }}
   <span *ngIf="product.stock?.stockLevel; else stockLevelStatusField">
     ({{ product.stock?.stockLevel }} available)
   </span>

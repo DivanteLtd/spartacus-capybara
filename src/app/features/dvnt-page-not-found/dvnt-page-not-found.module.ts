@@ -1,66 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ConfigModule,
-  CmsConfig,
-  CmsPageSlotsConfig,
-  ContentSlotComponentData,
-  CmsStructureConfig,
-} from '@spartacus/core';
+import { ConfigModule, I18nModule } from '@spartacus/core';
 
 import { DvntPageNotFoundComponent } from './dvnt-page-not-found.component';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
+import {
+  pageNotFoundCmsStructureConfig,
+  pageNotFoundTranslationsConfig,
+  pageNotFoundCmsConfig,
+  pageNotFoundLayoutConfig,
+} from './config/page-not-found.config';
 
 @NgModule({
   declarations: [DvntPageNotFoundComponent],
   imports: [
     CommonModule,
-    ConfigModule.withConfigFactory(cmsStructureConfig),
-    ConfigModule.withConfig({
-      cmsComponents: {
-        DvntPageNotFoundComponent: {
-          component: DvntPageNotFoundComponent,
-        },
-      },
-    } as CmsConfig),
-    ConfigModule.withConfig({
-      layoutSlots: {
-        ErrorPageTemplate: {
-          slots: ['PageNotFound'],
-        },
-      },
-    }),
+    I18nModule,
     DvntSharedModule,
+    ConfigModule.withConfigFactory(pageNotFoundCmsStructureConfig),
+    ConfigModule.withConfig(pageNotFoundTranslationsConfig),
+    ConfigModule.withConfig(pageNotFoundCmsConfig),
+    ConfigModule.withConfig(pageNotFoundLayoutConfig),
   ],
   entryComponents: [DvntPageNotFoundComponent],
 })
 export class DvntPageNotFoundModule {}
-
-export const staticComponents: {
-  [key: string]: ContentSlotComponentData | any;
-} = {
-  DvntPageNotFoundComponent: {
-    typeCode: 'DvntPageNotFoundComponent',
-    flexType: 'DvntPageNotFoundComponent',
-    uid: 'DvntPageNotFoundComponent',
-  },
-};
-
-const cmsPageSlotConfig: CmsPageSlotsConfig = {
-  PageNotFound: {
-    componentIds: ['DvntPageNotFoundComponent'],
-  },
-};
-
-export function cmsStructureConfig(): CmsStructureConfig {
-  return {
-    cmsStructure: {
-      components: {
-        ...staticComponents,
-      },
-      slots: {
-        ...cmsPageSlotConfig,
-      },
-    },
-  };
-}

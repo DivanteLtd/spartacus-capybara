@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ConfigModule, I18nModule } from '@spartacus/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { DvntCartSummaryComponent } from './dvnt-cart-summary/dvnt-cart-summary.
 import { DvntEmptyModalCartComponent } from './dvnt-cart-modal/dvnt-empty-modal-cart/dvnt-empty-modal-cart.component';
 import { DvntFilledModalCartComponent } from './dvnt-cart-modal/dvnt-filled-modal-cart/dvnt-filled-modal-cart.component';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
+import { cartTranslationsConfig } from './config/cart.config';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,13 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     DvntEmptyModalCartComponent,
     DvntFilledModalCartComponent,
   ],
-  imports: [CommonModule, DvntSharedModule, RouterModule],
+  imports: [
+    CommonModule,
+    I18nModule,
+    RouterModule,
+    DvntSharedModule,
+    ConfigModule.withConfig(cartTranslationsConfig),
+  ],
   entryComponents: [
     DvntCartModalComponent,
     DvntCartProductListComponent,

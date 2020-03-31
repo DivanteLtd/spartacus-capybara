@@ -21,10 +21,10 @@
   </div>
   <div class="action-column">
     <button (click)="addToCart()" class="btn btn-block btn-primary">
-      Add to cart
+      {{ 'wishlist.addToCart' | cxTranslate }}
     </button>
     <button (click)="removeEntry(cartEntry)" class="btn btn-block btn-link">
-      Remove
+      {{ 'wishlist.remove' | cxTranslate }}
     </button>
   </div>
 </div>

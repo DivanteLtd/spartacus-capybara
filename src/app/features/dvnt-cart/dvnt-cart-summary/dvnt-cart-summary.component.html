@@ -1,7 +1,7 @@
 <div *ngIf="cart$ | async as cart" class="summary-container">
   <div class="summary-row">
     <p class="summary-label">
-      Subtotal
+      {{ 'cartColumn.subtotal' | cxTranslate }}
     </p>
     <p class="summary-value">
       {{ cart.subTotal?.formattedValue }}
@@ -9,7 +9,7 @@
   </div>
   <div class="summary-row">
     <p class="summary-label">
-      Shipping & Handling (flat rate - fixed)
+      {{ 'cartColumn.shippingAndHandling' | cxTranslate }}
     </p>
     <p class="summary-value">
       {{ cart.deliveryCost?.formattedValue || '-' }}
@@ -17,7 +17,7 @@
   </div>
   <div class="summary-row">
     <p class="summary-label">
-      Discount
+      {{ 'cartColumn.discount' | cxTranslate }}
     </p>
     <p class="summary-value">
       {{ cart.totalDiscounts?.formattedValue }}
@@ -25,7 +25,7 @@
   </div>
   <div class="summary-row">
     <p class="summary-label">
-      Tax
+      {{ 'cartColumn.tax' | cxTranslate }}
     </p>
     <p class="summary-value">
       {{ cart.totalTax?.formattedValue }}
@@ -33,7 +33,7 @@
   </div>
   <div class="summary-row">
     <p class="summary-label">
-      Grand total
+      {{ 'cartColumn.grandTotal' | cxTranslate }}
     </p>
     <p class="summary-value">
       {{ cart.totalPriceWithTax?.formattedValue }}
