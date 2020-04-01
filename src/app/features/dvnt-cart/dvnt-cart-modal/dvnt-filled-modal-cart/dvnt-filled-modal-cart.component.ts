@@ -5,8 +5,11 @@ import {
   CartService,
   OrderEntry,
   PromotionResult,
+  StateWithCart,
+  CartSelectors,
 } from '@spartacus/core';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-dvnt-filled-modal-cart',
@@ -18,6 +21,10 @@ export class DvntFilledModalCartComponent extends MiniCartComponent {
     PromotionResult[]
   > = this.promotionService.getOrderPromotionsFromCart();
 
+  public loading$: Observable<boolean> = this.store.select(
+    CartSelectors.getCartLoading
+  );
+
   @Input() public products: OrderEntry[] = [];
 
   @Output() public closeSideBar = new EventEmitter<any>();
@@ -25,6 +32,7 @@ export class DvntFilledModalCartComponent extends MiniCartComponent {
   constructor(
     // tslint:disable-next-line: deprecation
     protected cartService: CartService,
+    protected store: Store<StateWithCart>,
     private promotionService: PromotionService,
     private routingService: RoutingService
   ) {

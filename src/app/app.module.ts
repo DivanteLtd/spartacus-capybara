@@ -5,13 +5,15 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
 import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 
 import { AppComponent } from './app.component';
-import { FeatureModule } from './features/feature.module';
-import { SharedModule } from './shared/shared.module';
 import { DvntSharedModule } from './features/dvnt-shared/dvnt-shared.module';
+import { FeatureModule } from './features/feature.module';
+import { PageLoaderModule } from './shared/page-loader/page-loader.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    PageLoaderModule,
     BrowserModule,
     B2cStorefrontModule.withConfig({
       backend: {

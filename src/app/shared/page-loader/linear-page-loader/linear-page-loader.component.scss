@@ -1,0 +1,27 @@
+@keyframes pageLoaderAnimation {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+:host {
+  display: block;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.loading-bar {
+  overflow: hidden;
+  transition: height 0.3s;
+
+  .gradient {
+    animation: pageLoaderAnimation 1s linear infinite;
+    display: block;
+    height: 100%;
+    width: 200%;
+  }
+}
