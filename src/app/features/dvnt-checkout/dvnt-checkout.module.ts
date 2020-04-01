@@ -20,6 +20,7 @@ import {
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 import { DvntCheckoutOrderSummaryComponent } from './dvnt-order-summary/dvnt-checkout-order-summary.component';
 import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mode.component';
+import { DvntPaymentMethodModule } from './dvnt-payment-method/dvnt-payment-method.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mo
     FeaturesConfigModule,
     CartSharedModule,
     PromotionsModule,
+    DvntPaymentMethodModule,
   ],
   entryComponents: [
     DvntShippingAddressComponent,

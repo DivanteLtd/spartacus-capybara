@@ -1,0 +1,194 @@
+<!-- FORM -->
+<div [formGroup]="payment">
+  <div [formGroup]="payment" class="form-group">
+    <ng-container *ngIf="cardTypes$ | async as cardTypes">
+      <div *ngIf="cardTypes.length">
+        <label aria-required="true">
+          <span class="label-content required">{{
+            'paymentForm.paymentType' | cxTranslate
+          }}</span>
+          <ng-select
+            (change)="paymentSelected($event)"
+            [clearable]="false"
+            [items]="cardTypes"
+            [searchable]="false"
+            bindLabel="name"
+            bindValue="code"
+            placeholder="{{ 'paymentForm.selectOne' | cxTranslate }}"
+          >
+          </ng-select>
+        </label>
+      </div>
+    </ng-container>
+  </div>
+  <div class="form-group">
+    <label>
+      <span class="label-content">{{
+        'paymentForm.accountHolderName.label' | cxTranslate
+      }}</span>
+      <input
+        class="form-control"
+        formControlName="accountHolderName"
+        placeholder="{{
+          'paymentForm.accountHolderName.placeholder' | cxTranslate
+        }}"
+        required
+        type="text"
+      />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      <span class="label-content">{{
+        'paymentForm.cardNumber' | cxTranslate
+      }}</span>
+      <input
+        class="form-control"
+        formControlName="cardNumber"
+        required
+        type="text"
+      />
+    </label>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>
+        <span class="label-content">{{
+          'paymentForm.expirationDate' | cxTranslate
+        }}</span>
+      </label>
+      <div class="cx-payment-form-exp-date row">
+        <div class="col-sm-6 col-md-5">
+          <ng-select
+            (change)="monthSelected($event)"
+            [clearable]="false"
+            [items]="months"
+            [searchable]="false"
+            bindLabel="name"
+            bindValue="expiryMonth"
+            placeholder="{{ 'paymentForm.monthMask' | cxTranslate }}"
+          >
+          </ng-select>
+        </div>
+        <div class="col-sm-6 col-md-7">
+          <ng-select
+            (change)="yearSelected($event)"
+            [clearable]="false"
+            [items]="years"
+            [searchable]="false"
+            bindLabel="name"
+            bindValue="expiryYear"
+            placeholder="{{ 'paymentForm.yearMask' | cxTranslate }}"
+          >
+          </ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>
+        <span class="label-content">
+          {{ 'paymentForm.securityCode' | cxTranslate }}
+          <cx-icon
+            [type]="iconTypes.INFO"
+            alt=""
+            class="cx-payment-form-tooltip"
+            placement="right"
+            title="{{ 'paymentForm.securityCodeTitle' | cxTranslate }}"
+          ></cx-icon>
+        </span>
+        <input
+          class="form-control"
+          formControlName="cvn"
+          id="cVVNumber"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+  </div>
+
+  <div *ngIf="setAsDefaultField" class="form-group">
+    <div class="form-check">
+      <label>
+        <input
+          (change)="toggleDefaultPaymentMethod()"
+          class="form-check-input"
+          type="checkbox"
+        />
+        <span class="form-check-label">{{
+          'paymentForm.setAsDefault' | cxTranslate
+        }}</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- BILLING -->
+  <div class="cx-payment-form-billing">
+    <div class="cx-payment-form-billing-address">
+      {{ 'paymentForm.billingAddress' | cxTranslate }}
+    </div>
+
+    <!-- SAME AS SHIPPING CHECKBOX -->
+    <ng-container *ngIf="showSameAsShippingAddressCheckbox() | async">
+      <div class="form-group">
+        <div class="form-check">
+          <label>
+            <input
+              (change)="toggleSameAsShippingAddress()"
+              [checked]="sameAsShippingAddress"
+              class="form-check-input"
+              type="checkbox"
+            />
+            <span class="form-check-label">{{
+              'paymentForm.sameAsShippingAddress' | cxTranslate
+            }}</span>
+          </label>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- BILLING INFO COMPONENT -->
+    <ng-container
+      *ngIf="
+        sameAsShippingAddress && shippingAddress$ | async as shippingAddress;
+        else billingAddressForm
+      "
+    >
+      <cx-card [content]="getAddressCardContent(shippingAddress)"></cx-card>
+    </ng-container>
+
+    <ng-template #billingAddressForm>
+      <cx-billing-address-form
+        [billingAddress]="billingAddress"
+        [countries$]="countries$"
+      >
+      </cx-billing-address-form>
+    </ng-template>
+  </div>
+</div>
+
+<!-- BUTTON SECTION -->
+<div class="checkout-navigation-buttons">
+  <button
+    (click)="back()"
+    *ngIf="paymentMethodsCount === 0"
+    class="btn btn-link"
+  >
+    {{ 'common.back' | cxTranslate }}
+  </button>
+  <button
+    (click)="close()"
+    *ngIf="paymentMethodsCount > 0"
+    class="btn btn-link"
+  >
+    {{ 'paymentForm.changePayment' | cxTranslate }}
+  </button>
+  <button
+    (click)="next()"
+    [disabled]="isContinueButtonDisabled()"
+    class="btn btn-block btn-primary"
+  >
+    {{ 'common.continue' | cxTranslate }}
+  </button>
+</div>

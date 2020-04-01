@@ -126,9 +126,17 @@ input:not([type='checkbox']) {
 }
 
 .form-check {
-  .form-checkbox {
+  .form-checkbox,
+  label {
     display: flex;
     margin-bottom: 0;
+
+    .form-check-label {
+      display: initial;
+      padding: initial;
+      position: initial;
+      top: initial;
+    }
 
     .form-check-input {
       border: none;
