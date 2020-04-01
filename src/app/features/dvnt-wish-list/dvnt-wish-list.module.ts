@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
-import { MediaModule } from '@spartacus/storefront';
+import { MediaModule, SpinnerModule } from '@spartacus/storefront';
 import { RouterModule } from '@angular/router';
 
 import { DvntWishListComponent } from './dvnt-wish-list.component';
@@ -20,6 +20,7 @@ import {
     MediaModule,
     RouterModule,
     UrlModule,
+    SpinnerModule,
     ConfigModule.withConfig(wishTranslationsConfig),
     ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig(wishListCmsConfig),

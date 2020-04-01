@@ -1,30 +1,42 @@
 <div class="wish-list-container">
-  <div *ngIf="wishList$ | async as wishList" class="wish-list-content">
-    <div class="wish-row wish-row-header">
-      <div class="image-column"></div>
-      <div class="name-column">
-        <h3>
-          {{ 'wishlist.productName' | cxTranslate }}
-        </h3>
-      </div>
-      <div class="price-column">
-        <h3>
-          {{ 'wishlist.itemPrice' | cxTranslate }}
-        </h3>
-      </div>
-      <div class="action-column">
-        <h3>
-          {{ 'wishlist.action' | cxTranslate }}
-        </h3>
-      </div>
-    </div>
+  <ng-container *ngIf="wishList$ | async as wishList">
+    <ng-container *ngIf="wishList?.entries?.length > 0; else emptyWishList">
+      <div class="wish-list-content">
+        <div class="wish-row wish-row-header">
+          <div class="image-column"></div>
+          <div class="name-column">
+            <h3>
+              {{ 'wishlist.productName' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="price-column">
+            <h3>
+              {{ 'wishlist.itemPrice' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="action-column">
+            <h3>
+              {{ 'wishlist.action' | cxTranslate }}
+            </h3>
+          </div>
+        </div>
 
-    <app-dvnt-wish-list-item
-      *ngFor="let entry of wishList?.entries"
-      (remove)="removeEntry($event)"
-      [cartEntry]="entry"
-    ></app-dvnt-wish-list-item>
-  </div>
+        <ng-container *ngIf="!(loading$ | async); else loading">
+          <app-dvnt-wish-list-item
+            *ngFor="let entry of wishList?.entries"
+            (remove)="removeEntry($event)"
+            [cartEntry]="entry"
+          ></app-dvnt-wish-list-item>
+        </ng-container>
+
+        <ng-template #loading>
+          <div class="cx-spinner">
+            <cx-spinner></cx-spinner>
+          </div>
+        </ng-template>
+      </div>
+    </ng-container>
+  </ng-container>
 
   <ng-template #emptyWishList>
     <h2>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ConfigModule, I18nModule } from '@spartacus/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SpinnerModule } from '@spartacus/storefront';
 
 import { DvntCartModalComponent } from './dvnt-cart-modal/dvnt-cart-modal.component';
 import { DvntCartProductListComponent } from './dvnt-cart-product-list/dvnt-cart-product-list.component';
@@ -23,6 +24,7 @@ import { cartTranslationsConfig } from './config/cart.config';
     CommonModule,
     I18nModule,
     RouterModule,
+    SpinnerModule,
     DvntSharedModule,
     ConfigModule.withConfig(cartTranslationsConfig),
   ],
