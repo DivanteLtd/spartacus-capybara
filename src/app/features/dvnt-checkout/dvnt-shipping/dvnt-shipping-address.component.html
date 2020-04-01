@@ -14,9 +14,9 @@
           {{ 'checkoutAddress.selectYourShippingAddress' | cxTranslate }}
         </p>
 
-        <div class="checkout-address-cards">
+        <div class="cards-flex">
           <div
-            class="checkout-address-card-item"
+            class="cards-flex-item"
             *ngFor="let card of cards; let i = index"
           >
             <div (click)="selectAddress(card.address)">

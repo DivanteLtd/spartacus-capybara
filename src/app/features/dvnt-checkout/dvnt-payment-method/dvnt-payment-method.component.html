@@ -1,0 +1,66 @@
+<h2 class="checkout-step-header">
+  {{ 'paymentForm.payment' | cxTranslate }}
+</h2>
+<ng-container *ngIf="existingPaymentMethods$ | async as existingPaymentMethods">
+  <ng-container *ngIf="!(isLoading$ | async); else loading">
+    <ng-container
+      *ngIf="
+        (existingPaymentMethods$ | async).length &&
+          !newPaymentFormManuallyOpened;
+        else newPaymentForm
+      "
+    >
+      <p>
+        {{ 'paymentForm.choosePaymentMethod' | cxTranslate }}
+      </p>
+
+      <div class="payment-method-container">
+        <div class=" cards-flex">
+          <div
+            *ngFor="let method of existingPaymentMethods"
+            class="cards-flex-item"
+          >
+            <app-dvnt-card
+              (sendCard)="paymentMethodSelected(method)"
+              [border]="true"
+              [content]="getCardContent(method) | async"
+              [fitToContainer]="true"
+              color="secondary"
+            ></app-dvnt-card>
+          </div>
+        </div>
+        <div>
+          <button (click)="showNewPaymentForm()" class="btn btn-link">
+            {{ 'paymentForm.addNewPayment' | cxTranslate }}
+          </button>
+        </div>
+      </div>
+      <div class="checkout-navigation-buttons">
+        <button (click)="back()" class="btn btn-link">
+          {{ 'common.back' | cxTranslate }}
+        </button>
+        <button
+          (click)="next()"
+          [disabled]="!selectedPayment"
+          class="btn btn-block btn-primary"
+        >
+          {{ 'common.continue' | cxTranslate }}
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-template #newPaymentForm>
+      <app-dvnt-payment-form
+        (closeForm)="hideNewPaymentForm()"
+        (goBack)="back()"
+        (setPaymentDetails)="setPaymentDetails($event)"
+        [paymentMethodsCount]="existingPaymentMethods?.length || 0"
+        [setAsDefaultField]="!isGuestCheckout"
+      ></app-dvnt-payment-form>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="cx-spinner"><cx-spinner></cx-spinner></div>
+  </ng-template>
+</ng-container>
