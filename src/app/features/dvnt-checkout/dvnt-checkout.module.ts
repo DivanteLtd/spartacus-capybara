@@ -29,6 +29,7 @@ import { DvntCheckoutOrderSummaryComponent } from './dvnt-order-summary/dvnt-che
 import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mode.component';
 import { DvntPaymentMethodModule } from './dvnt-payment-method/dvnt-payment-method.module';
 import { DvntOrderReviewModule } from './dvnt-order-review/dvnt-order-review.module';
+import { DvntOrderConfirmationModule } from './dvnt-order-confirmation/dvnt-order-confirmation.module';
 import { CheckoutReviewPageLayoutHandler } from './CheckoutReviewPageLayoutHandler';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { CheckoutReviewPageLayoutHandler } from './CheckoutReviewPageLayoutHandl
     PromotionsModule,
     DvntPaymentMethodModule,
     DvntOrderReviewModule,
+    DvntOrderConfirmationModule,
   ],
   providers: [
     {

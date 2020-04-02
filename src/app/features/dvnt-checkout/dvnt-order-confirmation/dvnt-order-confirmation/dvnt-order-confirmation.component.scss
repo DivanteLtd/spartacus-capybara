@@ -1,0 +1,6 @@
+@import 'mixins';
+
+.order-confirmation-message {
+  margin: calculateRem(60px) auto 0;
+  max-width: 586px;
+}

@@ -11,6 +11,7 @@ import {
   CheckoutDetailsLoadedGuard,
   DeliveryModeSetGuard,
   LayoutConfig,
+  OrderConfirmationGuard,
   PaymentDetailsSetGuard,
   ShippingAddressSetGuard,
 } from '@spartacus/storefront';
@@ -19,6 +20,7 @@ import { DvntCheckoutOrderSummaryComponent } from '../dvnt-order-summary/dvnt-ch
 import { DvntDeliveryModeComponent } from '../dvnt-delivery-mode/dvnt-delivery-mode.component';
 import { DvntPaymentMethodComponent } from '../dvnt-payment-method/dvnt-payment-method.component';
 import { DvntOrderReviewComponent } from '../dvnt-order-review/dvnt-order-review/dvnt-order-review.component';
+import { DvntOrderConfirmationComponent } from '../dvnt-order-confirmation/dvnt-order-confirmation/dvnt-order-confirmation.component';
 import { DvntReviewOrderComponent } from '../dvnt-order-review/dvnt-review-order/dvnt-review-order.component';
 
 export const CHECKOUT_REVIEW_ORDER_PATH = '/checkout/review-order';
@@ -78,8 +80,21 @@ export const checkoutCmsConfig = <CmsConfig>{
         PaymentDetailsSetGuard,
       ],
     },
+    OrderConfirmationThankMessageComponent: {
+      component: DvntOrderConfirmationComponent,
+      guards: [OrderConfirmationGuard],
+    },
     CheckoutProgress: {
       component: DvntCheckoutProgressComponent,
+    },
+    OrderConfirmationItemsComponent: {
+      component: null,
+    },
+    OrderConfirmationTotalsComponent: {
+      component: null,
+    },
+    OrderConfirmationOverviewComponent: {
+      component: null,
     },
     CheckoutProgressMobileTop: null,
     CheckoutProgressMobileBottom: null,
@@ -113,6 +128,19 @@ const checkoutTranslationOverwrites = {
         orderReview: 'Order review',
         payment: 'Payment',
         orderDetails: 'Order details',
+      },
+      checkoutOrderConfirmation: {
+        backToShop: 'Back to shop',
+        ssfOrderConfirmText: `It's ordered!`,
+        ssfOrderNo: 'Order No.',
+        ssfOrderSuccessLabel: 'You’ve successfully placed the order.',
+        ssfOrderSuccessText:
+          // tslint:disable-next-line:max-line-length
+          'You can check status of your order by using our delivery status feature. You will receive an order confirmation e-mail with details of your order and a link to track its progress.',
+        ssfYourAccount: 'Your Account',
+        ssfYourAccountText:
+          // tslint:disable-next-line:max-line-length
+          'You can log to your account using e-mail and password defined earlier. On your account you can edit your profile data, check history of transactions, edit subscription to newsletter.',
       },
     },
   },
