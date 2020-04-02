@@ -1,0 +1,37 @@
+@import 'media';
+@import 'mixins';
+
+.review-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .review-step {
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: calculateRem(20px);
+    position: relative;
+
+    h3 {
+      font-weight: 700;
+    }
+
+    .order-review-heading {
+      margin-bottom: calculateRem(40px);
+    }
+
+    .edit-checkout-step-link {
+      position: absolute;
+      right: calculateRem(32px);
+      top: calculateRem(38px);
+    }
+  }
+}
+
+.place-order {
+  margin-top: 1rem;
+  padding: 0.75rem;
+}

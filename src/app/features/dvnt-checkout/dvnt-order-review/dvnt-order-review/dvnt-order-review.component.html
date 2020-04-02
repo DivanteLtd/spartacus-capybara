@@ -1,0 +1,70 @@
+<div>
+  <div class="review-summary">
+    <div class="review-step highlight">
+      <h2 class="order-review-heading">
+        {{ 'checkoutReview.orderReview' | cxTranslate }}
+      </h2>
+
+      <h3>{{ 'checkoutProgress.shippingAddress' | cxTranslate }}</h3>
+      <ng-container *ngIf="deliveryAddress$ | async as deliveryAddress">
+        <p>
+          {{ deliveryAddress?.firstName + ' ' + deliveryAddress?.lastName }}
+          <br />
+          {{ deliveryAddress.line1 }} <br />
+          {{ deliveryAddress.line2 }}
+          {{ deliveryAddress.town + ', ' + (countryName$ | async) }} <br />
+          {{ deliveryAddress.postalCode }}} {{ deliveryAddress.phone }} <br />
+        </p>
+        <a
+          [routerLink]="
+            {
+              cxRoute: getCheckoutStepUrl(checkoutStepType.SHIPPING_ADDRESS)
+            } | cxUrl
+          "
+          class="edit-checkout-step-link"
+          >{{ 'common.edit' | cxTranslate }}</a
+        >
+      </ng-container>
+    </div>
+
+    <div class="review-step highlight">
+      <h3>{{ 'checkoutProgress.deliveryMode' | cxTranslate }}</h3>
+      <ng-container *ngIf="deliveryMode$ | async as deliveryMode">
+        <p>
+          {{ deliveryMode?.name }}<br />
+          {{ deliveryMode?.description }}
+        </p>
+        <a
+          [routerLink]="
+            { cxRoute: getCheckoutStepUrl(checkoutStepType.DELIVERY_MODE) }
+              | cxUrl
+          "
+          class="edit-checkout-step-link"
+          >{{ 'common.edit' | cxTranslate }}</a
+        >
+      </ng-container>
+    </div>
+
+    <div class="review-step highlight">
+      <h3>{{ 'checkoutReview.payment' | cxTranslate }}</h3>
+      <ng-container *ngIf="paymentDetails$ | async as paymentDetails">
+        <p>
+          {{ paymentDetails?.accountHolderName }} <br />
+          {{ paymentDetails.cardNumber }}
+          {{ 'paymentCard.expires' | cxTranslate }}
+        </p>
+      </ng-container>
+      <a
+        [routerLink]="
+          { cxRoute: getCheckoutStepUrl(checkoutStepType.PAYMENT_DETAILS) }
+            | cxUrl
+        "
+        class="edit-checkout-step-link"
+        >{{ 'common.edit' | cxTranslate }}</a
+      >
+    </div>
+  </div>
+  <div class="place-order">
+    <cx-place-order></cx-place-order>
+  </div>
+</div>

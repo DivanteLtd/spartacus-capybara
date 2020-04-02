@@ -10,4 +10,5 @@ export class DvntCardComponent extends CardComponent {
   @Input() color = '';
   @Input() hoverShadow = true;
   @Input() hasShadow = false;
+  @Input() className = '';
 }

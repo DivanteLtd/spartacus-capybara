@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DvntShippingAddressComponent } from './dvnt-shipping/dvnt-shipping-address.component';
-import { ConfigModule, FeaturesConfigModule } from '@spartacus/core';
+import {
+  CmsPageConfig,
+  CmsStructureConfig,
+  ConfigModule,
+  FeaturesConfigModule,
+} from '@spartacus/core';
 import { DvntCheckoutProgressComponent } from './dvnt-checkout-progress/dvnt-checkout-progress.component';
 import {
   checkoutCmsConfig,
   checkoutLayoutConfig,
   checkoutTranslationsConfig,
+  staticCmsonfig,
 } from './config/checkout.config';
 import { SharedModule } from '../../shared/shared.module';
 import {
@@ -14,6 +20,7 @@ import {
   CardModule,
   CartCouponModule,
   CartSharedModule,
+  PAGE_LAYOUT_HANDLER,
   PromotionsModule,
   SpinnerModule,
 } from '@spartacus/storefront';
@@ -21,6 +28,8 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 import { DvntCheckoutOrderSummaryComponent } from './dvnt-order-summary/dvnt-checkout-order-summary.component';
 import { DvntDeliveryModeComponent } from './dvnt-delivery-mode/dvnt-delivery-mode.component';
 import { DvntPaymentMethodModule } from './dvnt-payment-method/dvnt-payment-method.module';
+import { DvntOrderReviewModule } from './dvnt-order-review/dvnt-order-review.module';
+import { CheckoutReviewPageLayoutHandler } from './CheckoutReviewPageLayoutHandler';
 
 @NgModule({
   declarations: [
@@ -35,6 +44,7 @@ import { DvntPaymentMethodModule } from './dvnt-payment-method/dvnt-payment-meth
     ConfigModule.withConfig(checkoutTranslationsConfig),
     ConfigModule.withConfig(checkoutCmsConfig),
     ConfigModule.withConfig(checkoutLayoutConfig),
+    ConfigModule.withConfig(staticCmsonfig),
     CardModule,
     AddressFormModule,
     SpinnerModule,
@@ -44,6 +54,14 @@ import { DvntPaymentMethodModule } from './dvnt-payment-method/dvnt-payment-meth
     CartSharedModule,
     PromotionsModule,
     DvntPaymentMethodModule,
+    DvntOrderReviewModule,
+  ],
+  providers: [
+    {
+      provide: PAGE_LAYOUT_HANDLER,
+      useExisting: CheckoutReviewPageLayoutHandler,
+      multi: true,
+    },
   ],
   entryComponents: [
     DvntShippingAddressComponent,

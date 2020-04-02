@@ -1,0 +1,153 @@
+<div [ngClass]="compact ? 'cx-compact row' : 'row'">
+  <!-- Item Image -->
+  <div class="col-2 cx-image-container">
+    <a
+      (click)="viewItem()"
+      [routerLink]="{ cxRoute: 'product', params: item.product } | cxUrl"
+    >
+      <cx-media
+        [container]="item.product.images?.PRIMARY"
+        format="thumbnail"
+      ></cx-media>
+    </a>
+  </div>
+  <!-- Item Information -->
+  <div class="cx-info col-10">
+    <div class="cx-info-container row ">
+      <!-- Item Description -->
+      <div [ngClass]="compact ? '' : ' col-md-3 col-lg-3 col-xl-5'">
+        <div *ngIf="item.product.name" class="cx-name">
+          <a
+            (click)="viewItem()"
+            [routerLink]="{ cxRoute: 'product', params: item.product } | cxUrl"
+            class="cx-link"
+            >{{ item.product.name }}</a
+          >
+        </div>
+        <div *ngIf="item.product.code" class="cx-code">
+          {{ 'cartItems.id' | cxTranslate }} {{ item.product.code }}
+        </div>
+        <!-- Variants -->
+        <div
+          *ngFor="
+            let variant of item.product.baseOptions[0]?.selected
+              ?.variantOptionQualifiers
+          "
+          class="cx-property"
+        >
+          <div *ngIf="variant.name && variant.value" class="cx-label">
+            {{ variant.name }}: {{ variant.value }}
+          </div>
+        </div>
+      </div>
+      <!-- Item Price -->
+      <div
+        *ngIf="item.basePrice"
+        [ngClass]="compact ? '' : ' col-md-3 col-lg-3 col-xl-2'"
+        class="cx-price"
+      >
+        <div
+          [ngClass]="compact ? '' : ' d-block d-md-none d-lg-none d-xl-none'"
+          class="cx-label"
+        >
+          {{ 'cartItems.itemPrice' | cxTranslate }}
+        </div>
+        <div *ngIf="item.basePrice" class="cx-value">
+          {{ item.basePrice?.formattedValue }}
+        </div>
+      </div>
+      <!-- Item Quantity -->
+      <div [ngClass]="compact ? '' : ' col-3'" class="cx-quantity">
+        <div
+          [ngClass]="compact ? '' : ' d-block d-md-none d-lg-none d-xl-none'"
+          class="cx-label"
+          placement="left"
+          title="{{ 'cartItems.quantityTitle' | cxTranslate }}"
+        >
+          {{ 'cartItems.quantity' | cxTranslate }}
+        </div>
+
+        <div class="cx-value">
+          {{ item.quantity }}
+        </div>
+      </div>
+      <!-- Total -->
+      <ng-container
+        *ngIf="isSaveForLaterEnabled() && options.isSaveForLater; else total"
+      >
+        <div
+          [ngClass]="compact ? '' : ' col-md-3 col-lg-3 col-xl-2'"
+          class="cx-total"
+        >
+          <div
+            [ngClass]="compact ? '' : ' d-block d-md-none d-lg-none d-xl-none'"
+            class="cx-label"
+          >
+            {{ 'saveForLaterItems.stock' | cxTranslate }}
+          </div>
+          <div
+            *ngIf="item.product?.stock?.stockLevel >= 0; else forceInstock"
+            class="cx-value"
+          >
+            {{ item.product.stock.stockLevel }}
+          </div>
+          <ng-template #forceInstock
+            ><div class="cx-value">
+              {{ 'saveForLaterItems.forceInStock' | cxTranslate }}
+            </div></ng-template
+          >
+        </div>
+      </ng-container>
+    </div>
+    <!-- Availability -->
+    <div
+      *ngIf="isProductOutOfStock(item.product)"
+      class="cx-availability col-12"
+    >
+      {{ 'productSummary.outOfStock' | cxTranslate }}
+    </div>
+    <!-- Promotion -->
+    <ng-container
+      *ngIf="appliedProductPromotions$ | async as appliedProductPromotions"
+    >
+      <cx-promotions [promotions]="appliedProductPromotions"></cx-promotions>
+    </ng-container>
+    <!-- Actions -->
+
+    <div
+      *ngIf="(!isReadOnly || options.isSaveForLater) && item.updateable"
+      class="cx-actions col-12"
+    >
+      <ng-container *ngIf="!isProductOutOfStock(item.product)">
+        <ng-container
+          *ngTemplateOutlet="
+            options.optionalBtn;
+            context: { $implicit: { loading: cartIsLoading, item: item } }
+          "
+        ></ng-container>
+      </ng-container>
+
+      <div class="col-md-3 col-lg-3 col-xl-3 cx-remove-btn">
+        <button (click)="removeItem()" [disabled]="cartIsLoading" class="link">
+          {{ 'common.remove' | cxTranslate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #total>
+  <div
+    *ngIf="item.totalPrice"
+    [ngClass]="compact ? '' : ' col-md-3 col-lg-3 col-xl-2'"
+    class="cx-total"
+  >
+    <div
+      [ngClass]="compact ? '' : ' d-block d-md-none d-lg-none d-xl-none'"
+      class="cx-label"
+    >
+      {{ 'cartItems.total' | cxTranslate }}
+    </div>
+    <div class="cx-value">{{ item.totalPrice.formattedValue }}</div>
+  </div>
+</ng-template>

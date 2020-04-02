@@ -1,0 +1,28 @@
+@import 'mixins';
+
+.checkout-review-order {
+  h2 {
+    margin-bottom: calculateRem(40px);
+  }
+}
+
+.review-order-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+
+  .place-order {
+    margin-bottom: calculateRem(20px);
+    margin-top: calculateRem(20px);
+  }
+
+  .summary-label {
+    margin-bottom: 0.5rem;
+
+    .summary-amount {
+      float: right;
+      font-weight: 500;
+    }
+  }
+}

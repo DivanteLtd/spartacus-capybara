@@ -1,0 +1,67 @@
+<div *ngIf="cart$ | async as cart" class="checkout-review-order">
+  <h2 class="checkout-step-header">
+    {{ 'checkoutProgress.reviewOrder' | cxTranslate }}
+  </h2>
+  <ng-container *ngIf="cart$ | async as cart">
+    <div *ngIf="cart.entries as entries" class="desktop-only">
+      <cx-cart-item-list
+        [isReadOnly]="false"
+        [items]="entries"
+      ></cx-cart-item-list>
+    </div>
+  </ng-container>
+
+  <div class="review-order-bottom">
+    <h2>{{ 'checkoutReview.orderDetails' | cxTranslate }}</h2>
+    <div>
+      <div class="summary-label color-gray">
+        {{ 'orderCost.subtotalStandalone' | cxTranslate }}
+        <div class="summary-amount">
+          {{ cart.subTotal?.formattedValue }}
+        </div>
+      </div>
+      <div class="summary-label color-gray">
+        {{ 'orderCost.shipping' | cxTranslate }}
+        <div class="summary-amount">
+          {{
+            cart.deliveryCost?.formattedValue
+              ? cart.deliveryCost.formattedValue
+              : 'TBD'
+          }}
+        </div>
+      </div>
+      <ng-container *ngIf="cart.net" class="highlight highlight-gray">
+        <div class="summary-label color-gray">
+          {{ 'orderCost.salesTax' | cxTranslate }}
+          <div class="summary-amount">
+            {{ cart.totalTax?.formattedValue }}
+          </div>
+        </div>
+      </ng-container>
+      <div class="summary-label total-label text-uppercase">
+        {{ 'orderCost.total' | cxTranslate }}
+        <div class="summary-amount">
+          {{ cart.totalPriceWithTax?.formattedValue }}
+        </div>
+      </div>
+      <div *ngIf="cart.totalDiscounts?.value > 0">
+        <div class="summary-label">
+          {{ 'orderCost.discount' | cxTranslate }}
+          <div class="summary-amount">
+            {{ cart.totalDiscounts?.formattedValue }}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!cart.net">
+        <div class="summary-label">
+          {{ 'orderCost.grossTax' | cxTranslate }}
+          <div class="summary-amount">{{ cart.totalTax?.formattedValue }}.</div>
+        </div>
+        <cx-promotions
+          *ngIf="cart"
+          [promotions]="cart.appliedOrderPromotions"
+        ></cx-promotions>
+      </div>
+    </div>
+  </div>
+</div>

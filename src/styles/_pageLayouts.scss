@@ -1,18 +1,41 @@
 @import 'media';
+@import 'mixins';
 
 .MultiStepCheckoutSummaryPageTemplate {
   justify-content: space-between;
   padding: 0.5rem;
 
-  @include laptop-and-up {
-    padding: 0;
+  .SideContent {
+    align-items: stretch !important;
+    flex: 1;
   }
 
-  .BodyContent {
-    align-content: start;
-    flex: 0.6 !important;
+  @include laptop-and-up {
+    padding: 0;
+
+    .BodyContent {
+      align-content: start;
+      flex: 0.6 !important;
+    }
+
+    .SideContent {
+      align-items: flex-end;
+      flex: 0.4 !important;
+    }
   }
-  .SideContent {
-    flex: 0.4 !important;
+
+  .DvntBodyContent {
+    align-content: flex-start;
+    flex: 1 1;
+    justify-content: stretch;
+  }
+
+  .DvntSideContent {
+    flex: 0 0 25em;
+    margin-left: 0;
+
+    @include laptop-and-up {
+      margin-left: calculateRem(68px);
+    }
   }
 }

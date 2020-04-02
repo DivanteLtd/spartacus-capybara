@@ -1,0 +1,9 @@
+@import 'media';
+
+.SideContent {
+  @include laptop-and-up {
+    cx-place-order {
+      display: none;
+    }
+  }
+}
