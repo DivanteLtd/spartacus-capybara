@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { I18nModule, UrlModule, ConfigModule } from '@spartacus/core';
 import {
@@ -16,6 +17,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import { DvntAddProductToCartComponent } from './dvnt-add-product-to-cart/dvnt-add-product-to-cart.component';
 import { DvntCarouselModule } from 'src/app/shared/carousel/dvnt-carousel.module';
+import { DvntProductColorVariantComponent } from './dvnt-product-variants/dvnt-product-color-variant/dvnt-product-color-variant.component';
 import { DvntProductDetailsComponent } from './dvnt-product-details/dvnt-product-details.component';
 import { DvntProductImagesComponent } from './dvnt-product-images/dvnt-product-images.component';
 import { DvntProductIntroComponent } from './dvnt-product-intro/dvnt-product-intro.component';
@@ -23,12 +25,16 @@ import { DvntProductMobileImagesComponent } from './dvnt-product-mobile-images/d
 import { DvntProductTabsComponent } from './dvnt-product-tabs/dvnt-product-tabs.component';
 import { DvntProductTabsWrapperComponent } from './dvnt-product-tabs-wrapper/dvnt-product-tabs-wrapper.component';
 import { DvntProductUpSellingReferencesComponent } from './dvnt-product-up-selling-references/dvnt-product-up-selling-references.component';
+import { DvntProductVariantsComponent } from './dvnt-product-variants/dvnt-product-variants.component';
 import {
   productDetailsCmsStructureConfig,
   productDetailsTranslationsConfig,
   productDetailsCmsConfig,
   productDetailsLayoutConfig,
 } from './config/product-details.config';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { DvntProductSizeVariantComponent } from './dvnt-product-variants/dvnt-product-size-variant/dvnt-product-size-variant.component';
+import { DvntProductStyleVariantComponent } from './dvnt-product-variants/dvnt-product-style-variant/dvnt-product-style-variant.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -38,6 +44,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 @NgModule({
   declarations: [
     DvntAddProductToCartComponent,
+    DvntProductColorVariantComponent,
     DvntProductDetailsComponent,
     DvntProductImagesComponent,
     DvntProductIntroComponent,
@@ -45,6 +52,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntProductTabsComponent,
     DvntProductTabsWrapperComponent,
     DvntProductUpSellingReferencesComponent,
+    DvntProductVariantsComponent,
+    DvntProductSizeVariantComponent,
+    DvntProductStyleVariantComponent,
   ],
   imports: [
     CartComponentModule,
@@ -53,11 +63,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ItemCounterModule,
     MediaModule,
     OutletModule,
+    FormsModule,
+    ReactiveFormsModule,
     PageComponentModule,
     RouterModule,
     StarRatingModule,
     SwiperModule,
     UrlModule,
+    NgSelectModule,
     DvntCarouselModule,
     ConfigModule.withConfigFactory(productDetailsCmsStructureConfig),
     ConfigModule.withConfig(productDetailsTranslationsConfig),
@@ -66,6 +79,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   entryComponents: [
     DvntAddProductToCartComponent,
+    DvntProductColorVariantComponent,
     DvntProductDetailsComponent,
     DvntProductImagesComponent,
     DvntProductIntroComponent,
@@ -73,6 +87,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntProductTabsComponent,
     DvntProductTabsWrapperComponent,
     DvntProductUpSellingReferencesComponent,
+    DvntProductVariantsComponent,
   ],
   providers: [
     {
