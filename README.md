@@ -1,6 +1,6 @@
 # Spartacus Capybara
 
-This is an implementation [Capybara theme for Vue Storefront](https://github.com/DivanteLtd/vsf-capybara) but in [SAP Spartacus Storefront](https://github.com/SAP/spartacus). You can treat this repository as a sample Spartacus implementation or a starter code. Feel free to look around and get inspired.
+This is an implementation of [Capybara theme for Vue Storefront](https://github.com/DivanteLtd/vsf-capybara) but in [SAP Spartacus Storefront](https://github.com/SAP/spartacus). You can treat this repository as a sample Spartacus implementation or a starter code. Feel free to look around and get inspired.
 
 🔨  **Current status: Developer's preview**
 
@@ -8,7 +8,7 @@ Most of the work has been done already. However, we are still developing and enh
 
 ## 🚀 See it in action
 
-[Here you can try it out](https://spartacus-demo.web.app/)
+[Here you can try our live demo](https://spartacus-demo.web.app/)
 
 [![spartacus-mockup](spartacus-capybara-mockup.png)](https://spartacus-demo.web.app/)
 
@@ -41,4 +41,4 @@ This project is based on [Spartacus Storefront](https://github.com/SAP/spartacus
 
 ## 📓  Notes for developers
 
-We are using a public SAP Commerce Cloud (CCv2) instance as a backend - the same which is used by [Spartacus Public instance](https://stackblitz.com/edit/angular-b9ayx6?file=src%2Fapp%2Fapp.component.html). Because of this we had to provide some static CMS configuration. In production environment this configuration could be migrated to an impex.
+We are using a public SAP Commerce Cloud (CCv2) instance as a backend - the same which is used by [Spartacus Public instance](https://spartacus.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com/electronics-spa/en/USD/). Because of this we had to provide some static CMS configuration. In production environment this configuration could be migrated to an impex and served from the cms.
