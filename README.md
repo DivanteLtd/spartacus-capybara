@@ -1,27 +1,44 @@
-# SpartacusDemo
+# Spartacus Capybara
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+This is an implementation [Capybara theme for Vue Storefront](https://github.com/DivanteLtd/vsf-capybara) but in [SAP Spartacus Storefront](https://github.com/SAP/spartacus). You can treat this repository as a sample Spartacus implementation or a starter code. Feel free to look around and get inspired.
 
-## Development server
+🔨  **Current status: Developer's preview**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Most of the work has been done already. However, we are still developing and enhancing it.
 
-## Code scaffolding
+## 🚀 See it in action
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Here you can try it out](https://spartacus-demo.web.app/)
 
-## Build
+[![spartacus-mockup](spartacus-capybara-mockup.png)](https://spartacus-demo.web.app/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## ✨  Features
 
-## Running unit tests
+Our implementation supports all Spartacus B2C Storefront features including: Cart, Checkout, Wishlist, Search, Product Page, Category Page, etc.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+We also provide a style guide here [spartacus-demo.web.app/style-guide](https://spartacus-demo.web.app/style-guide).
 
-## Running end-to-end tests
+## 👥  Maintainers
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+If you need any support contact us:
 
-## Further help
+- Marek Ukleja [@sprajt](https://github.com/sprajt)
+- Adam Kaczmarek [@bja1011](https://github.com/bja1011)
+- Michał Dydo [@dydome](https://github.com/dydome)
+- Mateusz Ostafil [@mateuszo](https://github.com/mateuszo)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can also find us on [Spartacus Slack workspace](https://join.slack.com/t/spartacus-storefront/shared_invite/enQtNDM1OTI3OTMwNjU5LTg1NGVjZmFkZjQzODc1MzFhMjc3OTZmMzIzYzg0YjMwODJiY2YxYjA5MTE5NjVmN2E5NjMxNjEzMGNlMDRjMjU).
+
+## ☑️  Requirements
+
+This project is based on [Spartacus Storefront](https://github.com/SAP/spartacus) so the requirements are the same and can be found [here](https://github.com/SAP/spartacus#requirements).
+
+## 🔌  Installation
+
+1. `yarn install`
+2. `yarn start`
+3. open [localhost:4200](http://localhost:4200)
+
+## 📓  Notes for developers
+
+We are using a public SAP Commerce Cloud (CCv2) instance as a backend - the same which is used by [Spartacus Public instance](https://stackblitz.com/edit/angular-b9ayx6?file=src%2Fapp%2Fapp.component.html). Because of this we had to provide some static CMS configuration. In production environment this configuration could be migrated to an impex.
