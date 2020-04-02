@@ -9,6 +9,9 @@ import { DvntSharedModule } from './features/dvnt-shared/dvnt-shared.module';
 import { FeatureModule } from './features/feature.module';
 import { PageLoaderModule } from './shared/page-loader/page-loader.module';
 import { SharedModule } from './shared/shared.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ConfigModule } from '@spartacus/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,10 +39,19 @@ import { SharedModule } from './shared/shared.module';
         anonymousConsents: true,
       },
     }),
+    ConfigModule.withConfig({
+      pwa: {
+        enabled: true,
+        addToHomeScreen: true,
+      },
+    }),
     StorefrontMissingExportsModule,
     SharedModule,
     FeatureModule,
     DvntSharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   bootstrap: [AppComponent],
 })

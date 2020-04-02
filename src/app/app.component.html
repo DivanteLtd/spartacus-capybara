@@ -7,9 +7,9 @@
 
   <ng-template cxOutlet="cx-header">
     <header
-      [class.is-expanded]="isExpanded$ | async"
-      (keydown.escape)="collapseMenu()"
       (click)="collapseMenuIfClickOutside($event)"
+      (keydown.escape)="collapseMenu()"
+      [class.is-expanded]="isExpanded$ | async"
     >
       <cx-page-layout section="header"></cx-page-layout>
       <cx-page-layout section="navigation"></cx-page-layout>
@@ -23,6 +23,9 @@
   <ng-template cxOutlet="cx-footer">
     <footer>
       <ng-container [cxComponentWrapper]="footerComponent"></ng-container>
+      <div class="install-pwa-container text-center">
+        <cx-add-to-home-screen-banner></cx-add-to-home-screen-banner>
+      </div>
     </footer>
   </ng-template>
 </ng-template>
