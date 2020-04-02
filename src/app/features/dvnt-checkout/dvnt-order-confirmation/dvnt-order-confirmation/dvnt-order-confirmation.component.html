@@ -1,0 +1,42 @@
+<ng-container *ngIf="order$ | async as order">
+  <header class="order-confirmation-header text-center">
+    <div class="highlight">
+      <h2>
+        {{ 'checkoutOrderConfirmation.ssfOrderConfirmText' | cxTranslate }}
+      </h2>
+      <h4>
+        {{ 'checkoutOrderConfirmation.ssfOrderNo' | cxTranslate }}
+        {{ order.code }}
+      </h4>
+    </div>
+  </header>
+
+  <div class="order-confirmation-message text-center">
+    <h2>
+      {{ 'checkoutOrderConfirmation.ssfOrderSuccessLabel' | cxTranslate }}
+    </h2>
+    <p>
+      {{ 'checkoutOrderConfirmation.ssfOrderSuccessText' | cxTranslate }}
+    </p>
+  </div>
+
+  <div class="order-confirmation-message text-center">
+    <h2>{{ 'checkoutOrderConfirmation.ssfYourAccount' | cxTranslate }}</h2>
+    <p>
+      {{ 'checkoutOrderConfirmation.ssfYourAccountText' | cxTranslate }}
+    </p>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-outline" routerLink="/">
+      {{ 'checkoutOrderConfirmation.backToShop' | cxTranslate }}
+    </button>
+  </div>
+
+  <div *ngIf="isGuestCustomer">
+    <cx-guest-register-form
+      [email]="order.paymentInfo.billingAddress.email"
+      [guid]="orderGuid"
+    ></cx-guest-register-form>
+  </div>
+</ng-container>
