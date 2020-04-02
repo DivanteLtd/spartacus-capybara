@@ -1,8 +1,12 @@
 @import 'mixins';
+@import 'media';
 
 .checkout-order-summary {
   padding: 0.5rem;
-  padding-left: calculateRem(50px);
+
+  @include laptop-and-up {
+    padding-left: calculateRem(50px);
+  }
 
   .highlight {
     padding: 3rem;
