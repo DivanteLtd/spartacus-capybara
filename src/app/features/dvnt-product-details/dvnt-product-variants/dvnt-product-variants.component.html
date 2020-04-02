@@ -1,0 +1,19 @@
+<ng-container *ngIf="product$ | async as product">
+  <div class="variant-section" *ngIf="product.baseOptions?.length">
+    <!-- CANNOT show it properly -->
+    <!-- <app-dvnt-product-style-variant
+      *ngIf="variants[variantType.STYLE]"
+      [variants]="variants[variantType.STYLE]"
+    ></app-dvnt-product-style-variant> -->
+    <app-dvnt-product-size-variant
+      *ngIf="variants[variantType.SIZE]"
+      [product]="product"
+      [variants]="variants[variantType.SIZE]"
+    ></app-dvnt-product-size-variant>
+    <app-dvnt-product-color-variant
+      *ngIf="variants[variantType.COLOR]"
+      [product]="product"
+      [variants]="variants[variantType.COLOR]"
+    ></app-dvnt-product-color-variant>
+  </div>
+</ng-container>

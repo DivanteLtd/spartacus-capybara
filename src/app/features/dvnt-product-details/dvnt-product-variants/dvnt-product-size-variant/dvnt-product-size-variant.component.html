@@ -1,0 +1,18 @@
+<form [formGroup]="sizeForm" class="form-group variant-selector">
+  <label>
+    <span class="label-content">{{ 'variant.size' | cxTranslate }}</span>
+    <ng-select
+      (change)="changeSize($event)"
+      [items]="variants?.options"
+      [clearable]="false"
+      [virtualScroll]="true"
+      dropdownPosition="auto"
+      formControlName="size"
+      placeholfer="Select size"
+    >
+      <ng-template ng-label-tmp ng-option-tmp let-item="item">
+        {{ getVariantOptionValue(item.variantOptionQualifiers) }}
+      </ng-template>
+    </ng-select>
+  </label>
+</form>
