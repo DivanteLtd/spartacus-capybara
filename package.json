@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "yarn generate:icons-sheet && ng serve",
+    "start": "yarn generate:icons-sheet && ng serve --open=true",
+    "serve-from-path": "yarn generate:icons-sheet && ng serve --servePath=/spartacus-capybara/ --baseHref=/spartacus-capybara/ --open=true",
     "build": "yarn generate:icons-sheet && ng build --aot --prod",
     "test": "yarn generate:icons-sheet && ng test",
     "build:gh-pages": "yarn generate:icons-sheet && node_modules/.bin/ng build --aot --prod --baseHref=https://divanteltd.github.io/spartacus-capybara/",
