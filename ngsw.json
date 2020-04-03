@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585923661753,
+  "timestamp": 1585927014990,
   "index": "https://divanteltd.github.io/spartacus-capybara/index.html",
   "assetGroups": [
     {
@@ -9,14 +9,14 @@
       "updateMode": "prefetch",
       "urls": [
         "https://divanteltd.github.io/spartacus-capybara/index.html",
-        "https://divanteltd.github.io/spartacus-capybara/main-es2015.8129dcbd57df9bbb13c0.js",
-        "https://divanteltd.github.io/spartacus-capybara/main-es5.8129dcbd57df9bbb13c0.js",
+        "https://divanteltd.github.io/spartacus-capybara/main-es2015.5009324eec06bfffe4a3.js",
+        "https://divanteltd.github.io/spartacus-capybara/main-es5.5009324eec06bfffe4a3.js",
         "https://divanteltd.github.io/spartacus-capybara/manifest.webmanifest",
         "https://divanteltd.github.io/spartacus-capybara/polyfills-es2015.5b10b8fd823b6392f1fd.js",
         "https://divanteltd.github.io/spartacus-capybara/polyfills-es5.8e50a9832860f7cf804a.js",
         "https://divanteltd.github.io/spartacus-capybara/runtime-es2015.c5fa8325f89fc516600b.js",
         "https://divanteltd.github.io/spartacus-capybara/runtime-es5.c5fa8325f89fc516600b.js",
-        "https://divanteltd.github.io/spartacus-capybara/styles.7ccb9fe870c3218996fc.css"
+        "https://divanteltd.github.io/spartacus-capybara/styles.af86581c4dc61a91441f.css"
       ],
       "patterns": []
     },
@@ -73,6 +73,7 @@
         "https://divanteltd.github.io/spartacus-capybara/assets/images/homepage-logo.svg",
         "https://divanteltd.github.io/spartacus-capybara/assets/manifest-icon-192.png",
         "https://divanteltd.github.io/spartacus-capybara/assets/manifest-icon-512.png",
+        "https://divanteltd.github.io/spartacus-capybara/checked.efee71324ab91f2b69c7.svg",
         "https://divanteltd.github.io/spartacus-capybara/favicon.png",
         "https://divanteltd.github.io/spartacus-capybara/search.c439244f8b0bb55d8761.svg"
       ],
@@ -129,17 +130,18 @@
     "https://divanteltd.github.io/spartacus-capybara/assets/images/homepage-logo.svg": "39ebcea5e0088e2b4c45a2f2e81b06ad9f666e0b",
     "https://divanteltd.github.io/spartacus-capybara/assets/manifest-icon-192.png": "40948833dd285b255191e9a23328cf50f7b1dde5",
     "https://divanteltd.github.io/spartacus-capybara/assets/manifest-icon-512.png": "dce63aa64ca0e9cc5cef68706502ff56b1107126",
+    "https://divanteltd.github.io/spartacus-capybara/checked.efee71324ab91f2b69c7.svg": "8e47df1d2da226b1b2cc439645908320a1a6844b",
     "https://divanteltd.github.io/spartacus-capybara/favicon.png": "1e7c397dcb4713b40f282fdaec4cade8d69f32f0",
-    "https://divanteltd.github.io/spartacus-capybara/index.html": "651062416d3341e2547c9655776bb787e41ae436",
-    "https://divanteltd.github.io/spartacus-capybara/main-es2015.8129dcbd57df9bbb13c0.js": "3f83cacd94819d6d000a6aa231fbae5aaa1d6afd",
-    "https://divanteltd.github.io/spartacus-capybara/main-es5.8129dcbd57df9bbb13c0.js": "d4b2bb7efec1272644446d4c4821809f95d15bf5",
-    "https://divanteltd.github.io/spartacus-capybara/manifest.webmanifest": "4d00cf21dfd33aeac97d9b958a2887692e1d89e1",
+    "https://divanteltd.github.io/spartacus-capybara/index.html": "c80ffda8a99cbbd90c2feeddedb0905dec12d83d",
+    "https://divanteltd.github.io/spartacus-capybara/main-es2015.5009324eec06bfffe4a3.js": "7363309f572bf30e3bc7ba29cba731b280fa50d6",
+    "https://divanteltd.github.io/spartacus-capybara/main-es5.5009324eec06bfffe4a3.js": "888c717b966b1eb5d2e23ff2387824c2270ea70f",
+    "https://divanteltd.github.io/spartacus-capybara/manifest.webmanifest": "5b9d0c9781dcd107bff30a8df459e988c9efdd0b",
     "https://divanteltd.github.io/spartacus-capybara/polyfills-es2015.5b10b8fd823b6392f1fd.js": "9abfe15f17820a646e3d51c420908d9f8f7b69b8",
     "https://divanteltd.github.io/spartacus-capybara/polyfills-es5.8e50a9832860f7cf804a.js": "4b2c164ca0775cd3d101e08c7fcbff16579414e4",
     "https://divanteltd.github.io/spartacus-capybara/runtime-es2015.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "https://divanteltd.github.io/spartacus-capybara/runtime-es5.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "https://divanteltd.github.io/spartacus-capybara/search.c439244f8b0bb55d8761.svg": "f7aa920135ee5fc8cbea856d22fca3d61f7f98ac",
-    "https://divanteltd.github.io/spartacus-capybara/styles.7ccb9fe870c3218996fc.css": "e062f95bf3c26bf339afcf01b3ca6b6bc2459118"
+    "https://divanteltd.github.io/spartacus-capybara/styles.af86581c4dc61a91441f.css": "9feedc0e440b233207f78b35ab1b51483e057b91"
   },
   "navigationUrls": [
     {
