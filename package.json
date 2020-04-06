@@ -8,7 +8,7 @@
     "build": "yarn generate:icons-sheet && ng build --aot --prod",
     "test": "yarn generate:icons-sheet && ng test",
     "build:gh-pages": "yarn generate:icons-sheet && node_modules/.bin/ng build --aot --prod --baseHref=https://divanteltd.github.io/spartacus-capybara/",
-    "build:firebase": "yarn generate:icons-sheet && node_modules/.bin/ng build --aot --prod --outputPath=public --baseHref=https://spartacus-demo.web.app/",
+    "build:firebase": "yarn generate:icons-sheet && node_modules/.bin/ng build --aot --prod --outputPath=public --baseHref=https://spartacus-capybara.web.app/",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
