@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import {
   CHECKOUT_REVIEW_ORDER_PATH,
-  checkoutReviewSlots,
+  checkoutSkipSlots,
 } from './config/checkout.config';
 
 @Injectable({
@@ -32,7 +32,7 @@ export class CheckoutReviewPageLayoutHandler implements PageLayoutHandler {
   }
 
   filterCheckoutSlots(slots: string[]) {
-    return slots.filter((slot) => checkoutReviewSlots.includes(slot));
+    return slots.filter((slot) => !checkoutSkipSlots.includes(slot));
   }
 
   isCheckoutReviewRoute() {
