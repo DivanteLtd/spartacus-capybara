@@ -6,6 +6,7 @@
         <div *ngFor="let item of items" class="swiper-slide">
           <div
             *ngIf="item | async as singleItem"
+            (click)="emitClickOnProduct(singleItem)"
             [routerLink]="{ cxRoute: 'product', params: singleItem } | cxUrl"
             class="swiper-slide-content"
           >

@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { WishListItemComponent } from '@spartacus/storefront';
 import { CartService } from '@spartacus/core';
+import { GoogleAnalyticsEventsService } from 'src/app/shared/google-analytics/google-analytics-event.service';
+import {
+  GoogleEventCategory,
+  GoogleActionCategory,
+  GoogleLabelCategory,
+} from 'src/app/shared/google-analytics/google-analytics.enum';
 
 @Component({
   selector: 'app-dvnt-wish-list-item',
@@ -10,7 +16,8 @@ import { CartService } from '@spartacus/core';
 export class DvntWishListItemComponent extends WishListItemComponent {
   constructor(
     // tslint:disable-next-line: deprecation
-    private cartService: CartService
+    private cartService: CartService,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService
   ) {
     super();
   }
@@ -26,5 +33,12 @@ export class DvntWishListItemComponent extends WishListItemComponent {
       this.cartEntry.quantity
     );
     this.remove.emit(this.cartEntry);
+
+    this.googleAnalyticsEventsService.emitEvent(
+      GoogleEventCategory.SelectProduct,
+      GoogleActionCategory.AddToCartFromWishList,
+      GoogleLabelCategory.ProductCode,
+      this.cartEntry.product.code
+    );
   }
 }

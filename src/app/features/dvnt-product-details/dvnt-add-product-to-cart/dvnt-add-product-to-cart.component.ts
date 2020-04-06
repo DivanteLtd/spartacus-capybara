@@ -13,6 +13,12 @@ import {
   GlobalMessageService,
   GlobalMessageType,
 } from '@spartacus/core';
+import { GoogleAnalyticsEventsService } from 'src/app/shared/google-analytics/google-analytics-event.service';
+import {
+  GoogleEventCategory,
+  GoogleActionCategory,
+  GoogleLabelCategory,
+} from 'src/app/shared/google-analytics/google-analytics.enum';
 
 @Component({
   selector: 'app-dvnt-add-product-to-cart',
@@ -27,7 +33,8 @@ export class DvntAddProductToCartComponent extends AddToCartComponent {
     cd: ChangeDetectorRef,
     currentProductService: CurrentProductService,
     modalService: ModalService,
-    private globalMessageService: GlobalMessageService
+    private globalMessageService: GlobalMessageService,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService
   ) {
     super(cartService, modalService, currentProductService, cd);
   }
@@ -49,7 +56,18 @@ export class DvntAddProductToCartComponent extends AddToCartComponent {
         );
         this.cartService.addEntry(this.productCode, this.quantity);
         this.increment = false;
+
+        this.addToCartGoogleEvent(this.productCode);
       })
       .unsubscribe();
+  }
+
+  private addToCartGoogleEvent(productCode: string): void {
+    this.googleAnalyticsEventsService.emitEvent(
+      GoogleEventCategory.SelectProduct,
+      GoogleActionCategory.AddToCart,
+      GoogleLabelCategory.ProductCode,
+      productCode
+    );
   }
 }

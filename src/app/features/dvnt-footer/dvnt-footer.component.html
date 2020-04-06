@@ -5,7 +5,11 @@
         {{ column?.title }}
       </li>
       <li *ngFor="let item of column.children" class="footer-menu-item">
-        <a [href]="item.url" [target]="item.target">
+        <a
+          (click)="footerSectionSelected(column.title, item.title)"
+          [href]="item.url"
+          [target]="item.target"
+        >
           {{ item.title }}
         </a>
       </li>

@@ -1,6 +1,6 @@
 <ng-container *ngIf="user$ | async as user">
   <a
-    (click)="blockPropagation($event)"
+    (click)="goToWishList($event)"
     [routerLink]="'my-account/wishlist'"
     class="header-navigation-icon navigation-link"
     role="link"

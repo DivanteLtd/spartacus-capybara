@@ -8,6 +8,11 @@ import {
   User,
   WishListService,
 } from '@spartacus/core';
+import { GoogleAnalyticsEventsService } from 'src/app/shared/google-analytics/google-analytics-event.service';
+import {
+  GoogleEventCategory,
+  GoogleActionCategory,
+} from 'src/app/shared/google-analytics/google-analytics.enum';
 
 @Component({
   selector: 'app-dvnt-wish-list-icon',
@@ -25,6 +30,7 @@ export class DvntWishListIconComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService,
     private userService: UserService,
     private wishListService: WishListService
   ) {}
@@ -41,7 +47,16 @@ export class DvntWishListIconComponent implements OnInit {
     );
   }
 
-  public blockPropagation(event: Event): void {
+  public goToWishList(event: Event): void {
+    this.blockPropagation(event);
+
+    this.googleAnalyticsEventsService.emitEvent(
+      GoogleEventCategory.Navigation,
+      GoogleActionCategory.WishListRedirect
+    );
+  }
+
+  private blockPropagation(event: Event): void {
     event.stopPropagation();
     event.preventDefault();
   }

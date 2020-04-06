@@ -5,6 +5,8 @@ import {
   OnDestroy,
   ChangeDetectorRef,
   ChangeDetectionStrategy,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -57,6 +59,8 @@ export class DvntCarouselProductsComponent implements OnInit, OnDestroy {
   private _componentData$: Observable<any>;
   private _componentSubscription = new Subscription();
 
+  @Output() private emitClickEvent = new EventEmitter<Product>();
+
   constructor(
     private breakpointService: BreakpointService,
     private cd: ChangeDetectorRef,
@@ -76,6 +80,10 @@ export class DvntCarouselProductsComponent implements OnInit, OnDestroy {
 
   public get componentData$(): Observable<any> {
     return this._componentData$;
+  }
+
+  public emitClickOnProduct(product: Product): void {
+    this.emitClickEvent.emit(product);
   }
 
   private setTitle(): void {
