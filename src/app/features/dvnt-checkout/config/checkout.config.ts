@@ -193,12 +193,13 @@ export const staticComponents: {
   },
 };
 
-export const staticCmsonfig: CmsStructureConfig = {
-  cmsStructure: {
-    components: {
-      ...staticComponents,
+export function staticCmsConfigFactory(): CmsStructureConfig {
+  return {
+    cmsStructure: {
+      components: {
+        ...staticComponents,
+      },
+      pages: staticPages,
     },
-    slots: {},
-    pages: staticPages,
-  },
-};
+  };
+}
