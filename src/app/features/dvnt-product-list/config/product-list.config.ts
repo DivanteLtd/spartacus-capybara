@@ -29,6 +29,7 @@ const productListTranslationOverwrites = {
         filters: 'Filters',
         productsFound: 'Products found',
         sortBy: 'Sort By',
+        sortByRelevance: 'Relevance',
         view: 'View',
       },
     },
