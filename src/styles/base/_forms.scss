@@ -183,7 +183,7 @@ input:not([type='checkbox']) {
 
       &:checked + span:after {
         background-color: var(--cx-color-primary);
-        background-image: url($iconsPath+'checked.svg');
+        background-image: url('~assets/icons/checked.svg');
         border: 1px solid transparent;
       }
     }
