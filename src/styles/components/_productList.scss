@@ -7,28 +7,34 @@
     height: calculateRem(102px);
 
     &.top {
-      display: flex;
       align-items: center;
-      justify-content: space-around;
       border-bottom: solid 1px var(--ssf-light-primary);
+      display: flex;
+      justify-content: space-around;
 
       .cx-sort-dropdown {
-        margin-bottom: 0;
-        display: flex;
         align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-bottom: 0;
+        padding: 0px 4px;
 
         @include tablet-and-up {
+          flex-direction: row;
           margin-right: auto;
         }
       }
 
       .ng-select-container {
-        height: calculateRem(48px);
         border: none !important;
-        min-width: calculateRem(150px);
+        height: auto;
+        min-width: auto;
+        padding: 0;
 
         @include tablet-and-up {
-          min-width: calculateRem(200px);
+          height: calculateRem(48px);
+          min-width: calculateRem(152px);
         }
 
         input {
