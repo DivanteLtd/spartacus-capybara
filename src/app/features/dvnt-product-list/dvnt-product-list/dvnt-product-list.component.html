@@ -17,6 +17,7 @@
                 {{ 'productList.filters' | cxTranslate }}
               </span>
             </button>
+
             <div class="form-group cx-sort-dropdown">
               <span class="font-roboto sort-by-label">
                 {{ 'productList.sortBy' | cxTranslate }}:
@@ -28,6 +29,9 @@
                 placeholder="{{ 'productList.sortByRelevance' | cxTranslate }}"
               ></cx-sorting>
             </div>
+
+            <div class="desktop-divider"></div>
+
             <div class="items-found">
               <span class="items-found-label">
                 {{ 'productList.productsFound' | cxTranslate }}:
@@ -36,6 +40,7 @@
                 {{ (model$ | async).pagination.totalResults }}
               </span>
             </div>
+
             <span class="view-modes">
               <span class="view-modes-label font-roboto">
                 {{ 'productList.view' | cxTranslate }}

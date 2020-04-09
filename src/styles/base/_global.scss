@@ -62,7 +62,7 @@ header {
 footer {
   background-color: var(--cx-text-color-primary) !important;
   color: var(--cx-color-dark) !important;
-  margin: 50px auto 0px;
+  margin: 20px auto 0px;
   max-width: 1140px;
 
   @include laptop-and-up {

@@ -4,7 +4,6 @@ import {
   CmsStructureConfig,
   CmsPageSlotsConfig,
 } from '@spartacus/core';
-import { translationChunksConfig } from '@spartacus/assets';
 import { LayoutConfig } from '@spartacus/storefront';
 
 import { DvntCategoriesWrapperComponent } from '../dvnt-categories-wrapper.component';
@@ -57,7 +56,7 @@ export function categoriesWrapperCmsStructureConfig(): CmsStructureConfig {
 
 const categoriesWrapperTranslationOverwrites = {
   en: {
-    common: {
+    product: {
       productList: {
         categories: 'Categories',
       },
@@ -68,8 +67,5 @@ const categoriesWrapperTranslationOverwrites = {
 export const categoriesWrapperTranslationsConfig = {
   i18n: {
     resources: categoriesWrapperTranslationOverwrites,
-    chunks: {
-      common: translationChunksConfig.common.push('productList'),
-    },
   },
 };

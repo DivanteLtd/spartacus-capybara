@@ -4,7 +4,7 @@
   padding-top: 0;
 
   .cx-sorting {
-    height: calculateRem(102px);
+    height: auto;
 
     &.top {
       align-items: center;
@@ -16,13 +16,12 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        flex: 1;
+        flex: 0 1 auto;
         margin-bottom: 0;
         padding: 0px 4px;
 
         @include tablet-and-up {
           flex-direction: row;
-          margin-right: auto;
         }
       }
 
@@ -52,6 +51,7 @@
 
       .ng-dropdown-panel {
         border: none;
+        min-width: calculateRem(176px);
 
         .ng-dropdown-panel-items {
           max-height: 260px;
@@ -83,5 +83,9 @@
 
   @include laptop-and-up {
     max-width: 80% !important;
+  }
+
+  .cx-page {
+    padding-bottom: 0px;
   }
 }

@@ -12,12 +12,16 @@
     &.top {
       padding: calculateRem(20px) 0;
 
+      @include tablet-and-up {
+        padding-left: calculateRem(40px);
+      }
+
       .btn-filters {
         align-items: center;
         box-shadow: none !important;
         display: flex;
         flex-direction: column;
-        flex: 1;
+        flex: 0 1 100px;
         padding: 0px 4px;
         text-transform: none;
 
@@ -26,13 +30,11 @@
         }
 
         app-dvnt-icon {
-          margin-right: calculateRem(8px);
           margin-top: 7px;
           order: 2;
 
           @include tablet-and-up {
-            margin-left: calculateRem(8px);
-            margin-right: 0px;
+            margin-right: calculateRem(12px);
             margin-top: 0px;
             order: 1;
           }
@@ -43,14 +45,19 @@
         }
 
         .label {
-          color: var(--ssf-gray-primary) !important;
           font-family: var(--ssf-secondary-font-family);
           font-size: calculateRem(12px);
           font-weight: 300;
+          order: 1;
+
+          @include tablet-and-up {
+            font-size: calculateRem(14px);
+            order: 2;
+          }
         }
 
         @include tablet-and-up {
-          padding: 16px 40px;
+          padding: 0px 5px;
           font-size: calculateRem(14px);
         }
       }
@@ -74,7 +81,7 @@
         }
       }
 
-      .items-found {
+      .desktop-divider {
         display: none;
         flex: 1;
 
@@ -83,12 +90,21 @@
         }
       }
 
+      .items-found {
+        display: none;
+        flex: 0 1 auto;
+
+        @include tablet-and-up {
+          display: flex;
+        }
+      }
+
       .view-modes-label {
-        color: var(--ssf-dark-primary);
+        color: var(--ssf-dark-primary) !important;
       }
 
       .items-found-total {
-        color: var(--ssf-dark-primary);
+        color: var(--ssf-dark-primary) !important;
         display: none;
         font-weight: bold;
         margin-left: 4px;
@@ -114,7 +130,7 @@
         align-items: flex-start;
         display: flex;
         flex-wrap: wrap;
-        flex: 1;
+        flex: 0 1 auto;
         justify-content: center;
         padding: 0px 4px;
 
@@ -151,8 +167,12 @@
 
       .cx-sort-dropdown {
         span {
-          margin-right: calculateRem(8px);
           min-width: calculateRem(48px);
+          text-align: center;
+
+          @include tablet-and-up {
+            margin-right: calculateRem(8px);
+          }
         }
       }
     }
