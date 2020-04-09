@@ -65,5 +65,7 @@ const categoriesWrapperTranslationOverwrites = {
 };
 
 export const categoriesWrapperTranslationsConfig = {
-  i18n: { resources: categoriesWrapperTranslationOverwrites },
+  i18n: {
+    resources: categoriesWrapperTranslationOverwrites,
+  },
 };

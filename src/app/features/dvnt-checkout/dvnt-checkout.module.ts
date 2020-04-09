@@ -1,18 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DvntShippingAddressComponent } from './dvnt-shipping/dvnt-shipping-address.component';
-import {
-  CmsPageConfig,
-  CmsStructureConfig,
-  ConfigModule,
-  FeaturesConfigModule,
-} from '@spartacus/core';
+import { ConfigModule, FeaturesConfigModule } from '@spartacus/core';
 import { DvntCheckoutProgressComponent } from './dvnt-checkout-progress/dvnt-checkout-progress.component';
 import {
   checkoutCmsConfig,
   checkoutLayoutConfig,
   checkoutTranslationsConfig,
-  staticCmsonfig,
+  staticCmsConfigFactory,
 } from './config/checkout.config';
 import { SharedModule } from '../../shared/shared.module';
 import {
@@ -45,7 +40,7 @@ import { CheckoutReviewPageLayoutHandler } from './CheckoutReviewPageLayoutHandl
     ConfigModule.withConfig(checkoutTranslationsConfig),
     ConfigModule.withConfig(checkoutCmsConfig),
     ConfigModule.withConfig(checkoutLayoutConfig),
-    ConfigModule.withConfig(staticCmsonfig),
+    ConfigModule.withConfigFactory(staticCmsConfigFactory),
     CardModule,
     AddressFormModule,
     SpinnerModule,
