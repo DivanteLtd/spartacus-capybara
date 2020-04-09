@@ -2,7 +2,7 @@
   <ng-container *ngIf="!(loading$ | async); else loading">
     <div class="top-section">
       <h3 class="header-label">
-        {{ 'filled.total' | cxTranslate: { count: quantity$ | async } }}
+        {{ 'cartDetails.total' | cxTranslate: { count: quantity$ | async } }}
       </h3>
 
       <app-dvnt-cart-product-list
