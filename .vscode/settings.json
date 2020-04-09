@@ -1,5 +1,10 @@
 {
-    "git.ignoreLimitWarning": true,
-    "files.eol": "\n",
-    "prettier.endOfLine": "lf"
+  "git.ignoreLimitWarning": true,
+  "files.eol": "\n",
+  "prettier.endOfLine": "lf",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#4D1B39",
+    "titleBar.activeBackground": "#6C2650",
+    "titleBar.activeForeground": "#FDF8FB"
+  }
 }
