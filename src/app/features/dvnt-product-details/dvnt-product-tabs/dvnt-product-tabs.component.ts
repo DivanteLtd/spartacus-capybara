@@ -3,6 +3,7 @@ import {
   OnInit,
   OnDestroy,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import {
   TabParagraphContainerComponent,
@@ -16,6 +17,7 @@ import {
   WindowRef,
 } from '@spartacus/core';
 import { Subscription } from 'rxjs';
+import { DvntProductDetailsService } from '../dvnt-product-details.service';
 
 @Component({
   selector: 'app-dvnt-product-tabs',
@@ -33,7 +35,9 @@ export class DvntProductTabsComponent extends TabParagraphContainerComponent
     componentData: CmsComponentData<CMSTabParagraphContainer>,
     cmsService: CmsService,
     winRef: WindowRef,
-    private breakpointService: BreakpointService
+    private cd: ChangeDetectorRef,
+    private breakpointService: BreakpointService,
+    private productDetailsService: DvntProductDetailsService
   ) {
     super(componentData, cmsService, winRef);
   }
@@ -42,6 +46,7 @@ export class DvntProductTabsComponent extends TabParagraphContainerComponent
     super.ngOnInit();
 
     this.componentSubscription.add(this.subscribeToBreakpointChanges());
+    this.componentSubscription.add(this.subscribeToReviewsRedirect());
   }
 
   ngOnDestroy(): void {
@@ -73,6 +78,15 @@ export class DvntProductTabsComponent extends TabParagraphContainerComponent
 
   generateTabHeaderId(index: number): string {
     return `tab-header-${index}`;
+  }
+
+  private subscribeToReviewsRedirect(): Subscription {
+    return this.productDetailsService.redirectToReviews.subscribe(() => {
+      // Reviews tab has index 2
+      this.select(2);
+      this.clickOnTab(2);
+      this.cd.detectChanges();
+    });
   }
 
   private subscribeToBreakpointChanges(): Subscription {

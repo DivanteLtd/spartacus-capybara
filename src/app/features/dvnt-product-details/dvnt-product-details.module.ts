@@ -19,6 +19,7 @@ import { DvntAddProductToCartComponent } from './dvnt-add-product-to-cart/dvnt-a
 import { DvntCarouselModule } from 'src/app/shared/carousel/dvnt-carousel.module';
 import { DvntProductColorVariantComponent } from './dvnt-product-variants/dvnt-product-color-variant/dvnt-product-color-variant.component';
 import { DvntProductDetailsComponent } from './dvnt-product-details/dvnt-product-details.component';
+import { DvntProductDetailsService } from './dvnt-product-details.service';
 import { DvntProductImagesComponent } from './dvnt-product-images/dvnt-product-images.component';
 import { DvntProductIntroComponent } from './dvnt-product-intro/dvnt-product-intro.component';
 import { DvntProductMobileImagesComponent } from './dvnt-product-mobile-images/dvnt-product-mobile-images.component';
@@ -90,6 +91,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DvntProductVariantsComponent,
   ],
   providers: [
+    DvntProductDetailsService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
