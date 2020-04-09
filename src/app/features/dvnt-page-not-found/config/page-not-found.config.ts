@@ -5,7 +5,6 @@ import {
   CmsPageSlotsConfig,
 } from '@spartacus/core';
 import { LayoutConfig } from '@spartacus/storefront';
-import { translationChunksConfig } from '@spartacus/assets';
 
 import { DvntPageNotFoundComponent } from '../dvnt-page-not-found.component';
 
@@ -56,11 +55,11 @@ export function pageNotFoundCmsStructureConfig(): CmsStructureConfig {
 const pageNotFoundTranslationOverwrites = {
   en: {
     common: {
-      pageNotFound: {
+      common: {
         back: 'Back',
         returnToHome: 'Return to home',
-        slogan: `Unfortunately we can't find the page you are looking for.`,
-        title: `We can't find the page`,
+        pageNotFoundSlogan: `Unfortunately we can't find the page you are looking for.`,
+        pageNotFoundTitle: `We can't find the page`,
       },
     },
   },
@@ -69,8 +68,5 @@ const pageNotFoundTranslationOverwrites = {
 export const pageNotFoundTranslationsConfig = {
   i18n: {
     resources: pageNotFoundTranslationOverwrites,
-    chunks: {
-      common: translationChunksConfig.common.push('pageNotFound'),
-    },
   },
 };
