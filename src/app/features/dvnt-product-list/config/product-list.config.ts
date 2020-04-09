@@ -1,6 +1,5 @@
 import { CmsConfig } from '@spartacus/core';
 import { LayoutConfig } from '@spartacus/storefront';
-import { translationChunksConfig } from '@spartacus/assets';
 
 import { DvntProductListComponent } from '../dvnt-product-list/dvnt-product-list.component';
 
@@ -24,11 +23,12 @@ export const productListCmsConfig = <CmsConfig>{
 
 const productListTranslationOverwrites = {
   en: {
-    common: {
+    product: {
       productList: {
         filters: 'Filters',
         productsFound: 'Products found',
         sortBy: 'Sort By',
+        sortByRelevance: 'Relevance',
         view: 'View',
       },
     },
@@ -38,8 +38,5 @@ const productListTranslationOverwrites = {
 export const productListTranslationsConfig = {
   i18n: {
     resources: productListTranslationOverwrites,
-    chunks: {
-      common: translationChunksConfig.common.push('productList'),
-    },
   },
 };

@@ -1,14 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DvntProductListComponent } from './dvnt-product-list/dvnt-product-list.component';
-import {
-  CmsConfig,
-  CmsPageSlotsConfig,
-  CmsStructureConfig,
-  ConfigModule,
-  ContentSlotComponentData,
-  FeaturesConfigModule,
-} from '@spartacus/core';
+import { ConfigModule, FeaturesConfigModule } from '@spartacus/core';
 import { SharedModule } from '../../shared/shared.module';
 import {
   ListNavigationModule,

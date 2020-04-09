@@ -1,8 +1,12 @@
-name: Deploy to GitHub Pages
+name: Build and deploy
 on:
   push:
     branches:
+      - 'feature/*'
+      - 'hotfix/*'
+      - 'bugfix/*'
       - develop
+      - master
 
 jobs:
   build-and-deploy:
@@ -23,11 +27,12 @@ jobs:
           yarn
           yarn format:all
           yarn lint
-          yarn build:gh-pages
+          yarn build:firebase
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        if: github.ref == 'refs/heads/develop'
+        uses: w9jds/firebase-action@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist/SpartacusDemo
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

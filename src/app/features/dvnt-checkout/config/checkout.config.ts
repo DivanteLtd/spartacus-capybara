@@ -25,12 +25,7 @@ import { DvntReviewOrderComponent } from '../dvnt-order-review/dvnt-review-order
 
 export const CHECKOUT_REVIEW_ORDER_PATH = '/checkout/review-order';
 
-export const checkoutReviewSlots = [
-  'TopContent',
-  'DvntBodyContent',
-  'DvntSideContent',
-  'BottomContent',
-];
+export const checkoutSkipSlots = ['BodyContent', 'SideContent'];
 
 export const checkoutLayoutConfig = {
   layoutSlots: {
@@ -193,12 +188,13 @@ export const staticComponents: {
   },
 };
 
-export const staticCmsonfig: CmsStructureConfig = {
-  cmsStructure: {
-    components: {
-      ...staticComponents,
+export function staticCmsConfigFactory(): CmsStructureConfig {
+  return {
+    cmsStructure: {
+      components: {
+        ...staticComponents,
+      },
+      pages: staticPages,
     },
-    slots: {},
-    pages: staticPages,
-  },
-};
+  };
+}
