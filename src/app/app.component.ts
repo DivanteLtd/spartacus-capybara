@@ -22,7 +22,7 @@ export class AppComponent extends StorefrontComponent implements OnDestroy {
     flexType: 'FooterNavigationComponent',
   };
 
-  private unsubscribe: Subject<any> = new Subject();
+  private routerEventsSubscription: Subject<any> = new Subject();
 
   constructor(
     hamburgerMenuService: HamburgerMenuService,
@@ -32,16 +32,19 @@ export class AppComponent extends StorefrontComponent implements OnDestroy {
   ) {
     super(hamburgerMenuService, routingService);
 
-    this.router.events.pipe(takeUntil(this.unsubscribe)).subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.googleAnalyticsEventsService.emitSetPage(event.urlAfterRedirects);
-        console.log('SET PAGE', event.urlAfterRedirects);
-      }
-    });
+    this.router.events
+      .pipe(takeUntil(this.routerEventsSubscription))
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.googleAnalyticsEventsService.emitSetPage(
+            event.urlAfterRedirects
+          );
+        }
+      });
   }
 
   public ngOnDestroy(): void {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
+    this.routerEventsSubscription.next();
+    this.routerEventsSubscription.complete();
   }
 }
