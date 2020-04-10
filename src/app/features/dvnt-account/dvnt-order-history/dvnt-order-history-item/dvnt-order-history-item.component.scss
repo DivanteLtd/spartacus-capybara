@@ -1,0 +1,36 @@
+@import 'media';
+@import 'mixins';
+
+.order-history-row {
+  align-items: flex-start;
+  border-bottom: 1px var(--ssf-light-primary) solid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  min-height: 70px;
+  padding: 15px 0px;
+  width: 100%;
+
+  .single-column {
+    align-self: center;
+    display: flex;
+    flex: 1 0 50%;
+    justify-content: flex-start;
+    margin: 5px 0;
+
+    @include laptop-and-up {
+      flex: 1;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .column-value {
+      margin: 0;
+      text-align: center;
+    }
+
+    .navigation {
+      text-transform: uppercase;
+    }
+  }
+}
