@@ -23,12 +23,7 @@ import { tap } from 'rxjs/operators';
 export class DvntProductMobileImagesComponent extends ProductImagesComponent
   implements OnInit {
   public config: SwiperConfigInterface = {
-    a11y: true,
-    direction: 'horizontal',
     slidesPerView: 1,
-    keyboard: true,
-    mousewheel: true,
-    pagination: false,
   };
 
   private pagination: SwiperPaginationInterface = {

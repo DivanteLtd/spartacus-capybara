@@ -38,8 +38,11 @@ import { DvntProductSizeVariantComponent } from './dvnt-product-variants/dvnt-pr
 import { DvntProductStyleVariantComponent } from './dvnt-product-variants/dvnt-product-style-variant/dvnt-product-style-variant.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  a11y: true,
   direction: 'horizontal',
-  slidesPerView: 'auto',
+  keyboard: true,
+  mousewheel: false,
+  pagination: false,
 };
 
 @NgModule({
