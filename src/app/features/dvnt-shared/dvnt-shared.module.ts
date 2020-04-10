@@ -33,8 +33,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { sharedTranslationsConfig } from './config/shared.config';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  a11y: true,
   direction: 'horizontal',
-  slidesPerView: 'auto',
+  keyboard: true,
+  mousewheel: false,
+  pagination: false,
 };
 
 @NgModule({

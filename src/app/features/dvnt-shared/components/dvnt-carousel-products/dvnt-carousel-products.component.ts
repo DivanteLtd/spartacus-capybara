@@ -37,13 +37,8 @@ export class DvntCarouselProductsComponent implements OnInit, OnDestroy {
   @Input() public items$: Observable<Observable<Product>[]>;
 
   public config: SwiperConfigInterface = {
-    a11y: true,
     autoplay: true,
-    direction: 'horizontal',
-    keyboard: true,
-    mousewheel: true,
     navigation: true,
-    pagination: false,
   };
 
   protected readonly PRODUCT_SCOPE =
