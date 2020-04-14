@@ -1,0 +1,65 @@
+@import 'media';
+
+.my-interests-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .my-interests-list-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .my-interests-row {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+
+      .standard-column {
+        align-self: center;
+        display: flex;
+        flex: 1 0 50%;
+        justify-content: flex-start;
+        margin: 5px 0;
+
+        @include laptop-and-up {
+          flex: 1;
+          justify-content: center;
+          margin: 0;
+        }
+      }
+
+      .wider-column {
+        flex: 2;
+      }
+
+      .empty-column {
+        @extend .standard-column;
+
+        display: none;
+
+        @include laptop-and-up {
+          display: flex;
+        }
+      }
+
+      .single-column {
+        @extend .standard-column;
+
+        .column-label {
+          margin: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .my-interests-row-header {
+      border-bottom: 1px solid var(--cx-border-color);
+      margin-bottom: 0px;
+      padding-bottom: 12px;
+    }
+  }
+}

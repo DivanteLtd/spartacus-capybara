@@ -1,0 +1,44 @@
+<div class="my-interests-list-container">
+  <ng-container *ngIf="interests$ | async as interests">
+    <ng-container *ngIf="interests?.results?.length > 0; else noInterest">
+      <div class="my-interests-list-content">
+        <div class="my-interests-row my-interests-row-header">
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.item' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.price' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.notifications' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="empty-column"></div>
+        </div>
+
+        <ng-container>
+          <app-dvnt-my-interests-item
+            *ngFor="let interest of interests?.results"
+            [interest]="interest"
+          ></app-dvnt-my-interests-item>
+        </ng-container>
+      </div>
+
+      <app-dvnt-pagination
+        [pagination]="pagination"
+        (viewPageEvent)="pageChange($event)"
+      ></app-dvnt-pagination>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noInterest>
+    <h2>
+      {{ 'myInterests.noInterests' | cxTranslate }}
+    </h2>
+  </ng-template>
+</div>

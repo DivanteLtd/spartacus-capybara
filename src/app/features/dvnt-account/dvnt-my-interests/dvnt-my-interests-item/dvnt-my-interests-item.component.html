@@ -1,0 +1,36 @@
+<div
+  *ngIf="interest.product$ | async as product"
+  class="my-interest-row my-interest-row-header"
+>
+  <div class="single-column">
+    <p class="column-value">
+      {{ product.code }}
+    </p>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      {{ product.price.formattedValue }}
+    </p>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      cos
+    </p>
+  </div>
+  <div class="single-column">
+    <button
+      (click)="removeInterest(interest$)"
+      [disabled]="isRemoveDisabled$ | async"
+      class="btn btn-block btn-primary"
+      type="button"
+    >
+      {{ 'myInterests.remove' | cxTranslate }}
+    </button>
+  </div>
+
+  <div>
+    <pre> {{ interest$ | json }}</pre>
+    -------------------------------------------------------------
+    <pre> {{ product | json }}</pre>
+  </div>
+</div>
