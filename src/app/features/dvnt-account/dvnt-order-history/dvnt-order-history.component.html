@@ -35,6 +35,11 @@
           ></app-dvnt-order-history-item>
         </ng-container>
       </div>
+
+      <app-dvnt-pagination
+        [pagination]="history.pagination"
+        (viewPageEvent)="pageChange($event)"
+      ></app-dvnt-pagination>
     </ng-container>
   </ng-container>
 

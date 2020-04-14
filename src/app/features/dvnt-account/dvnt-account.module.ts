@@ -13,9 +13,10 @@ import {
 import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
 import { DvntOrderHistoryComponent } from './dvnt-order-history/dvnt-order-history.component';
-import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { DvntOrderHistoryItemComponent } from './dvnt-order-history/dvnt-order-history-item/dvnt-order-history-item.component';
+import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DvntOrderHistoryItemComponent } from './dvnt-order-history/dvnt-order-h
     UrlModule,
     RouterModule,
     NgSelectModule,
+    DvntSharedModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig(accountTranslationsConfig),
     ConfigModule.withConfig(accountCmsConfig),
