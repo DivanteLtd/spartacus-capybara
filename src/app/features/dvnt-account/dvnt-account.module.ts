@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { SpinnerModule } from '@spartacus/storefront';
+import { SpinnerModule, ListNavigationModule } from '@spartacus/storefront';
 
 import {
   accountCmsConfig,
@@ -39,6 +39,7 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     UrlModule,
     SpinnerModule,
     RouterModule,
+    ListNavigationModule,
     NgSelectModule,
     DvntSharedModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
