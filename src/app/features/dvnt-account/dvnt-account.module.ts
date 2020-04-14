@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SpinnerModule } from '@spartacus/storefront';
 
 import {
   accountCmsConfig,
@@ -10,21 +12,24 @@ import {
   accountTranslationsConfig,
   cmsStructureConfig,
 } from './config/account.config';
+import { DvntConsentFormComponent } from './dvnt-consent-management/dvnt-consent-form/dvnt-consent-form.component';
+import { DvntConsentManagementComponent } from './dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
 import { DvntOrderHistoryComponent } from './dvnt-order-history/dvnt-order-history.component';
 import { DvntOrderHistoryItemComponent } from './dvnt-order-history/dvnt-order-history-item/dvnt-order-history-item.component';
 import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
 import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
+    DvntConsentFormComponent,
+    DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
     DvntLoginCustomerComponent,
     DvntOrderHistoryComponent,
-    DvntRegisterCustomerComponent,
     DvntOrderHistoryItemComponent,
+    DvntRegisterCustomerComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +37,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     I18nModule,
     UrlModule,
+    SpinnerModule,
     RouterModule,
     NgSelectModule,
     DvntSharedModule,
@@ -41,6 +47,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ConfigModule.withConfig(accountLayoutConfig),
   ],
   entryComponents: [
+    DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
     DvntLoginCustomerComponent,
     DvntOrderHistoryComponent,

@@ -1,0 +1,51 @@
+<div class="consent-management-container">
+  <ng-container *ngIf="isLevel13; else legacyConsentManagementPage">
+    <div *ngIf="loading$ | async; else consentManagementForm">
+      <div class="cx-spinner">
+        <cx-spinner></cx-spinner>
+      </div>
+    </div>
+
+    <ng-template #consentManagementForm>
+      <ng-container *ngIf="templateList$ | async as templateList">
+        <div class="consent-action-links">
+          <button (click)="rejectAll(templateList)" class="btn btn-link">
+            {{ 'consentManagementForm.clearAll' | cxTranslate }}
+          </button>
+          <button (click)="allowAll(templateList)" class="btn btn-link">
+            {{ 'consentManagementForm.selectAll' | cxTranslate }}
+          </button>
+        </div>
+
+        <div class="consent-form">
+          <app-dvnt-consent-form
+            *ngFor="let consentTemplate of templateList"
+            [consentTemplate]="consentTemplate"
+            [requiredConsents]="requiredConsents"
+            [isAnonymousConsentsEnabled]="isAnonymousConsentsEnabled"
+            [isLevel13]="isLevel13"
+            (consentChanged)="onConsentChange($event)"
+          ></app-dvnt-consent-form>
+        </div>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #legacyConsentManagementPage>
+    <div *ngIf="loading$ | async; else consentManagementForm">
+      <div class="cx-spinner">
+        <cx-spinner></cx-spinner>
+      </div>
+    </div>
+
+    <ng-template #consentManagementForm>
+      <div class="consent-form">
+        <app-dvnt-consent-form
+          *ngFor="let consentTemplate of templateList$ | async"
+          [consentTemplate]="consentTemplate"
+          (consentChanged)="onConsentChange($event)"
+        ></app-dvnt-consent-form>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
