@@ -5,9 +5,11 @@ import {
 } from '@spartacus/core';
 import { LayoutConfig } from '@spartacus/storefront';
 
+import { DvntConsentManagementComponent } from '../dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from '../dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from '../dvnt-login-customer/dvnt-login-customer.component';
 import { DvntMyInterestsComponent } from '../dvnt-my-interests/dvnt-my-interests.component';
+import { DvntOrderHistoryComponent } from '../dvnt-order-history/dvnt-order-history.component';
 import { DvntRegisterCustomerComponent } from '../dvnt-register-customer/dvnt-register-customer.component';
 
 export const accountLayoutConfig = {
@@ -31,6 +33,12 @@ export const accountCmsConfig = <CmsConfig>{
     },
     MyInterestsComponent: {
       component: DvntMyInterestsComponent,
+    },
+    AccountOrderHistoryComponent: {
+      component: DvntOrderHistoryComponent,
+    },
+    ConsentManagementComponent: {
+      component: DvntConsentManagementComponent,
     },
   },
 };
@@ -57,6 +65,16 @@ export const staticComponents: {
     typeCode: 'DvntMyInterestsComponent',
     flexType: 'DvntMyInterestsComponent',
     uid: 'DvntMyInterestsComponent',
+  },
+  DvntOrderHistoryComponent: {
+    typeCode: 'DvntOrderHistoryComponent',
+    flexType: 'DvntOrderHistoryComponent',
+    uid: 'DvntOrderHistoryComponent',
+  },
+  DvntConsentManagementComponent: {
+    typeCode: 'DvntConsentManagementComponent',
+    flexType: 'DvntConsentManagementComponent',
+    uid: 'DvntConsentManagementComponent',
   },
 };
 

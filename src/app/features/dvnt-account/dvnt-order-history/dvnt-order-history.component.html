@@ -1,0 +1,51 @@
+<div class="order-history-list-container">
+  <ng-container *ngIf="orders$ | async as history">
+    <ng-container
+      *ngIf="history?.orders?.length > 0; else emptyOrderHistoryList"
+    >
+      <div class="order-history-list-content">
+        <div class="order-history-row order-history-row-header">
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'orderHistory.orderId' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'orderHistory.date' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'orderHistory.total' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'orderHistory.status' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="empty-column"></div>
+        </div>
+
+        <ng-container>
+          <app-dvnt-order-history-item
+            *ngFor="let order of history?.orders"
+            [order]="order"
+          ></app-dvnt-order-history-item>
+        </ng-container>
+      </div>
+
+      <app-dvnt-pagination
+        [pagination]="history.pagination"
+        (viewPageEvent)="pageChange($event)"
+      ></app-dvnt-pagination>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #emptyOrderHistoryList>
+    <h2>
+      {{ 'orderHistory.noOrders' | cxTranslate }}
+    </h2>
+  </ng-template>
+</div>
