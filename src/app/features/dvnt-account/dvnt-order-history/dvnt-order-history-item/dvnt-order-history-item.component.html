@@ -1,0 +1,33 @@
+<div class="order-history-row order-history-row-header">
+  <div class="single-column">
+    <p class="column-value">
+      {{ order?.code }}
+    </p>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      {{ order?.placed | cxDate: 'HH:mm MM/dd/yyyy' }}
+    </p>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      {{ order?.total.formattedValue }}
+    </p>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      {{
+        'orderDetails.statusDisplay'
+          | cxTranslate: { context: order?.statusDisplay }
+      }}
+    </p>
+  </div>
+  <div class="single-column">
+    <a
+      [routerLink]="{ cxRoute: 'orderDetails', params: order } | cxUrl"
+      class="navigation"
+    >
+      View
+    </a>
+  </div>
+</div>

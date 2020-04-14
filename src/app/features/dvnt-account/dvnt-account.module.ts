@@ -16,7 +16,10 @@ import { DvntConsentFormComponent } from './dvnt-consent-management/dvnt-consent
 import { DvntConsentManagementComponent } from './dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
+import { DvntOrderHistoryComponent } from './dvnt-order-history/dvnt-order-history.component';
+import { DvntOrderHistoryItemComponent } from './dvnt-order-history/dvnt-order-history-item/dvnt-order-history-item.component';
 import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
+import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-reg
     DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
     DvntLoginCustomerComponent,
+    DvntOrderHistoryComponent,
+    DvntOrderHistoryItemComponent,
     DvntRegisterCustomerComponent,
   ],
   imports: [
@@ -35,6 +40,7 @@ import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-reg
     SpinnerModule,
     RouterModule,
     NgSelectModule,
+    DvntSharedModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
     ConfigModule.withConfig(accountTranslationsConfig),
     ConfigModule.withConfig(accountCmsConfig),
@@ -44,6 +50,7 @@ import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-reg
     DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
     DvntLoginCustomerComponent,
+    DvntOrderHistoryComponent,
     DvntRegisterCustomerComponent,
   ],
 })
