@@ -3,7 +3,6 @@ import {
   Input,
   ChangeDetectionStrategy,
   Output,
-  EventEmitter,
 } from '@angular/core';
 import { NavigationNode } from '@spartacus/storefront';
 import { DvntCategoriesService } from '../../services/dvnt-categories/dvnt-categories.service';

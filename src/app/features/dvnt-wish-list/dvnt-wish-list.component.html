@@ -1,6 +1,10 @@
 <div class="wish-list-container">
   <ng-container *ngIf="wishList$ | async as wishList">
     <ng-container *ngIf="wishList?.entries?.length > 0; else emptyWishList">
+      <h2 class="wish-list-header">
+        {{ 'wishlist.header' | cxTranslate }}
+      </h2>
+
       <div class="wish-list-content">
         <div class="wish-row wish-row-header">
           <div class="image-column"></div>

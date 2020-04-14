@@ -48,6 +48,7 @@ const wishTranslationOverwrites = {
   en: {
     myAccount: {
       wishlist: {
+        header: 'Wish list',
         action: 'Action',
         itemPrice: 'Item price',
         productName: 'Product name',

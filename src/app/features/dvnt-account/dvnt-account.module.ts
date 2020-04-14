@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import {
+  MediaModule,
+  SpinnerModule,
+  ListNavigationModule,
+} from '@spartacus/storefront';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 
@@ -32,7 +37,10 @@ import {
     ReactiveFormsModule,
     I18nModule,
     UrlModule,
+    MediaModule,
     RouterModule,
+    SpinnerModule,
+    ListNavigationModule,
     NgSelectModule,
     DvntSharedModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),

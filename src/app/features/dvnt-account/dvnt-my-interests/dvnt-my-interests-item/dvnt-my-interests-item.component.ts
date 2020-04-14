@@ -1,5 +1,16 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { ProductInterestEntryRelation } from '@spartacus/core';
+import {
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { ProductInterestEntryRelation, Product } from '@spartacus/core';
+import { Observable } from 'rxjs';
+
+interface ProductInterestEntryRelationUI extends ProductInterestEntryRelation {
+  product$?: Observable<Product>;
+}
 
 @Component({
   selector: 'app-dvnt-my-interests-item',
@@ -8,5 +19,8 @@ import { ProductInterestEntryRelation } from '@spartacus/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DvntMyInterestsItemComponent {
-  @Input() public interest: ProductInterestEntryRelation;
+  @Input() public interest: ProductInterestEntryRelationUI;
+  @Input() public isRemoveDisabled$: Observable<boolean>;
+
+  @Output() public removeInterest = new EventEmitter<any>();
 }

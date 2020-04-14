@@ -78,6 +78,11 @@ const accountTranslationOverwrites = {
           'I want to create an account and I am confirming that I have read and agreed with the',
       },
     },
+    myAccount: {
+      myInterests: {
+        sortBy: 'Sort By',
+      },
+    },
   },
 };
 
