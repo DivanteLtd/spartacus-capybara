@@ -63,7 +63,7 @@
   min-width: 22px;
   transition: 0.3s;
 
-  &:checked + .cx-facet-text {
+  &:checked + .form-check-text {
     color: var(--cx-color-primary);
     font-weight: 500;
   }
@@ -79,7 +79,7 @@
     margin: 8px 0;
   }
 
-  .cx-facet-label {
+  .form-check-label {
     color: var(--cx-color-secondary);
     font-weight: var(--cx-font-weight-normal);
     position: relative;
@@ -93,7 +93,7 @@
       background-color: var(--cx-color-light);
     }
 
-    .cx-facet-text {
+    .form-check-text {
       line-height: 22px;
       color: var(--ssf-dark-primary);
       display: block;

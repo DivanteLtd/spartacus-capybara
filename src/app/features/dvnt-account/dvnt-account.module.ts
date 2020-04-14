@@ -3,23 +3,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
-
-import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
-import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
+import { SpinnerModule } from '@spartacus/storefront';
+
 import {
   accountCmsConfig,
   accountLayoutConfig,
   accountTranslationsConfig,
   cmsStructureConfig,
 } from './config/account.config';
+import { DvntConsentFormComponent } from './dvnt-consent-management/dvnt-consent-form/dvnt-consent-form.component';
+import { DvntConsentManagementComponent } from './dvnt-consent-management/dvnt-consent-management.component';
+import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
+import { DvntLoginCustomerComponent } from './dvnt-login-customer/dvnt-login-customer.component';
+import { DvntRegisterCustomerComponent } from './dvnt-register-customer/dvnt-register-customer.component';
 
 @NgModule({
   declarations: [
-    DvntRegisterCustomerComponent,
-    DvntLoginCustomerComponent,
+    DvntConsentFormComponent,
+    DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
+    DvntLoginCustomerComponent,
+    DvntRegisterCustomerComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +32,7 @@ import {
     ReactiveFormsModule,
     I18nModule,
     UrlModule,
+    SpinnerModule,
     RouterModule,
     NgSelectModule,
     ConfigModule.withConfigFactory(cmsStructureConfig),
@@ -35,9 +41,10 @@ import {
     ConfigModule.withConfig(accountLayoutConfig),
   ],
   entryComponents: [
-    DvntRegisterCustomerComponent,
-    DvntLoginCustomerComponent,
+    DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
+    DvntLoginCustomerComponent,
+    DvntRegisterCustomerComponent,
   ],
 })
 export class DvntAccountModule {}

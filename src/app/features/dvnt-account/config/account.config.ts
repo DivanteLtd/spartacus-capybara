@@ -5,6 +5,7 @@ import {
 } from '@spartacus/core';
 import { LayoutConfig } from '@spartacus/storefront';
 
+import { DvntConsentManagementComponent } from '../dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from '../dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from '../dvnt-login-customer/dvnt-login-customer.component';
 import { DvntRegisterCustomerComponent } from '../dvnt-register-customer/dvnt-register-customer.component';
@@ -28,6 +29,9 @@ export const accountCmsConfig = <CmsConfig>{
     ForgotPasswordComponent: {
       component: DvntForgotPasswordComponent,
     },
+    ConsentManagementComponent: {
+      component: DvntConsentManagementComponent,
+    },
   },
 };
 
@@ -48,6 +52,11 @@ export const staticComponents: {
     typeCode: 'DvntForgotPasswordComponent',
     flexType: 'DvntForgotPasswordComponent',
     uid: 'DvntForgotPasswordComponent',
+  },
+  DvntConsentManagementComponent: {
+    typeCode: 'DvntConsentManagementComponent',
+    flexType: 'DvntConsentManagementComponent',
+    uid: 'DvntConsentManagementComponent',
   },
 };
 
