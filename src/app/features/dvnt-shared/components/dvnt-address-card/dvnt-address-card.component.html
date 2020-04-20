@@ -1,0 +1,60 @@
+<div class="address-card-container">
+  <div class="left-container">
+    <p class="address-card-label-name">
+      {{ address?.firstName }} {{ address?.lastName }}
+    </p>
+    <p class="address-card-label">
+      {{ address?.line1 }}
+    </p>
+    <p class="address-card-label">
+      {{ address?.line2 }}
+    </p>
+    <p class="address-card-label">
+      {{ address?.town }},
+      <span *ngIf="!address?.region?.isocode">{{
+        address?.country?.isocode
+      }}</span
+      ><span>{{ address?.region?.isocode }}</span>
+    </p>
+    <p class="address-card-label">
+      {{ address?.postalCode }}
+    </p>
+    <p class="address-card-label-phone">
+      {{ address?.phone }}
+    </p>
+  </div>
+
+  <div [ngClass]="{ 'align-center': editMode }" class="right-container">
+    <ng-container *ngIf="editMode">
+      <span>
+        {{ 'addressBook.areYouSureToDeleteAddress' | cxTranslate }}
+      </span>
+
+      <div class="address-card-action-buttons">
+        <button (click)="deleteAddress(address.id)" class="btn btn-primary">
+          {{ 'common.delete' | cxTranslate }}
+        </button>
+        <button (click)="cancelEdit()" class="btn btn-secondary">
+          {{ 'common.cancel' | cxTranslate }}
+        </button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!editMode">
+      <button
+        *ngIf="!address?.defaultAddress"
+        (click)="setAddressAsDefault(address.id)"
+        class="btn btn-outline address-card-set-default-button"
+      >
+        {{ 'addressCard.setAsDefault' | cxTranslate }}
+      </button>
+      <div class="address-card-action-buttons">
+        <button (click)="openEditFormEvent()" class="btn btn-primary">
+          {{ 'common.edit' | cxTranslate }}
+        </button>
+        <button (click)="setEditMode()" class="btn btn-clear">
+          {{ 'common.delete' | cxTranslate }}
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

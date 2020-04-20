@@ -12,6 +12,7 @@ import {
   accountTranslationsConfig,
   cmsStructureConfig,
 } from './config/account.config';
+import { DvntAddressBookComponent } from './dvnt-address-book/dvnt-address-book.component';
 import { DvntConsentFormComponent } from './dvnt-consent-management/dvnt-consent-form/dvnt-consent-form.component';
 import { DvntConsentManagementComponent } from './dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from './dvnt-forgot-password/dvnt-forgot-password.component';
@@ -23,6 +24,7 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
 
 @NgModule({
   declarations: [
+    DvntAddressBookComponent,
     DvntConsentFormComponent,
     DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
@@ -47,6 +49,7 @@ import { DvntSharedModule } from '../dvnt-shared/dvnt-shared.module';
     ConfigModule.withConfig(accountLayoutConfig),
   ],
   entryComponents: [
+    DvntAddressBookComponent,
     DvntConsentManagementComponent,
     DvntForgotPasswordComponent,
     DvntLoginCustomerComponent,

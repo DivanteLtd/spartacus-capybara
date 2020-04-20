@@ -1,0 +1,64 @@
+<div>
+  <p
+    *ngIf="!(showAddAddressForm || showEditAddressForm)"
+    class="address-book-header-label"
+  >
+    {{ 'addressBook.header.manage' | cxTranslate }}
+    {{ 'addressBook.header.manually' | cxTranslate }}
+  </p>
+
+  <ng-container
+    *ngIf="
+      (addresses$ | async).length &&
+      !(showAddAddressForm || showEditAddressForm)
+    "
+  >
+    <div *ngIf="!(addressesStateLoading$ | async); else loading">
+      <div *ngFor="let address of addresses$ | async">
+        <app-dvnt-address-card
+          (editEvent)="editAddressButtonHandle(address)"
+          [address]="address"
+        ></app-dvnt-address-card>
+      </div>
+    </div>
+
+    <div class="add-new-address">
+      <button (click)="addAddressButtonHandle()" class="btn btn-primary">
+        {{ 'addressBook.addNewAddress' | cxTranslate }}
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!(addresses$ | async).length || showAddAddressForm">
+    <p class="address-book-header-label">
+      {{ 'addressBook.addNewShippingAddress' | cxTranslate }}
+    </p>
+    <app-dvnt-address-form
+      (backToAddress)="addAddressCancel()"
+      (submitAddress)="addAddressSubmit($event)"
+      [setAsDefaultField]="!((addresses$ | async).length === 0)"
+      [showCancelBtn]="!((addresses$ | async).length === 0)"
+      actionBtnLabel="{{ 'addressBook.addAddress' | cxTranslate }}"
+      cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}"
+      showTitleCode="true"
+    ></app-dvnt-address-form>
+  </ng-container>
+
+  <ng-container *ngIf="showEditAddressForm">
+    <p class="address-book-header-label">
+      {{ 'addressBook.editShippingAddress' | cxTranslate }}
+    </p>
+    <app-dvnt-address-form
+      (backToAddress)="editAddressCancel()"
+      (submitAddress)="editAddressSubmit($event)"
+      [addressData]="currentAddress"
+      actionBtnLabel="{{ 'addressBook.updateAddress' | cxTranslate }}"
+      cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}"
+      showTitleCode="true"
+    ></app-dvnt-address-form>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <cx-spinner></cx-spinner>
+</ng-template>

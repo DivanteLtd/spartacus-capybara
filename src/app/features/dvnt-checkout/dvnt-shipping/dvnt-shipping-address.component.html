@@ -21,10 +21,10 @@
           >
             <div (click)="selectAddress(card.address)">
               <app-dvnt-card
-                color="secondary"
-                [fitToContainer]="true"
-                [content]="card.card"
                 (sendCard)="selectAddress(card.address)"
+                [content]="card.card"
+                [fitToContainer]="true"
+                color="secondary"
               ></app-dvnt-card>
             </div>
           </div>
@@ -42,12 +42,12 @@
           {{ 'checkout.backToCart' | cxTranslate }}
         </button>
         <button
-          class="btn btn-primary"
+          (click)="next()"
           [disabled]="
             (!selectedAddress || !selectedAddress.id) &&
             !(selectedAddress$ | async)?.shippingAddress
           "
-          (click)="next()"
+          class="btn btn-primary"
         >
           {{ 'common.continue' | cxTranslate }}
         </button>
@@ -56,21 +56,21 @@
 
     <ng-template #newAddressForm>
       <ng-container *ngIf="cards.length; else initialAddressForm">
-        <cx-address-form
-          [showTitleCode]="true"
+        <app-dvnt-address-form
           (backToAddress)="hideNewAddressForm(false)"
           (submitAddress)="addAddress($event)"
-        ></cx-address-form>
+          [showTitleCode]="true"
+        ></app-dvnt-address-form>
       </ng-container>
       <ng-template #initialAddressForm>
-        <cx-address-form
-          [showTitleCode]="true"
-          [setAsDefaultField]="!isGuestCheckout"
-          [addressData]="setAddress"
-          cancelBtnLabel="{{ 'checkout.backToCart' | cxTranslate }}"
+        <app-dvnt-address-form
           (backToAddress)="hideNewAddressForm(true)"
           (submitAddress)="addAddress($event)"
-        ></cx-address-form>
+          [addressData]="setAddress"
+          [setAsDefaultField]="!isGuestCheckout"
+          [showTitleCode]="true"
+          cancelBtnLabel="{{ 'checkout.backToCart' | cxTranslate }}"
+        ></app-dvnt-address-form>
       </ng-template>
     </ng-template>
   </ng-container>
