@@ -1,12 +1,12 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import {
-  CurrentProductService,
-  BreakpointService,
   BREAKPOINT,
+  BreakpointService,
+  CurrentProductService,
 } from '@spartacus/storefront';
-import { Product } from '@spartacus/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Product, AuthService } from '@spartacus/core';
+import { Observable, combineLatest } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dvnt-product-details',
@@ -14,11 +14,13 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./dvnt-product-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DvntProductDetailsComponent {
+export class DvntProductDetailsComponent implements OnInit {
   public isMobileView$: Observable<boolean>;
   public product$: Observable<Product>;
+  public outOfStock$: Observable<boolean>;
 
   constructor(
+    private authService: AuthService,
     private currentProductService: CurrentProductService,
     private breakpointService: BreakpointService
   ) {
@@ -26,6 +28,18 @@ export class DvntProductDetailsComponent {
 
     this.isMobileView$ = this.breakpointService.breakpoint$.pipe(
       map((breakpoint) => breakpoint === BREAKPOINT.xs)
+    );
+  }
+
+  ngOnInit() {
+    this.outOfStock$ = combineLatest([
+      this.currentProductService.getProduct().pipe(filter(Boolean)),
+      this.authService.getOccUserId(),
+    ]).pipe(
+      map(
+        ([product]: [Product, String]) =>
+          !!product.stock && product.stock.stockLevelStatus === 'outOfStock'
+      )
     );
   }
 }

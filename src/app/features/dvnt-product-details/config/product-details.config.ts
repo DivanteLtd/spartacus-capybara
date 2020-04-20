@@ -9,6 +9,7 @@ import { LayoutConfig } from '@spartacus/storefront';
 import { DvntProductDetailsComponent } from '../dvnt-product-details/dvnt-product-details.component';
 import { DvntProductTabsComponent } from '../dvnt-product-tabs/dvnt-product-tabs.component';
 import { DvntProductUpSellingReferencesComponent } from '../dvnt-product-up-selling-references/dvnt-product-up-selling-references.component';
+import { DvntStockNotificationComponent } from '../dvnt-stock-notification/dvnt-stock-notification.component';
 
 export const productDetailsLayoutConfig = {
   layoutSlots: {
@@ -29,6 +30,9 @@ export const productDetailsCmsConfig = <CmsConfig>{
     ProductReferencesComponent: {
       component: DvntProductUpSellingReferencesComponent,
     },
+    StockNotificationComponent: {
+      component: DvntStockNotificationComponent,
+    },
   },
 };
 
@@ -39,6 +43,11 @@ export const staticComponents: {
     typeCode: 'DvntProductDetailsComponent',
     flexType: 'DvntProductDetailsComponent',
     uid: 'DvntProductDetailsComponent',
+  },
+  DvntStockNotificationComponent: {
+    typeCode: 'DvntStockNotificationComponent',
+    flexType: 'DvntStockNotificationComponent',
+    uid: 'DvntStockNotificationComponent',
   },
 };
 
