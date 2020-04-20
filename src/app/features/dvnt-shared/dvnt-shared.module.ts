@@ -14,10 +14,12 @@ import {
   ItemCounterModule,
 } from '@spartacus/storefront';
 
+import { NgSelectModule } from '@ng-select/ng-select';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
+import { DvntAddressCardComponent } from './components/dvnt-address-card/dvnt-address-card.component';
 import { DvntAppliedCouponsComponent } from './components/dvnt-applied-coupons/dvnt-applied-coupons.component';
 import { DvntCardComponent } from './components/dvnt-card/dvnt-card.component';
 import { DvntCarouselProductsComponent } from './components/dvnt-carousel-products/dvnt-carousel-products.component';
@@ -31,6 +33,7 @@ import { DvntIconComponent } from './components/dvnt-icon/dvnt-icon.component';
 import { DvntPaginationComponent } from './components/dvnt-pagination/dvnt-pagination.component';
 import { SharedModule } from '../../shared/shared.module';
 import { sharedTranslationsConfig } from './config/shared.config';
+import { DvntAddressFormComponent } from './components/dvnt-address-form/dvnt-address-form.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   a11y: true,
@@ -42,6 +45,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 @NgModule({
   declarations: [
+    DvntAddressCardComponent,
+    DvntAddressFormComponent,
     DvntAppliedCouponsComponent,
     DvntCardComponent,
     DvntCarouselProductsComponent,
@@ -66,9 +71,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SharedModule,
     FeaturesConfigModule,
     ItemCounterModule,
+    NgSelectModule,
     ConfigModule.withConfig(sharedTranslationsConfig),
   ],
   exports: [
+    DvntAddressCardComponent,
+    DvntAddressFormComponent,
     DvntAppliedCouponsComponent,
     DvntCardComponent,
     DvntCarouselProductsComponent,

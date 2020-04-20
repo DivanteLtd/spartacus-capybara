@@ -1,0 +1,213 @@
+<div [formGroup]="address">
+  <div class="row">
+    <div class="form-group col-sm-12 col-md-12" *ngIf="showTitleCode">
+      <ng-container *ngIf="titles$ | async as titles">
+        <div *ngIf="titles.length !== 0">
+          <label aria-required="true">
+            <span class="label-content required">{{
+              'addressForm.title' | cxTranslate
+            }}</span>
+            <ng-select
+              (change)="titleSelected($event)"
+              [clearable]="false"
+              [items]="titles"
+              [searchable]="false"
+              bindLabel="name"
+              bindValue="code"
+              formControlName="titleCode"
+            >
+            </ng-select>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content required">{{
+          'addressForm.firstName.label' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="firstName"
+          placeholder="{{ 'addressForm.firstName.placeholder' | cxTranslate }}"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content required">{{
+          'addressForm.lastName.label' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="lastName"
+          placeholder="{{ 'addressForm.lastName.placeholder' | cxTranslate }}"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content required">{{
+          'addressForm.address1' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="line1"
+          placeholder="{{ 'addressForm.streetAddress' | cxTranslate }}"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content">{{
+          'addressForm.address2' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="line2"
+          placeholder="{{ 'addressForm.aptSuite' | cxTranslate }}"
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content required">{{
+          'addressForm.city.label' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="town"
+          placeholder="{{ 'addressForm.city.placeholder' | cxTranslate }}"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+
+    <ng-container *ngIf="regions$ | async as regions">
+      <div
+        *ngIf="regions.length !== 0"
+        class="form-group col-sm-12 col-md-6"
+        formGroupName="region"
+      >
+        <label aria-required="true">
+          <span class="label-content required">{{
+            'addressForm.state' | cxTranslate
+          }}</span>
+          <ng-select
+            (change)="regionSelected($event)"
+            [clearable]="false"
+            [items]="regions"
+            [searchable]="true"
+            bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
+            bindValue="{{ regions[0].name ? 'isocode' : 'region' }}"
+            class="region-select"
+            formControlName="isocode"
+            placeholder="{{ 'addressForm.selectOne' | cxTranslate }}"
+          >
+          </ng-select>
+        </label>
+      </div>
+    </ng-container>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content required">{{
+          'addressForm.zipCode.label' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="postalCode"
+          placeholder="{{ 'addressForm.zipCode.placeholder' | cxTranslate }}"
+          required
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6" formGroupName="country">
+      <ng-container *ngIf="countries$ | async as countries">
+        <div *ngIf="countries.length !== 0">
+          <label aria-required="true">
+            <span class="label-content required">{{
+              'addressForm.country' | cxTranslate
+            }}</span>
+            <ng-select
+              (change)="countrySelected($event)"
+              [clearable]="false"
+              [items]="countries"
+              [searchable]="true"
+              bindLabel="name"
+              bindValue="isocode"
+              class="country-select"
+              formControlName="isocode"
+              placeholder="{{ 'addressForm.selectOne' | cxTranslate }}"
+            >
+            </ng-select>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6">
+      <label>
+        <span class="label-content">{{
+          'addressForm.phoneNumber.label' | cxTranslate
+        }}</span>
+        <input
+          class="form-control"
+          formControlName="phone"
+          placeholder="{{
+            'addressForm.phoneNumber.placeholder' | cxTranslate
+          }}"
+          type="text"
+        />
+      </label>
+    </div>
+
+    <div class="form-group col-sm-12 col-md-6" *ngIf="setAsDefaultField">
+      <div class="form-check">
+        <label>
+          <input
+            (change)="toggleDefaultAddress()"
+            class="form-check-input"
+            formControlName="defaultAddress"
+            type="checkbox"
+          />
+          <span class="form-check-label">{{
+            'addressForm.setAsDefault' | cxTranslate
+          }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="address-form-action-buttons row">
+    <div *ngIf="showCancelBtn" class="col-sm-12 col-md-6">
+      <button (click)="back()" class="btn btn-block btn-secondary">
+        {{ cancelBtnLabel || ('addressForm.chooseAddress' | cxTranslate) }}
+      </button>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <button
+        (click)="verifyAddress()"
+        [disabled]="address.invalid"
+        class="btn btn-block btn-primary"
+      >
+        {{ actionBtnLabel || ('common.continue' | cxTranslate) }}
+      </button>
+    </div>
+  </div>
+</div>

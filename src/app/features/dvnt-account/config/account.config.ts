@@ -5,6 +5,7 @@ import {
 } from '@spartacus/core';
 import { LayoutConfig } from '@spartacus/storefront';
 
+import { DvntAddressBookComponent } from '../dvnt-address-book/dvnt-address-book.component';
 import { DvntConsentManagementComponent } from '../dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from '../dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from '../dvnt-login-customer/dvnt-login-customer.component';
@@ -35,6 +36,9 @@ export const accountCmsConfig = <CmsConfig>{
     },
     ConsentManagementComponent: {
       component: DvntConsentManagementComponent,
+    },
+    AccountAddressBookComponent: {
+      component: DvntAddressBookComponent,
     },
   },
 };
@@ -67,6 +71,11 @@ export const staticComponents: {
     flexType: 'DvntConsentManagementComponent',
     uid: 'DvntConsentManagementComponent',
   },
+  DvntAddressBookComponent: {
+    typeCode: 'DvntAddressBookComponent',
+    flexType: 'DvntAddressBookComponent',
+    uid: 'DvntAddressBookComponent',
+  },
 };
 
 export function cmsStructureConfig(): CmsStructureConfig {
@@ -85,6 +94,14 @@ const accountTranslationOverwrites = {
       register: {
         registerTerms:
           'I want to create an account and I am confirming that I have read and agreed with the',
+      },
+    },
+    address: {
+      addressBook: {
+        header: {
+          manage: `Manage all the shipping addresses you want (work place, home address ...)`,
+          manually: `This way you won't have to enter the shipping address manually with each order.`,
+        },
       },
     },
   },

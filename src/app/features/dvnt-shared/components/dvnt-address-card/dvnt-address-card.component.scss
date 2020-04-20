@@ -1,0 +1,51 @@
+.address-card-container {
+  align-items: center;
+  border-bottom: 1px solid var(--ssf-light-primary);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-container {
+    @extend .column;
+
+    .address-card-label {
+      margin: 0;
+    }
+
+    .address-card-label-name {
+      @extend .address-card-label;
+
+      font-weight: bold;
+    }
+
+    .address-card-label-phone {
+      @extend .address-card-label;
+
+      margin-top: 20px;
+    }
+  }
+
+  .right-container {
+    @extend .column;
+
+    .address-card-action-buttons {
+      display: flex;
+      margin-top: 20px;
+
+      button {
+        &:last-of-type {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .align-center {
+    align-items: center;
+  }
+}
