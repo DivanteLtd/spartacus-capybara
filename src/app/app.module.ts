@@ -22,7 +22,7 @@ import { ConfigModule } from '@spartacus/core';
       backend: {
         occ: {
           baseUrl:
-            'https://storefront.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com',
+            'https://api.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com',
           prefix: '/rest/v2/',
         },
       },
