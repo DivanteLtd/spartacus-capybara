@@ -3,6 +3,24 @@
     <ng-container
       *ngIf="history?.orders?.length > 0; else emptyOrderHistoryList"
     >
+      <h2 class="order-history-header">
+        {{ 'orderHistory.orderHistory' | cxTranslate }}
+      </h2>
+
+      <div class="form-group sort-dropdown">
+        <span class="font-roboto sort-by-label">
+          {{ 'productList.sortBy' | cxTranslate }}:
+        </span>
+        <cx-sorting
+          (sortListEvent)="changeSortCode($event)"
+          [selectedOption]="history.pagination.sort"
+          [sortLabels]="getSortLabels() | async"
+          [sortOptions]="history.sorts"
+          placeholder="{{ 'orderHistory.sortByMostRecent' | cxTranslate }}"
+        >
+        </cx-sorting>
+      </div>
+
       <div class="order-history-list-content">
         <div class="order-history-row order-history-row-header">
           <div class="single-column">

@@ -1,5 +1,12 @@
+@import 'media';
+
 .consent-form {
+  padding-left: 0px;
   text-align: justify;
+
+  @include tablet-and-up {
+    padding-left: 1.25rem;
+  }
 
   .consent-main-text {
     font-weight: bold;

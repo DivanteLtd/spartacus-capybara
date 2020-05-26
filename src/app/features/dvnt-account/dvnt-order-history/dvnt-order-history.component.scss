@@ -1,9 +1,41 @@
 @import 'media';
+@import 'mixins';
 
 .order-history-list-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .order-history-header {
+    font-size: calculateRem(24px);
+    margin-bottom: 30px;
+  }
+
+  .sort-dropdown {
+    margin-bottom: 10px;
+    max-width: 180px;
+    width: auto;
+
+    @include tablet-and-up {
+      margin-bottom: 30px;
+    }
+
+    .sort-by-label {
+      color: var(--ssf-gray-primary) !important;
+      font-family: var(--ssf-secondary-font-family);
+      font-size: calculateRem(12px);
+      font-weight: 300;
+
+      @include tablet-and-up {
+        font-size: var(--ssf-font-size-mobile);
+      }
+
+      .sort-by-label {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
 
   .order-history-list-content {
     display: flex;
@@ -57,9 +89,16 @@
     }
 
     .order-history-row-header {
+      background: rgb(241, 242, 243);
       border-bottom: 1px solid var(--cx-border-color);
       margin-bottom: 0px;
       padding-bottom: 12px;
+      padding: 5px;
+
+      @include laptop-and-up {
+        background: transparent;
+        padding: 0px;
+      }
     }
   }
 }
