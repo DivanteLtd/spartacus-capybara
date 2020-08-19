@@ -17,7 +17,7 @@
 
 <ng-template #login>
   <a
-    (click)="blockPropagation($event)"
+    (click)="loginEvent($event)"
     [routerLink]="{ cxRoute: 'login' } | cxUrl"
     class="header-navigation-icon"
     role="link"

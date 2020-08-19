@@ -7,6 +7,12 @@ import { DvntModalSearchComponent } from 'src/app/features/dvnt-modal-search/dvn
 import { DvntProfileLinkListComponent } from 'src/app/features/dvnt-profile-link-list/dvnt-profile-link-list.component';
 import { DvntModalCategoriesComponent } from '../dvnt-modal-categories/dvnt-modal-categories.component';
 import { DvntCartModalComponent } from '../dvnt-cart/dvnt-cart-modal/dvnt-cart-modal.component';
+import { GoogleAnalyticsEventsService } from 'src/app/shared/google-analytics/google-analytics-event.service';
+import {
+  GoogleEventCategory,
+  GoogleActionCategory,
+  GoogleLabelCategory,
+} from 'src/app/shared/google-analytics/google-analytics.enum';
 
 @Component({
   selector: 'app-dvnt-bottom-navigation',
@@ -18,6 +24,7 @@ export class DvntBottomNavigationComponent implements OnDestroy {
 
   constructor(
     private authService: AuthService,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService,
     private routingService: RoutingService,
     private modalService: ModalService
   ) {}
@@ -26,10 +33,15 @@ export class DvntBottomNavigationComponent implements OnDestroy {
     this.clearModalRef();
   }
 
-  public navigateTo(path: string, event: Event): void {
+  public navigateToHomePage(event: Event): void {
     this.preventOtherActions(event);
 
-    this.routingService.goByUrl(path);
+    this.routingService.goByUrl('');
+
+    this.googleAnalyticsEventsService.emitEvent(
+      GoogleEventCategory.Navigation,
+      GoogleActionCategory.HomePageRedirect
+    );
   }
 
   public setSearchAction(event: Event): void {
@@ -81,6 +93,13 @@ export class DvntBottomNavigationComponent implements OnDestroy {
   private createModal(component: any, componentType: string): void {
     this.clearModalRef();
     this.createModelInstance(component, componentType);
+
+    this.googleAnalyticsEventsService.emitEvent(
+      GoogleEventCategory.Modal,
+      GoogleActionCategory.OpenModal,
+      GoogleLabelCategory.BottomNavigationModal,
+      componentType
+    );
   }
 
   private createModelInstance(component: any, componentType: string): void {
