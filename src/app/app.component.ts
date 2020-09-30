@@ -11,6 +11,7 @@ import { NavigationEnd, Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [GoogleTagManagerService],
 })
 export class AppComponent extends StorefrontComponent {
   public footerComponent: ContentSlotComponentData = {
