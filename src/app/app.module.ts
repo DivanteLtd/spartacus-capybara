@@ -53,6 +53,7 @@ import { ConfigModule } from '@spartacus/core';
       enabled: environment.production,
     }),
   ],
+  providers: [{ provide: 'googleTagManagerId', useValue: 'GTM-T7JZFXT' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

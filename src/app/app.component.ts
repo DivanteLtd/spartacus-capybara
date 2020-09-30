@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-
-import { StorefrontComponent } from '@spartacus/storefront';
-import { ContentSlotComponentData } from '@spartacus/core';
+import {
+  HamburgerMenuService,
+  StorefrontComponent,
+} from '@spartacus/storefront';
+import { ContentSlotComponentData, RoutingService } from '@spartacus/core';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +18,27 @@ export class AppComponent extends StorefrontComponent {
     typeCode: 'FooterNavigationComponent',
     flexType: 'FooterNavigationComponent',
   };
+
+  constructor(
+    hamburgerMenuService: HamburgerMenuService,
+    routingService: RoutingService,
+    private gtmService: GoogleTagManagerService,
+    private router: Router
+  ) {
+    super(hamburgerMenuService, routingService);
+
+    this.router.events.forEach((item) => {
+      if (item instanceof NavigationEnd) {
+        console.log('NAVIGATION END');
+
+        const gtmTag = {
+          event: 'page',
+          pageName: item.url,
+        };
+        console.log('gtmTag', gtmTag);
+
+        this.gtmService.pushTag(gtmTag);
+      }
+    });
+  }
 }
