@@ -41,6 +41,7 @@
     "@spartacus/core": "^1.5",
     "@spartacus/storefront": "^1.5",
     "@spartacus/styles": "^1.5",
+    "angular-google-tag-manager": "^1.2.0",
     "bootstrap": "^4.2.1",
     "husky": "^4.2.3",
     "i18next": "^15.0.6",
