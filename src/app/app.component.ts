@@ -33,13 +33,19 @@ export class AppComponent extends StorefrontComponent {
         console.log('NAVIGATION END');
 
         const gtmTag = {
-          event: 'page',
+          event: 'PageView',
           pageName: item.url,
         };
         console.log('gtmTag', gtmTag);
 
         this.gtmService.pushTag(gtmTag);
+        this.gtmService.pushTag({
+          event: 'button-test',
+          data: item.id,
+        });
       }
+
+      console.log(this.gtmService.getDataLayer());
     });
   }
 }
