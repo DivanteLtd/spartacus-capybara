@@ -1,0 +1,80 @@
+<div *ngIf="interest.product$ | async as product" class="my-interest-row">
+  <div class="single-column">
+    <div class="column-value item-column">
+      <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl">
+        <cx-media
+          [container]="product.images?.PRIMARY"
+          format="thumbnail"
+        ></cx-media>
+      </a>
+      <div class="item-details">
+        <a
+          *ngIf="product.name"
+          [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+        >
+          {{ product.name }}
+        </a>
+
+        <span *ngIf="product.code">
+          {{ 'myInterests.productId' | cxTranslate: { code: product.code } }}
+        </span>
+
+        <ng-container *ngFor="let baseOptions of product.baseOptions">
+          <div
+            *ngFor="
+              let variant of baseOptions.selected?.variantOptionQualifiers
+            "
+          >
+            <span>
+              {{ variant.name }}
+            </span>
+            <span>
+              {{ variant.value }}
+            </span>
+          </div>
+        </ng-container>
+
+        <span
+          *ngIf="product.stock.stockLevelStatus === 'outOfStock'"
+          class="item-out-of-stock-status"
+        >
+          {{ 'myInterests.outOfStock' | cxTranslate }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="single-column">
+    <p class="column-value">
+      {{ product.price.formattedValue }}
+    </p>
+  </div>
+  <div class="single-column">
+    <div class="column-value notification-column">
+      <div
+        *ngFor="let interestEntry of interest.productInterestEntry"
+        class="notification"
+      >
+        <span>
+          {{ 'myInterests.' + interestEntry.interestType | cxTranslate }}
+        </span>
+        <span>
+          {{
+            'myInterests.expirationDate'
+              | cxTranslate
+                : { expirationDate: interestEntry.expirationDate | date }
+          }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="single-column">
+    <button
+      (click)="removeInterest.emit()"
+      [disabled]="isRemoveDisabled$ | async"
+      class="btn btn-primary"
+      type="button"
+    >
+      {{ 'myInterests.remove' | cxTranslate }}
+    </button>
+  </div>
+</div>

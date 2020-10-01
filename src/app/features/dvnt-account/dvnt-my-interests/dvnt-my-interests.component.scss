@@ -1,0 +1,109 @@
+@import 'media';
+@import 'mixins';
+
+.my-interests-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .my-interests-header {
+    font-size: calculateRem(24px);
+    margin-bottom: 30px;
+  }
+
+  .sort-dropdown {
+    margin-bottom: 10px;
+    max-width: 180px;
+    width: auto;
+
+    @include tablet-and-up {
+      margin-bottom: 30px;
+    }
+
+    .sort-by-label {
+      color: var(--ssf-gray-primary) !important;
+      font-family: var(--ssf-secondary-font-family);
+      font-size: calculateRem(12px);
+      font-weight: 300;
+
+      @include tablet-and-up {
+        font-size: var(--ssf-font-size-mobile);
+      }
+
+      .sort-by-label {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .my-interests-list-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .my-interests-row {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+
+      .standard-column {
+        align-self: flex-start;
+        display: flex;
+        flex: 1 0 50%;
+        justify-content: flex-start;
+        margin: 5px 0;
+
+        @include laptop-and-up {
+          align-self: center;
+          flex: 1;
+          justify-content: center;
+          margin: 0;
+        }
+      }
+
+      .wider-column {
+        flex: 2;
+      }
+
+      .empty-column {
+        @extend .standard-column;
+
+        display: none;
+
+        @include laptop-and-up {
+          display: flex;
+        }
+      }
+
+      .single-column {
+        @extend .standard-column;
+
+        .column-label {
+          margin: 0;
+          text-align: center;
+          text-transform: lowercase;
+
+          &::first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    .my-interests-row-header {
+      display: none;
+
+      @include laptop-and-up {
+        border-bottom: 1px solid var(--cx-border-color);
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+}

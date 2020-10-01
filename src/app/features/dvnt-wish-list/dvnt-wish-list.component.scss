@@ -1,9 +1,15 @@
 @import 'media';
+@import 'mixins';
 
 .wish-list-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .wish-list-header {
+    font-size: calculateRem(24px);
+    margin-bottom: 30px;
+  }
 
   .wish-list-content {
     display: flex;

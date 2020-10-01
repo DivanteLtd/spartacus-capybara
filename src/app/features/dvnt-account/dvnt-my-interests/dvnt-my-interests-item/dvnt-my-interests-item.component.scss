@@ -1,0 +1,66 @@
+@import 'media';
+@import 'mixins';
+
+.my-interest-row {
+  align-items: flex-start;
+  border-bottom: 1px var(--ssf-light-primary) solid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  min-height: 70px;
+  padding: 15px 0px;
+  width: 100%;
+
+  @include laptop-and-up {
+    flex-direction: row;
+  }
+
+  .single-column {
+    align-self: flex-start;
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    margin: 5px 0;
+
+    @include laptop-and-up {
+      align-self: center;
+      flex: 1;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .column-value {
+      margin: 0;
+      text-align: center;
+    }
+
+    .item-column {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: start;
+
+      .item-details {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        .item-out-of-stock-status {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .notification-column {
+      display: flex;
+      flex-direction: column;
+
+      .notification {
+        display: flex;
+        margin: 5px 0px;
+      }
+    }
+  }
+}

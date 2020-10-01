@@ -8,6 +8,7 @@ import { LayoutConfig } from '@spartacus/storefront';
 import { DvntConsentManagementComponent } from '../dvnt-consent-management/dvnt-consent-management.component';
 import { DvntForgotPasswordComponent } from '../dvnt-forgot-password/dvnt-forgot-password.component';
 import { DvntLoginCustomerComponent } from '../dvnt-login-customer/dvnt-login-customer.component';
+import { DvntMyInterestsComponent } from '../dvnt-my-interests/dvnt-my-interests.component';
 import { DvntOrderHistoryComponent } from '../dvnt-order-history/dvnt-order-history.component';
 import { DvntRegisterCustomerComponent } from '../dvnt-register-customer/dvnt-register-customer.component';
 
@@ -29,6 +30,9 @@ export const accountCmsConfig = <CmsConfig>{
     },
     ForgotPasswordComponent: {
       component: DvntForgotPasswordComponent,
+    },
+    MyInterestsComponent: {
+      component: DvntMyInterestsComponent,
     },
     AccountOrderHistoryComponent: {
       component: DvntOrderHistoryComponent,
@@ -56,6 +60,11 @@ export const staticComponents: {
     typeCode: 'DvntForgotPasswordComponent',
     flexType: 'DvntForgotPasswordComponent',
     uid: 'DvntForgotPasswordComponent',
+  },
+  DvntMyInterestsComponent: {
+    typeCode: 'DvntMyInterestsComponent',
+    flexType: 'DvntMyInterestsComponent',
+    uid: 'DvntMyInterestsComponent',
   },
   DvntOrderHistoryComponent: {
     typeCode: 'DvntOrderHistoryComponent',
@@ -85,6 +94,11 @@ const accountTranslationOverwrites = {
       register: {
         registerTerms:
           'I want to create an account and I am confirming that I have read and agreed with the',
+      },
+    },
+    myAccount: {
+      myInterests: {
+        sortBy: 'Sort By',
       },
     },
   },

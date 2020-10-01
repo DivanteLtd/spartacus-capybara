@@ -1,0 +1,69 @@
+<div class="my-interests-list-container">
+  <ng-container *ngIf="interests$ | async as interests">
+    <ng-container *ngIf="interests?.results?.length > 0; else noInterest">
+      <h2 class="my-interests-header">
+        {{ 'myInterests.header' | cxTranslate }}
+      </h2>
+
+      <div class="form-group sort-dropdown">
+        <span class="font-roboto sort-by-label">
+          {{ 'productList.sortBy' | cxTranslate }}:
+        </span>
+        <cx-sorting
+          (sortListEvent)="sortChange($event)"
+          [selectedOption]="sort"
+          [sortLabels]="sortLabels | async"
+          [sortOptions]="sortOptions"
+          placeholder="{{ 'myInterests.sortByMostRecent' | cxTranslate }}"
+        >
+        </cx-sorting>
+      </div>
+
+      <div class="my-interests-list-content">
+        <div class="my-interests-row my-interests-row-header">
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.item' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.price' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="single-column">
+            <h3 class="column-label">
+              {{ 'myInterests.notifications' | cxTranslate }}
+            </h3>
+          </div>
+          <div class="empty-column"></div>
+        </div>
+
+        <ng-container *ngIf="!(getInterestsloading$ | async); else loading">
+          <app-dvnt-my-interests-item
+            *ngFor="let interest of interests?.results"
+            (removeInterest)="removeInterest(interest)"
+            [interest]="interest"
+            [isRemoveDisabled$]="isRemoveDisabled$"
+          ></app-dvnt-my-interests-item>
+        </ng-container>
+        <ng-template #loading>
+          <div class="cx-spinner">
+            <cx-spinner></cx-spinner>
+          </div>
+        </ng-template>
+      </div>
+
+      <app-dvnt-pagination
+        [pagination]="pagination"
+        (viewPageEvent)="pageChange($event)"
+      ></app-dvnt-pagination>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noInterest>
+    <h2>
+      {{ 'myInterests.noInterests' | cxTranslate }}
+    </h2>
+  </ng-template>
+</div>
