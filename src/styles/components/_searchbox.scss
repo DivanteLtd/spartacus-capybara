@@ -12,6 +12,10 @@ cx-searchbox {
     position: relative;
     width: 240px;
 
+    @include tablet-and-up {
+      min-width: 240px;
+    }
+
     &.dirty .search {
       display: none;
     }
