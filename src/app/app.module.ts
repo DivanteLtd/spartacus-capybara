@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { translations, translationChunksConfig } from '@spartacus/assets';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { translationChunksConfig, translations } from '@spartacus/assets';
+import { ConfigModule } from '@spartacus/core';
 import { B2cStorefrontModule } from '@spartacus/storefront';
-import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
-
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { DvntSharedModule } from './features/dvnt-shared/dvnt-shared.module';
 import { FeatureModule } from './features/feature.module';
 import { PageLoaderModule } from './shared/page-loader/page-loader.module';
 import { SharedModule } from './shared/shared.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { ConfigModule } from '@spartacus/core';
+import { StorefrontMissingExportsModule } from './storefront-missing-exports/storefront-missing-exports.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,9 +20,8 @@ import { ConfigModule } from '@spartacus/core';
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl:
-            'https://api.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com',
-          prefix: '/rest/v2/',
+          baseUrl: 'https://spartacus-training.eastus.cloudapp.azure.com:8443',
+          prefix: '/occ/v2/',
         },
       },
       context: {
