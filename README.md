@@ -42,3 +42,4 @@ This project is based on [Spartacus Storefront](https://github.com/SAP/spartacus
 ## 📓  Notes for developers
 
 We are using a public SAP Commerce Cloud (CCv2) instance as a backend - the same which is used by [Spartacus Public instance](https://spartacus.c39j2-walkersde1-d4-public.model-t.cc.commerce.ondemand.com/electronics-spa/en/USD/). Because of this we had to provide some static CMS configuration. In production environment this configuration could be migrated to an impex and served from the cms.
+
