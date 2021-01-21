@@ -20,7 +20,7 @@ import { StorefrontMissingExportsModule } from './storefront-missing-exports/sto
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://spartacus-training.eastus.cloudapp.azure.com:8443',
+          baseUrl: 'https://spartacus-demo.eastus.cloudapp.azure.com:8443',
           prefix: '/occ/v2/',
         },
       },
