@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-
 import { DvntAccountModule } from './dvnt-account/dvnt-account.module';
 import { DvntBottomNavigationModule } from './dvnt-bottom-navigation/dvnt-bottom-navigation.module';
 import { DvntBreadcrumbsModule } from './dvnt-breadcrumbs/dvnt-breadcrumbs.module';
 import { DvntCartModule } from './dvnt-cart/dvnt-cart.module';
 import { DvntCategoriesWrapperModule } from './dvnt-categories-wrapper/dvnt-categories-wrapper.module';
+import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
 import { DvntFooterModule } from './dvnt-footer/dvnt-footer.module';
 import { DvntHeaderModule } from './dvnt-header/dvnt-header.module';
 import { DvntLandingPageModule } from './dvnt-landing-page/dvnt-landing-page.module';
+import { DvntLearnMoreModule } from './dvnt-learn-more/dvnt-learn-more.module';
 import { DvntModalCategoriesModule } from './dvnt-modal-categories/dvnt-modal-categories.module';
 import { DvntModalSearchModule } from './dvnt-modal-search/dvnt-modal-search.module';
 import { DvntPageNotFoundModule } from './dvnt-page-not-found/dvnt-page-not-found.module';
@@ -16,7 +17,6 @@ import { DvntProductListModule } from './dvnt-product-list/dvnt-product-list.mod
 import { DvntProfileLinkListModule } from './dvnt-profile-link-list/dvnt-profile-link-list.module';
 import { DvntWishListModule } from './dvnt-wish-list/dvnt-wish-list.module';
 import { StyleGuideModule } from './style-guide/style-guide.module';
-import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
 
 @NgModule({
   imports: [
@@ -37,6 +37,8 @@ import { DvntCheckoutModule } from './dvnt-checkout/dvnt-checkout.module';
     DvntWishListModule,
     StyleGuideModule,
     DvntCheckoutModule,
+    DvntLearnMoreModule,
   ],
+  exports: [DvntLearnMoreModule],
 })
 export class FeatureModule {}
